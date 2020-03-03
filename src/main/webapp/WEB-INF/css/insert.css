@@ -1,0 +1,16 @@
+body{
+    width: 1200px;
+    margin: 0 auto;
+    background-color: seashell;
+}
+
+#insert_wrap{
+    width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+#insert_table{
+
+    margin: 0 auto;
+  
+}
