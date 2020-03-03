@@ -13,7 +13,7 @@ pageEncoding="UTF-8"%>
 <body>
 	
 	<div>
-		<h2>메인페이지</h2>
+		<h2>메인페이지111</h2>
 		<a href="insert.do">회원가입</a>
 	</div>
 
