@@ -4,12 +4,12 @@ package com.shopping.view.user;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
 import com.shopping.MVC_reshop.MainController;
-
+@Controller
 public class LoginOutController {
 	
 private static final Logger logger = LoggerFactory.getLogger(MainController.class);
