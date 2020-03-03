@@ -6,9 +6,9 @@
 <meta charset="EUC-KR">
 <title>제품 상세 페이지</title>
 </head>
-<link rel="stylesheet" href="../css/product_detail.css">
-<script src=".../js/jquery-2.2.4.min.js"></script>
-<script src=".../js/product_detail.js"></script>
+<link rel="stylesheet" href="../../css/product_detail.css">
+<script src="../../js/jquery-2.2.4.min.js"></script>
+<script src="../../js/product_detail.js"></script>
 <body>
 	<section align="center" class="detail_main">
     <h1>제품 상세 페이지</h1>
