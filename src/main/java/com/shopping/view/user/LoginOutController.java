@@ -14,15 +14,12 @@ public class LoginOutController {
 	
 private static final Logger logger = LoggerFactory.getLogger(MainController.class);
 	
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
-	@RequestMapping(value = "/insert.do")
+	
+	@RequestMapping("/insert.do")
 	public String insert() {
 		
 		System.out.println("회원가입 페이지로 이동");
-		
-		return "/main/insert";
+		return "/login&insert/insert.jsp";
 	}
 
 }
