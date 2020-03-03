@@ -3,12 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="../css/header.css">
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title>로그인</title>
 </head>
 <body>
-	<h1>헤더입니다.</h1>
 
 </body>
 </html>
