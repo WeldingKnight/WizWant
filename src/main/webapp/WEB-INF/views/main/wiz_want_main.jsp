@@ -1,12 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
+
+
 <!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>WIZ*WANT(©Л╦╝╟║ ©Ьго╢б ╟м)</title>
+<title>WIZ*WANT(Л ╟К╕╛Й╟─ Л⌡░М∙≤К┼■ Й╡┐)</title>
 </head>
 <body>
+
 
 </body>
 </html>
