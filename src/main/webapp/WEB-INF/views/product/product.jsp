@@ -126,6 +126,7 @@
     </ul>
 </nav>
 
+
 <section align="center">
     <div id="detail_rap">
         <div class="detail_content">
