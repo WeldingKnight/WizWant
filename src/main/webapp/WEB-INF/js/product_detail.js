@@ -6,4 +6,5 @@ $(function(){
         $(".detail_seller").css("display", "block");
         $(".detail_sellerCnt").css("display", "none");
     });
+    
 });
