@@ -7,7 +7,9 @@
 
 <meta charset="UTF-8">
 
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/header.css">
+<!-- <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/header.css"> -->
+<link rel="stylesheet" href="./css/header.css">
+<link rel="stylesheet" href="./css/mypage.css">
 </head>
 <body >
 	<div id="header_box">
