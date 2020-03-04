@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="../../css/insert.css">
+<link rel="stylesheet" href="./css/insert.css">
 <meta charset="UTF-8">
 <title>회원가입</title>
 </head>
