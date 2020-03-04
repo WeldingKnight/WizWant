@@ -3,7 +3,7 @@
     list-style:none;
     text-decoration: none;
 }
-img{
+.detail_content img{
     margin: 10px;
 }
 .detail_main table td{
