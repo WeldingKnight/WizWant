@@ -40,7 +40,7 @@ public class MainController { //메인 페이지 컨트롤러
 //		}
 		
 		
-		return "/main/main/wiz_want_main.jsp";
+		return "/main/wiz_want_main.jsp";
 	}
 	
 }
