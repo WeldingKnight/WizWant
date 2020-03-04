@@ -19,7 +19,6 @@
 			</ul>
 		</div>
 	</nav>
-
 	<table id="mypage_menu">
 		<tr>
 			<td>
