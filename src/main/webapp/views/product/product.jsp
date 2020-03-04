@@ -1,17 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
-<!DOCTYPE html>
-<html>
-<head>
-<link rel="stylesheet" href="../../css/product.css" >
-<script src="../../js/jquery-2.2.4.min.js"></script>
-<script src="../../js/product.js"></script>
-<meta charset="UTF-8">
-<title>상세 페이지</title>
-</head>
-<body>
-    <h2 align="center">상세 페이지</h2>
+<%@ include file="../header_footer/header.jsp"%>
+    <h2 align="center">상품 페이지</h2>
 <nav id="detail_navMenu">
     <ul>
         <li id="detail_sort1"><a href="#">대분류 ></a>
@@ -144,5 +135,4 @@
 </c:forEach>
     </div>
 </section>
-</body>
-</html>
+<%@ include file="../header_footer/footer.jsp"%>
