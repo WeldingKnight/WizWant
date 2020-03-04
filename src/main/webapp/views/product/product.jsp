@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="../../css/product.css">
+<link rel="stylesheet" href="../../css/product.css" >
 <script src="../../js/jquery-2.2.4.min.js"></script>
 <script src="../../js/product.js"></script>
 <meta charset="EUC-KR">

@@ -21,5 +21,12 @@ private static final Logger logger = LoggerFactory.getLogger(HomeController.clas
 		System.out.println("회원가입 페이지로 이동");
 		return "/views/login&insert/insert.jsp";
 	}
+	
+	@RequestMapping("/login.do")
+	public String login() {
+		
+		System.out.println("로그인 페이지로 이동");
+		return "/views/login&insert/login.jsp";
+	}
 
 }

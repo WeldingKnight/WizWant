@@ -6,8 +6,8 @@
 <head>
 
 <meta charset="UTF-8">
-<link rel="stylesheet"  type="text/css" href="../../css/header.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/src/main/webapp/css/header.css">
+<link rel="stylesheet"  type="text/css" href="header.css">
+
 
 </head>
 <body>
