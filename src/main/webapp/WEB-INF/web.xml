@@ -16,6 +16,10 @@
 
 	<!-- Processes application requests -->
 	
+	<!-- start page -->
+	<welcom-file-list>
+		<welcom-file>index.jsp</welcom-file>
+	</welcom-file-list>
 	
 	
 	<servlet>
@@ -48,11 +52,6 @@
 		<servlet-name>action</servlet-name>
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
-	
-	
-	
-
-	
 	
 	
 </web-app>

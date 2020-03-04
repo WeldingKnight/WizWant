@@ -26,6 +26,12 @@ pageEncoding="UTF-8"%>
 	.header_menu{
 		border: 1px solid blue;
 	}
+	
+	.header_menu >img{
+	
+		width= 200px;
+		height= 100px;
+	}
 
 </style>
 
