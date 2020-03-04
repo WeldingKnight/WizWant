@@ -1,19 +1,20 @@
-<%@ page language="java" contentType="text/jsp; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
-<!DOCTYPE jsp>
-<jsp>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
 <head>
-<meta charset="EUC-KR">
-<title></title>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+    <link href="../../css/mypage.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<h1>¸¶ÀÌÆäÀÌÁö</h1>
+	<h1>ë§ˆì´íŽ˜ì´ì§€</h1>
 	<nav>
 		<div>
 			<ul>
-				<li><a href="./mypage/update.jsp">È¸¿øÁ¤º¸¼öÁ¤</a></li>
-				<li><a href="./mypage/bookmark.jsp">Âò¸ñ·Ï</a></li>
-				<li><a href="./mypage/orders.jsp">ÁÖ¹®³»¿ª</a></li>
+				<li><a href="update.do">íšŒì›ì •ë³´ìˆ˜ì •</a></li>
+				<li><a href="bookmark.do">ì°œëª©ë¡</a></li>
+				<li><a href="orders.do">ì£¼ë¬¸ë‚´ì—­</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -22,20 +23,20 @@
 		<tr>
 			<td>
 				<div>
-					<a href="./mypage/update.jsp"><img src="http://placehold.it/200x100">È¸¿øÁ¤º¸¼öÁ¤</a>
+					<a href="update.do"><img src="http://placehold.it/200x100">íšŒì›ì •ë³´ìˆ˜ì •</a>
 				</div>
 			</td>
 			<td>
 				<div>
-					<a href="./mypage/bookmark.jsp"><img src="http://placehold.it/200x100">Âò¸ñ·Ï</a>
+					<a href="bookmark.do"><img src="http://placehold.it/200x100">ì°œëª©ë¡</a>
 				</div>
 			</td>
 			<td>
 				<div>
-					<a href="./mypage/orders.jsp"><img src="http://placehold.it/200x100">ÁÖ¹®³»¿ª</a>
+					<a href="orders.do"><img src="http://placehold.it/200x100">ì£¼ë¬¸ë‚´ì—­</a>
 				</div>
 			</td>
 		</tr>
 	</table>
 </body>
-</jsp>
+</html>
