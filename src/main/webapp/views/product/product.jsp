@@ -135,4 +135,5 @@
 </c:forEach>
     </div>
 </section>
+
 <%@ include file="../header_footer/footer.jsp"%>
