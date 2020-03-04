@@ -5,9 +5,6 @@
     text-decoration: none;
     
 }
-body{
-    background-color: seashell;
-}
 #detail_navMenu ul > li {
     float: left;
     margin: 10px;
