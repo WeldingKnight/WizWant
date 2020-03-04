@@ -6,12 +6,13 @@
 <head>
 
 <meta charset="UTF-8">
-<link rel="stylesheet"  type="text/css" href="../../header.css">
+<link rel="stylesheet" href="../../css/header.css">
+
 
 
 </head>
 <body>
-	<h1>헤더입니다.</h1>
+	<h1 id="header_h1">헤더입니다.</h1>
 
 
 </body>
