@@ -129,7 +129,7 @@
 <section align="center">
     <div id="detail_rap">
         <div class="detail_content">
-        <img src="http://placehold.it/200x200">
+        <a href="product_detail.jsp"><img src="http://placehold.it/200x200"></a>
         <div class="detail_product">
             <div id="detail_productName">제품명</div>
             <div id="detail_productPrice">가격</div>
