@@ -7,34 +7,9 @@ pageEncoding="UTF-8"%>
 
 <html>
 <head>
+<link rel="stylesheet" href="../../css/header.css">
+
 <meta charset="UTF-8">
-
-
-<style>
-	#header_body{
-	
-		margin: 0 auto;
-    	text-align: center;	
-	}
-	
-	#header_box{
-		width:1200px;	
-		border: 1px solid red;
-
-	}
-	
-	.header_menu{
-		border: 1px solid blue;
-	}
-	
-	.header_menu >img{
-	
-		width= 200px;
-		height= 100px;
-	}
-
-</style>
-
 <title>WIZ*WANT(우리가 원하는 것)</title>
 </head>
 <body>
@@ -44,7 +19,6 @@ pageEncoding="UTF-8"%>
 		<h2>메인페이지</h2>
 		<a href="login.do">로그인</a>
 		<a href="insert.do">회원가입</a>
-		<a href="mypage.do">마이페이지</a>
 	</div>
 
 	<jsp:include page="../header_footer/footer.jsp"></jsp:include>
