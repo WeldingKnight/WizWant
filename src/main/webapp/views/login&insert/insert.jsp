@@ -3,7 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<link rel="stylesheet" href="../../css/insert.css">
+<meta charset="UTF-8">
 <title>회원가입</title>
 </head>
 <body>

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="../css/header.css">
+	<link rel="stylesheet" href="../../css/header.css">
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>

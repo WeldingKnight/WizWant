@@ -8,18 +8,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
-import com.shopping.MVC_reshop.MainController;
+import com.shopping.MVC_reshop.HomeController;
 @Controller
 public class LoginOutController {
 	
-private static final Logger logger = LoggerFactory.getLogger(MainController.class);
+private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	
 	@RequestMapping("/insert.do")
 	public String insert() {
 		
 		System.out.println("회원가입 페이지로 이동");
-		return "/login&insert/insert.jsp";
+		return "/views/login&insert/insert.jsp";
 	}
 
 }

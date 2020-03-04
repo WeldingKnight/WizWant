@@ -15,7 +15,7 @@ import com.shopping.MVC_reshop.user.UserVO;
  * Handles requests for the application home page.
  */
 @Controller
-public class MainController { //메인 페이지 컨트롤러
+public class HomeController { //메인 페이지 컨트롤러
 	
 	
 }
