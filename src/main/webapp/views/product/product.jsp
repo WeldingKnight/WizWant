@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -127,62 +128,20 @@
 </nav>
 
 <section align="center">
-    <div id="detail_rap">
-        <div class="detail_content">
-        <a href="product_detail.jsp"><img src="http://placehold.it/200x200"></a>
-        <div class="detail_product">
-            <div id="detail_productName">제품명</div>
-            <div id="detail_productPrice">가격</div>
-        </div>
-        <div class="detail_seller">
-            <div id="detail_sellerId">판매자아이디</div>
-            <div id="detail_sellerReliability">판매자신뢰도</div>
-        </div>
-        </div>
-        <div class="detail_content">
-        <img src="http://placehold.it/200x200">
-        <div class="detail_product">
-            <div id="detail_productName">제품명</div>
-            <div id="detail_productPrice">가격</div>
-        </div>
-        <div class="detail_seller">
-            <div id="detail_sellerId">판매자아이디</div>
-            <div id="detail_sellerReliability">판매자신뢰도</div>
-        </div>
-        </div>
-        <div class="detail_content">
-        <img src="http://placehold.it/200x200">
-        <div class="detail_product">
-            <div id="detail_productName">제품명</div>
-            <div id="detail_productPrice">가격</div>
-        </div>
-        <div class="detail_seller">
-            <div id="detail_sellerId">판매자아이디</div>
-            <div id="detail_sellerReliability">판매자신뢰도</div>
-        </div>
-        </div>
-        <div class="detail_content">
-        <img src="http://placehold.it/200x200">
-        <div class="detail_product">
-            <div id="detail_productName">제품명</div>
-            <div id="detail_productPrice">가격</div>
-        </div>
-        <div class="detail_seller">
-            <div id="detail_sellerId">판매자아이디</div>
-            <div id="detail_sellerReliability">판매자신뢰도</div>
-        </div>
-        </div>
-        <div class="detail_content">
-        <img src="http://placehold.it/200x200">
-        <div class="detail_product">
-            <div id="detail_productName">제품명</div>
-            <div id="detail_productPrice">가격</div>
-        </div>
-        <div class="detail_seller">
-            <div id="detail_sellerId">판매자아이디</div>
-            <div id="detail_sellerReliability">판매자신뢰도</div>
-        </div>
-        </div>
+<div id="detail_rap">
+<c:forEach items="${productList}" var="product">
+	<div class="detail_content">
+		<a href="getBoard.do?seq=${product.productid}"><img src="${product.image}"></a>
+		<div class="detail_product">
+		    <div id="detail_productName">${product.productname}</div>
+		    <div id="detail_productPrice">${product.price}</div>
+		</div>
+		<div class="detail_seller">
+	        <div id="detail_sellerId">${product.sellerid}</div>
+	        <div id="detail_sellerReliability">${product.score}</div>
+	    </div>
+    </div>
+</c:forEach>
     </div>
 </section>
 </body>
