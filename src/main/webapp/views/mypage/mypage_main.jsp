@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-    <link rel="stylesheet" href="../../css/mypage.css">
+    <link href="../../css/mypage.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<h1>마이페이지</h1>
