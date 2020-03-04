@@ -4,7 +4,6 @@ pageEncoding="UTF-8"%>
 
 
 
-
 	<div>
 		<h2>메인페이지</h2>
 		<a href="login.do">로그인</a>
