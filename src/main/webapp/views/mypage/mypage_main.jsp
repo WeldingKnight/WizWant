@@ -7,6 +7,7 @@
 <title>Insert title here</title>
     <link href="../../css/mypage.css" rel="stylesheet" type="text/css">
 </head>
+<jsp:include page="../header_footer/header.jsp"></jsp:include>
 <body>
 	<h1>마이페이지</h1>
 	<nav>
@@ -39,4 +40,4 @@
 		</tr>
 	</table>
 </body>
-</html>
+<jsp:include page="../header_footer/footer.jsp"></jsp:include>
