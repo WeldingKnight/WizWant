@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" href="../../css/product.css" >
 <script src="../../js/jquery-2.2.4.min.js"></script>
 <script src="../../js/product.js"></script>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>상세 페이지</title>
 </head>
 <body>

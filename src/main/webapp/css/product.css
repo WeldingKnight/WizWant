@@ -35,9 +35,6 @@ ul > li {
     -webkit-border-bottom-right-radius: 3px;
     border-bottom-right-radius: 3px;
     }
-/* #navMenu ul li:hover ul {  
-    display: block;
-    } */
 #detail_navMenu ul ul {
     display:none;
     position:absolute;
