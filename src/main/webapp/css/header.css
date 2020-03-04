@@ -3,3 +3,17 @@
 h1{
     border: 1px solid red;
 }
+
+#main_header{
+	width: 1200px;
+	border: 1px solid red;
+}
+
+.header_menu{
+	width:900px;
+	margin: 0 auto;
+}
+.header_menu a > img {
+	width: 200px;
+	height: 100px;
+}
