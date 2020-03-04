@@ -8,7 +8,7 @@
 body{
     background-color: seashell;
 }
-ul > li {
+#detail_navMenu ul > li {
     float: left;
     margin: 10px;
 }
@@ -44,7 +44,7 @@ ul > li {
 #detail_navMenu ul ul li {
     float:none;
     }
-ul{
+#detail_navMenu ul{
     clear: both;
 }
 .detail_product > div , .detail_seller > div {
@@ -67,7 +67,7 @@ ul{
     text-align: center;
     box-sizing: border-box;
 }
-img{
+.detail_content img{
     float: left;
 }
 .detail_content{
