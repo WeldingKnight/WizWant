@@ -119,20 +119,20 @@
 </nav>
 
 <section align="center">
-<div id="detail_rap">
-<c:forEach items="${productList}" var="product">
-	<div class="detail_content">
-		<a href="getBoard.do?seq=${product.productid}"><img src="${product.image}"></a>
-		<div class="detail_product">
-		    <div id="detail_productName">${product.productname}</div>
-		    <div id="detail_productPrice">${product.price}</div>
-		</div>
-		<div class="detail_seller">
-	        <div id="detail_sellerId">${product.sellerid}</div>
-	        <div id="detail_sellerReliability">${product.score}</div>
-	    </div>
-    </div>
-</c:forEach>
+	<div id="detail_rap">
+		<c:forEach items="${productList}" var="product">
+			<div class="detail_content">
+				<a href="getBoard.do?seq=${product.productid}"><img src="${product.image}"></a>
+				<div class="detail_product">
+				    <div id="detail_productName">${product.productname}</div>
+				    <div id="detail_productPrice">${product.price}</div>
+				</div>
+				<div class="detail_seller">
+			        <div id="detail_sellerId">${product.sellerid}</div>
+			        <div id="detail_sellerReliability">${product.score}</div>
+			    </div>
+		    </div>
+		</c:forEach>
     </div>
 </section>
 
