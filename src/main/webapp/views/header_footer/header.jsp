@@ -6,14 +6,18 @@
 <head>
 
 <meta charset="UTF-8">
-<link rel="stylesheet" href="../../css/header.css">
-
 
 
 </head>
-<body>
-	<h1 id="header_h1">헤더입니다.</h1>
-
-
+<body id="header_body">
+	<div id="header_box">
+		임시 헤더 부분
+		<div>
+			<div class="header_menu">디지털</div>
+			<div class="header_menu">통신</div>
+			<div class="header_menu">패션의류</div>
+			<div class="header_menu">잡화</div>
+		</div>
+	</div>
 </body>
 </html>
