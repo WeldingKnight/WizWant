@@ -121,4 +121,19 @@ $(function(){
                 });
             });
     }); 
+    $(function(){
+    	var tmplObj = new Object();
+        var tmpArr;
+        
+        bigArr = ['a1','a2','a3'];
+        tmplObj.a = tmpArr;
+         
+        middleArr  = ['b1','b2','b3'];
+        tmplObj.b = tmpArr;
+        
+        smaleArr = ['a1','a2','a3'];
+        tmplObj.a     = tmpArr;
+         
+        console.log( "json object : " + JSON.stringify(tmplObj) );
+    });
 });
