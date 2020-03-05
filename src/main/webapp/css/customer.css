@@ -23,9 +23,13 @@ div.tab > div.tab_cate > div.cate {
 }
 
 div.tab > div.tab_cate > div.cate > a.relative > img {
+	width:126px;
+	height:126px;
     display: block;
 }
 div.tab > div.tab_cate > div.cate > a.relative > img.hover-img {
+	width:126px;
+	height:126px;
     display: none;
 }
 
