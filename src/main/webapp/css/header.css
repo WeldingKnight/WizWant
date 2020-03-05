@@ -37,14 +37,16 @@
 
 #header_menu{
 	width: 900px;
+	border:1px solid red;
 	margin:0 auto;
 	display: block;
+	text-align: center;
 }
 
 .header_menu_box{
 	width:110px;
 	margin: 0 auto;
-	float: left;
+		text-align: center;
 	
 }
 .header_menu_box a > img {
