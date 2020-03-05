@@ -1,1 +1,12 @@
 @charset "EUC-KR";
+
+body{
+	width:1200px;
+	margin:0 auto;
+	text-align: center;
+	 background-color: seashell;
+}
+#login_wrap{
+	width:900px;
+	display: inline-block;
+}

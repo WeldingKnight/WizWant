@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="./css/login.css">
 <meta charset="UTF-8">
 <title>로그인</title>
 </head>
@@ -12,7 +13,7 @@
   
     <h1 style="font-size: 50px; color: dodgerblue;">로그인<h1>  
         
-            <form action="./JUNGO.html" id="login_form">
+            <form action="wiz_want.do" id="login_form">
                 <table >
                     <br> 
                     <input style="width:300px;height:50px;font-size:30px;" type="text" id="id" name="id" accesskey="L" placeholder="아이디"  maxlength="41"><br/><br/>

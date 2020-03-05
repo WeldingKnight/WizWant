@@ -10,27 +10,50 @@
 	border: 2px solid red;
 	margin:0 auto;
 	background-size: 1200px 370px;
+	background-color: orange;
     background-repeat: no-repeat;
     display: inline-block;
+    
     text-align: center;
 
 }
 
+#header_name{
+	
+	font-family: fantasy;
+    font-size: 90px;
+    color: dodgerblue;
+	display: block;
+    font-weight: bold;
+
+}
+
+#header_menu_cover{
+	width: 1100px;
+	margin: 0 auto;
+	
+}
+
 #header_menu{
-	width: 1000px;
+	width: 900px;
 	margin:0 auto;
+	display: block;
 }
 
 .header_menu_box{
 	width:110px;
 	margin: 0 auto;
 	float: left;
+	
 }
 .header_menu_box a > img {
-	width: 100px;
+	width: 90px;
 	height: 70px;
 }
 
 #header_a_tag{
+	width:250px;
+	margin: 0 auto;
+	border: 2px solid white;
 	float:right;
 }
