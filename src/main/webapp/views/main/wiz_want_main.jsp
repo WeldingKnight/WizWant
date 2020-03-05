@@ -7,6 +7,7 @@ pageEncoding="UTF-8"%>
 
 	<div id="main_div">
 		<h2>메인페이지</h2>
+		<img alt="" src="./img/main_img/sibal.gif">
 		
 	</div>
 
