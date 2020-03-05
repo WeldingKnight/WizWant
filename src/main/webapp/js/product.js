@@ -6,6 +6,7 @@ $(function(){
 $(function(){
     $('#detail_category').children().click(function(){
         var idV = $(this).attr("id"); //id뽑아오기 digital
+//        let id = document.
         if(idV == "detail_digital"){
             $("#detail_sort2 > ul").css("display", "none");
             $("#detail_sort2 > .detail_digital").css("display", "block");
@@ -120,4 +121,19 @@ $(function(){
                 });
             });
     }); 
+    $(function(){
+    	var tmplObj = new Object();
+        var tmpArr;
+        
+        bigArr = ['a1','a2','a3'];
+        tmplObj.a = tmpArr;
+         
+        middleArr  = ['b1','b2','b3'];
+        tmplObj.b = tmpArr;
+        
+        smaleArr = ['a1','a2','a3'];
+        tmplObj.a     = tmpArr;
+         
+        console.log( "json object : " + JSON.stringify(tmplObj) );
+    });
 });

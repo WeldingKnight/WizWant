@@ -12,8 +12,17 @@ pageEncoding="UTF-8"%>
 			<img alt="" src="./img/main_img/nako.gif">
 		</div>
 		<aside id="main_link">
+			<div class="main_link_img"><img src="./img/main_img/jungonara.png"></div>
+			<div class="main_link_img"><img src="./img/main_img/jungonara.png"></div>
+			<div class="main_link_img"><img src="./img/main_img/jungonara.png"></div>
+			<div class="main_link_img"><img src="./img/main_img/jungonara.png"></div>
 		</aside>
-		<div id="main_pitem">
+		<div id="main_pitem"><!-- pitem: popular item -->
+		
+			<div class="main_pitem_each"></div>
+			<div class="main_pitem_each"></div>
+			<div class="main_pitem_each"></div>
+			<div class="main_pitem_each"></div>
 		</div>
 		<div id="chat">
 		</div>
