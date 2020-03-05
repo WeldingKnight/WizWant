@@ -133,6 +133,50 @@
 			    </div>
 		    </div>
 		</c:forEach>
+		<div class="detail_content">
+        <img src="../../img/product_img/Yerin.jpg">
+        <div class="detail_product">
+            <div id="detail_productName">제품명</div>
+            <div id="detail_productPrice">가격</div>
+        </div>
+        <div class="detail_seller">
+            <div id="detail_sellerId">판매자아이디</div>
+            <div id="detail_sellerReliability">판매자신뢰도</div>
+        </div>
+        </div>
+        <div class="detail_content">
+        <img src="../../img/product_img/Yerin1.jpg">
+        <div class="detail_product">
+            <div id="detail_productName">제품명</div>
+            <div id="detail_productPrice">가격</div>
+        </div>
+        <div class="detail_seller">
+            <div id="detail_sellerId">판매자아이디</div>
+            <div id="detail_sellerReliability">판매자신뢰도</div>
+        </div>
+        </div>
+        <div class="detail_content">
+        <img src="../../img/product_img/Yerin2.jpg">
+        <div class="detail_product">
+            <div id="detail_productName">제품명</div>
+            <div id="detail_productPrice">가격</div>
+        </div>
+        <div class="detail_seller">
+            <div id="detail_sellerId">판매자아이디</div>
+            <div id="detail_sellerReliability">판매자신뢰도</div>
+        </div>
+        </div>
+        <div class="detail_content">
+        <img src="../../img/product_img/Yerin3.jpg">
+        <div class="detail_product">
+            <div id="detail_productName">제품명</div>
+            <div id="detail_productPrice">가격</div>
+        </div>
+        <div class="detail_seller">
+            <div id="detail_sellerId">판매자아이디</div>
+            <div id="detail_sellerReliability">판매자신뢰도</div>
+        </div>
+        </div>
     </div>
 </section>
 
