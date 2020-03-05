@@ -9,8 +9,10 @@
 <link rel="stylesheet" href="./css/header.css"> <!-- 헤더 css -->
 <link rel="stylesheet" href="./css/main_page.css">
 <link rel="stylesheet" href="./css/product.css">
+<link rel="stylesheet" href="./css/product_detail.css">
 <script src="./js/jquery-2.2.4.min.js"></script>
 <script src="./js/product.js"></script>
+<script src="./js/product_detail.js"></script>
 </head>
 <body >
 	<div id="full_box">
