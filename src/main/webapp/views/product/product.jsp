@@ -117,6 +117,8 @@
         </li>
     </ul>
 </nav>
+
+
 <section align="center">
 	<div id="detail_rap">
 		<c:forEach items="${productList}" var="product">
