@@ -3,7 +3,6 @@ $(function(){
         $("#detail_category").css("display", "block");
     });
 });
-
 $(function(){
     $('#detail_category').children().click(function(){
         var idV = $(this).attr("id"); //id뽑아오기 digital
