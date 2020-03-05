@@ -7,10 +7,11 @@
 
 #main_header{
 	width: 1200px;
-	border: 2px solid red;
+	border: 2px solid black;
 	margin:0 auto;
+	background-image: url('../img/main_img/main_back1.jpg');
 	background-size: 1200px 370px;
-	background-color: orange;
+
     background-repeat: no-repeat;
     display: inline-block;
     
@@ -22,7 +23,7 @@
 	
 	font-family: fantasy;
     font-size: 90px;
-    color: dodgerblue;
+    color: white;
 	display: block;
     font-weight: bold;
 

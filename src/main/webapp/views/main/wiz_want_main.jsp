@@ -7,7 +7,16 @@ pageEncoding="UTF-8"%>
 
 	<div id="main_div">
 		<h2>메인페이지</h2>
-		<img alt="" src="./img/main_img/sibal.gif">
+		<div id="main_slider">
+			<img alt="" src="./img/main_img/nako.gif">
+		</div>
+		<div id="main_link">
+		</div>
+		<div id="main_pitem">
+		</div>
+		<div id="chat">
+		</div>
+	
 		
 	</div>
 
