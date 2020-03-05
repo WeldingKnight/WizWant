@@ -25,8 +25,14 @@ img{
 	float:right;
 }
 
+.main_link_img{
+	width:290px;
+	height:100px;
+	text-align: center;
+}
 .main_link_img >img{
 	width:150px;
+	height:100px;
 }
 #main_pitem{
 	padding-top:10px;

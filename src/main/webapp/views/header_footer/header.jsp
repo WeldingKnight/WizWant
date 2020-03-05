@@ -23,7 +23,7 @@
 <body id="header_body">
 	<div id="full_box">
 		<header id="main_header">
-			<h1 id="header_name">WIZ*WANT</h1>
+			<h1 id="header_name"><a href="wiz_want.do">WIZ*WANT</a></h1>
 			<div id="header_menu_cover">
 				<div id="header_menu">
 				

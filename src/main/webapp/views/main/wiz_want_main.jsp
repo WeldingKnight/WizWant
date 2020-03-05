@@ -13,9 +13,9 @@ pageEncoding="UTF-8"%>
 		</div>
 		<aside id="main_link">
 			<div class="main_link_img"><img src="./img/main_img/jungonara.png"></div>
-			<div class="main_link_img"><img src="./img/main_img/jungonara.png"></div>
-			<div class="main_link_img"><img src="./img/main_img/jungonara.png"></div>
-			<div class="main_link_img"><img src="./img/main_img/jungonara.png"></div>
+			<div class="main_link_img"><img src="./img/main_img/auction.png"></div>
+			<div class="main_link_img"><img src="./img/main_img/ebay.jpg"></div>
+			<div class="main_link_img"><img src="./img/main_img/gmarket.png"></div>
 		</aside>
 		<div id="main_pitem"><!-- pitem: popular item -->
 		

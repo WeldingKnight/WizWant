@@ -1,9 +1,13 @@
 @charset "UTF-8";
 
+a{
+	text-decoration: none;
+}
 #header_body{
 	width:1200px;
 	margin: 0 auto;
 }
+
 
 #main_header{
 	width: 1200px;
@@ -32,21 +36,25 @@
 #header_menu_cover{
 	width: 1100px;
 	margin: 0 auto;
+	text-align: center;
+	display: inline-block;
 	
 }
 
 #header_menu{
-	width: 900px;
+	width: 500px;
 	border:1px solid red;
 	margin:0 auto;
-	display: block;
+
 	text-align: center;
 }
 
 .header_menu_box{
-	width:110px;
+	width:90px;
 	margin: 0 auto;
-		text-align: center;
+	text-align: center;
+	display: inline-block;
+	float:left;
 	
 }
 .header_menu_box a > img {
@@ -55,7 +63,7 @@
 }
 
 #header_a_tag{
-	width:250px;
+	width:300px;
 	margin: 0 auto;
 	border: 2px solid white;
 	float:right;
