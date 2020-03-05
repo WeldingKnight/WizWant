@@ -7,7 +7,7 @@
     <ul>
         <li id="detail_sort1"><a href="product.do">대분류 ></a>
             <ul id="detail_category">
-                <li id="detail_digital"><a href="#">디지털</a></li>
+                <li class="big" id="detail_digital"><a href="#">디지털</a></li>
                 <li id="detail_mobile"><a href="#">통신</a></li>
                 <li id="detail_clothes"><a href="#">의류</a></li>
                 <li id="detail_fashion"><a href="#">패션잡화</a></li>
@@ -133,6 +133,50 @@
 			    </div>
 		    </div>
 		</c:forEach>
+		<div class="detail_content">
+        <img src="../../img/product_img/Yerin.jpg">
+        <div class="detail_product">
+            <div id="detail_productName">제품명</div>
+            <div id="detail_productPrice">가격</div>
+        </div>
+        <div class="detail_seller">
+            <div id="detail_sellerId">판매자아이디</div>
+            <div id="detail_sellerReliability">판매자신뢰도</div>
+        </div>
+        </div>
+        <div class="detail_content">
+        <img src="../../img/product_img/Yerin1.jpg">
+        <div class="detail_product">
+            <div id="detail_productName">제품명</div>
+            <div id="detail_productPrice">가격</div>
+        </div>
+        <div class="detail_seller">
+            <div id="detail_sellerId">판매자아이디</div>
+            <div id="detail_sellerReliability">판매자신뢰도</div>
+        </div>
+        </div>
+        <div class="detail_content">
+        <img src="../../img/product_img/Yerin2.jpg">
+        <div class="detail_product">
+            <div id="detail_productName">제품명</div>
+            <div id="detail_productPrice">가격</div>
+        </div>
+        <div class="detail_seller">
+            <div id="detail_sellerId">판매자아이디</div>
+            <div id="detail_sellerReliability">판매자신뢰도</div>
+        </div>
+        </div>
+        <div class="detail_content">
+        <img src="../../img/product_img/Yerin3.jpg">
+        <div class="detail_product">
+            <div id="detail_productName">제품명</div>
+            <div id="detail_productPrice">가격</div>
+        </div>
+        <div class="detail_seller">
+            <div id="detail_sellerId">판매자아이디</div>
+            <div id="detail_sellerReliability">판매자신뢰도</div>
+        </div>
+        </div>
     </div>
 </section>
 
