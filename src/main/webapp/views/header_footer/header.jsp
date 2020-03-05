@@ -11,9 +11,14 @@
 <link rel="stylesheet" href="./css/main_page.css">
 <link rel="stylesheet" href="./css/product.css">
 <link rel="stylesheet" href="./css/product_detail.css">
+<link rel="stylesheet" href="./css/customer.css">
+
 <script src="./js/jquery-2.2.4.min.js"></script>
+<script src="./js/jquery-ui.min.js"></script>
+<script src="./js/jquery.easing.1.3.js"></script>
 <script src="./js/product.js"></script>
 <script src="./js/product_detail.js"></script>
+<script src="./js/customer.js"></script>
 </head>
 <body id="header_body">
 	<div id="full_box">
