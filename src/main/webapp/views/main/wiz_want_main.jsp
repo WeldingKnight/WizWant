@@ -7,20 +7,17 @@ pageEncoding="UTF-8"%>
 
 	<div id="main_div">
 		<h2>메인페이지</h2>
-<<<<<<< HEAD
+
 		<div id="main_slider">
 			<img alt="" src="./img/main_img/nako.gif">
 		</div>
-		<div id="main_link">
-		</div>
+		<aside id="main_link">
+		</aside>
 		<div id="main_pitem">
 		</div>
 		<div id="chat">
 		</div>
-	
-=======
-		<img alt="" src="./img/main_img/ye_rin.jpg">
->>>>>>> branch 'master' of https://github.com/WeldingKnight/WizWant.git
+
 		
 	</div>
 

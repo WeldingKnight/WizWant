@@ -2,15 +2,16 @@
 
 #main_div{
 	border: 2px solid blue;
-	width:1100px;
+	width:1150px;
 	height: 1000px;  
 	margin: 0 auto;
 		
 }
 #main_slider{
-	width:700px;
+	width:800px;
 	height:600px;
 	border: 2px solid red;
+	float:left;
 }
 img{
 	width:700px;
@@ -18,8 +19,9 @@ img{
 }
 
 #main_link{
-	width:290px;
+	width:300px;
 	height:600px;
 	border: 2px solid orange;
+	float:right;
 }
 
