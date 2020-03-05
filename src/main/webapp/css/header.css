@@ -1,11 +1,19 @@
 @charset "UTF-8";
 
-
+#header_body{
+	width:1200px;
+	margin: 0 auto;
+}
 
 #main_header{
 	width: 1200px;
 	border: 2px solid red;
 	margin:0 auto;
+	background-size: 1200px 370px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    text-align: center;
+
 }
 
 #header_menu{

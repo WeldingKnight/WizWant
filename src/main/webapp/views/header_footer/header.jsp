@@ -14,7 +14,7 @@
 <script src="./js/product.js"></script>
 <script src="./js/product_detail.js"></script>
 </head>
-<body >
+<body id="header_body" >
 	<div id="full_box">
 		<header id="main_header">
 			임시 헤더 부분
