@@ -134,7 +134,7 @@
 		    </div>
 		</c:forEach>
 		<div class="detail_content">
-        <img src="../../img/product_img/Yerin.jpg">
+        <img src="./img/product_img/Yerin.jpg">
         <div class="detail_product">
             <div id="detail_productName">제품명</div>
             <div id="detail_productPrice">가격</div>
@@ -145,7 +145,7 @@
         </div>
         </div>
         <div class="detail_content">
-        <img src="../../img/product_img/Yerin1.jpg">
+        <img src="./img/product_img/Yerin1.jpg">
         <div class="detail_product">
             <div id="detail_productName">제품명</div>
             <div id="detail_productPrice">가격</div>
@@ -156,7 +156,7 @@
         </div>
         </div>
         <div class="detail_content">
-        <img src="../../img/product_img/Yerin2.jpg">
+        <img src="./img/product_img/Yerin2.jpg">
         <div class="detail_product">
             <div id="detail_productName">제품명</div>
             <div id="detail_productPrice">가격</div>
@@ -167,7 +167,7 @@
         </div>
         </div>
         <div class="detail_content">
-        <img src="../../img/product_img/Yerin3.jpg">
+        <img src="./img/product_img/Yerin3.jpg">
         <div class="detail_product">
             <div id="detail_productName">제품명</div>
             <div id="detail_productPrice">가격</div>

@@ -52,6 +52,8 @@
     box-sizing: border-box;
 }
 .detail_content img{
+	width: 150px;
+	height:200px;
     float: left;
 }
 .detail_content{
