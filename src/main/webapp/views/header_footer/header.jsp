@@ -21,20 +21,21 @@
 			<h1 id="header_name">WIZ*WANT</h1>
 			<div id="header_menu_cover">
 				<div id="header_menu">
+				
 					<div class="header_menu_box">
-						<a href="product.do" ><img src="./img/main_img/digital_img.png"
-							alt="디지털이미지" value="digital"></a>
+						<a href="product.do?Classification=${'digital'}" ><img src="./img/main_img/digital_img.png"
+							alt="디지털이미지" ></a>
 					</div>
 					<div class="header_menu_box">
-						<a href="product.do"><img src="./img/main_img/tel_img.svg"
+						<a href="product.do?Classification=${'tel'}"><img src="./img/main_img/tel_img.svg"
 							alt="통신이미지"></a>
 					</div>
 					<div class="header_menu_box">
-						<a href="product.do"><img
+						<a href="product.do?Classification=${'clothing'}"><img
 							src="./img/main_img/clothing_img.svg" alt="패션의류이미지"></a>
 					</div>
 					<div class="header_menu_box">
-						<a href="product.do"><img src="./img/main_img/digital_img.png"
+						<a href="product.do?Classification=${'grocery'}"><img src="./img/main_img/digital_img.png"
 							alt="잡화이미지"></a>
 					</div>
 				</div>
