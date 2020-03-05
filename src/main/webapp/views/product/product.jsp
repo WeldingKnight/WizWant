@@ -7,7 +7,7 @@
     <ul>
         <li id="detail_sort1"><a href="product.do">대분류 ></a>
             <ul id="detail_category">
-                <li id="detail_digital"><a href="#">디지털</a></li>
+                <li class="big" id="detail_digital"><a href="#">디지털</a></li>
                 <li id="detail_mobile"><a href="#">통신</a></li>
                 <li id="detail_clothes"><a href="#">의류</a></li>
                 <li id="detail_fashion"><a href="#">패션잡화</a></li>

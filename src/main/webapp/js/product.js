@@ -6,6 +6,7 @@ $(function(){
 $(function(){
     $('#detail_category').children().click(function(){
         var idV = $(this).attr("id"); //id뽑아오기 digital
+//        let id = document.
         if(idV == "detail_digital"){
             $("#detail_sort2 > ul").css("display", "none");
             $("#detail_sort2 > .detail_digital").css("display", "block");
