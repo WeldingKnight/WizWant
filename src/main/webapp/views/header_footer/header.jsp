@@ -25,7 +25,7 @@
 <script src="./js/product_detail.js"></script>
 <script src="./js/customer.js"></script>
 </head>
-<body id="header_body">
+<body id="header_body" style="background-color: seashell">
 	<div id="full_box">
 		<header id="main_header">
 			<h1 id="header_name"><a href="wiz_want.do">WIZ*WANT</a></h1>
