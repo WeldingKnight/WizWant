@@ -79,6 +79,7 @@ $(function(){
         
         
         
+        
         if(idV == "detail_digital"){
             $("#detail_sort2 > ul").css("display", "none");
             $("#detail_sort2 > .detail_digital").css("display", "block");
