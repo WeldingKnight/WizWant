@@ -7,7 +7,7 @@
     <ul>
         <li id="detail_sort1"><a href="product.do">대분류 ></a>
             <ul id="detail_category">
-                <li class="big" id="detail_digital"><a href="#">디지털</a></li>
+                <li id="detail_digital"><a href="#">디지털</a></li>
                 <li id="detail_mobile"><a href="#">통신</a></li>
                 <li id="detail_clothes"><a href="#">의류</a></li>
                 <li id="detail_fashion"><a href="#">패션잡화</a></li>
@@ -15,23 +15,23 @@
         </li>
         <li id="detail_sort2"><a href="#">중분류 ></a>
             <ul class="detail_digital">
-                <li class="detail_desktop"><a href="#">데스크탑</a></li>
+                <!-- <li class="detail_desktop"><a href="#">데스크탑</a></li>
                 <li class="detail_laptop"><a href="#">노트북</a></li>
-                <li class="detail_tablet"><a href="#">태블릿</a></li>
+                <li class="detail_tablet"><a href="#">태블릿</a></li> -->
             </ul>
             <ul class="detail_mobile">
-                <li class="detail_smart"><a href="#">스마트폰</a></li>
+                <!-- <li class="detail_smart"><a href="#">스마트폰</a></li>
                 <li class="detail_interface"><a href="#">주변기기</a></li>
-                <li class="detail_feature"><a href="#">피처폰</a></li>
+                <li class="detail_feature"><a href="#">피처폰</a></li> -->
             </ul>
             <ul class="detail_clothes">
-                <li class="detail_male"><a href="#">남성</a></li>
-                <li class="detail_female"><a href="#">여성</a></li>
+                <!-- <li class="detail_male"><a href="#">남성</a></li>
+                <li class="detail_female"><a href="#">여성</a></li> -->
             </ul>
             <ul class="detail_fashion">
-                <li class="detail_watch"><a href="#">시계</a></li>
+                <!-- <li class="detail_watch"><a href="#">시계</a></li>
                 <li class="detail_shoes"><a href="#">신발</a></li>
-                <li class="detail_except"><a href="#">그 외</a></li>
+                <li class="detail_except"><a href="#">그 외</a></li> -->
             </ul>
         </li>
         <li id="detail_sort3"><a href="#">소분류 ></a>

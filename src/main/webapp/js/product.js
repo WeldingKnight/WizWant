@@ -2,7 +2,9 @@ $(function(){
     $('#detail_sort1').hover(function() {
         $("#detail_category").css("display", "block");
     });
-    $(function(){
+});
+$(function(){
+	$(function(){
     	var tmpObj = new Object();
         var tmpArr;
         
@@ -11,9 +13,9 @@ $(function(){
         
         tmpArr  = [
         	{"digital":['데스크탑','노트북','태블릿']},
-        	{"phone":['스마트폰','주변기기','피처폰']},
-        	{"gender":['남성','여성']},
-        	{"passion":['시계','신발','그 외']}
+        	{"mobile":['스마트폰','주변기기','피처폰']},
+        	{"clothes":['남성','여성']},
+        	{"fashion":['시계','신발','그 외']}
         ];
         tmpObj.middle = tmpArr;
         
@@ -40,77 +42,85 @@ $(function(){
          
         
         console.log( "json object : " + JSON.stringify(tmpObj));
-        
         var Json = JSON.stringify(tmpObj);
+        console.log(tmpObj.middle[0]);
+        console.log(tmpObj.small[0].desktop[0]);
         
-//        var obj2 = [{ name: "홍길동", age: "20" },{ name: "이순신", age: "30" }];      
-//        $.each(obj2,function(key,value) {
-//        	alert('key:'+key+', name:'+value.name+',age:'+value.age);
-//					0		홍길동		20/ 1 이순신 30
-//        });
-
-        console.log(tmpObj.small[0].key);
-//        $.each(json, function(key, value){
-//            alert('key:' + key + ' / ' + 'value:' + value);
-//        });
-    });
-});
-$(function(){
-    $('#detail_category').children().click(function(){
-        var idV = $(this).attr("id"); //id뽑아오기 digital
-//        let id = document.
+	        $('#detail_category').children().click(function(){
+	    	var idV = $(this).attr("id"); //id뽑아오기 digital
+	        if(idV == "detail_digital"){
+	        	var html = '';
+	        	for(var i=0;i<tmpObj.middle[0].digital.length; i++){
+	        		html += '<li class="detail_digital'+i+'"><a href="#">' +tmpObj.middle[0].digital[i] + '</a></li>';
+	        	}
+	          $('#detail_sort2 > .detail_digital').html(html);   
+	          $("#detail_sort2 > ul").css("display", "none");
+	          $("#detail_sort2 > .detail_digital").css("display", "block");
+	        }
+	        else if(idV =="detail_mobile"){
+	        	var html = '';
+	        	for(var i=0;i<tmpObj.middle[1].mobile.length; i++){
+	        		html += '<li class="detail_mobile'+i+'"><a href="#">' +tmpObj.middle[1].mobile[i] + '</a></li>';
+	        	}
+	          $('#detail_sort2 > .detail_mobile').html(html);   
+	          $("#detail_sort2 > ul").css("display", "none");
+	          $("#detail_sort2 > .detail_mobile").css("display", "block");
+	        }
+	        else if(idV =="detail_clothes"){
+	        	var html = '';
+	        	for(var i=0;i<tmpObj.middle[2].clothes.length; i++){
+	        		html += '<li class="detail_clothes'+i+'"><a href="#">' +tmpObj.middle[2].clothes[i] + '</a></li>';
+	        	}
+	          $('#detail_sort2 > .detail_clothes').html(html);   
+	          $("#detail_sort2 > ul").css("display", "none");
+	          $("#detail_sort2 > .detail_clothes").css("display", "block");
+	        }
+	        else if(idV =="detail_fashion"){
+	        	var html = '';
+	        	for(var i=0;i<tmpObj.middle[3].fashion.length; i++){
+	        		html += '<li class="detail_fashion'+i+'"><a href="#">' +tmpObj.middle[3].fashion[i] + '</a></li>';
+	        	}
+	          $('#detail_sort2 > .detail_fashion').html(html);   
+	          $("#detail_sort2 > ul").css("display", "none");
+	          $("#detail_sort2 > .detail_fashion").css("display", "block");
+	        }
+        });   
+	});     
+//    $('#detail_category').children().click(function(){
+//    	var idV = $(this).attr("id"); //id뽑아오기 digital
 //        if(idV == "detail_digital"){
-//          $.each(tmpObj.middle, function(value){
-//        	  html += '<ul class="detail_digital">';
-//	    	  html += '<li class="detail_'+  +'"><a href="#">' + value + '</a></li>';
-//	    	  html += '<div class="part">' + entry.part + '</div>';
-//	    	  html += '<div class="definition">';
-//	    	  html += entry.definition;
-//	    	  html += '</div>';
-//	    	  html += '</ul>';
-//	      });
-//          
-//	          <li class="detail_desktop"><a href="#">데스크탑</a></li>
-//	          <li class="detail_laptop"><a href="#">노트북</a></li>
-//	          <li class="detail_tablet"><a href="#">태블릿</a></li>
-//          
+//            $("#detail_sort2 > ul").css("display", "none");
+//            $("#detail_sort2 > .detail_digital").css("display", "block");
+//            $("#detail_sort3 > ul").css("display", "none");
+//            $("#detail_sort4 > ul").css("display", "none");
+//            $("#detail_sort5 > ul").css("display","none");
 //        }
-        
-        
-        
-        
-        
-        if(idV == "detail_digital"){
-            $("#detail_sort2 > ul").css("display", "none");
-            $("#detail_sort2 > .detail_digital").css("display", "block");
-            $("#detail_sort3 > ul").css("display", "none");
-            $("#detail_sort4 > ul").css("display", "none");
-            $("#detail_sort5 > ul").css("display","none");
-        }
-        else if(idV =="detail_mobile"){
-            $("#detail_sort2 > ul").css("display", "none");
-            $("#detail_sort2 > .detail_mobile").css("display", "block");
-            $("#detail_sort3 > ul").css("display", "none");
-            $("#detail_sort4 > ul").css("display", "none");
-            $("#detail_sort5 > ul").css("display","none");
-        }
-        else if(idV =="detail_clothes"){
-            $("#detail_sort2 > ul").css("display", "none");
-            $("#detail_sort2 > .detail_clothes").css("display", "block");
-            $("#detail_sort3 > ul").css("display", "none");
-            $("#detail_sort4 > ul").css("display", "none");
-            $("#detail_sort5 > ul").css("display","none");
-        }
-        else if(idV =="detail_fashion"){
-            $("#detail_sort2 > ul").css("display", "none");
-            $("#detail_sort2 > .detail_fashion").css("display", "block");
-            $("#detail_sort3 > ul").css("display", "none");
-            $("#detail_sort4 > ul").css("display", "none");
-            $("#detail_sort5 > ul").css("display","none");
-        }   
-    });
+//    	
+//    	else if(idV =="detail_mobile"){
+//            $("#detail_sort2 > ul").css("display", "none");
+//            $("#detail_sort2 > .detail_mobile").css("display", "block");
+//            $("#detail_sort3 > ul").css("display", "none");
+//            $("#detail_sort4 > ul").css("display", "none");
+//            $("#detail_sort5 > ul").css("display","none");
+//        }
+//        else if(idV =="detail_clothes"){
+//            $("#detail_sort2 > ul").css("display", "none");
+//            $("#detail_sort2 > .detail_clothes").css("display", "block");
+//            $("#detail_sort3 > ul").css("display", "none");
+//            $("#detail_sort4 > ul").css("display", "none");
+//            $("#detail_sort5 > ul").css("display","none");
+//        }
+//        else if(idV =="detail_fashion"){
+//            $("#detail_sort2 > ul").css("display", "none");
+//            $("#detail_sort2 > .detail_fashion").css("display", "block");
+//            $("#detail_sort3 > ul").css("display", "none");
+//            $("#detail_sort4 > ul").css("display", "none");
+//            $("#detail_sort5 > ul").css("display","none");
+//        }   
+//    });
     $('#detail_sort2').find("ul > li").click(function(){
             var id1 = $(this).attr("class");
+            
             if(id1 == "detail_desktop"){
                 $("#detail_sort3 > ul").css("display","none");
                 $("#detail_sort3 > .detail_desktop").css("display", "block");
@@ -193,5 +203,5 @@ $(function(){
                     $("#detail_sort5 > ul").css("display","none");
                 });
             });
-    }); 
+    	});
 });

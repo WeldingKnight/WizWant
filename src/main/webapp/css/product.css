@@ -1,6 +1,12 @@
-#detail_navMenu ul li {
-	list-style:none;
+#detail_navMenu, #detail_navMenu ul, #detail_navMenu ul ul, #detail_navMenu ul li, #detail_navMenu li { 
+	
+    margin: 0;
+    padding: 0;
+    list-style:none;
     text-decoration: none;
+    
+}
+#detail_navMenu ul li {
 	background-color: dodgerblue;
 	border: 1px solid white;
 	width: 150px;
