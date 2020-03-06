@@ -122,18 +122,42 @@ $(function(){
             });
     }); 
     $(function(){
-    	var tmplObj = new Object();
+    	var tmpObj = new Object();
         var tmpArr;
         
-        bigArr = ['a1','a2','a3'];
-        tmplObj.a = tmpArr;
-         
-        middleArr  = ['b1','b2','b3'];
-        tmplObj.b = tmpArr;
+        tmpArr = {"big":['디지털','모바일','의류','패션잡화']};
+        tmpObj.big = tmpArr;
         
-        smaleArr = ['a1','a2','a3'];
-        tmplObj.a     = tmpArr;
+        tmpArr  = {"middle":[
+        	{"digital":['데스크탑','노트북','태블릿']},
+        	{"phone":['스마트폰','주변기기','피처폰']},
+        	{"gender":['남성','여성']},
+        	{"passion":['시계','신발','그 외']}
+        ]};
+        tmpObj.middle = tmpArr;
+        
+        tmpArr = {"small":[
+        	{'desktop':['조립','브랜드(삼성,LG,애플)','브랜드(기타)']},
+        	{'laptop':['애플','삼성,LG','기타 브랜드']},
+        	{'tablet':['애플','삼성,LG','기타 브랜드']},
+        	{'smart':['애플','삼성,LG','기타 브랜드']},
+        	{'interface':['애플','삼성,LG','기타 브랜드']},
+        	{'feature':['삼성,LG','기타 브랜드']},
+        	{'male':['하의','상의','그 외']},
+        	{'female':['하의','상의','그 외']},
+        	{'watch':['남','여','브랜드 별']},
+        	{'shoes':['남','여','브랜드 별']},
+        	{'except':['남','여','브랜드']}
+        ]};
+        tmpObj.small     = tmpArr;
+        
+        tmpArr = {"local":['서울','경기/인천','부산/울산','대구/경북','대전/세종','광주/전라','강원/제주']};
+        tmpObj.local     = tmpArr;
+        
+        tmpArr = {"price":['10이하','10-20','20-30','30-40','40-50','50-60','60-70','70-80','80-90','90-100','100이상']};
+        tmpObj.price     = tmpArr;
          
-        console.log( "json object : " + JSON.stringify(tmplObj) );
+        
+        console.log( "json object : " + JSON.stringify(tmpObj) );
     });
 });
