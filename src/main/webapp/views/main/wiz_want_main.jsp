@@ -9,22 +9,22 @@
 	<h2>메인페이지</h2>
 
 	<!-- 슬라이드 부분 -->
-	<div id="main_slider">
+	<div id="main_slider_div">
 		<div class="main_slideshow-container">
 
 			<div class="mainSlides">
 				<div class="main_numbertext">1 / 3</div>
-				<img class="main_slide_img" src="./img/main_img/nako.gif">
+				<img class="main_slide_img" src="./img/main_img/slide1.jpg">
 			</div>
 
 			<div class="mainSlides">
 				<div class="main_numbertext">2 / 3</div>
-				<img class="main_slide_img" src="./img/main_img/izone.jpg">
+				<img class="main_slide_img" src="./img/main_img/slide2.jpg">
 			</div>
 
 			<div class="mainSlides">
 				<div class="main_numbertext">3 / 3</div>
-				<img class="main_slide_img" src="./img/main_img/move.gif">
+				<img class="main_slide_img" src="./img/main_img/slide3.jpg">
 			</div>
 
 		</div>

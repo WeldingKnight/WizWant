@@ -1,11 +1,12 @@
 @charset "UTF-8";
 
-a{
+header_a_tag> a{
 	text-decoration: none;
 }
 #header_body{
 	width:1200px;
 	margin: 0 auto;
+	background-color: blue;
 }
 
 
