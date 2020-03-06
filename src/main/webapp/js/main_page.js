@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 	var mainurl = window.location.pathname;
 	
-	alert(mainurl);
+	
 
 	if (mainurl == '/MVC_reshop/wiz_want.do'|| mainurl == '/MVC_reshop/') {
 
