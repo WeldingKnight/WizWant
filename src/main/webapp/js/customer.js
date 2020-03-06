@@ -17,7 +17,7 @@ $(document).ready(function(){
     });
     $("div.content > div.faq > div.faq_title").eq(0).trigger("click");
  });
-
+s
 function changeImg(e){
     var im = e;
     var active = document.getElementsByClassName('active');   
