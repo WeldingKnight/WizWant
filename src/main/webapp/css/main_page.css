@@ -65,17 +65,11 @@ img{
   position: relative;
   margin: auto;
 }
-
-
-.main_text {
-  color: #000000;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
+.main_slide_img{
+	width:750px;
+	height:550px;
 }
+
 
 
 .main_numbertext {
@@ -121,6 +115,3 @@ img{
 }
 
 
-@media only screen and (max-width: 300px) {
-  .text {font-size: 11px}
-}
