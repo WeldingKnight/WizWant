@@ -7,7 +7,7 @@
  		<!-- 탭 메뉴 -->
         <div class="tab">
             <div class="tab_cate">
-                <div class="cate one active">
+                <div class="cate one">
                     <a href="#" class="relative">
                         <img src="./img/customer_img/allqna.jpg" class="active" onclick="changeImg(this);"alt="전체 Q&A">
                         <img src="./img/customer_img/allqnahover.jpg" class="hover-img" alt="전체 Q&A">
