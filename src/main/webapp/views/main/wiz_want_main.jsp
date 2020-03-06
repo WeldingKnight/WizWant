@@ -6,8 +6,6 @@
 
 
 <div id="main_div">
-	<h2>메인페이지</h2>
-
 	<!-- 슬라이드 부분 -->
 	<div id="main_slider_div">
 		<div class="main_slideshow-container">
