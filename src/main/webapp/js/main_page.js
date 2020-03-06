@@ -1,7 +1,9 @@
 
 
 $(document).ready(function () {
+	
 	/*메인 페이지 슬라이드 jquery*/
+	if (window.location.pathname == '/wiz_want.do') {
     var slideIndex = 0;
     showSlides();
 
@@ -23,4 +25,5 @@ $(document).ready(function () {
         dots[slideIndex - 1].className += " active";
         setTimeout(showSlides, 2000); // Change image every 2 seconds
     }
+	}z
 });
