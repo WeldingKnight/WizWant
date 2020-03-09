@@ -15,79 +15,68 @@
         </li>
         <li id="detail_sort2"><a href="#">중분류 ></a>
             <ul class="detail_digital">
-                <!-- <li class="detail_desktop"><a href="#">데스크탑</a></li>
-                <li class="detail_laptop"><a href="#">노트북</a></li>
-                <li class="detail_tablet"><a href="#">태블릿</a></li> -->
             </ul>
             <ul class="detail_mobile">
-                <!-- <li class="detail_smart"><a href="#">스마트폰</a></li>
-                <li class="detail_interface"><a href="#">주변기기</a></li>
-                <li class="detail_feature"><a href="#">피처폰</a></li> -->
             </ul>
             <ul class="detail_clothes">
-                <!-- <li class="detail_male"><a href="#">남성</a></li>
-                <li class="detail_female"><a href="#">여성</a></li> -->
             </ul>
             <ul class="detail_fashion">
-                <!-- <li class="detail_watch"><a href="#">시계</a></li>
-                <li class="detail_shoes"><a href="#">신발</a></li>
-                <li class="detail_except"><a href="#">그 외</a></li> -->
             </ul>
         </li>
         <li id="detail_sort3"><a href="#">소분류 ></a>
             <ul class="detail_desktop">
-                <li class="detail_assemble"><a href="#">조립</a></li>
+                <!-- <li class="detail_assemble"><a href="#">조립</a></li>
                 <li class="detail_brandSLA"><a href="#">브랜드(삼성,LG,애플)</a></li>
-                <li class="detail_brand"><a href="#">브랜드(기타)</a></li>
+                <li class="detail_brand"><a href="#">브랜드(기타)</a></li> -->
             </ul>
             <ul class="detail_laptop">
-                <li class="detail_apple"><a href="#">애플</a></li>
+                <!-- <li class="detail_apple"><a href="#">애플</a></li>
                 <li class="detail_SL"><a href="#">삼성,LG</a></li>
-                <li class="detail_except"><a href="#">기타</a></li>
+                <li class="detail_except"><a href="#">기타</a></li> -->
             </ul>
             <ul class="detail_tablet">
-                <li class="detail_apple"><a href="#">애플</a></li>
+                <!-- <li class="detail_apple"><a href="#">애플</a></li>
                 <li class="detail_SL"><a href="#">삼성,LG</a></li>
-                <li class="detail_except"><a href="#">기타</a></li>
+                <li class="detail_except"><a href="#">기타</a></li> -->
             </ul>
             <ul class="detail_smart">
-                <li class="detail_apple"><a href="#">애플</a></li>
+                <!-- <li class="detail_apple"><a href="#">애플</a></li>
                 <li class="detail_SL"><a href="#">삼성,LG</a></li>
-                <li class="detail_except"><a href="#">기타</a></li>
+                <li class="detail_except"><a href="#">기타</a></li> -->
             </ul>
             <ul class="detail_interface">
-                <li class="detail_apple"><a href="#">애플</a></li>
+                <!-- <li class="detail_apple"><a href="#">애플</a></li>
                 <li class="detail_SL"><a href="#">삼성,LG</a></li>
-                <li class="detail_except"><a href="#">기타</a></li>
+                <li class="detail_except"><a href="#">기타</a></li> -->
             </ul>
             <ul class="detail_feature">
-                <li class="detail_SL"><a href="#">삼성,LG</a></li>
-                <li class="detail_except"><a href="#">기타</a></li>
+                <!-- <li class="detail_SL"><a href="#">삼성,LG</a></li>
+                <li class="detail_except"><a href="#">기타</a></li> -->
             </ul>
             <ul class="detail_male">
-                <li class="detail_top"><a href="#">상의</a></li>
+                <!-- <li class="detail_top"><a href="#">상의</a></li>
                 <li class="detail_bottoms"><a href="#">하의</a></li>
-                <li class="detail_except"><a href="#">그 외</a></li>
+                <li class="detail_except"><a href="#">그 외</a></li> -->
             </ul>
             <ul class="detail_female">
-                <li class="detail_top"><a href="#">상의</a></li>
+                <!-- <li class="detail_top"><a href="#">상의</a></li>
                 <li class="detail_bottoms"><a href="#">하의</a></li>
-                <li class="detail_except"><a href="#">그 외</a></li>
+                <li class="detail_except"><a href="#">그 외</a></li> -->
             </ul>
             <ul class="detail_watch">
-                <li class="detail_MF"><a href="#">남, 여</a></li>
+                <!-- <li class="detail_MF"><a href="#">남, 여</a></li>
                 <li class="detail_brand"><a href="#">브랜드 별</a></li>
-                <li class="detail_nomal"><a href="#">일반</a></li>
+                <li class="detail_nomal"><a href="#">일반</a></li> -->
             </ul>
             <ul class="detail_shoes">
-                <li class="detail_MF"><a href="#">남, 여</a></li>
+                <!-- <li class="detail_MF"><a href="#">남, 여</a></li>
                 <li class="detail_brand"><a href="#">브랜드 별</a></li>
-                <li class="detail_nomal"><a href="#">일반</a></li>
+                <li class="detail_nomal"><a href="#">일반</a></li> -->
             </ul>
             <ul class="detail_except">
-                <li class="detail_MF"><a href="#">남, 여</a></li>
+                <!-- <li class="detail_MF"><a href="#">남, 여</a></li>
                 <li class="detail_brand"><a href="#">브랜드 별</a></li>
-                <li class="detail_nomal"><a href="#">일반</a></li>
+                <li class="detail_nomal"><a href="#">일반</a></li> -->
             </ul>
         </li>
         <li id="detail_sort4"><a href="#">거래 가능지역 ></a>

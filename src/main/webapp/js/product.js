@@ -51,6 +51,9 @@ $(function(){
 	      $('#detail_sort2 > .detail_digital').html(html);   
 	      $("#detail_sort2 > ul").css("display", "none");
 	      $("#detail_sort2 > .detail_digital").css("display", "block");
+	      $("#detail_sort3 > ul").css("display", "none");
+	      $("#detail_sort4 > ul").css("display", "none");
+          $("#detail_sort5 > ul").css("display","none");
 	    }
 	    else if(idV =="detail_mobile"){
 	    	var html = '';
@@ -60,6 +63,9 @@ $(function(){
 	      $('#detail_sort2 > .detail_mobile').html(html);   
 	      $("#detail_sort2 > ul").css("display", "none");
 	      $("#detail_sort2 > .detail_mobile").css("display", "block");
+	      $("#detail_sort3 > ul").css("display", "none");
+	      $("#detail_sort4 > ul").css("display", "none");
+          $("#detail_sort5 > ul").css("display","none");
 	    }
 	    else if(idV =="detail_clothes"){
 	    	var html = '';
@@ -69,6 +75,9 @@ $(function(){
 	      $('#detail_sort2 > .detail_clothes').html(html);   
 	      $("#detail_sort2 > ul").css("display", "none");
 	      $("#detail_sort2 > .detail_clothes").css("display", "block");
+	      $("#detail_sort3 > ul").css("display", "none");
+	      $("#detail_sort4 > ul").css("display", "none");
+          $("#detail_sort5 > ul").css("display","none");
 	    }
 	    else if(idV =="detail_fashion"){
 	    	var html = '';
@@ -78,76 +87,131 @@ $(function(){
 	      $('#detail_sort2 > .detail_fashion').html(html);   
 	      $("#detail_sort2 > ul").css("display", "none");
 	      $("#detail_sort2 > .detail_fashion").css("display", "block");
+	      $("#detail_sort3 > ul").css("display", "none");
+	      $("#detail_sort4 > ul").css("display", "none");
+          $("#detail_sort5 > ul").css("display","none");
 	    }
 	    $('#detail_sort2 ul li').click(function(){
 	        var id1 = $(this).attr("class");
-	        
-	        console.log(id1);
-	        
-	        
+	        console.log(tmpObj.small[6].male);
 	        if(id1 == "detail_digital0"){
 	            $("#detail_sort3 > ul").css("display","none");
+	            var html = '';
+		    	for(var i=0;i<tmpObj.small[0].desktop.length; i++){
+		    		html += '<li class="detail_digital0'+i+'"><a href="#">' +tmpObj.small[0].desktop[i] + '</a></li>';
+		    	}
+		    	$('#detail_sort3 > .detail_desktop').html(html);
 	            $("#detail_sort3 > .detail_desktop").css("display", "block");
 	            $("#detail_sort4 > ul").css("display", "none");
 	            $("#detail_sort5 > ul").css("display","none");
 	        }  
 	        else if(id1 == "detail_digital1"){
-	            $("#detail_sort3 > ul").css("display","none");
-	            $("#detail_sort3 > .detail_laptop").css("display", "block");
+	        	$("#detail_sort3 > ul").css("display","none");
+	            var html = '';
+		    	for(var i=0;i<tmpObj.small[1].laptop.length; i++){
+		    		html += '<li class="detail_digital1'+i+'"><a href="#">' +tmpObj.small[1].laptop[i] + '</a></li>';
+		    	}
+		    	$('#detail_sort3 > .detail_desktop').html(html);
+	            $("#detail_sort3 > .detail_desktop").css("display", "block");
 	            $("#detail_sort4 > ul").css("display", "none");
 	            $("#detail_sort5 > ul").css("display","none");
 	        }
 	        else if(id1 == "detail_digital2"){
-	            $("#detail_sort3 > ul").css("display","none");
-	            $("#detail_sort3 > .detail_tablet").css("display", "block");
-	            $("#detail_sort4 > ul").css("display", "none");
-	            $("#detail_sort5 > ul").css("display","none");
+				$("#detail_sort3 > ul").css("display","none");
+				var html = '';
+				for(var i=0;i<tmpObj.small[2].tablet.length; i++){
+					html += '<li class="detail_digital2'+i+'"><a href="#">' +tmpObj.small[2].tablet[i] + '</a></li>';
+				}
+				$('#detail_sort3 > .detail_desktop').html(html);
+				$("#detail_sort3 > .detail_desktop").css("display", "block");
+				$("#detail_sort4 > ul").css("display", "none");
+				$("#detail_sort5 > ul").css("display","none");
 	        }
 	        else if(id1 == "detail_mobile0"){
-	            $("#detail_sort3 > ul").css("display","none");
-	            $("#detail_sort3 > .detail_smart").css("display", "block");
+	        	$("#detail_sort3 > ul").css("display","none");
+	        	var html = '';
+		    	for(var i=0;i<tmpObj.small[3].smart.length; i++){
+		    		html += '<li class="detail_mobile0'+i+'"><a href="#">' +tmpObj.small[3].smart[i] + '</a></li>';
+		    	}
+		    	$('#detail_sort3 > .detail_mobile').html(html);
+	            $("#detail_sort3 > .detail_mobile").css("display", "block");
 	            $("#detail_sort4 > ul").css("display", "none");
 	            $("#detail_sort5 > ul").css("display","none");
 	        }
 	        else if(id1 == "detail_mobile1"){
-	            $("#detail_sort3 > ul").css("display","none");
-	            $("#detail_sort3 > .detail_interface").css("display", "block");
+	        	$("#detail_sort3 > ul").css("display","none");
+	        	var html = '';
+		    	for(var i=0;i<tmpObj.small[4].interface.length; i++){
+		    		html += '<li class="detail_mobile1'+i+'"><a href="#">' +tmpObj.small[4].interface[i] + '</a></li>';
+		    	}
+		    	$('#detail_sort3 > .detail_mobile').html(html);
+	            $("#detail_sort3 > .detail_mobile").css("display", "block");
 	            $("#detail_sort4 > ul").css("display", "none");
 	            $("#detail_sort5 > ul").css("display","none");
 	        }
 	        else if(id1 == "detail_mobile2"){
-	            $("#detail_sort3 > ul").css("display","none");
-	            $("#detail_sort3 > .detail_feature").css("display", "block");
+	        	$("#detail_sort3 > ul").css("display","none");
+	        	var html = '';
+		    	for(var i=0;i<tmpObj.small[5].feature.length; i++){
+		    		html += '<li class="detail_mobile2'+i+'"><a href="#">' +tmpObj.small[5].feature[i] + '</a></li>';
+		    	}
+		    	$('#detail_sort3 > .detail_mobile').html(html);
+	            $("#detail_sort3 > .detail_mobile").css("display", "block");
 	            $("#detail_sort4 > ul").css("display", "none");
 	            $("#detail_sort5 > ul").css("display","none");
 	        }
 	        else if(id1 == "detail_clothes0"){
-	            $("#detail_sort3 > ul").css("display","none");
-	            $("#detail_sort3 > .detail_male").css("display", "block");
+	        	$("#detail_sort3 > ul").css("display","none");
+	        	var html = '';
+		    	for(var i=0;i<tmpObj.small[6].male.length; i++){
+		    		html += '<li class="detail_clothes0'+i+'"><a href="#">' +tmpObj.small[6].male[i] + '</a></li>';
+		    	}
+		    	$('#detail_sort3 > .detail_clothes').html(html);
+	            $("#detail_sort3 > .detail_clothes").css("display", "block");
 	            $("#detail_sort4 > ul").css("display", "none");
 	            $("#detail_sort5 > ul").css("display","none");
 	        }
 	        else if(id1 == "detail_clothes1"){
-	            $("#detail_sort3 > ul").css("display","none");
-	            $("#detail_sort3 > .detail_female").css("display", "block");
+	        	$("#detail_sort3 > ul").css("display","none");
+	        	var html = '';
+		    	for(var i=0;i<tmpObj.small[7].female.length; i++){
+		    		html += '<li class="detail_clothes1'+i+'"><a href="#">' +tmpObj.small[7].female[i] + '</a></li>';
+		    	}
+		    	$('#detail_sort3 > .detail_clothes').html(html);
+	            $("#detail_sort3 > .detail_clothes").css("display", "block");
 	            $("#detail_sort4 > ul").css("display", "none");
 	            $("#detail_sort5 > ul").css("display","none");
 	        }
 	        else if(id1 == "detail_fashion0"){
-	            $("#detail_sort3 > ul").css("display","none");
-	            $("#detail_sort3 > .detail_watch").css("display", "block");
+	        	$("#detail_sort3 > ul").css("display","none");
+	        	var html = '';
+		    	for(var i=0;i<tmpObj.small[8].watch.length; i++){
+		    		html += '<li class="detail_fashion0'+i+'"><a href="#">' +tmpObj.small[8].watch[i] + '</a></li>';
+		    	}
+		    	$('#detail_sort3 > .detail_fashion').html(html);
+	            $("#detail_sort3 > .detail_fashion").css("display", "block");
 	            $("#detail_sort4 > ul").css("display", "none");
 	            $("#detail_sort5 > ul").css("display","none");
 	        }
 	        else if(id1 == "detail_fashion1"){
-	            $("#detail_sort3 > ul").css("display","none");
-	            $("#detail_sort3 > .detail_shoes").css("display", "block");
+	        	$("#detail_sort3 > ul").css("display","none");
+	        	var html = '';
+		    	for(var i=0;i<tmpObj.small[9].shoes.length; i++){
+		    		html += '<li class="detail_fashion1'+i+'"><a href="#">' +tmpObj.small[9].shoes[i] + '</a></li>';except
+		    	}
+		    	$('#detail_sort3 > .detail_fashion').html(html);
+	            $("#detail_sort3 > .detail_fashion").css("display", "block");
 	            $("#detail_sort4 > ul").css("display", "none");
 	            $("#detail_sort5 > ul").css("display","none");
 	        }
 	        else if(id1 == "detail_fashion2"){
-	            $("#detail_sort3 > ul").css("display","none");
-	            $("#detail_sort3 > .detail_except").css("display", "block");
+	        	$("#detail_sort3 > ul").css("display","none");
+	        	var html = '';
+		    	for(var i=0;i<tmpObj.small[10].except.length; i++){
+		    		html += '<li class="detail_fashion2'+i+'"><a href="#">' +tmpObj.small[10].except[i] + '</a></li>';
+		    	}
+		    	$('#detail_sort3 > .detail_fashion').html(html);
+	            $("#detail_sort3 > .detail_fashion").css("display", "block");
 	            $("#detail_sort4 > ul").css("display", "none");
 	            $("#detail_sort5 > ul").css("display","none");
 	        }
