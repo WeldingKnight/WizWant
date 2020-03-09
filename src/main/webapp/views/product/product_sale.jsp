@@ -3,6 +3,7 @@
 <%@ include file="../header_footer/header.jsp"%>
 
     <div id="product_sale_wrap">
+    <h2 align="center">상품 등록 페이지</h2>
         <form id="product_sale">
             <table id="product_sale_table">
                 <tr id="product_sale_contents" >
