@@ -25,4 +25,10 @@ public class ProductController {
 		System.out.println("제품 상세 페이지로 이동");
 		return "/views/product/product_detail.jsp";
 	}
+	@RequestMapping("/product_sale.do")
+	public String product_sale() {
+
+		System.out.println("판매 등록 페이지로 이동");
+		return "/views/product/product_sale.jsp";
+	}
 }
