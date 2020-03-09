@@ -54,7 +54,6 @@
 					<a href="login.do">로그인</a> 
 					<a href="insert.do">회원가입</a> 
 					<a href="mypage.do">마이페이지</a>
-					<a href="product_sale.do">상품등록</a>
 				</div>
 			</div>
 		</header>
