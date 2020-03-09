@@ -4,7 +4,7 @@ $(function(){
 	function setDiv(name, index){
 		var html = '';
 		for(var i=0;i<tmpObj.middle[index].length; i++){
-    		html += '<li class="detail_'+i+'"><a href="#">' +tmpObj.middle[index][i] + '</a></li>';
+    		html += '<li class="'+name+i+'"><a href="#">' +tmpObj.middle[index][i] + '</a></li>\n';
     	}
 		$('#detail_sort2 > .'+name).html(html);   
 	    $("#detail_sort2 > ul").css("display", "none");
@@ -18,7 +18,8 @@ $(function(){
 		var html = '';
 		$("#detail_sort3 > ul").css("display","none");
     	for(var i=0;i<tmpObj.small[index].length; i++){
-    		html += '<li class="detail__'+i+'"><a href="#">' +tmpObj.small[index][i] + '</a></li>';
+    		html += '<li class="'+name+i+'"><a href="#">' +tmpObj.small[index][i] + '</a></li>\n';
+    		
     	}
     	$('#detail_sort3 > .'+name).html(html);
         $("#detail_sort3 > ."+name).css("display", "block");
@@ -65,11 +66,9 @@ $(function(){
 	
 	console.log( "json object : " + JSON.stringify(tmpObj));
 	var Json = JSON.stringify(tmpObj);
-	console.log(tmpObj.middle[0]);
 	// 첫 카테고리에서 메뉴 선택시 메뉴 보이기
     $('#detail_category').children().click(function(){
 		var idV = $(this).attr("id"); //id뽑아오기 digital
-		console.log(idV);
 	    if(idV == "detail_digital"){
 	    	setDiv("detail_digital", 0);
 	    }
@@ -77,128 +76,48 @@ $(function(){
 	    	setDiv("detail_mobile", 1);
 	    }
 	    else if(idV =="detail_clothes"){
-	    	setDiv("detail_mobile", 2);
+	    	setDiv("detail_clothes", 2);
 	    }
 	    else if(idV =="detail_fashion"){
-	    	setDiv("detail_mobile", 3);
+	    	setDiv("detail_fashion", 3);
 	    }
 	    
 	    // 2번쨰 카테고리에서 메뉴 선택시 메뉴 보이기
 	    
 	    $('#detail_sort2 ul li').click(function(){
 	        var id1 = $(this).attr("class");
-	        if(id1 == "detail_0"){
-	        	setDiv2("detail_0", 0);
+	        if(id1 == "detail_digital0"){
+	        	setDiv2("detail_digital0", 0);
 	        }  
 	        else if(id1 == "detail_digital1"){
-	        	$("#detail_sort3 > ul").css("display","none");
-	            var html = '';
-		    	for(var i=0;i<tmpObj.small[1].laptop.length; i++){
-		    		html += '<li class="detail_digital1'+i+'"><a href="#">' +tmpObj.small[1].laptop[i] + '</a></li>';
-		    	}
-		    	$('#detail_sort3 > .detail_laptop').html(html);
-	            $("#detail_sort3 > .detail_laptop").css("display", "block");
-	            $("#detail_sort4 > ul").css("display", "none");
-	            $("#detail_sort5 > ul").css("display","none");
+	        	setDiv2("detail_digital1", 1);
 	        }
 	        else if(id1 == "detail_digital2"){
-				$("#detail_sort3 > ul").css("display","none");
-				var html = '';
-				for(var i=0;i<tmpObj.small[2].tablet.length; i++){
-					html += '<li class="detail_digital2'+i+'"><a href="#">' +tmpObj.small[2].tablet[i] + '</a></li>';
-				}
-				$('#detail_sort3 > .detail_tablet').html(html);
-				$("#detail_sort3 > .detail_tablet").css("display", "block");
-				$("#detail_sort4 > ul").css("display", "none");
-				$("#detail_sort5 > ul").css("display","none");
+	        	setDiv2("detail_digital2", 2);
 	        }
 	        else if(id1 == "detail_mobile0"){
-	        	$("#detail_sort3 > ul").css("display","none");
-	        	var html = '';
-		    	for(var i=0;i<tmpObj.small[3].smart.length; i++){
-		    		html += '<li class="detail_mobile0'+i+'"><a href="#">' +tmpObj.small[3].smart[i] + '</a></li>';
-		    	}
-		    	$('#detail_sort3 > .detail_smart').html(html);
-	            $("#detail_sort3 > .detail_smart").css("display", "block");
-	            $("#detail_sort4 > ul").css("display", "none");
-	            $("#detail_sort5 > ul").css("display","none");
+	        	setDiv2("detail_mobile0", 3);
 	        }
 	        else if(id1 == "detail_mobile1"){
-	        	$("#detail_sort3 > ul").css("display","none");
-	        	var html = '';
-		    	for(var i=0;i<tmpObj.small[4].interface.length; i++){
-		    		html += '<li class="detail_mobile1'+i+'"><a href="#">' +tmpObj.small[4].interface[i] + '</a></li>';
-		    	}
-		    	$('#detail_sort3 > .detail_interface').html(html);
-	            $("#detail_sort3 > .detail_interface").css("display", "block");
-	            $("#detail_sort4 > ul").css("display", "none");
-	            $("#detail_sort5 > ul").css("display","none");
+	        	setDiv2("detail_mobile1", 4);
 	        }
 	        else if(id1 == "detail_mobile2"){
-	        	$("#detail_sort3 > ul").css("display","none");
-	        	var html = '';
-		    	for(var i=0;i<tmpObj.small[5].feature.length; i++){
-		    		html += '<li class="detail_mobile2'+i+'"><a href="#">' +tmpObj.small[5].feature[i] + '</a></li>';
-		    	}
-		    	$('#detail_sort3 > .detail_feature').html(html);
-	            $("#detail_sort3 > .detail_feature").css("display", "block");
-	            $("#detail_sort4 > ul").css("display", "none");
-	            $("#detail_sort5 > ul").css("display","none");
+	        	setDiv2("detail_mobile2", 5);
 	        }
 	        else if(id1 == "detail_clothes0"){
-	        	$("#detail_sort3 > ul").css("display","none");
-	        	var html = '';
-		    	for(var i=0;i<tmpObj.small[6].male.length; i++){
-		    		html += '<li class="detail_clothes0'+i+'"><a href="#">' +tmpObj.small[6].male[i] + '</a></li>';
-		    	}
-		    	$('#detail_sort3 > .detail_male').html(html);
-	            $("#detail_sort3 > .detail_male").css("display", "block");
-	            $("#detail_sort4 > ul").css("display", "none");
-	            $("#detail_sort5 > ul").css("display","none");
+	        	setDiv2("detail_clothes0", 6);
 	        }
 	        else if(id1 == "detail_clothes1"){
-	        	$("#detail_sort3 > ul").css("display","none");
-	        	var html = '';
-		    	for(var i=0;i<tmpObj.small[7].female.length; i++){
-		    		html += '<li class="detail_clothes1'+i+'"><a href="#">' +tmpObj.small[7].female[i] + '</a></li>';
-		    	}
-		    	$('#detail_sort3 > .detail_female').html(html);
-	            $("#detail_sort3 > .detail_female").css("display", "block");
-	            $("#detail_sort4 > ul").css("display", "none");
-	            $("#detail_sort5 > ul").css("display","none");
+	        	setDiv2("detail_clothes1", 7);
 	        }
 	        else if(id1 == "detail_fashion0"){
-	        	$("#detail_sort3 > ul").css("display","none");
-	        	var html = '';
-		    	for(var i=0;i<tmpObj.small[8].watch.length; i++){
-		    		html += '<li class="detail_fashion0'+i+'"><a href="#">' +tmpObj.small[8].watch[i] + '</a></li>';
-		    	}
-		    	$('#detail_sort3 > .detail_watch').html(html);
-	            $("#detail_sort3 > .detail_watch").css("display", "block");
-	            $("#detail_sort4 > ul").css("display", "none");
-	            $("#detail_sort5 > ul").css("display","none");
+	        	setDiv2("detail_fashion0", 8);
 	        }
 	        else if(id1 == "detail_fashion1"){
-	        	$("#detail_sort3 > ul").css("display","none");
-	        	var html = '';
-		    	for(var i=0;i<tmpObj.small[9].shoes.length; i++){
-		    		html += '<li class="detail_fashion1'+i+'"><a href="#">' +tmpObj.small[9].shoes[i] + '</a></li>';
-		    	}
-		    	$('#detail_sort3 > .detail_shoes').html(html);
-	            $("#detail_sort3 > .detail_shoes").css("display", "block");
-	            $("#detail_sort4 > ul").css("display", "none");
-	            $("#detail_sort5 > ul").css("display","none");
+	        	setDiv2("detail_fashion1", 9);
 	        }
 	        else if(id1 == "detail_fashion2"){
-	        	$("#detail_sort3 > ul").css("display","none");
-	        	var html = '';
-		    	for(var i=0;i<tmpObj.small[10].except.length; i++){
-		    		html += '<li class="detail_fashion2'+i+'"><a href="#">' +tmpObj.small[10].except[i] + '</a></li>';
-		    	}
-		    	$('#detail_sort3 > .detail_except').html(html);
-	            $("#detail_sort3 > .detail_except").css("display", "block");
-	            $("#detail_sort4 > ul").css("display", "none");
-	            $("#detail_sort5 > ul").css("display","none");
+	        	setDiv2("detail_fashion2", 10);
 	        }
 	        
 	        // 3번쨰 카테고리에서 메뉴 선택시 메뉴 보이기

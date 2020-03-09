@@ -24,27 +24,27 @@
             </ul>
         </li>
         <li id="detail_sort3"><a href="#">소분류 ></a>
-            <ul class="detail_desktop">
+            <ul class="detail_digital0">
             </ul>
-            <ul class="detail_laptop">
+            <ul class="detail_digital1">
             </ul>
-            <ul class="detail_tablet">
+            <ul class="detail_digital2">
             </ul>
-            <ul class="detail_smart">
+            <ul class="detail_mobile0">
             </ul>
-            <ul class="detail_interface">
+            <ul class="detail_mobile1">
             </ul>
-            <ul class="detail_feature">
+            <ul class="detail_mobile2">
             </ul>
-            <ul class="detail_male">
+            <ul class="detail_clothes0">
             </ul>
-            <ul class="detail_female">
+            <ul class="detail_clothes1">
             </ul>
-            <ul class="detail_watch">
+            <ul class="detail_fashion0">
             </ul>
-            <ul class="detail_shoes">
+            <ul class="detail_fashion1">
             </ul>
-            <ul class="detail_except">
+            <ul class="detail_fashion2">
             </ul>
         </li>
         <li id="detail_sort4"><a href="#">거래 가능지역 ></a>
