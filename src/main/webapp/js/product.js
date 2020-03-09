@@ -12,6 +12,9 @@ $(function(){
 	    $("#detail_sort3 > ul").css("display", "none");
 	    $("#detail_sort4 > ul").css("display", "none");
 	    $("#detail_sort5 > ul").css("display","none");
+	    
+	    $("#detail_sort1 > ul li").css("background-color","dodgerblue");
+	    $("#"+name).css("background-color","#e8491d");
 	}
 	
 	function setDiv2(name, index) {
