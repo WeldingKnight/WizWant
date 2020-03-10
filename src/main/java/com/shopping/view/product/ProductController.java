@@ -31,7 +31,6 @@ public class ProductController {
 		return "getBoardList.jsp";
 	}
 
-
 	@RequestMapping("/product_detail.do")
 	public String product_detail() {
 
