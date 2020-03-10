@@ -1,4 +1,4 @@
-@charset "EUC-KR";
+@charset "UTF-8";
 
 body{
 	width:1200px;
@@ -9,4 +9,26 @@ body{
 #login_wrap{
 	width:900px;
 	display: inline-block;
+}
+
+#login_form{
+	margin: 0 auto;
+	text-align: center;
+ 	display: inline-block;
+ 	
+	
+}
+#login_form >table{
+	width:500px;
+	height:500px;
+}
+
+.login_name{
+	font-size: 40px;
+}
+
+.login_input{
+	width:300px;
+	height:100px;
+	font-size: 50px;
 }
