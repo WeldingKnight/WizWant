@@ -1,16 +1,11 @@
-body {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-nav {
+#mypage_nav {
     max-width: 1200px;
     width: 100%;
     height: auto;
     margin: 0 auto;
 }
 
-nav div{
+#mypage_nav div{
     max-width: 1200px;
     width: 100%;
     height: 50px;
@@ -18,21 +13,21 @@ nav div{
     text-align: center;
 }
 
-nav div ul {
+#mypage_nav div ul {
     max-width: 1200px;
     width: 100%;
     height: 50px;
     list-style: none;
 }
 
-nav div ul li {
+#mypage_nav div ul li {
     text-align: center;
     float: left;
     margin-left: 20px;
     border: 1px solid black;
 }
 
-nav div ul li a {
+#mypage_nav div ul li a {
     text-decoration: none;
     color: black;
 }
