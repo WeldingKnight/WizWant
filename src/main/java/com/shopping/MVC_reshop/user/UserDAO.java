@@ -37,9 +37,7 @@ private final String USER_GET = "select * from member where id=? and pwd =?";
 				user.setId(rs.getString("ID"));
 				user.setPassword(rs.getString("PASSWORD"));
 				user.setName(rs.getString("NAME"));
-			
 			}
-			
 			
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -48,10 +46,6 @@ private final String USER_GET = "select * from member where id=? and pwd =?";
 			JDBCUtil.close(rs, stmt, conn);
 		}
 		
-		return user;
-		
+		return user;	
 	}
-	
-	
-
 }
