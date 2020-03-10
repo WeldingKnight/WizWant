@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+#product_sale_wrap{
+    width: 1200px;
+    border: 2px solid salmon;
+    margin: 0 auto;
+    
+}
+#product_sale {
+    border: 1px saddlebrown;
+
+}
+#product_sale_table{
+    width: 1050px;
+    margin: 0 auto;
+    border: 2px solid blue;
+}
+
+
+#product_sale_contents >td{
+    border: 1px solid black;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+}
+
+#product_sale_enrollment >td{
+    border: 1px solid black;
+    height: 50px;
+  
+}
+#product_sale_button{
+
+    text-align: center;
+    float: right;
+}
+
+
+
+

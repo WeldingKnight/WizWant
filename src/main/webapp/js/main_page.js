@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 	var mainurl = window.location.pathname;
 	
-	alert(mainurl);
+	
 
 	if (mainurl == '/MVC_reshop/wiz_want.do'|| mainurl == '/MVC_reshop/') {
 
@@ -28,7 +28,7 @@ $(document).ready(function() {
 			}
 			slides[slideIndex - 1].style.display = "block";
 			dots[slideIndex - 1].className += " active";
-			setTimeout(showSlides, 2000); // Change image every 2 seconds
+			setTimeout(showSlides, 3500); // Change image every 2 seconds
 		}
 	}
 

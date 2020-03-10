@@ -95,8 +95,11 @@
 						style="width: 300px; height: 30px; font-size: 20px;" type="text"
 						id="adress" name="adress" accesskey="L" maxlength="41"></td>
 				</tr>
-			
-				<input id="insert_input" type="submit" alt="회원가입" value="회원가입" />
+				<tr>
+					<td><input id="insert_input" type="submit" alt="회원가입"
+						value="회원가입" />
+					</td>
+				</tr>
 			</table>
 		</form>
 	</div>
