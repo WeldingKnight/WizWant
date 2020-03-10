@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../header_footer/header.jsp"%>
-
+<%@ page import="com.shopping.MVC_reshop.product.*" %>
+<%@ page import="java.util.List" %>
+<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
     <div id="product_sale_wrap">
     <h2 align="center">상품 등록 페이지</h2>
         <form id="product_sale">
@@ -30,7 +32,7 @@
                     <td>판매기한</td>
                     <td>판매 수량</td>
                     <td>추가 설명</td>
-                    <td>판매자 ID</td>
+                    <td>${userId}</td>
                 </tr>
 
                 <tr id="product_sale_enrollment">

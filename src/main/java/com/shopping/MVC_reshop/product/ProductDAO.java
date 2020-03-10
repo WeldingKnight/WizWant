@@ -82,5 +82,10 @@ public class ProductDAO {
 			JDBCUtil.close(stmt, conn);
 		}
 	}
+
+	public Object getProduct(ProductVO vo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
