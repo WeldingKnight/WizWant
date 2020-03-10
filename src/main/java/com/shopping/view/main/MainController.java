@@ -23,7 +23,7 @@ public class MainController { //메인 페이지 컨트롤러
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping("/wiz_want.do")
-	public String main(UserVO vo, UserDAO userdao, HttpSession session) {
+	public String main(HttpSession session) {
 		
 		System.out.println("메인페이지로 이동");
 	

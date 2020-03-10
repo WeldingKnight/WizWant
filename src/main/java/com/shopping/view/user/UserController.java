@@ -1,11 +1,13 @@
 package com.shopping.view.user;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.shopping.MVC_reshop.user.UserDAO;
 import com.shopping.MVC_reshop.user.UserVO;
 
+@Controller
 public class UserController {
 	
 

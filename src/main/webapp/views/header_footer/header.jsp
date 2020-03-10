@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="./css/product_detail.css">
 <link rel="stylesheet" href="./css/product_sale.css">
 <link rel="stylesheet" href="./css/customer.css">
+<link rel="stylesheet" href="./css/mypage.css">
 
 <!-- ------------------------------------------------------- -->
 <!-- 사이트 jquery 스크립트 부분 -->
