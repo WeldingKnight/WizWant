@@ -43,4 +43,12 @@ public class MainController { //메인 페이지 컨트롤러
 		return "/views/main/wiz_want_main.jsp";
 	}
 	
+	@RequestMapping("/login_page.do")
+	public String login_page() {
+		
+		System.out.println("로그인 페이지로 이동");
+		return "/views/login&insert/login.jsp";
+	}
+	
+	
 }
