@@ -13,7 +13,7 @@ public class ProductDAO {
 	private ResultSet rs = null;
 	
 	//SQL ¸í·É¾î
-	private final String BOARD_INSERT = "insert into goods(seller_id, goods_name, goods_detail, goods_quantity,goods_price,goods_id,goods_image,goods_validate) values(?,?,?,?,?,(select nvl(max(goods_id), 0)+1 from goods),?,?)";	
+	private final String BOARD_INSERT = "insert into goods(seller_id, goods_name, goods_detail, goods_quantity,goods_price,goods_id,goods_image,goods_validate) values(?,?,?,?,?,goods_seq.nextval,?,'')";
 	private final String BOARD_UPDATE = "update goods set goods_name=?, goods_detail=?, goods_quantity=?, goods_price=?, goods_image=?, goods_validate=?  where goods_id=?";	
 	private final String BOARD_DELETE = "delete goods where goods_id=?";	
 	private final String BOARD_GET = "select * from goods where seq=?";
@@ -31,9 +31,7 @@ public class ProductDAO {
 			stmt.setString(3, vo.getGoods_detail());
 			stmt.setInt(4, vo.getGoods_quantity());
 			stmt.setInt(5, vo.getGoods_price());
-			stmt.setInt(6, vo.getGoods_id());
-			stmt.setString(7, vo.getGoods_image());
-			stmt.setString(8, vo.getGoods_validate());
+			stmt.setString(6, vo.getGoods_image());	
 			stmt.executeUpdate();
 			
 		}catch(Exception e) {

@@ -5,9 +5,9 @@ public class ProductVO {
 	private String seller_id;		//회원 아이디
 	private String goods_name;		//상품 이름
 	private String goods_detail;	//상품 설명
-	private int goods_quantity;	//상품 수량
+	private int goods_quantity;		//상품 수량
 	private int goods_price;		//상품 가격
-	private int goods_id;		//상품 번호
+	private int goods_id;			//상품 번호
 	private String goods_image;		//상품 이미지
 	private String goods_validate;	//상품 판매여부
 	
