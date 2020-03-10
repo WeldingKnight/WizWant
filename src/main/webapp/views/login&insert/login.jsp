@@ -13,7 +13,7 @@
 
 		<h1 style="font-size: 50px; color: dodgerblue;">로그인<h1>
 
-				<form name="login_form" method="POST" action="login.do" id="login_form">
+				<form name="login_form" method="post" action="login.do" id="login_form">
 					<table border="1" cellpadding="0" cellspacing="0">
 						<tr>
 							<td >아이디</td>

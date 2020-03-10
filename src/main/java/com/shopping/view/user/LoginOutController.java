@@ -1,45 +1,55 @@
 package com.shopping.view.user;
 
-
-
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 //import com.company.AnnotationMVC.user.UserDAO;
 //import com.company.AnnotationMVC.user.UserVO;
 import com.shopping.MVC_reshop.HomeController;
 import com.shopping.MVC_reshop.user.UserDAO;
 import com.shopping.MVC_reshop.user.UserVO;
+
 @Controller
 public class LoginOutController {
-	
-private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
-	
-	@RequestMapping("/insert.do")
-	public String insert() {
-		
-		System.out.println("회원가입 페이지로 이동");
-		return "/views/login&insert/insert.jsp";
+
+	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+
+	@RequestMapping(value = "/login.do",method = RequestMethod.GET)
+	public String login_page() {
+
+		System.out.println("로그인 페이지로 이동");
+		return "/views/login&insert/login.jsp";
 	}
-	
-	@RequestMapping("/login.do")
+
+	@RequestMapping(value ="/login.do",method = RequestMethod.POST)
 	public String login(UserVO vo, UserDAO userdao, HttpSession session) {
-	
-		//session: 내가 클라이언트에서 접속하고 있는 동안 개인한테 제공하는 메모리공간이다.(예수님 가라사대)
+
+		// session: 내가 클라이언트에서 접속하고 있는 동안 개인한테 제공하는 메모리공간이다.(예수님 가라사대)
 		UserVO user = userdao.getUser(vo);
-		
-		if(user != null) {
-			session.setAttribute("userName", user.getName());
+
+		if (user != null) {
+			session.setAttribute("userId", user.getId());
 			System.out.println("로그인성공");
-			return "/views/main/wiz_want_main.jsp";
-		}else {
+			return "wiz_want.do";
+		} else {
 			System.out.println("로그인실패");
 			return "/views/login&insert/login.jsp";
 		}
+	}
+
+	@RequestMapping(value = "/logout.do")
+	public String logout(HttpSession session) {
+
+		System.out.println("로그아웃 실행");
+
+		session.invalidate(); // 세션에 저장된 로그인 정보 지움
+
+		return "wiz_want.do";
+
 	}
 }

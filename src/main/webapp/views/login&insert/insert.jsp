@@ -13,7 +13,7 @@
 
 		<h1 style="font-size: 30px; color: dodgerblue;">회원가입</h1>
 
-		<form action="wiz_want.do" id="insert_form">
+		<form action="insert.do" id="insert_form" method="post">
 			<table id="insert_table">
 
 				<tr>
