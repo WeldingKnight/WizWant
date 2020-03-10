@@ -9,9 +9,9 @@
 </head>
 <body>
 	<div id="login_wrap">
-		<h1 style="font-size: 80px; color: dodgerblue;">WIZ*WANT</h1>
+		<h1 style="font-size: 80px; color: white;"><a href="wiz_want.do">WIZ*WANT</a></h1>
 
-		<h1 style="font-size: 50px; color: dodgerblue;">로그인</h1>
+		<h1 style="font-size: 50px; color: white;">로그인</h1>
 
 				<form name="login_form" method="post" action="login.do" id="login_form">
 					<table border="0" cellpadding="0" cellspacing="0">

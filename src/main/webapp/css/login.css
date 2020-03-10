@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 body{
 	width:1200px;
 	margin:0 auto;
@@ -7,9 +8,20 @@ body{
 	 background-color: seashell;
 }
 #login_wrap{
+	margin-top:50px;
 	width:900px;
 	display: inline-block;
+	background-image: url('../img/main_img/main_back1.jpg');
 }
+
+#login_wrap >h1>a{
+	font-family: fantasy;
+	text-decoration: none;
+	color: white;
+}
+
+
+
 
 #login_form{
 	margin: 0 auto;
@@ -21,10 +33,11 @@ body{
 #login_form >table{
 	width:500px;
 	height:500px;
+	margin-bottom: 100px;
 }
 
 .login_name{
-	font-size: 40px;
+	font-size: 45px;
 }
 
 .login_input{

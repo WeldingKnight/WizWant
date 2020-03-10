@@ -25,8 +25,6 @@ import com.shopping.MVC_reshop.user.UserVO;
 @Controller
 public class LoginOutController {
 
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-
 	@RequestMapping(value = "/login.do",method = RequestMethod.GET)
 	public String login_page() {
 
@@ -61,7 +59,8 @@ public class LoginOutController {
 
 		session.invalidate(); // 세션에 저장된 로그인 정보 지움
 
-		return "wiz_want.do";
+		return "/wiz_want.do";
 
 	}
+	
 }
