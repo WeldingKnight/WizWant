@@ -74,7 +74,7 @@ QnaDAO qnaDAO = new QnaDAO();
         <!-- //탭 메뉴 -->
         <!-- content -->
 		<center>                         
-			<h3 align="center">test님 게시판에 오신것을 환영합니다.&nbsp;&nbsp;&nbsp;<a href="logout.do">로그아웃</a></h3>
+			<h3 align="center">test님 게시판에 오신것을 환영합니다.&nbsp;&nbsp;&nbsp;</h3>
 			<h4>총 게시글 : ${totalList}건</h4>
 			<form method='get' action='customer.do'>
 				<table border='1' cellpadding='0' cellspacing='0' width='700'>
