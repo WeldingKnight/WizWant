@@ -55,6 +55,10 @@ public class UserVO {
 	}
 	
 	
+	public String loginString() {
+		return "로그인 정보: id= "+id+" 이름: "+name+" password:  "+ password;
+	}
+	
 	@Override
 	public String toString() {
 		return "UserVO [id=" + id + ", password=" + password + ", name=" + name + ", email=" + email + ", sex=" + sex

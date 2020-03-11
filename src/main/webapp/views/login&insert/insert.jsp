@@ -62,7 +62,7 @@
 					<td>성별</td>
 				</tr>
 				<tr>
-					<td><select name="sex"
+					<td><select name="sex" id="sex"
 						style="width: 300px; height: 30px; font-size: 20px;">
 							<option value="none">성별</option>
 							<option value="남">남</option>

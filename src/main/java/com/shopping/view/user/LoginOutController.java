@@ -63,7 +63,7 @@ public class LoginOutController {
 			session.invalidate(); // 세션의 기능을 중단시키고무효화 시키는것
 		}
 
-		return "/wiz_want.do";
+		return "/views/main/wiz_want_main.jsp";
 
 	}
 	
