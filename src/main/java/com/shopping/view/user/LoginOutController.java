@@ -42,6 +42,8 @@ public class LoginOutController {
 		if (user != null) {
 			
 			session.setAttribute("userId", user.getId());
+//			session.setAttribute("userRole", user.getRole());
+		
 			System.out.println("로그인성공");
 			
 			return "/wiz_want.do";
