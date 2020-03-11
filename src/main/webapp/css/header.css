@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+html{
+	background-image: url('../img/main_img/back_img1.gif');
+}
 a{
 	text-decoration: none;
 	}

@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
-<html>
+<html style="background-image: ">
 <head>
 
 <meta charset="UTF-8">
@@ -70,5 +70,6 @@
 						<a href="mypage.do">마이페이지</a>
 					</c:otherwise>
 				</c:choose>
+				<a href="getQnaList.do">고객센터</a>
 			</div>
 		</header>
