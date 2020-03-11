@@ -5,6 +5,10 @@
 <%
 request.setCharacterEncoding("UTF-8");
 
+	String id = request.getParameter("Classification");
+	session.setAttribute("Classification", id);
+
+
 %>
     <h2 align="center">상품 페이지</h2>
 <nav id="detail_navMenu">
@@ -69,8 +73,8 @@ request.setCharacterEncoding("UTF-8");
 			<div class="detail_content">
 				<a href="product_detail.do?goods_id=${product.goods_id}"><img src="${product.goods_image}"></a>
 				<div class="detail_product">
-				    <div id="detail_productName">${product.productname}</div>
-				    <div id="detail_productPrice">${product.goods_name}</div>
+				    <div id="detail_productName">${product.goods_name}</div>
+				    <div id="detail_productPrice">${product.goods_price}</div>
 				</div>
 				<div class="detail_seller">
 			        <div id="detail_sellerId">${product.seller_id}</div>

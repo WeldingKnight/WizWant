@@ -1,5 +1,3 @@
-
-
 $(function(){
 	function setDiv(name, index){
 		var html = '';
@@ -66,9 +64,15 @@ $(function(){
 	tmpArr = ['10이하','10-20','20-30','30-40','40-50','50-60','60-70','70-80','80-90','90-100','100이상'];
 	tmpObj.price     = tmpArr;
 	 
-	
+		
 	console.log( "json object : " + JSON.stringify(tmpObj));
 	var Json = JSON.stringify(tmpObj);
+	
+//	var sessionId = session.getAttribute(Classification);
+//	console.log($.session("Classification"));
+	
+
+	
 	// 첫 카테고리에서 메뉴 선택시 메뉴 보이기
     $('#detail_category').children().click(function(){
 		var idV = $(this).attr("id"); //id뽑아오기 digital
