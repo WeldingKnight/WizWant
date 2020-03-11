@@ -40,11 +40,11 @@
                     <td><input type="date"></td>
                     <td><input type="number" name="goods_quantity"></td>
                     <td><textarea rows="10" cols="60" style="resize: none;" name="goods_detail"></textarea></td>
-                    <td>${userId}<input type='hidden' name="seller_id"  value="${userId}" /></td>
+                    <td>${sessionscope.loginUser.id}<input type='hidden' name="seller_id"  value="${userId}" /></td>
                 </tr>
                 <tr id="product_sale_button">
                     <td>
-                        <input id="product_sale_input" type="submit" alt="상품등록" value="상품등록" name="product_sale()"/>
+                        <input id="product_sale_input" type="submit" alt="상품등록" value="상품등록" />
                     </td>
                 </tr>
                 
