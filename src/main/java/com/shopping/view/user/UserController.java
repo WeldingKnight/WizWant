@@ -27,6 +27,8 @@ public class UserController {
 	public String insert(UserDAO dao, UserVO vo, HttpServletRequest request) throws ServletException,IOException{
 		request.setCharacterEncoding("UTF-8");
 		
+		System.out.println("이름: "+vo.getName());
+		
 		dao.insertUser(vo);
 		
 		System.out.println("회원가입 완료 후 main페이지로 이동");
