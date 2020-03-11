@@ -44,7 +44,7 @@ public class ProductController {
 		return "/views/product/product_sale.jsp";
 	}
 	
-<<<<<<< HEAD
+
 	//글 등록 페이지로 이동
 		@RequestMapping(value ="/product_sale.do",method = RequestMethod.POST)
 		public String insertProduct(ProductVO vo, ProductDAO productDAO) {
@@ -53,8 +53,7 @@ public class ProductController {
 			System.out.println("판매 등록 후 상품 전체 페이지로 이동");
 			return "/views/product/product.jsp";
 		}
-=======
->>>>>>> branch 'master' of https://github.com/WeldingKnight/WizWant.git
+
 	
 	//글 수정
 	@RequestMapping("/updateProduct.do")
