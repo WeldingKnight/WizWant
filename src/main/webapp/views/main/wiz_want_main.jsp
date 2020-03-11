@@ -38,16 +38,24 @@
 	<!-- 중고거래사이트 링크부분 -->
 	<aside id="main_link">
 		<div class="main_link_img">
-			<img src="./img/main_img/jungonara.png" alt="중고나라 이미지">
+			<a href="https://cafe.naver.com/joonggonara" target="blank"> 
+				<img src="./img/main_img/jungonara.png" alt="중고나라 이미지">
+			</a>
 		</div>
 		<div class="main_link_img">
-			<img src="./img/main_img/auction.png" alt="옥션 중고장터 이미지">
+			<a href="http://corners.auction.co.kr/corner/usedmarket.aspx" target="blank"> 
+			 	<img src="./img/main_img/auction.png"alt="옥션 중고장터 이미지">
+			 </a>
 		</div>
 		<div class="main_link_img">
-			<img src="./img/main_img/ebay.png" alt="ebay이미지">
+			<a href="https://www.ebay.com/sch/i.html?_nkw=my%20beay" target="blank">
+				<img src="./img/main_img/ebay.png" alt="ebay이미지">
+			</a>
 		</div>
 		<div class="main_link_img">
+		<a href="http://category.gmarket.co.kr/listview/L100000051.aspx" target="blank">
 			<img src="./img/main_img/gmarket.png" alt="gmarket 이미지">
+		</a>
 		</div>
 	</aside>
 
