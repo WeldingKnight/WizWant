@@ -1,6 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<% request.setCharacterEncoding("UTF-8"); %>
+
+<%@ page import="com.shopping.MVC_reshop.qna.QnaVO" %>
+<%@ page import="com.shopping.MVC_reshop.qna.QnaDAO" %>
+<%@ page import="java.util.List" %>
+
+<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+<%
+	//스크립트릿 =>자바코드 작성
+request.setCharacterEncoding("UTF-8");
+
+String searchField =""; // 제목 or 작성 or 내용 
+String searchText=""; // 제목 or 작성 or 내용 
+
+if(request.getParameter("searchCondition") != null && request.getParameter("searchKeyword") != null){
+	searchField = request.getParameter("searchCondition");
+	searchText = request.getParameter("searchKeyword");
+	request.setAttribute("searchword", searchText);
+}
+
+QnaDAO qnaDAO = new QnaDAO();
+//메소드 호출
+   List<QnaVO> qnaList = qnaDAO.getQnaList(searchField, searchText);
+   request.setAttribute("qnaList", qnaList);
+   
+   int totalList = qnaList.size(); // 총게시글 얻어오기
+%>    
 <%@ include file="../header_footer/header.jsp"%>
 
  <div class="wrap">
@@ -45,40 +71,46 @@
                 </div>
             </div>
         </div>
-        <!-- 탭 메뉴 -->                         
-        <div class="content">
-            <div class="faq">
-                <div class="faq_title">
-                    상품에 대한 질문입니다.
-                </div>
-                <div class="faq_item">
-                    상품이 이상합니다. 왜 상품이 왓죠? 오나홀 포장 부탁드립니다.
-                </div>
-                <div class="faq_title">
-                    판매에 대한 질문입니다.
-                </div>
-                <div class="faq_item">
-                    판매 어떻게 합니까 희수상!!!.
-                </div>
-                <div class="faq_title">
-                    환불에 대한 질문입니다.
-                </div>
-                <div class="faq_item">
-                    환불이 이상합니다. 왜 환불하는데 수수료떼죠? 이서훈!
-                </div>
-                <div class="faq_title">
-                    결제에 대한 질문입니다.
-                </div>
-                <div class="faq_item">
-                    결제를 신청하는데 왜 100만메소로 결제가 안된다는 거죠? 메이플 무시하나요?
-                </div>
-                <div class="faq_title">
-                    배송에 대한 질문입니다.
-                </div>
-                <div class="faq_item">
-                    배송이 이상합니다. 왠 외국인이 뤽배송이란 사람이 왔어요.
-                </div>
-            </div>
-        </div>
-    </div>
+        <!-- //탭 메뉴 -->
+        <!-- content -->
+		<center>                         
+			<h3 align="center">test님 게시판에 오신것을 환영합니다.&nbsp;&nbsp;&nbsp;<a href="logout.do">로그아웃</a></h3>
+			<h4>총 게시글 : ${totalList}건</h4>
+			<form method='get' action='customer.do'>
+				<table border='1' cellpadding='0' cellspacing='0' width='700'>
+					<tr>
+						<td align='right'>
+							<select name='searchCondition'>
+								<option value='qna_title'>제목
+								<option value='qna_content'>내용
+								<option value='user_id'>작성자
+							</select>
+							<input name='searchKeyword' type='text' value='<%=searchText%>' />
+							<input type="submit" value="검색">
+						</td>
+					</tr>
+				</table>
+			</form>
+			<table border='1' cellpadding='0' cellspacing='0' width='700'>
+				<tr>
+					<th bgcolor="orange" width='100'>번호</th>
+					<th bgcolor="orange" width='200'>제목</th>
+					<th bgcolor="orange" width='150'>작성자</th>
+					<th bgcolor="orange" width='150'>등록일</th>
+				</tr>
+				<c:forEach items="${qnaList}" var="qna">
+					<tr>
+						<td align="center">${qna.qna_id}</td>
+						<td align="left"><a href="#">${qna.qna_title}</a></td>
+						<td align="center">${qna.user_id}</td>
+						<td align="center">${qna.qna_timestamp}</td>
+					</tr>
+				</c:forEach>
+			</table>
+			<br>
+			<a href="insertQna.jsp">새글 등록</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="customer.do">전체글 목록 보기</a>
+		</center>
+		<!-- //content -->
+ </div>
 <%@ include file="../header_footer/footer.jsp"%>
