@@ -17,16 +17,18 @@
 }
 
 #main_link{
-	width:300px;
+	width:250px;
 	height:600px;
 	border: 2px solid orange;
 	float:right;
 }
 
 .main_link_img{
-	width:290px;
+	width:250px;
 	height:100px;
 	text-align: center;
+	margin-top:5px;
+	margin-bottom: 5px;
 }
 .main_link_img >img{
 	width:150px;
