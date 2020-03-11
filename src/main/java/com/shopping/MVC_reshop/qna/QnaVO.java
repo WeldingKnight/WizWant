@@ -3,25 +3,15 @@ package com.shopping.MVC_reshop.qna;
 import java.sql.Date;
 
 public class QnaVO {
-	private String user_id;
-	private String qna_title;
-	private String qna_content;
-	private int reply_id;
-	private Date qna_timestamp;
-	private int qna_id;
+	private String user_id;   //id FK
+	private String qna_title; // 제목
+	private String qna_content; // 내용
+	private int reply_id; // 관리자 답변 id fk
+	private Date qna_timestamp;  // 시간
+	private int qna_id; // 글 번호
+	private int cnt; // 조회수
+	private String kind;  //qna 종류
 	
-	public String getQna_content() {
-		return qna_content;
-	}
-	public void setQna_content(String qna_content) {
-		this.qna_content = qna_content;
-	}
-	public int getReply_id() {
-		return reply_id;
-	}
-	public void setReply_id(int reply_id) {
-		this.reply_id = reply_id;
-	}
 	public String getUser_id() {
 		return user_id;
 	}
@@ -33,6 +23,18 @@ public class QnaVO {
 	}
 	public void setQna_title(String qna_title) {
 		this.qna_title = qna_title;
+	}
+	public String getQna_content() {
+		return qna_content;
+	}
+	public void setQna_content(String qna_content) {
+		this.qna_content = qna_content;
+	}
+	public int getReply_id() {
+		return reply_id;
+	}
+	public void setReply_id(int reply_id) {
+		this.reply_id = reply_id;
 	}
 	public Date getQna_timestamp() {
 		return qna_timestamp;
@@ -46,5 +48,16 @@ public class QnaVO {
 	public void setQna_id(int qna_id) {
 		this.qna_id = qna_id;
 	}
-	
+	public int getCnt() {
+		return cnt;
+	}
+	public void setCnt(int cnt) {
+		this.cnt = cnt;
+	}
+	public String getKind() {
+		return kind;
+	}
+	public void setKind(String kind) {
+		this.kind = kind;
+	}
 }

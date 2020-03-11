@@ -5,7 +5,7 @@
 <%@ page import="com.shopping.MVC_reshop.qna.QnaVO" %>
 <%@ page import="com.shopping.MVC_reshop.qna.QnaDAO" %>
 <%@ page import="java.util.List" %>
-
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <%
 	//스크립트릿 =>자바코드 작성
@@ -76,8 +76,8 @@ QnaDAO qnaDAO = new QnaDAO();
 		<center>                         
 			<h3 align="center">test님 게시판에 오신것을 환영합니다.&nbsp;&nbsp;&nbsp;</h3>
 			<h4>총 게시글 : ${totalList}건</h4>
-			<form method='get' action='customer.do'>
-				<table border='1' cellpadding='0' cellspacing='0' width='700'>
+			<form method='get' action='getQnaList.do'>
+				<table border='1' cellpadding='0' cellspacing='0' width='750'>
 					<tr>
 						<td align='right'>
 							<select name='searchCondition'>
@@ -91,25 +91,29 @@ QnaDAO qnaDAO = new QnaDAO();
 					</tr>
 				</table>
 			</form>
-			<table border='1' cellpadding='0' cellspacing='0' width='700'>
+			<table border='1' cellpadding='0' cellspacing='0' width='750'>
 				<tr>
-					<th bgcolor="orange" width='100'>번호</th>
-					<th bgcolor="orange" width='200'>제목</th>
-					<th bgcolor="orange" width='150'>작성자</th>
-					<th bgcolor="orange" width='150'>등록일</th>
+					<th bgcolor="orange" width='50'>번호</th>
+					<th bgcolor="orange" width='100'>종류</th>
+					<th bgcolor="orange" width='300'>제목</th>
+					<th bgcolor="orange" width='100'>작성자</th>
+					<th bgcolor="orange" width='100'>등록일</th>
+					<th bgcolor="orange" width='100'>조회수</th>
 				</tr>
 				<c:forEach items="${qnaList}" var="qna">
 					<tr>
 						<td align="center">${qna.qna_id}</td>
-						<td align="left"><a href="#">${qna.qna_title}</a></td>
+						<td align="center">${qna.kind}</td>
+						<td align="center"><a href="getQna.do?qna_id=${qna.qna_id}">${qna.qna_title}</a></td>
 						<td align="center">${qna.user_id}</td>
-						<td align="center">${qna.qna_timestamp}</td>
+						<td align="center"><fmt:formatDate value="${qna.qna_timestamp}"  pattern="yy-MM-dd"/></td>
+						<td align="center">${qna.cnt}</td>
 					</tr>
 				</c:forEach>
 			</table>
 			<br>
-			<a href="insertQna.jsp">새글 등록</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<a href="customer.do">전체글 목록 보기</a>
+			<a href="insertQna.do">새글 등록</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="getQnaList.do">전체글 목록 보기</a>
 		</center>
 		<!-- //content -->
  </div>

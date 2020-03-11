@@ -57,39 +57,39 @@ public class QnaDAO {
 	}
 	
 	//글 상세 조회
-//	public QnaVO getBoard(QnaVO vo) {
-//		System.out.println("===> JDBC로 insertBoard() 기능 처리");
-//		QnaVO qna = null;
-//		
-//		try {
-//			conn = JDBCUtil.getConnection();
-//			//해당 게시글 조회수(cnt)에 +1 update 처리
-//			String UPDATE_CNT = "update board set cnt=cnt+1 where seq=?";
-//			pstmt = conn.prepareStatement(UPDATE_CNT);
-//			pstmt.setInt(1, vo.getSeq());
-//			pstmt.executeUpdate();
-//			
-//			//글 상세 가져오기
-//			pstmt = conn.prepareStatement(BOARD_GET);
-//			pstmt.setInt(1, vo.getSeq());
-//			rs=pstmt.executeQuery();
-//			
-//			if(rs.next()) {
-//				qna = new BoardVO();
-//				qna.setSeq(rs.getInt("SEQ"));
-//				qna.setTitle(rs.getString("TITLE"));
-//				qna.setWriter(rs.getString("WRITER"));
-//				qna.setContent(rs.getString("CONTENT"));
-//				qna.setRegDate(rs.getDate("REGDATE"));
-//				qna.setCnt(rs.getInt("CNT"));
-//			}
-//		}catch(Exception e) {
-//			System.out.println("getQna"+e);
-//		}finally {
-//			JDBCUtil.close(rs, pstmt, conn);
-//		}
-//		return board;
-//	}
+	public QnaVO getQna(QnaVO vo) {
+		System.out.println("===> JDBC로 insertBoard() 기능 처리");
+		QnaVO qna = null;
+		
+		try {
+			conn = JDBCUtil.getConnection();
+			//해당 게시글 조회수(cnt)에 +1 update 처리
+			String UPDATE_CNT = "update qna_board set cnt=cnt+1 where qna_id=?";
+			pstmt = conn.prepareStatement(UPDATE_CNT);
+			pstmt.setInt(1, vo.getQna_id());
+			pstmt.executeUpdate();
+			
+			//글 상세 가져오기
+			pstmt = conn.prepareStatement(QNA_GET);
+			pstmt.setInt(1, vo.getQna_id());
+			rs=pstmt.executeQuery();
+			
+			if(rs.next()) {
+				qna = new QnaVO();
+				qna.setQna_id(rs.getInt("QNA_ID"));
+				qna.setQna_title(rs.getString("QNA_TITLE"));
+				qna.setUser_id(rs.getString("USER_ID"));
+				qna.setQna_content(rs.getString("QNA_CONTENT"));
+				qna.setQna_timestamp(rs.getDate("QNA_TIMESTAMP"));
+				qna.setCnt(rs.getInt("CNT"));
+			}
+		}catch(Exception e) {
+			System.out.println("getQna() : "+e);
+		}finally {
+			JDBCUtil.close(rs, pstmt, conn);
+		}
+		return qna;
+	}
 	
 	// 글등록
 	public void insertQna(QnaVO vo){
@@ -113,7 +113,7 @@ public class QnaDAO {
 	
 	//전체 게시글 불러오기
 	public List<QnaVO> getQnaList(String searchField, String searchText){
-		System.out.println("===> JDBC로 getBoardList() 기능 처리");
+		System.out.println("===> JDBC로 getQnaList() 기능 처리");
 		
 		List<QnaVO> qnaList = new ArrayList<QnaVO>(); // 가변 배열 객체 생성
 		
@@ -130,9 +130,9 @@ public class QnaDAO {
 				pstmt = conn.prepareStatement(QNA_GET_LIST);
 			}else {
 			//조건이 들어오지 않을 시 where가 없으므로, 전체 불러오기가 됩니다.
-			pstmt = conn.prepareStatement(QNA_GET);
-			System.out.println(QNA_GET);
-			System.out.println("3");
+				pstmt = conn.prepareStatement(QNA_GET);
+				System.out.println(QNA_GET);
+				System.out.println("3");
 			}
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
@@ -143,6 +143,8 @@ public class QnaDAO {
 				qna.setQna_title(rs.getString("QNA_TITLE"));
 				qna.setQna_timestamp(rs.getDate("QNA_TIMESTAMP"));
 				qna.setQna_id(rs.getInt("QNA_ID"));
+				qna.setCnt(rs.getInt("CNT"));
+				qna.setKind(rs.getString("KIND"));
 				qnaList.add(qna);
 
 				System.out.println("title : "+qna.getQna_title());

@@ -20,16 +20,27 @@
 			<table border='1' cellpadding='0' cellspacing='0'>
 				<tr>
 					<td bgcolor="orange" width="70">제목 :</td>
-					<td align="left"><input type='text' name='title' size='38'></td>
+					<td align="left"><input type='text' name='qna_title' size='38'></td>
 				</tr>
 				<tr>
 					<td bgcolor="orange" width="70">작성자 :</td>
-					<td>${userName}</td>
-					<input type='hidden' name='writer' value='${userName}'/>
+					<td>${userId}</td>
+					<input type='hidden' name='user_id' value='${userId}'/>
+				</tr>
+				<tr>
+					<td bgcolor="orange" width="70">종류:</td>
+					<td>
+						<select>
+							<option>주문결제</option>
+							<option>배송문의</option>
+							<option>반품환불</option>
+							<option>상품문의</option>
+						</select>
+					</td>
 				</tr>
 				<tr>
 					<td bgcolor='orange' width='70'>내용 :</td>
-					<td align='left'><textarea name='content' rows='10' cols='40'></textarea></td>
+					<td align='left'><textarea name='qna_content' rows='10' cols='40'></textarea></td>
 				</tr>
 				<tr>
 					<td colspan='2' align='center'>
