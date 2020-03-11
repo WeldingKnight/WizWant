@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,36 +29,46 @@
 <script src="./js/product_detail.js"></script>
 <script src="./js/customer.js"></script>
 </head>
-<body id="header_body" style="background-color: seashell">
+<body id="header_body" >
 	<div id="full_box">
 		<header id="main_header">
-			<h1 id="header_name"><a href="wiz_want.do">WIZ*WANT</a></h1>
+			<h1 id="header_name">
+				<a href="wiz_want.do">WIZ*WANT</a>
+			</h1>
 			<div id="header_menu_cover">
 				<div id="header_menu">
-				
+
 					<div class="header_menu_box">
-						<a href="product.do?Classification=${'digital'}" ><img src="./img/main_img/digital_img.png"
-							alt="디지털이미지" >디지털</a>
+						<a href="product.do?Classification=${'digital'}"><img
+							src="./img/main_img/digital_img.png" alt="디지털이미지">디지털</a>
 					</div>
 					<div class="header_menu_box">
-						<a href="product.do?Classification=${'tel'}"><img src="./img/main_img/tel_img.svg"
-							alt="통신이미지">통신</a>
+						<a href="product.do?Classification=${'tel'}"><img
+							src="./img/main_img/tel_img.svg" alt="통신이미지">통신</a>
 					</div>
 					<div class="header_menu_box">
 						<a href="product.do?Classification=${'clothing'}"><img
 							src="./img/main_img/clothing_img.svg" alt="패션의류이미지">패션*의류</a>
 					</div>
 					<div class="header_menu_box">
-						<a href="product.do?Classification=${'grocery'}"><img src="./img/main_img/digital_img.png"
-							alt="잡화이미지">잡화</a>
+						<a href="product.do?Classification=${'grocery'}"><img
+							src="./img/main_img/digital_img.png" alt="잡화이미지">잡화</a>
 					</div>
 				</div>
-				
+
 			</div>
 			<div id="header_a_tag">
-					<a href="login.do" >로그인</a>
-					<a href="logout.do" >로그아웃</a> 
-					<a href="insert.do">회원가입</a> 
-					<a href="mypage.do">마이페이지</a>
-				</div>
+
+				<c:choose>
+					<c:when test="${empty sessionScope.loginuser}">
+						<a href="login.do">로그인</a>
+						<a href="insert.do">회원가입</a>
+					</c:when>
+					<c:otherwise>
+						 ${sessionScope.loginuser.id}님 
+						<a href="logout.do">로그아웃</a>
+						<a href="mypage.do">마이페이지</a>
+					</c:otherwise>
+				</c:choose>
+			</div>
 		</header>

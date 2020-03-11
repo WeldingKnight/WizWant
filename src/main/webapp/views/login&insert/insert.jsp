@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>회원가입</title>
 </head>
-<body>
+<body id="insert_body">
 	<div id="insert_wrap">
 		<h1 style="font-size: 80px; color: dodgerblue;">WIZ*WANT</h1>
 

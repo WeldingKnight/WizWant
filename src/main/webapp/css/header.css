@@ -7,10 +7,11 @@ a{
 #header_body{
 	width:1200px;
 	margin: 0 auto;
-	background-color: blue;
+
 }
 #header_a_tag > a{
 	 color: white;
+	 font-weight: bold ;
 }
 
 

@@ -5,8 +5,7 @@
 <%@ page import="com.shopping.MVC_reshop.qna.QnaVO" %>
 <%@ page import="com.shopping.MVC_reshop.qna.QnaDAO" %>
 <%@ page import="java.util.List" %>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+
 <%
 	//스크립트릿 =>자바코드 작성
 request.setCharacterEncoding("UTF-8");

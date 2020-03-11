@@ -1,9 +1,9 @@
 @CHARSET "UTF-8";
 
-body {
+#insert_body {
 	width: 1200px;
 	margin: 0 auto;
-	background-color: seashell;
+
 }
 
 #insert_wrap {

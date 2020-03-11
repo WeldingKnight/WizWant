@@ -41,7 +41,7 @@ public class LoginOutController {
 
 		if (user != null) {
 			
-			session.setAttribute("userId", user.getId());
+			session.setAttribute("loginuser", user);
 //			session.setAttribute("userRole", user.getRole());
 		
 			System.out.println("로그인성공");
@@ -49,7 +49,7 @@ public class LoginOutController {
 			return "/wiz_want.do";
 		} else {
 			System.out.println("로그인실패");
-			return "/views/login&insert/login.jsp";
+			return "/views/login&insert/login_fail.jsp";
 		
 		}
 	}
@@ -58,8 +58,10 @@ public class LoginOutController {
 	public String logout(HttpSession session) {
 
 		System.out.println("로그아웃 실행");
-
-		session.invalidate(); // 세션에 저장된 로그인 정보 지움
+		
+		if (session!=null) {
+			session.invalidate(); // 세션의 기능을 중단시키고무효화 시키는것
+		}
 
 		return "/wiz_want.do";
 
