@@ -25,15 +25,6 @@ public class ProductController {
 		return "/views/product/product.jsp";
 	}
 	
-	
-	
-	@RequestMapping("/product.do" )
-	public String getProduct(ProductVO vo, ProductDAO productDAO, Model model) {
-		model.addAttribute("productList",productDAO.getProduct(vo));
-		
-		System.out.println("상품 페이지로 이동");
-		return "getBoardList.jsp";
-	}
 	//글 상세 보기
 	@RequestMapping("/product_detail.do")
 	public String getproduct_detail(ProductVO vo, ProductDAO productDAO, Model model) {
