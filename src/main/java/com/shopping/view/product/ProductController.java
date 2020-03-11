@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.shopping.MVC_reshop.product.ProductDAO;
 import com.shopping.MVC_reshop.product.ProductVO;
@@ -34,14 +35,23 @@ public class ProductController {
 		return "/views/product/product_detail.jsp";
 	}
 	
-	//글 등록
-	@RequestMapping("/product_sale.do")
-	public String insertProduct(ProductVO vo, ProductDAO productDAO) {
-		productDAO.insertProduct(vo);
+	//글 등록 페이지로 이동
+	@RequestMapping(value ="/product_sale.do",method = RequestMethod.GET)
+	public String insertProduct() {
+//		productDAO.insertProduct(vo);
 		
 		System.out.println("판매 등록 페이지로 이동");
-		return "/views/product/product.jsp";
+		return "/views/product/product_sale.jsp";
 	}
+	
+	//글 등록 페이지로 이동
+		@RequestMapping(value ="/product_sale.do",method = RequestMethod.POST)
+		public String insertProduct(ProductVO vo, ProductDAO productDAO) {
+//			productDAO.insertProduct(vo);
+			
+			System.out.println("판매 등록 후 상품 전체 페이지로 이동");
+			return "/views/product/product.jsp";
+		}
 	
 	//글 수정
 	@RequestMapping("/updateProduct.do")

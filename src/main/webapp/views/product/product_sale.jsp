@@ -6,7 +6,8 @@
 <%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
     <div id="product_sale_wrap">
     <h2 align="center">상품 등록 페이지</h2>
-        <form id="product_sale">
+    
+        <form id="product_sale" action="product_sale.do" method="post">
             <table id="product_sale_table">
                 <tr id="product_sale_contents" >
                     <td >상품 분류</td>

@@ -36,26 +36,27 @@
 				
 					<div class="header_menu_box">
 						<a href="product.do?Classification=${'digital'}" ><img src="./img/main_img/digital_img.png"
-							alt="디지털이미지" ></a>
+							alt="디지털이미지" >디지털</a>
 					</div>
 					<div class="header_menu_box">
 						<a href="product.do?Classification=${'tel'}"><img src="./img/main_img/tel_img.svg"
-							alt="통신이미지"></a>
+							alt="통신이미지">통신</a>
 					</div>
 					<div class="header_menu_box">
 						<a href="product.do?Classification=${'clothing'}"><img
-							src="./img/main_img/clothing_img.svg" alt="패션의류이미지"></a>
+							src="./img/main_img/clothing_img.svg" alt="패션의류이미지">패션*의류</a>
 					</div>
 					<div class="header_menu_box">
 						<a href="product.do?Classification=${'grocery'}"><img src="./img/main_img/digital_img.png"
-							alt="잡화이미지"></a>
+							alt="잡화이미지">잡화</a>
 					</div>
 				</div>
-				<div id="header_a_tag">
+				
+			</div>
+			<div id="header_a_tag">
 					<a href="login.do" >로그인</a>
 					<a href="logout.do" >로그아웃</a> 
 					<a href="insert.do">회원가입</a> 
 					<a href="mypage.do">마이페이지</a>
 				</div>
-			</div>
 		</header>
