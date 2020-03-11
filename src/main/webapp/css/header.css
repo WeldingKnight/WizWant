@@ -1,12 +1,16 @@
 @charset "UTF-8";
 
-header_a_tag> a{
+a{
 	text-decoration: none;
-}
+	}
+
 #header_body{
 	width:1200px;
 	margin: 0 auto;
 	background-color: blue;
+}
+#header_a_tag > a{
+	 color: white;
 }
 
 
@@ -47,7 +51,7 @@ header_a_tag> a{
 	width: 500px;
 	border:1px solid red;
 	margin:0 auto;
-
+	height:100px;
 	text-align: center;
 }
 
@@ -67,6 +71,6 @@ header_a_tag> a{
 #header_a_tag{
 	width:300px;
 	margin: 0 auto;
-	border: 2px solid white;
+
 	float:right;
 }

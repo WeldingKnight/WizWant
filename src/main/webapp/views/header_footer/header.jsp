@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="./css/product_detail.css">
 <link rel="stylesheet" href="./css/product_sale.css">
 <link rel="stylesheet" href="./css/customer.css">
+<link rel="stylesheet" href="./css/mypage.css">
 
 <!-- ------------------------------------------------------- -->
 <!-- 사이트 jquery 스크립트 부분 -->
@@ -51,7 +52,8 @@
 					</div>
 				</div>
 				<div id="header_a_tag">
-					<a href="login_page.do">로그인</a> 
+					<a href="login.do" >로그인</a>
+					<a href="logout.do" >로그아웃</a> 
 					<a href="insert.do">회원가입</a> 
 					<a href="mypage.do">마이페이지</a>
 				</div>

@@ -1,4 +1,5 @@
-@charset "EUC-KR";
+@charset "UTF-8";
+
 
 body{
 	width:1200px;
@@ -7,6 +8,40 @@ body{
 	 background-color: seashell;
 }
 #login_wrap{
+	margin-top:50px;
 	width:900px;
 	display: inline-block;
+	background-image: url('../img/main_img/main_back1.jpg');
+}
+
+#login_wrap >h1>a{
+	font-family: fantasy;
+	text-decoration: none;
+	color: white;
+}
+
+
+
+
+#login_form{
+	margin: 0 auto;
+	text-align: center;
+ 	display: inline-block;
+ 	
+	
+}
+#login_form >table{
+	width:500px;
+	height:500px;
+	margin-bottom: 100px;
+}
+
+.login_name{
+	font-size: 45px;
+}
+
+.login_input{
+	width:300px;
+	height:100px;
+	font-size: 50px;
 }
