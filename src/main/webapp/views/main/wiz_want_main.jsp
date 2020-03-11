@@ -38,16 +38,16 @@
 	<!-- 중고거래사이트 링크부분 -->
 	<aside id="main_link">
 		<div class="main_link_img">
-			<img src="./img/main_img/jungonara.png">
+			<img src="./img/main_img/jungonara.png" alt="중고나라 이미지">
 		</div>
 		<div class="main_link_img">
-			<img src="./img/main_img/auction.png">
+			<img src="./img/main_img/auction.png" alt="옥션 중고장터 이미지">
 		</div>
 		<div class="main_link_img">
-			<img src="./img/main_img/ebay.jpg">
+			<img src="./img/main_img/ebay.png" alt="ebay이미지">
 		</div>
 		<div class="main_link_img">
-			<img src="./img/main_img/gmarket.png">
+			<img src="./img/main_img/gmarket.png" alt="gmarket 이미지">
 		</div>
 	</aside>
 
