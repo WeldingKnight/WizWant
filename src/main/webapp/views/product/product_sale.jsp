@@ -43,7 +43,7 @@
                 </tr>
                 <tr id="product_sale_button">
                     <td>
-                        <input id="product_sale_input" type="submit" alt="상품등록" value="상품등록" />
+                        <input id="product_sale_input" type="submit" alt="상품등록" value="상품등록" name="product_sale()"/>
                     </td>
                 </tr>
                 
