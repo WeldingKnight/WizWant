@@ -40,7 +40,7 @@ public class ProductController {
 		productDAO.insertProduct(vo);
 		
 		System.out.println("판매 등록 페이지로 이동");
-		return "/views/product/product_sale.jsp";
+		return "/views/product/product.jsp";
 	}
 	
 	//글 수정

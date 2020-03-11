@@ -39,7 +39,6 @@
                     <td><input type="date"></td>
                     <td><input type="number" name="goods_quantity"></td>
                     <td><textarea rows="10" cols="60" style="resize: none;" name="goods_detail"></textarea></td>
-                    <!-- <td><input type="text" readonly></td> -->
                     <td>${userId}<input type='hidden' name="seller_id"  value="${userId}" /></td>
                 </tr>
                 <tr id="product_sale_button">
