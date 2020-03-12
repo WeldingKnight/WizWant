@@ -29,6 +29,7 @@ public class UserController {
 		
 		System.out.println("이름: "+vo.getName());
 		
+		
 		dao.insertUser(vo);
 		
 		System.out.println("회원가입 완료 후 main페이지로 이동");

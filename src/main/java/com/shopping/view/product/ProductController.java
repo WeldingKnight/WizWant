@@ -50,6 +50,7 @@ public class ProductController {
 		public String insertProduct(ProductVO vo, ProductDAO productDAO) {
 			productDAO.insertProduct(vo);
 			
+			System.out.println(productDAO.getProduct(vo));
 			System.out.println("판매 등록 후 상품 전체 페이지로 이동");
 			return "/views/product/product.jsp";
 		}

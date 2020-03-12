@@ -13,7 +13,7 @@ public class ProductDAO {
 	private ResultSet rs = null;
 	
 	//SQL 명령어
-	private final String BOARD_INSERT = "insert into goods(seller_id, goods_name, goods_detail, goods_quantity,goods_price,goods_id,goods_image,goods_validate) values(?,?,?,?,?,goods_seq.nextval,?,'')";
+	private final String BOARD_INSERT = "insert into goods(seller_id, goods_name, goods_detail, goods_quantity,goods_price,goods_id,goods_image,goods_validate) values(?,?,?,?,?,goods_seq.nextval,?,'N')";
 	private final String BOARD_UPDATE = "update goods set goods_name=?, goods_detail=?, goods_quantity=?, goods_price=?, goods_image=?, goods_validate=?  where goods_id=?";	
 	private final String BOARD_DELETE = "delete goods where goods_id=?";	
 	private final String BOARD_GET = "select * from goods where seq=?";
@@ -33,6 +33,8 @@ public class ProductDAO {
 			stmt.setInt(5, vo.getGoods_price());
 			stmt.setString(6, vo.getGoods_image());	
 			stmt.executeUpdate();
+			
+			System.out.println("상품등록 내용 확인: "+vo.toString());
 			
 		}catch(Exception e) {
 			System.out.println("insertProduct()"+e);
