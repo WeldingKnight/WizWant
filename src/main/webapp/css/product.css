@@ -1,6 +1,6 @@
 #detail_navMenu, #detail_navMenu ul, #detail_navMenu ul ul, #detail_navMenu ul li, #detail_navMenu li { 
 	
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     list-style:none;
     text-decoration: none;
@@ -62,5 +62,13 @@
     margin: 10px;
 }
 #detail_rap {
+	margin: 0 auto;
 	height: 800px;
+}
+
+/*========================================*/
+
+#product_section{
+	
+	margin: 0 auto;
 }

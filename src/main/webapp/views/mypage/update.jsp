@@ -13,7 +13,7 @@
 			</tr>
 			<tr>
 				<td><input style="width: 300px; height: 30px; font-size: 30px;"
-					type="text" id="id" name="id" maxlength="41" value="입력했던 아이디"></td>
+					type="text" id="id" name="id" maxlength="41" value="${sessionScope.loginuser.id}"></td>
 			</tr>
 			<tr>
 				<td>비밀번호</td>
@@ -34,7 +34,7 @@
 			</tr>
 			<tr>
 				<td><input style="width: 300px; height: 30px; font-size: 30px;"
-					type="text" id="name" name="name" maxlength="41" value="입력했던 이름"></td>
+					type="text" id="name" name="name" maxlength="41" value="${sessionScope.loginuser.name}"></td>
 			</tr>
 			<tr>
 				<td>성별</td>

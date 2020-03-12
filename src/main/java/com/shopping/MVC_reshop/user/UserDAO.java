@@ -15,9 +15,12 @@ public class UserDAO {
 	private PreparedStatement stmt =  null;
 	private ResultSet rs = null;
 	
-	private final String USER_GET = "select * from member where id=? and pwd =?";
+	//SQL문 정리
+	private final String USER_GET = "select * from member where id=? and pwd =?"; //로그인
+	private final String USER_insert= "insert into member (NAME,id,pwd,email,address) values(?,?,?,?,?)"; //회원가입
+	private final String USER_update ="update member set name=? pwd=? where id=?";  //회원정보수정
 	
-	public UserVO getUser(UserVO vo) {
+	public UserVO getUser(UserVO vo) {  //로그인메서드
 		UserVO user = null;
 		
 		try {
@@ -25,8 +28,8 @@ public class UserDAO {
 			conn = JDBCUtil.getConnection();
 			stmt = conn.prepareStatement(USER_GET);
 			
-			System.out.println(vo.getId());
-			System.out.println(vo.getPassword());
+			
+			System.out.println(vo.loginString()); //로그인 정보 확인
 			
 			stmt.setString(1, vo.getId());
 			stmt.setString(2, vo.getPassword());
@@ -51,7 +54,7 @@ public class UserDAO {
 	
 	//SQL 명령어
 	
-	private final String USER_insert= "insert into member (NAME,id,pwd,email,address) values(?,?,?,?,?)";
+	
 		
 	public void insertUser(UserVO vo) {
 			
@@ -69,7 +72,7 @@ public class UserDAO {
 				pstmt.setString(5, vo.getAdress());
 				pstmt.executeUpdate();
 				
-				System.out.println("UserDAO 회원메서드 내용확인: "+vo.toString());
+				System.out.println("UserDAO 회원가입 데이터 내용확인: "+vo.toString());
 				
 
 			} catch (Exception e) {

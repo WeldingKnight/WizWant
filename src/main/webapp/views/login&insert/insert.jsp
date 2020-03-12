@@ -10,7 +10,7 @@
 </head>
 <body id="insert_body">
 	<div id="insert_wrap">
-		<h1 style="font-size: 80px; color: dodgerblue;">WIZ*WANT</h1>
+		<h1 style="font-size: 80px; color: dodgerblue;"><a href="wiz_want.do">WIZ*WANT</a></h1>
 
 		<h1 style="font-size: 30px; color: dodgerblue;">회원가입</h1>
 
@@ -62,7 +62,7 @@
 					<td>성별</td>
 				</tr>
 				<tr>
-					<td><select name="sex"
+					<td><select name="sex" id="sex"
 						style="width: 300px; height: 30px; font-size: 20px;">
 							<option value="none">성별</option>
 							<option value="남">남</option>
@@ -73,28 +73,17 @@
 					<td>생년월일</td>
 				</tr>
 				<tr>
-					<td><input style="width: 90px; height: 30px; font-size: 20px;"
-						type="text" id="birth_y" name="birth" accesskey="L" maxlength="41">&nbsp;
-						<select style="width: 90px; height: 30px; font-size: 20px;"
-						name="birth_m" id="birth_m">
-							<script>
-								for (i = 1; i <= 12; i++) {
-									document
-											.write("<option>" + i + "</option>");
-								}
-							</script>
-					</select>&nbsp; <input style="width: 90px; height: 30px; font-size: 20px;"
-						type="text" id="birth_d" name="birth_d" accesskey="L"
-						maxlength="41"></td>
+					<td>
+						<input style="width: 300px; height: 30px; font-size: 20px;" type="text" id="birth" name="birth" accesskey="L" maxlength="41">
+					</td>
 				</tr>
-
 				<tr>
 					<td>주소</td>
 				</tr>
 				<tr>
-					<td><input
-						style="width: 300px; height: 30px; font-size: 20px;" type="text"
-						id="adress" name="adress" accesskey="L" maxlength="41" ></td>
+					<td>
+						<input style="width: 300px; height: 30px; font-size: 20px;" type="text" id="adress" name="adress" accesskey="L" maxlength="41" >
+					</td>
 				</tr>
 				<tr>
 					<td><input id="insert_input" type="submit" alt="회원가입"

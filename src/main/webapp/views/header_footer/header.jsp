@@ -3,7 +3,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
-<html>
+<html style="background-image: ">
+<%
+	request.setCharacterEncoding("UTF-8");
+	String categoryId =  request.getParameter("Classification");
+	request.setAttribute("categoryId", categoryId);
+%>
 <head>
 
 <meta charset="UTF-8">
@@ -29,7 +34,7 @@
 <script src="./js/product_detail.js"></script>
 <script src="./js/customer.js"></script>
 </head>
-<body id="header_body" >
+<body id="header_body"  onload="takeId('${categoryId}')">
 	<div id="full_box">
 		<header id="main_header">
 			<h1 id="header_name">
@@ -70,5 +75,6 @@
 						<a href="mypage.do">마이페이지</a>
 					</c:otherwise>
 				</c:choose>
+				<a href="getQnaList.do">고객센터</a>
 			</div>
 		</header>

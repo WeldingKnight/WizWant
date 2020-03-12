@@ -41,7 +41,7 @@ public class QnaDAO {
 		}
 	}
 	//글 삭제
-	public void deleteBoard(QnaVO vo) {
+	public void deleteQna(QnaVO vo) {
 		System.out.println("===> JDBC로 deleteQna() 기능 처리");
 		
 		try {
@@ -121,7 +121,7 @@ public class QnaDAO {
 			conn = JDBCUtil.getConnection();
 			System.out.println("1");
 			//핵심 부분] = > 전체 목록 가져오기 & 검색 조건에 맞는 것만 가져오기
-			String where = "";
+			String where = ""; // 문자열 where 변수 선언(문자검색용 스트링 쿼리용)
 			if(!searchField.equals("") && !searchText.equals("")) {
 				where = "where "+searchField+" like '%" + searchText + "%'";
 				String QNA_GET_LIST = "select * from qna_board "+where+" order by qna_id desc";
@@ -134,6 +134,7 @@ public class QnaDAO {
 				System.out.println(QNA_GET);
 				System.out.println("3");
 			}
+			
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				System.out.println("4");

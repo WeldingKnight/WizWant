@@ -1,35 +1,4 @@
-
-
-$(function(){
-	function setDiv(name, index){
-		var html = '';
-		for(var i=0;i<tmpObj.middle[index].length; i++){
-    		html += '<li class="'+name+i+'"><a href="#">' +tmpObj.middle[index][i] + '</a></li>\n';
-    	}
-		$('#detail_sort2 > .'+name).html(html);   
-	    $("#detail_sort2 > ul").css("display", "none");
-	    $("#detail_sort2 > ."+name).css("display", "block");
-	    $("#detail_sort3 > ul").css("display", "none");
-	    $("#detail_sort4 > ul").css("display", "none");
-	    $("#detail_sort5 > ul").css("display","none");
-	    
-	    $("#detail_sort1 > ul li").css("background-color","dodgerblue");
-	    $("#"+name).css("background-color","#e8491d");
-	}
-	
-	function setDiv2(name, index) {
-		var html = '';
-		$("#detail_sort3 > ul").css("display","none");
-    	for(var i=0;i<tmpObj.small[index].length; i++){
-    		html += '<li class="'+name+i+'"><a href="#">' +tmpObj.small[index][i] + '</a></li>\n';
-    		
-    	}
-    	$('#detail_sort3 > .'+name).html(html);
-        $("#detail_sort3 > ."+name).css("display", "block");
-        $("#detail_sort4 > ul").css("display", "none");
-        $("#detail_sort5 > ul").css("display","none");
-	}
-	
+function takeId(id) {
 	//json으로 nav텝 목록 담기
 	var tmpObj = new Object();
 	var tmpArr;
@@ -66,9 +35,63 @@ $(function(){
 	tmpArr = ['10이하','10-20','20-30','30-40','40-50','50-60','60-70','70-80','80-90','90-100','100이상'];
 	tmpObj.price     = tmpArr;
 	 
-	
-	console.log( "json object : " + JSON.stringify(tmpObj));
+		
+	//console.log( "json object : " + JSON.stringify(tmpObj));
+	//json 목록 출력
 	var Json = JSON.stringify(tmpObj);
+	
+	function setDiv(name, index){
+		var html = '';
+		for(var i=0;i<tmpObj.middle[index].length; i++){
+    		html += '<li class="'+name+i+'"><a href="#">' +tmpObj.middle[index][i] + '</a></li>\n';
+    	}
+		$('#detail_sort2 > .'+name).html(html);   
+	    $("#detail_sort2 > ul").css("display", "none");
+	    $("#detail_sort2 > ."+name).css("display", "block");
+	    $("#detail_sort3 > ul").css("display", "none");
+	    $("#detail_sort4 > ul").css("display", "none");
+	    $("#detail_sort5 > ul").css("display","none");
+	    
+	    $("#detail_sort1 > ul li").css("background-color","dodgerblue");
+	    $("#"+name).css("background-color","#e8491d");
+	}
+	
+	function setDiv2(name, index) {
+		var html = '';
+		$("#detail_sort3 > ul").css("display","none");
+    	for(var i=0;i<tmpObj.small[index].length; i++){
+    		html += '<li class="'+name+i+'"><a href="#">' +tmpObj.small[index][i] + '</a></li>\n';
+    	}
+    	$('#detail_sort3 > .'+name).html(html);
+        $("#detail_sort3 > ."+name).css("display", "block");
+        $("#detail_sort4 > ul").css("display", "none");
+        $("#detail_sort5 > ul").css("display","none");
+	}
+	
+	
+	var idV = "";
+	console.log(id);
+	
+	if(id == "digital"){
+		$("#detail_category").css("display", "block");
+		idV = "detail_digital";
+		setDiv("detail_digital", 0);
+	}else if( id == "tel"){
+		$("#detail_category").css("display", "block");
+		idV = "detail_mobile";
+		setDiv("detail_mobile", 1);
+	}else if( id == "clothing"){
+		$("#detail_category").css("display", "block");
+		idV = "detail_clothes";
+		setDiv("detail_clothes", 2);
+	}else if( id == "grocery"){
+		$("#detail_category").css("display", "block");
+		idV = "detail_fashion";
+		setDiv("detail_fashion", 3);
+	}
+
+
+$(function(){
 	// 첫 카테고리에서 메뉴 선택시 메뉴 보이기
     $('#detail_category').children().click(function(){
 		var idV = $(this).attr("id"); //id뽑아오기 digital
@@ -158,6 +181,6 @@ $(function(){
 	});
     $('#detail_sort1').hover(function() {
         $("#detail_category").css("display", "block");
-    });
-    
+    });   
 });
+};

@@ -8,14 +8,10 @@
 		    	<footer>
 		    		<hr>
 		    		<div id="copy">
-		    			COMPANY INFO
-						COMPANY (주)형지에스콰이아 | OWNER 권영숭 | CPO 이세희
-						TEL 1800-8635 | MAIL help@hyungji.com
-						ADDRESS 서울특별시 강남구 개포로 208 (개포동) 형지빌딩
-						BUSINESS LICENCE 218-81-12066
-						MAIL-ORDER LICENCE 제2015-서울강남-03867호 [사업자정보확인]
-						HOSTING BY 심플렉스인터넷(주) Copyright (c) (주)형지에스콰이아 . All rights reserved
-		    		
+		    			Project INFO
+						COMPANY (주)한국인재개발원| Project-Leader:강희수 | Team members: 박성진 변성호 손명우 이서훈 윤의태 
+						TEL 02--000-0000 | <br>MAIL: audentia16@naver.com |
+						ADDRESS 서울특별시 금천구 가산로 IT캐슬 2차
 		    		</div>
 		    	</footer>
 		    <!-- //footer -->
