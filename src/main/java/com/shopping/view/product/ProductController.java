@@ -36,11 +36,10 @@ public class ProductController {
 		return "/views/product/product_detail.jsp";
 	}
 	
-	//글 등록 페이지로 이동
+	//상품 등록 페이지로 이동
 	@RequestMapping(value ="/product_sale.do",method = RequestMethod.GET)
 	public String insertProduct() {
-//		productDAO.insertProduct(vo);
-		
+
 		System.out.println("판매 등록 페이지로 이동");
 		return "/views/product/product_sale.jsp";
 	}

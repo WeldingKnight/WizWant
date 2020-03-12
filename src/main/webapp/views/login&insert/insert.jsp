@@ -59,6 +59,14 @@
 						id="email" name="email" accesskey="L" maxlength="41"></td>
 				</tr>
 				<tr>
+					<td>전화번호</td>
+				</tr>
+				<tr>
+					<td><input
+						style="width: 300px; height: 30px; font-size: 30px;" type="tel"
+						id="tel" name="tel" accesskey="L" maxlength="41"></td>
+				</tr>
+				<tr>
 					<td>성별</td>
 				</tr>
 				<tr>
