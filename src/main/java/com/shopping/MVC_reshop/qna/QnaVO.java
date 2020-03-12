@@ -9,8 +9,8 @@ public class QnaVO {
 	private int reply_id; // 관리자 답변 id fk
 	private Date qna_timestamp;  // 시간
 	private int qna_id; // 글 번호
-	private int cnt; // 조회수
-	private String kind;  //qna 종류
+	private int qna_views; // 조회수
+	private String qna_kind;  //qna 종류
 	
 	public String getUser_id() {
 		return user_id;
@@ -48,16 +48,16 @@ public class QnaVO {
 	public void setQna_id(int qna_id) {
 		this.qna_id = qna_id;
 	}
-	public int getCnt() {
-		return cnt;
+	public int getQna_views() {
+		return qna_views;
 	}
-	public void setCnt(int cnt) {
-		this.cnt = cnt;
+	public void setQna_views(int qna_views) {
+		this.qna_views = qna_views;
 	}
-	public String getKind() {
-		return kind;
+	public String getQna_kind() {
+		return qna_kind;
 	}
-	public void setKind(String kind) {
-		this.kind = kind;
+	public void setQna_kind(String qna_kind) {
+		this.qna_kind = qna_kind;
 	}
 }

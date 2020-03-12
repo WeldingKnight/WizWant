@@ -5,26 +5,22 @@
 <%@ page import="com.shopping.MVC_reshop.qna.QnaVO" %>
 <%@ page import="com.shopping.MVC_reshop.qna.QnaDAO" %>
 <%@ page import="java.util.List" %>
-<%@ include file="../header_footer/header.jsp"%>
 
 <%
 	//스크립트릿 =>자바코드 작성
 request.setCharacterEncoding("UTF-8");
 
 %>    
+<%@ include file="../header_footer/header.jsp"%>
    <center>
    <h1>글 상세 보기</h1>
    <hr>
-   <form action="getUpdateQna.do" method="POST">
-      <input name="qna_id" type="hidden" value="${qna.qna_id}" readonly/>
+   <form action="updateQna.do" method="POST">
+      <input name="seq" type="hidden" value="${qna.qna_id}"/>
       <table border='1' cellpadding='0' cellspacing='0'>
          <tr>
             <td bgcolor="orange" width="70">제목 </td>
-            <td align="left"><input name="title" type="text" value="${qna.qna_title}" readonly></td>
-         </tr>
-         <tr>
-         	<td bgcolor="orange">종류</td>
-         	<td align="left">${qna.qna_kind}</td>
+            <td align="left"><input name="title" type="text" value="${qna.qna_title}"></td>
          </tr>
          <tr>
             <td bgcolor="orange">작성자 </td>
@@ -32,7 +28,7 @@ request.setCharacterEncoding("UTF-8");
          </tr>
          <tr>
          	<td bgcolor="orange">내용</td>
-         	<td align='center'><p name="content" rows="10" cols="40">${qna.qna_content}</p></td>
+         	<td align='center'><textarea name="content" rows="10" cols="40">${qna.qna_content}</textarea></td>
          </tr>
          <tr>
             <td bgcolor="orange">등록일</td>
@@ -40,7 +36,7 @@ request.setCharacterEncoding("UTF-8");
          </tr>
          <tr>
             <td bgcolor="orange">조회수</td>
-            <td align="left">${qna.qna_views}</td>
+            <td align="left">${qna.cnt}</td>
          </tr>
          <tr>
             <td colspan="2" align="center">
@@ -50,18 +46,8 @@ request.setCharacterEncoding("UTF-8");
       </table>
    </form>
    <hr>
-   <a href='insertQna.jsp'>새글 등록</a>&nbsp;&nbsp;&nbsp;
-   <c:choose>
-	 <c:when test="${sessionScope.loginuser==(qna.user_id || 'admin' )}">
-	 	<a href='deleteQna.do?qna_id=${qna.qna_id}'>글 삭제</a>&nbsp;&nbsp;&nbsp;		
-	 </c:when>
-	 <!--<c:set var="name" value="홍길동" /> 
-     <c:if test="${name eq '홍길동'}">
-	   <c:out value="${str}" />
-	 </c:if>-->
-	 <c:otherwise>
-     </c:otherwise>
-   </c:choose>      
+   <a href='insertQna.jsp'>글 등록</a>&nbsp;&nbsp;&nbsp;
+   <a href='deleteQna.do?qna_id=${qna.qna_id}'>글 삭제</a>&nbsp;&nbsp;&nbsp;
    <a href='getQnaList.do'>전체 게시판</a>
    </center>
 <%@ include file="../header_footer/footer.jsp"%>

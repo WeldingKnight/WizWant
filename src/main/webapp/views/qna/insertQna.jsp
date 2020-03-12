@@ -1,18 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("UTF-8"); %>
 
 <%@ page import="com.shopping.MVC_reshop.qna.QnaVO" %>
 <%@ page import="com.shopping.MVC_reshop.qna.QnaDAO" %>
 <%@ page import="java.util.List" %>
-<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>새글 등록하기</title>
-</head>
-<body>
+
+<%
+	//스크립트릿 =>자바코드 작성
+request.setCharacterEncoding("UTF-8");
+
+%>    
+<%@ include file="../header_footer/header.jsp"%>
 	<center>
 	<h1>QNA 등록</h1>
 	<hr>
@@ -56,5 +55,4 @@
 			<a href='getQnaList.jsp'>게시판 돌아가기</a>
 		</form>
 	</center>
-</body>
-</html>
+<%@ include file="../header_footer/footer.jsp"%>
