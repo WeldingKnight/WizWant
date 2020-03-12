@@ -12,7 +12,7 @@ public static Connection getConnection() throws Exception{
 		try {
 			System.out.println("DB연결시작");
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@192.168.0.17:1521:xe", "scott", "tiger");
+			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@192.168.0.24:1521:xe", "wiz", "1234");
 //			Class.forName("org.h2.Driver");
 //			Connection con = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test", "sa", "");
 			System.out.println("DB연결성공");

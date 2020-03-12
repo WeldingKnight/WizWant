@@ -33,7 +33,7 @@ public class UserController {
 		
 		System.out.println("회원가입 완료 후 main페이지로 이동");
 		
-		return "/wiz_want.do";
+		return "redirect:/wiz_want.do";
 
 	}
 }
