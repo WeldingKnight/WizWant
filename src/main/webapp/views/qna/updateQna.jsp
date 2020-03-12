@@ -6,12 +6,18 @@
 <%@ page import="com.shopping.MVC_reshop.qna.QnaDAO" %>
 <%@ page import="java.util.List" %>
 
-<%
-	//스크립트릿 =>자바코드 작성
-request.setCharacterEncoding("UTF-8");
-
-%>    
+<!-- header -->
 <%@ include file="../header_footer/header.jsp"%>
+<!-- //header -->
+
+<!-- 스크립트릿 -->
+	<%
+		//스크립트릿 =>자바코드 작성
+	request.setCharacterEncoding("UTF-8");
+	
+	%>
+<!-- //스크립트릿 -->
+
    <center>
    <h1>글 상세 보기</h1>
    <hr>
@@ -50,4 +56,5 @@ request.setCharacterEncoding("UTF-8");
    <a href='deleteQna.do?qna_id=${qna.qna_id}'>글 삭제</a>&nbsp;&nbsp;&nbsp;
    <a href='getQnaList.do'>전체 게시판</a>
    </center>
+  
 <%@ include file="../header_footer/footer.jsp"%>
