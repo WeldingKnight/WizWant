@@ -63,7 +63,7 @@ QnaDAO qnaDAO = new QnaDAO();
                     </a>
                 </div>
                 <div class="cate six">
-                    <a href="#" class="relative">
+                    <a href="notice.do" class="relative">
                         <img src="./img/customer_img/notice.jpg" class="active" onclick="changeImg(this);"alt="공지사항">
                         <img src="./img/customer_img/noticehover.jpg" class="hover-img" alt="공지사항">
                     </a>

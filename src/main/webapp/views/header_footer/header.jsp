@@ -22,6 +22,7 @@
 <link rel="stylesheet" href="./css/product_sale.css">
 <link rel="stylesheet" href="./css/customer.css">
 <link rel="stylesheet" href="./css/mypage.css">
+<link rel="stylesheet" href="./css/notice.css">
 
 <!-- ------------------------------------------------------- -->
 <!-- 사이트 jquery 스크립트 부분 -->
@@ -33,6 +34,7 @@
 <script src="./js/product.js"></script>
 <script src="./js/product_detail.js"></script>
 <script src="./js/customer.js"></script>
+<script src="./js/notice.js"></script>
 </head>
 <body id="header_body"  onload="takeId('${categoryId}')">
 	<div id="full_box">
