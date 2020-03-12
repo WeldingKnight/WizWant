@@ -49,34 +49,34 @@
         <div class="content">
             <div class="faq">
                 <div class="faq_title">
-                    1
+                    [공지] 개인정보처리방침 및 위치기반서비스 이용약관 개정 공지
                 </div>
                 <div class="faq_item">
-                    1-1
+                    [공지] 개인정보처리방침 및 위치기반서비스 이용약관 개정 공지
                 </div>
                 <div class="faq_title">
-                    2
+                    [공지] 위즈원트 이용약관 개정 공지 (2020년 2월 1일 시행)
                 </div>
                 <div class="faq_item">
-                    2-2
+                    [공지] 위즈원트 이용약관 개정 공지 (2020년 2월 1일 시행)
                 </div>
                 <div class="faq_title">
-                    3
+                    [이벤트] 돌아온 초성퀴즈! 맞추면 카톡 이모티콘 Dream☆ 
                 </div>
                 <div class="faq_item">
-                    3-3
+                    [이벤트] 돌아온 초성퀴즈! 맞추면 카톡 이모티콘 Dream☆
                 </div>
                 <div class="faq_title">
-                    4
+                    [안내] 현직 경찰회원님이 전하는 '장물 사기 거래' 예방팁
                 </div>
                 <div class="faq_item">
-                    4-4
+                    [안내] 현직 경찰회원님이 전하는 '장물 사기 거래' 예방팁
                 </div>
                 <div class="faq_title">
-                    5
+                    [공지] 2020 인터넷 지킴이 캠페인. 스마트폰 속 개인정보 확인하고 지키세요!
                 </div>
                 <div class="faq_item">
-                    5-5
+                    [공지] 2020 인터넷 지킴이 캠페인. 스마트폰 속 개인정보 확인하고 지키세요!
                 </div>
             </div>
         </div>

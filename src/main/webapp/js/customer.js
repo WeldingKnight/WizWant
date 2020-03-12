@@ -15,7 +15,9 @@ $(document).ready(function(){
       $("div.content > div.faq > div.faq_title").not(this).next().slideUp(300);
       return false;
     });
-    $("div.content > div.faq > div.faq_title").eq(0).trigger("click");
+    //이거 없어야 자동으로 맨 위에꺼 안나오길래 지워놈(의태)
+//    $("div.content > div.faq > div.faq_title").eq(0).trigger("click");
+    
  });
 
 function changeImg(e){
