@@ -17,15 +17,15 @@
                 </tr>
                 <tr id="product_sale_enrollment">
                     <td>
-                        <label><input type="radio" name="category" value="디지털">디지털</label>
+                        <label><input type="radio" id="" name="category" value="디지털">디지털</label>
                         <label> <input type="radio" name="category"  value="통신">통신</label>
                         <br>
                         <label> <input type="radio" name="category"  value="의류">의류</label>&nbsp;&nbsp;&nbsp;
                         <label> <input type="radio" name="category"  value="잡화">잡화</label>
                     </td>
-                    <td><input type="file" name="goods_image"  value="none" src="./img/product_img/default.jpg"></td>
-                    <td><input type="text" name="goods_price"></td>
-                    <td><input type="text" name="goods_name"></td>
+                    <td><input type="file" name="goods_image"  id="goods_image" src="./img/product_img/default.jpg"></td>
+                    <td><input type="text" id="goods_price" name="goods_price"></td>
+                    <td><input type="text" id="goods_name" name="goods_name"></td>
                     
                 </tr>
              
@@ -37,10 +37,10 @@
                 </tr>
 
                 <tr id="product_sale_enrollment">
-                    <td><input type="date"></td>
-                    <td><input type="number" name="goods_quantity"></td>
-                    <td><textarea rows="10" cols="60" style="resize: none;" name="goods_detail"></textarea></td>
-                    <td>${loginuser.id}<input type='hidden' name="seller_id"  value="${loginuser.id}" /></td>
+                    <td><input  id="sell_date"type="date"></td>
+                    <td><input type="number" id="goods_quantity" name="goods_quantity"></td>
+                    <td><textarea rows="10" cols="60" style="resize: none;"  id="goods_detail"name="goods_detail"></textarea></td>
+                    <td>${loginuser.id}<input type='hidden' id="seller_id" name="seller_id"  value="${loginuser.id}" /></td>
                 </tr>
                 <tr id="product_sale_button">
                     <td>

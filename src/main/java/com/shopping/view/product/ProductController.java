@@ -48,6 +48,7 @@ public class ProductController {
 	//글 등록 페이지로 이동
 		@RequestMapping(value ="/product_sale.do",method = RequestMethod.POST)
 		public String insertProduct(ProductVO vo, ProductDAO productDAO) {
+			System.out.println(vo.toString());
 			productDAO.insertProduct(vo);
 			
 			System.out.println(productDAO.getProduct(vo));

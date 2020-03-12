@@ -1,5 +1,6 @@
 package com.shopping.MVC_reshop.product;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -35,7 +36,7 @@ public class ProductDAO {
 			stmt.executeUpdate();
 			
 			System.out.println("상품등록 내용 확인: "+vo.toString());
-			
+			File fileupload =new File("D:\\Kangheesoo\\WizWant\\src\\main\\webapp\\img\\product_img"+vo.getGoods_image());
 		}catch(Exception e) {
 			System.out.println("insertProduct()"+e);
 		}finally {
