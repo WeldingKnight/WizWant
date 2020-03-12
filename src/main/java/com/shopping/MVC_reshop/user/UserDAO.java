@@ -16,9 +16,9 @@ public class UserDAO {
 	private ResultSet rs = null;
 	
 	//SQL문 정리
-	private final String USER_GET = "select * from member where id=? and pwd =?"; //로그인
-	private final String USER_insert= "insert into member (NAME,id,pwd,email,address) values(?,?,?,?,?)"; //회원가입
-	private final String USER_update ="update member set name=? pwd=? where id=?";  //회원정보수정
+	private final String USER_GET = "select * from members where id=? and pwd =?"; //로그인
+	private final String USER_insert= "insert into members (NAME,id,pwd,mail,address,birth) values(?,?,?,?,?,?)"; //회원가입
+	private final String USER_update ="update members set name=? pwd=? where id=?";  //회원정보수정
 	
 	public UserVO getUser(UserVO vo) {  //로그인메서드
 		UserVO user = null;
@@ -70,6 +70,7 @@ public class UserDAO {
 				pstmt.setString(3, vo.getPassword());
 				pstmt.setString(4, vo.getEmail());
 				pstmt.setString(5, vo.getAdress());
+				pstmt.setString(6, vo.getBirth());
 				pstmt.executeUpdate();
 				
 				System.out.println("UserDAO 회원가입 데이터 내용확인: "+vo.toString());

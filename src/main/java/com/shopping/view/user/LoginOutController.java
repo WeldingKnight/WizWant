@@ -15,8 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.support.RequestContext;
 
-//import com.company.AnnotationMVC.user.UserDAO;
-//import com.company.AnnotationMVC.user.UserVO;
+
 import com.shopping.MVC_reshop.HomeController;
 import com.shopping.MVC_reshop.user.UserDAO;
 import com.shopping.MVC_reshop.user.UserVO;
@@ -46,7 +45,7 @@ public class LoginOutController {
 		
 			System.out.println("로그인성공");
 			
-			return "/wiz_want.do";
+			return "redirect:wiz_want.do";
 		} else {
 			System.out.println("로그인실패");
 			return "/views/login&insert/login_fail.jsp";
@@ -54,7 +53,7 @@ public class LoginOutController {
 		}
 	}
 
-	@RequestMapping(value = "/logout.do")
+	@RequestMapping(value = "/logout.do",method = RequestMethod.GET)
 	public String logout(HttpSession session) {
 
 		System.out.println("로그아웃 실행");
@@ -63,8 +62,21 @@ public class LoginOutController {
 			session.invalidate(); // 세션의 기능을 중단시키고무효화 시키는것
 		}
 
-		return "/views/main/wiz_want_main.jsp";
+		return "redirect:wiz_want.do";
 
 	}
+	
+	
+//	@RequestMapping(value = "/logout.do")
+//	public void logout(HttpServletRequest request, HttpServletResponse response,HttpSession session)throws ServletException,IOException{
+//		String url = "/wiz_want.do";
+//		
+//		if (session!=null) {
+//			session.invalidate(); // 세션의 기능을 중단시키고무효화 시키는것
+//		}
+//		
+//		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+//		dispatcher.forward(request, response);
+//	}
 	
 }
