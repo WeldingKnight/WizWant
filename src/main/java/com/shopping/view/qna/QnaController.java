@@ -1,15 +1,12 @@
 package com.shopping.view.qna;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.shopping.MVC_reshop.qna.QnaDAO;
 import com.shopping.MVC_reshop.qna.QnaVO;
-import com.shopping.MVC_reshop.user.UserDAO;
-import com.shopping.MVC_reshop.user.UserVO;
+
 
 @Controller
 public class QnaController {
@@ -32,12 +29,30 @@ public class QnaController {
 		return "/views/qna/getQna.jsp";
 	}
 	
+	//글 수정 이동
+	@RequestMapping("/getUpdateQna.do")
+	public String getUpdateQna(QnaDAO qna, QnaVO vo, Model model) {//DAO,VO,Model 매개변수로 넘겨주기
+		System.out.println("글 수정페이지 이동"); //콘솔확인
+		model.addAttribute("qna", qna.getUpdateQna(vo));
+		//모델 객체로 수정 페이지에 정보를 뿌려주기 위한 메소드
+		return "/views/qna/updateQna.jsp";
+	}
+	
+	//글 수정 실행
+	@RequestMapping("/updateQna.do")
+	public String updateQna(QnaDAO qna, QnaVO vo) {//DB 연결 객체, 및 데이터 저장객체 넘겨주기
+		System.out.println("글 수정");//콘솔 확인용
+		qna.updateQna(vo);
+		//보여주기가 아닌 쿼리 실행만 하면 되므로 모델 객체가 불필요함.
+		return "/views/qna/getQnaList.jsp"; //실행후 리스트로 이동
+	}
+	
 	//글 입력
 	@RequestMapping("/insertQna.do")
 	public String insertQna(QnaDAO qna, QnaVO vo) {//DAO,VO 매개변수로 넘겨주기, 글입력은 보여줄 데이터X, 모델객체 불필요.
 		System.out.println("새글 입력"); // 콘솔 확인용
 		qna.insertQna(vo);
 		//입력 메소드로 데이터값 입력
-		return "/views/qna/insertQna.jsp";
+		return "/views/qna/getQnaList.jsp"; //실행후 리스트로 이동
 	}
 }

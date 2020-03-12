@@ -72,9 +72,16 @@ QnaDAO qnaDAO = new QnaDAO();
         </div>
         <!-- //탭 메뉴 -->
         <!-- content -->
-		<center>                         
-			<h3 align="center">test님 게시판에 오신것을 환영합니다.&nbsp;&nbsp;&nbsp;</h3>
-			<h4>총 게시글 : ${totalList}건</h4>
+		<center>
+			<c:choose>
+				<c:when test="${empty sessionScope.loginuser}">
+					<h3>고객센터 QNA 게시판에 오신것을 환영합니다.</h3>
+				</c:when>
+				<c:otherwise>
+					 <h3 align="center">${sessionScope.loginuser.id}님 QNA 게시판에 오신것을 환영합니다.</h3> 
+				</c:otherwise>
+			</c:choose>                         
+			<h4>총 Q&A : ${totalList} 건</h4>
 			<form method='get' action='getQnaList.do'>
 				<table border='1' cellpadding='0' cellspacing='0' width='750'>
 					<tr>
