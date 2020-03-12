@@ -40,10 +40,10 @@ public class UserDAO {
 				user.setId(rs.getString("ID"));
 				user.setPassword(rs.getString("pwd"));
 				user.setName(rs.getString("name"));
-				user.setEmail(rs.getString("email"));
+				user.setEmail(rs.getString("mail"));
 				user.setSex(rs.getString("sex"));
 				user.setBirth(rs.getString("birth"));
-				user.setAdress(rs.getString("adress"));
+				user.setAddress(rs.getString("address"));
 				user.setRole(rs.getString("role"));
 			}
 			
@@ -75,7 +75,7 @@ public class UserDAO {
 				pstmt.setString(2, vo.getId());
 				pstmt.setString(3, vo.getPassword());
 				pstmt.setString(4, vo.getEmail());
-				pstmt.setString(5, vo.getAdress());
+				pstmt.setString(5, vo.getAddress());
 				pstmt.setString(6, vo.getBirth());
 				pstmt.executeUpdate();
 				
