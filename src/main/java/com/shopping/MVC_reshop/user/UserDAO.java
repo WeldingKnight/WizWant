@@ -38,12 +38,18 @@ public class UserDAO {
 			if(rs.next()) {
 				user = new UserVO();
 				user.setId(rs.getString("ID"));
-				user.setPassword(rs.getString("PASSWORD"));
-				user.setName(rs.getString("NAME"));
+				user.setPassword(rs.getString("pwd"));
+				user.setName(rs.getString("name"));
+				user.setEmail(rs.getString("mail"));
+				user.setSex(rs.getString("sex"));
+				user.setBirth(rs.getString("birth"));
+				user.setAddress(rs.getString("address"));
+				user.setRole(rs.getString("role"));
 			}
 			
+	
 		} catch (Exception e) {
-			// TODO: handle exception
+
 		}finally {
 			
 			JDBCUtil.close(rs, stmt, conn);
@@ -69,7 +75,7 @@ public class UserDAO {
 				pstmt.setString(2, vo.getId());
 				pstmt.setString(3, vo.getPassword());
 				pstmt.setString(4, vo.getEmail());
-				pstmt.setString(5, vo.getAdress());
+				pstmt.setString(5, vo.getAddress());
 				pstmt.setString(6, vo.getBirth());
 				pstmt.executeUpdate();
 				

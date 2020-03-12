@@ -82,7 +82,7 @@
 				</tr>
 				<tr>
 					<td>
-						<input style="width: 300px; height: 30px; font-size: 20px;" type="text" id="adress" name="adress" accesskey="L" maxlength="41" >
+						<input style="width: 300px; height: 30px; font-size: 20px;" type="text" id="address" name="address" accesskey="L" maxlength="41" >
 					</td>
 				</tr>
 				<tr>
