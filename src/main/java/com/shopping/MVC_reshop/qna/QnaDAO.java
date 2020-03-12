@@ -65,7 +65,7 @@ public class QnaDAO {
 		try {
 			conn = JDBCUtil.getConnection();
 			//해당 게시글 조회수(cnt)에 +1 update 처리
-			String UPDATE_CNT = "update qna_board set cnt=cnt+1 where qna_id=?";
+			String UPDATE_CNT = "update qna_board set qna_views=qna_views+1 where qna_id=?";
 			pstmt = conn.prepareStatement(UPDATE_CNT);
 			pstmt.setInt(1, vo.getQna_id());
 			pstmt.executeUpdate();
@@ -101,7 +101,6 @@ public class QnaDAO {
 		try {
 			conn = JDBCUtil.getConnection();
 			
-			//글 상세 가져오기
 			pstmt = conn.prepareStatement(QNA_GET);
 			pstmt.setInt(1, vo.getQna_id());
 			rs=pstmt.executeQuery();

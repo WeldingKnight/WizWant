@@ -58,7 +58,7 @@
 					</td>
 				</tr>
 			</table>
-			<a href='getQnaList.jsp'>게시판 돌아가기</a>
+			<a href='getQnaList.do'>게시판 돌아가기</a>
 		</form>
 	</center>
 <%@ include file="../header_footer/footer.jsp"%>
