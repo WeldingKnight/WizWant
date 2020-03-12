@@ -6,6 +6,7 @@ public class UserVO {
 	private String password; // 비밀번호
 	private String name; // 이름
 	private String email;// 이메일
+	private String tel; // 전화번호
 	private String sex; // 성별
 	private String birth; // 생년월일
 	private String address; // 주소
@@ -43,6 +44,14 @@ public class UserVO {
 		this.email = email;
 	}
 
+	public String getTel() {
+		return tel;
+	}
+
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+
 	public String getSex() {
 		return sex;
 	}
@@ -78,15 +87,15 @@ public class UserVO {
 	public String loginString() {
 		return "로그인 정보: id= " + id + " 이름: " + name + " password:  " + password;
 	}
-	
-	
 
 	@Override
 	public String toString() {
-		return "UserVO [id=" + id + ", password=" + password + ", name=" + name + ", email=" + email + ", sex=" + sex
-				+ ", birth=" + birth + ", address=" + address + ", role=" + role + "]";
+		return "UserVO [id=" + id + ", password=" + password + ", name=" + name + ", email=" + email + ", tel=" + tel
+				+ ", sex=" + sex + ", birth=" + birth + ", address=" + address + ", role=" + role + "]";
 	}
-	
-	
 
+
+
+	
+	
 }

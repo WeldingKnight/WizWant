@@ -3,7 +3,7 @@
 <%@ include file="../header_footer/header.jsp"%>
 <%@ page import="com.shopping.MVC_reshop.product.*" %>
 <%@ page import="java.util.List" %>
-<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+
     <div id="product_sale_wrap">
     <h2 align="center">상품 등록 페이지</h2>
     
@@ -23,8 +23,8 @@
                         <label> <input type="radio" name="category"  value="의류">의류</label>&nbsp;&nbsp;&nbsp;
                         <label> <input type="radio" name="category"  value="잡화">잡화</label>
                     </td>
-                    <td><input type="image" name="goods_image"  value="none"></td>
-                    <td><input type="number" name="goods_price"></td>
+                    <td><input type="image" name="goods_image"  value="none" src="./img/product_img/default.jpg"></td>
+                    <td><input type="text" name="goods_price"></td>
                     <td><input type="text" name="goods_name"></td>
                     
                 </tr>
@@ -40,7 +40,7 @@
                     <td><input type="date"></td>
                     <td><input type="number" name="goods_quantity"></td>
                     <td><textarea rows="10" cols="60" style="resize: none;" name="goods_detail"></textarea></td>
-                    <td>${sessionscope.loginUser.id}<input type='hidden' name="seller_id"  value="${userId}" /></td>
+                    <td>${loginuser.id}<input type='hidden' name="seller_id"  value="${loginuser.id}" /></td>
                 </tr>
                 <tr id="product_sale_button">
                     <td>

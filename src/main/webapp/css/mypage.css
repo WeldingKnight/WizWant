@@ -4,40 +4,6 @@
 }
 
 /*mypage css*/
-#mypage_nav {
-	max-width: 1200px;
-	width: 100%;
-	height: auto;
-	margin: 0 auto;
-}
-
-#mypage_nav div {
-	max-width: 1200px;
-	width: 100%;
-	height: 50px;
-	margin: 0 auto;
-	text-align: center;
-}
-
-#mypage_nav div ul {
-	max-width: 1200px;
-	width: 100%;
-	height: 50px;
-	list-style: none;
-}
-
-#mypage_nav div ul li {
-	text-align: center;
-	float: left;
-	margin-left: 20px;
-	border: 1px solid black;
-}
-
-#mypage_nav div ul li a {
-	text-decoration: none;
-	color: black;
-}
-
 #mypage_menu {
 	margin: 0 auto;
 }
