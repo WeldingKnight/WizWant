@@ -77,8 +77,8 @@ public class QnaDAO {
 			
 			if(rs.next()) {
 				qna = new QnaVO();
-				qna.setQna_id(rs.getInt("QNA_ID"));
-				qna.setQna_title(rs.getString("QNA_TITLE"));
+				qna.setQna_id(rs.getInt("qna_id"));
+				qna.setQna_title(rs.getString("qna_title"));
 				qna.setUser_id(rs.getString("USER_ID"));
 				qna.setQna_content(rs.getString("QNA_CONTENT"));
 				qna.setQna_timestamp(rs.getDate("QNA_TIMESTAMP"));
@@ -107,13 +107,13 @@ public class QnaDAO {
 			
 			if(rs.next()) {
 				qna = new QnaVO();
-				qna.setQna_id(rs.getInt("QNA_ID"));
-				qna.setQna_title(rs.getString("QNA_TITLE"));
-				qna.setUser_id(rs.getString("USER_ID"));
-				qna.setQna_content(rs.getString("QNA_CONTENT"));
-				qna.setQna_timestamp(rs.getDate("QNA_TIMESTAMP"));
-				qna.setQna_kind(rs.getString("QNA_KIND"));				
-				qna.setQna_views(rs.getInt("QNA_VIEWS"));
+				qna.setQna_id(rs.getInt("qna_id"));
+				qna.setQna_title(rs.getString("qna_title"));
+				qna.setUser_id(rs.getString("user_id"));
+				qna.setQna_content(rs.getString("qna_content"));
+				qna.setQna_timestamp(rs.getDate("qna_timestamp"));
+				qna.setQna_kind(rs.getString("qna_kind"));				
+				qna.setQna_views(rs.getInt("qna_views"));
 			}
 		}catch(Exception e) {
 			System.out.println("getQna() : "+e);
@@ -174,12 +174,12 @@ public class QnaDAO {
 				System.out.println("4");
 				QnaVO qna = new QnaVO();
 				System.out.println("2");
-				qna.setUser_id(rs.getString("USER_ID"));
-				qna.setQna_title(rs.getString("QNA_TITLE"));
-				qna.setQna_timestamp(rs.getDate("QNA_TIMESTAMP"));
-				qna.setQna_id(rs.getInt("QNA_ID"));
-				qna.setQna_views(rs.getInt("QNA_VIEWS"));
-				qna.setQna_kind(rs.getString("QNA_KIND"));
+				qna.setUser_id(rs.getString("user_id"));
+				qna.setQna_title(rs.getString("qna_title"));
+				qna.setQna_timestamp(rs.getDate("qna_timestamp"));
+				qna.setQna_id(rs.getInt("qna_id"));
+				qna.setQna_views(rs.getInt("qna_views"));
+				qna.setQna_kind(rs.getString("qna_kind"));
 				qnaList.add(qna);
 
 				System.out.println("title : "+qna.getQna_title());

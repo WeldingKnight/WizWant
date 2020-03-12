@@ -5,6 +5,9 @@
 <%@ page import="com.shopping.MVC_reshop.qna.QnaVO" %>
 <%@ page import="com.shopping.MVC_reshop.qna.QnaDAO" %>
 <%@ page import="java.util.List" %>
+<%@ page import="javax.servlet.http.HttpServletRequest" %>
+<%@ page import="javax.servlet.http.HttpServletResponse" %>
+<%@ page import="javax.servlet.http.HttpSession" %>
 
 <!-- header -->
 <%@ include file="../header_footer/header.jsp"%>
@@ -14,8 +17,7 @@
 	<%
 		//스크립트릿 =>자바코드 작성
 	request.setCharacterEncoding("UTF-8");
-	
-	%>
+	%> 
 <!-- //스크립트릿 -->
 
 	<center>
@@ -29,8 +31,8 @@
 				</tr>
 				<tr>
 					<td bgcolor="orange" width="70">작성자 :</td>
-					<td>${userId}</td>
-					<input type='hidden' name='user_id' value='${userId}'/>
+					<td> ${sessionScope.loginuser.name}</td>
+					<input type='hidden' name='user_id' value='${sessionScope.loginuser.name}'/>
 				</tr>
 				<tr>
 					<td bgcolor="orange" width="70">종류:</td>
