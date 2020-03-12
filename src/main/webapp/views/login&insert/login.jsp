@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>로그인</title>
 </head>
-<body>
+<body id="login_body">
 	<div id="login_wrap">
 		<h1 style="font-size: 80px; color: white;"><a href="wiz_want.do">WIZ*WANT</a></h1>
 

@@ -6,7 +6,8 @@
 <%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
     <div id="product_sale_wrap">
     <h2 align="center">상품 등록 페이지</h2>
-        <form id="product_sale">
+    
+        <form id="product_sale" action="product_sale.do" method="post">
             <table id="product_sale_table">
                 <tr id="product_sale_contents" >
                     <td >상품 분류</td>
@@ -39,8 +40,7 @@
                     <td><input type="date"></td>
                     <td><input type="number" name="goods_quantity"></td>
                     <td><textarea rows="10" cols="60" style="resize: none;" name="goods_detail"></textarea></td>
-                    <!-- <td><input type="text" readonly></td> -->
-                    <td>${userId}<input type='hidden' name="seller_id"  value="${userId}" /></td>
+                    <td>${sessionscope.loginUser.id}<input type='hidden' name="seller_id"  value="${userId}" /></td>
                 </tr>
                 <tr id="product_sale_button">
                     <td>

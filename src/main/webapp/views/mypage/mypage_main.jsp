@@ -10,7 +10,7 @@
 			<li><a href="update.do">회원정보수정</a></li>
 			<li><a href="bookmark.do">찜목록</a></li>
 			<li><a href="orders.do">주문내역</a></li>
-			<li><a href="product_sale.do">상품등록</a></li>
+			<li><a href="product_sale.jsp">상품등록</a></li>
 		</ul>
 	</div>
 </nav>

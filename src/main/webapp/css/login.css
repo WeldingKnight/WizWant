@@ -1,11 +1,10 @@
 @charset "UTF-8";
 
 
-body{
+#login_body{
 	width:1200px;
 	margin:0 auto;
-	text-align: center;
-	 background-color: seashell;
+	text-align: center;	
 }
 #login_wrap{
 	margin-top:50px;

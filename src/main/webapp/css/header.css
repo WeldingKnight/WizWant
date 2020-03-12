@@ -7,16 +7,17 @@ a{
 #header_body{
 	width:1200px;
 	margin: 0 auto;
-	background-color: blue;
+
 }
 #header_a_tag > a{
 	 color: white;
+	 font-weight: bold ;
 }
 
 
 #main_header{
 	width: 1200px;
-	border: 2px solid black;
+	/*border: 2px solid black;*/
 	margin:0 auto;
 	background-image: url('../img/main_img/main_back1.jpg');
 	background-size: 1200px 370px;
@@ -49,7 +50,6 @@ a{
 
 #header_menu{
 	width: 500px;
-	border:1px solid red;
 	margin:0 auto;
 	height:100px;
 	text-align: center;
@@ -57,9 +57,10 @@ a{
 
 .header_menu_box{
 	width:90px;
-	margin: 0 auto;
+	margin-left:20px;
+	margin-right: 10px;
 	text-align: center;
-	display: inline-block;
+	
 	float:left;
 	
 }
