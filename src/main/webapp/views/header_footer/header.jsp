@@ -4,7 +4,11 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html style="background-image: ">
-
+<%
+	request.setCharacterEncoding("UTF-8");
+	String categoryId =  request.getParameter("Classification");
+	request.setAttribute("categoryId", categoryId);
+%>
 <head>
 
 <meta charset="UTF-8">
@@ -30,7 +34,7 @@
 <script src="./js/product_detail.js"></script>
 <script src="./js/customer.js"></script>
 </head>
-<body id="header_body" >
+<body id="header_body"  onload="takeId('${categoryId}')">
 	<div id="full_box">
 		<header id="main_header">
 			<h1 id="header_name">

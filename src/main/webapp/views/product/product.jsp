@@ -2,14 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <jsp:include page="../header_footer/header.jsp"></jsp:include>
-<%
-request.setCharacterEncoding("UTF-8");
-
-	String id = request.getParameter("Classification");
-	session.setAttribute("Classification", id);
-
-
-%>
     <h2 align="center">상품 페이지</h2>
 <nav id="detail_navMenu">
     <ul>
