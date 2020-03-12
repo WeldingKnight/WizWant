@@ -19,6 +19,7 @@ public class ProductController {
 		
 		String Classification = request.getParameter("Classification");
 		String userId = request.getParameter("userId");
+		
 		System.out.println(Classification);
 		System.out.println(userId);
 		
