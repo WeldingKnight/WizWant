@@ -67,7 +67,7 @@ request.setCharacterEncoding("UTF-8");
 </nav>
 
 
-<section align="center">
+<section id="product_section">
 	<div id="detail_rap">
 		<c:forEach items="${productList}" var="product">
 			<div class="detail_content">

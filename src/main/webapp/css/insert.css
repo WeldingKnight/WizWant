@@ -12,6 +12,10 @@
 	text-align: center;
 }
 
+#insert_wrap > h1 >a {
+		text-decoration: none;
+}
+
 #insert_table {
 	margin: 0 auto;
 }
