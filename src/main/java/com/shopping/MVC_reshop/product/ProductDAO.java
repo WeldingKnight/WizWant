@@ -37,6 +37,7 @@ public class ProductDAO {
 			
 			System.out.println("상품등록 내용 확인: "+vo.toString());
 			File fileupload =new File("D:\\Kangheesoo\\WizWant\\src\\main\\webapp\\img\\product_img"+vo.getGoods_image());
+		
 		}catch(Exception e) {
 			System.out.println("insertProduct()"+e);
 		}finally {
