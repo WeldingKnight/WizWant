@@ -6,12 +6,18 @@
 <%@ page import="com.shopping.MVC_reshop.qna.QnaDAO" %>
 <%@ page import="java.util.List" %>
 
-<%
-	//스크립트릿 =>자바코드 작성
-request.setCharacterEncoding("UTF-8");
-
-%>    
+<!-- header -->
 <%@ include file="../header_footer/header.jsp"%>
+<!-- //header -->
+
+<!-- 스크립트릿 -->
+	<%
+		//스크립트릿 =>자바코드 작성
+	request.setCharacterEncoding("UTF-8");
+	
+	%>
+<!-- //스크립트릿 -->
+
 	<center>
 	<h1>QNA 등록</h1>
 	<hr>
@@ -52,7 +58,7 @@ request.setCharacterEncoding("UTF-8");
 					</td>
 				</tr>
 			</table>
-			<a href='getQnaList.jsp'>게시판 돌아가기</a>
+			<a href='getQnaList.do'>게시판 돌아가기</a>
 		</form>
 	</center>
 <%@ include file="../header_footer/footer.jsp"%>
