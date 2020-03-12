@@ -38,12 +38,18 @@ public class UserDAO {
 			if(rs.next()) {
 				user = new UserVO();
 				user.setId(rs.getString("ID"));
-				user.setPassword(rs.getString("PASSWORD"));
-				user.setName(rs.getString("NAME"));
+				user.setPassword(rs.getString("pwd"));
+				user.setName(rs.getString("name"));
+				user.setEmail(rs.getString("email"));
+				user.setSex(rs.getString("sex"));
+				user.setBirth(rs.getString("birth"));
+				user.setAdress(rs.getString("adress"));
+				user.setRole(rs.getString("role"));
 			}
 			
+	
 		} catch (Exception e) {
-			// TODO: handle exception
+
 		}finally {
 			
 			JDBCUtil.close(rs, stmt, conn);

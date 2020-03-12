@@ -9,6 +9,7 @@ public class UserVO {
 	private String sex; //성별
 	private String birth; //생년월일
 	private String adress; //주소
+	private String role; // 회원등급 구분(0:관리자,1:유저,2:판매자)
 	
 	
 	public String getId() {
@@ -53,16 +54,25 @@ public class UserVO {
 	public void setAdress(String adress) {
 		this.adress = adress;
 	}
-	
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
 	
 	public String loginString() {
 		return "로그인 정보: id= "+id+" 이름: "+name+" password:  "+ password;
 	}
 	
+	
 	@Override
 	public String toString() {
 		return "UserVO [id=" + id + ", password=" + password + ", name=" + name + ", email=" + email + ", sex=" + sex
-				+ ", birth=" + birth + ", adress=" + adress + "]";
+				+ ", birth=" + birth + ", adress=" + adress + ", role=" + role + "]";
 	}
+	
+	
+	
 	
 }

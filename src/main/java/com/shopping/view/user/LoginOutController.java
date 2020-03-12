@@ -40,9 +40,11 @@ public class LoginOutController {
 
 		if (user != null) {
 			
-			session.setAttribute("loginuser", user);
-//			session.setAttribute("userRole", user.getRole());
-		
+			session.setAttribute("loginuser", user); //로그인 정보
+			session.setAttribute("role", user.getRole()); //해당 회원의 등급필요
+
+			System.out.println(user.toString());
+			
 			System.out.println("로그인성공");
 			
 			return "redirect:wiz_want.do";
