@@ -23,7 +23,7 @@
                         <label> <input type="radio" name="category"  value="의류">의류</label>&nbsp;&nbsp;&nbsp;
                         <label> <input type="radio" name="category"  value="잡화">잡화</label>
                     </td>
-                    <td><input type="image" name="goods_image"  value="none"></td>
+                    <td><input type="image" name="goods_image"  value="none" src="./img/product_img/default.jpg"></td>
                     <td><input type="text" name="goods_price"></td>
                     <td><input type="text" name="goods_name"></td>
                     
