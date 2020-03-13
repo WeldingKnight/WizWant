@@ -33,6 +33,17 @@
             <td align="left">${qna.user_id}</td>
          </tr>
          <tr>
+         	<td bgcolor="orange" width="70">종류:</td>
+			<td>
+				<select name="qna_kind">
+					<option value="주문결제">주문결제</option>
+					<option value="배송문의">배송문의</option>
+					<option value="반품환불">반품환불</option>
+					<option value="상품문의">상품문의</option>
+				</select>
+			</td>
+         </tr>
+         <tr>
          	<td bgcolor="orange">내용</td>
          	<td align='center'><textarea name="content" rows="10" cols="40">${qna.qna_content}</textarea></td>
          </tr>
@@ -42,7 +53,7 @@
          </tr>
          <tr>
             <td bgcolor="orange">조회수</td>
-            <td align="left">${qna.cnt}</td>
+            <td align="left">${qna.qna_views}</td>
          </tr>
          <tr>
             <td colspan="2" align="center">
@@ -52,7 +63,7 @@
       </table>
    </form>
    <hr>
-   <a href='insertQna.jsp'>글 등록</a>&nbsp;&nbsp;&nbsp;
+   <a href='getInsertQna.do'>글 등록</a>&nbsp;&nbsp;&nbsp;
    <a href='deleteQna.do?qna_id=${qna.qna_id}'>글 삭제</a>&nbsp;&nbsp;&nbsp;
    <a href='getQnaList.do'>전체 게시판</a>
    </center>

@@ -31,17 +31,17 @@
 				</tr>
 				<tr>
 					<td bgcolor="orange" width="70">작성자 :</td>
-					<td> ${sessionScope.loginuser.name}</td>
-					<input type='hidden' name='user_id' value='${sessionScope.loginuser.name}'/>
+					<td> ${sessionScope.loginuser.id}</td>
+					<input type='hidden' name='user_id' value='${sessionScope.loginuser.id}'/>
 				</tr>
 				<tr>
 					<td bgcolor="orange" width="70">종류:</td>
 					<td>
-						<select>
-							<option>주문결제</option>
-							<option>배송문의</option>
-							<option>반품환불</option>
-							<option>상품문의</option>
+						<select name="qna_kind">
+							<option value="주문결제">주문결제</option>
+							<option value="배송문의">배송문의</option>
+							<option value="반품환불">반품환불</option>
+							<option value="상품문의">상품문의</option>
 						</select>
 					</td>
 				</tr>
@@ -60,7 +60,7 @@
 					</td>
 				</tr>
 			</table>
-			<a href='getQnaList.do'>게시판 돌아가기</a>
 		</form>
+		<a href='getQnaList.do'>게시판 돌아가기</a>
 	</center>
 <%@ include file="../header_footer/footer.jsp"%>

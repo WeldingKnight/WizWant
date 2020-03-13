@@ -109,16 +109,16 @@ QnaDAO qnaDAO = new QnaDAO();
 				<c:forEach items="${qnaList}" var="qna">
 					<tr>
 						<td align="center">${qna.qna_id}</td>
-						<td align="center">${qna.kind}</td>
+						<td align="center">${qna.qna_kind}</td>
 						<td align="center"><a href="getQna.do?qna_id=${qna.qna_id}">${qna.qna_title}</a></td>
 						<td align="center">${qna.user_id}</td>
 						<td align="center"><fmt:formatDate value="${qna.qna_timestamp}"  pattern="yy-MM-dd"/></td>
-						<td align="center">${qna.cnt}</td>
+						<td align="center">${qna.qna_views}</td>
 					</tr>
 				</c:forEach>
 			</table>
 			<br>
-			<a href="insertQna.do">새글 등록</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="getInsertQna.do">새글 등록</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<a href="getQnaList.do">전체글 목록 보기</a>
 		</center>
 		<!-- //content -->
