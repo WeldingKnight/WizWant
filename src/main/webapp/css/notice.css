@@ -50,7 +50,7 @@ div.not > div {
 div.not > div.not_title {
     height:20px; 
     line-height:20px;
-    background-color: #999; 
+	background-image: url('../img/main_img/main_back1.jpg');
     display:block; 
     text-decoration:none; 
     color:#000;
@@ -61,5 +61,4 @@ div.not > div.not_title {
 div.not > div.not_item {
 	color:black;
 	font-weight: bold;
-	background-color: #555;
 	}
