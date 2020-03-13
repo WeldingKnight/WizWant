@@ -46,26 +46,25 @@
             <td bgcolor="orange">조회수</td>
             <td align="left">${qna.qna_views}</td>
          </tr>
+         <c:if test='${sessionScope.loginuser.id==qna.user_id}'>
          <tr>
             <td colspan="2" align="center">
             	<input type='submit' value='글수정'/>
             </td>
          </tr>
+         </c:if>
       </table>
    </form>
    <hr>
-   <a href='insertQna.jsp'>새글 등록</a>&nbsp;&nbsp;&nbsp;
+   <a href='getInsertQna.do'>새글 등록</a>&nbsp;&nbsp;&nbsp;
    <c:choose>
-	 <c:when test="${sessionScope.loginuser==(qna.user_id || 'admin' )}">
-	 	<a href='deleteQna.do?qna_id=${qna.qna_id}'>글 삭제</a>&nbsp;&nbsp;&nbsp;		
+	 <c:when test="${sessionScope.loginuser.id==qna.user_id}">
+	 	<a href='deleteQna.do?qna_id=${qna.qna_id}'>글 삭제</a>&nbsp;&nbsp;&nbsp;
+	 	<a href='getQnaList.do'>전체 게시판</a>		
 	 </c:when>
-	 <!--<c:set var="name" value="홍길동" /> 
-     <c:if test="${name eq '홍길동'}">
-	   <c:out value="${str}" />
-	 </c:if>-->
 	 <c:otherwise>
+	 	<a href='getQnaList.do'>전체 게시판</a>
      </c:otherwise>
    </c:choose>      
-   <a href='getQnaList.do'>전체 게시판</a>
    </center>
 <%@ include file="../header_footer/footer.jsp"%>

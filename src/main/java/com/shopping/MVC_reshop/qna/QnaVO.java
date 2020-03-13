@@ -60,4 +60,12 @@ public class QnaVO {
 	public void setQna_kind(String qna_kind) {
 		this.qna_kind = qna_kind;
 	}
+	@Override
+	public String toString() {
+		return "QnaVO [user_id=" + user_id + ", qna_title=" + qna_title + ", qna_content=" + qna_content + ", reply_id="
+				+ reply_id + ", qna_timestamp=" + qna_timestamp + ", qna_id=" + qna_id + ", qna_views=" + qna_views
+				+ ", qna_kind=" + qna_kind + "]";
+	}
+	
+	
 }

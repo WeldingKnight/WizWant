@@ -12,7 +12,8 @@ import com.shopping.MVC_reshop.qna.QnaVO;
 
 @Controller
 public class QnaController {
-	
+	String url="";
+
 	//전체 게시글
 	@RequestMapping("/getQnaList.do")
 	public String getQnaList(QnaDAO qna, QnaVO vo, Model model, String searchField, String searchText) {//DAO,VO,Model, String객체(글 검색용) 두개를 매개변수로 넘겨주기
@@ -35,7 +36,6 @@ public class QnaController {
 	@RequestMapping("/getUpdateQna.do")
 	public String getUpdateQna(QnaDAO qna, QnaVO vo, Model model, HttpSession session) {//DAO,VO,Model 매개변수로 넘겨주기
 		System.out.println("글 수정페이지 이동"); //콘솔확인
-		String url="";
 		if(session.getAttribute("loginuser") == null) {
 			url = "redirect:/login.do";
 			System.out.println("세션 값: "+session.getAttribute("loginuser"));
@@ -53,14 +53,13 @@ public class QnaController {
 	@RequestMapping("/updateQna.do")
 	public String updateQna(QnaDAO qna, QnaVO vo, HttpSession session) {//DB 연결 객체, 및 데이터 저장객체 넘겨주기
 		System.out.println("글 수정");//콘솔 확인용
-		String url="";
 
 		if(session.getAttribute("loginuser")==null) {
 			url = "redirect:/login.do";
 			System.out.println("세션 값: "+session.getAttribute("loginuser"));
 			System.out.println(url);
 		}else {
-			url ="/views/qna/getQnaList.jsp";
+			url ="redirect:/getQnaList.do";
 			System.out.println(url);
 			//보여주기가 아닌 쿼리 실행만 하면 되므로 모델 객체가 불필요함.
 			qna.updateQna(vo);
@@ -68,20 +67,34 @@ public class QnaController {
 		return url; //실행후 리스트로 이동
 	}
 	
-	//새 글 등록
-	@RequestMapping("/insertQna.do")
-	public String insertQna(QnaDAO qna, QnaVO vo, HttpSession session) {//DAO,VO 매개변수로 넘겨주기, 글입력은 보여줄 데이터X, 모델객체 불필요.
-		System.out.println("새글 입력"); // 콘솔 확인용
-		String url="";
-		
-		if(session.getAttribute("loginuser")==null) {
+	//새글 등록 이동
+	@RequestMapping("/getInsertQna.do")
+	public String getInsertQna(QnaDAO qna, QnaVO vo, HttpSession session) {//DAO,VO,Model 매개변수로 넘겨주기
+		System.out.println("글 등록페이지 이동"); //콘솔확인
+		if(session.getAttribute("loginuser") == null) {
 			url = "redirect:/login.do";
 			System.out.println("세션 값: "+session.getAttribute("loginuser"));
 			System.out.println(url);
 		}else {
 			url ="/views/qna/insertQna.jsp";
 			System.out.println(url);
+		}
+		return url;
+	}
+		
+	//새글 등록 실행
+	@RequestMapping("/insertQna.do")
+	public String insertQna(QnaDAO qna, QnaVO vo, HttpSession session) {//DAO,VO 매개변수로 넘겨주기, 글입력은 보여줄 데이터X, 모델객체 불필요.
+		System.out.println("새글 입력"); // 콘솔 확인용
+		if(session.getAttribute("loginuser")==null) {
+			url = "redirect:/login.do";
+			System.out.println("세션 값: "+session.getAttribute("loginuser"));
+			System.out.println(url);
+		}else {
+			url ="redirect:/getQnaList.do";
+			System.out.println(url);
 			//입력 메소드로 데이터값 입력
+			System.out.println(vo.toString());
 			qna.insertQna(vo);
 		}
 		return url; //실행 후 리스트로 이동
