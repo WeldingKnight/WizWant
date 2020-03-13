@@ -59,7 +59,7 @@
 					</div>
 					<div class="header_menu_box">
 						<a href="product.do?Classification=${'grocery'}"><img
-							src="./img/main_img/digital_img.png" alt="잡화이미지">잡화</a>
+							src="./img/main_img/other.svg" alt="잡화이미지">잡화</a>
 					</div>
 				</div>
 
