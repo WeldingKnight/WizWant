@@ -89,7 +89,7 @@ public class UserDAO {
 				e.printStackTrace();
 			}finally {
 				
-				JDBCUtil.close(rs, stmt, conn);
+				JDBCUtil.close(stmt, conn);
 			}
 	
 		}

@@ -89,6 +89,76 @@ function takeId(id) {
 		idV = "detail_fashion";
 		setDiv("detail_fashion", 3);
 	}
+	 // 2번쨰 카테고리에서 메뉴 선택시 메뉴 보이기
+    
+    $('#detail_sort2 ul li').click(function(){
+        var id1 = $(this).attr("class");
+        if(id1 == "detail_digital0"){
+        	setDiv2("detail_digital0", 0);
+        }  
+        else if(id1 == "detail_digital1"){
+        	setDiv2("detail_digital1", 1);
+        }
+        else if(id1 == "detail_digital2"){
+        	setDiv2("detail_digital2", 2);
+        }
+        else if(id1 == "detail_mobile0"){
+        	setDiv2("detail_mobile0", 3);
+        }
+        else if(id1 == "detail_mobile1"){
+        	setDiv2("detail_mobile1", 4);
+        }
+        else if(id1 == "detail_mobile2"){
+        	setDiv2("detail_mobile2", 5);
+        }
+        else if(id1 == "detail_clothes0"){
+        	setDiv2("detail_clothes0", 6);
+        }
+        else if(id1 == "detail_clothes1"){
+        	setDiv2("detail_clothes1", 7);
+        }
+        else if(id1 == "detail_fashion0"){
+        	setDiv2("detail_fashion0", 8);
+        }
+        else if(id1 == "detail_fashion1"){
+        	setDiv2("detail_fashion1", 9);
+        }
+        else if(id1 == "detail_fashion2"){
+        	setDiv2("detail_fashion2", 10);
+        }
+        
+        // 3번쨰 카테고리에서 메뉴 선택시 메뉴 보이기
+        
+        $('#detail_sort3').find("ul > li").click(function(){      	
+            $("#detail_sort4 > ul").css("display", "none");
+            var html = '';
+	    	for(var i=0;i<tmpObj.local.length; i++){
+	    		html += '<li class="detail_local'+i+'"><a href="#">' +tmpObj.local[i] + '</a></li>';
+	    	}
+	    	$('#detail_sort4 > .detail_local').html(html);
+            $("#detail_sort4 > .detail_local").css("display", "block");
+            $("#detail_sort5 > ul").css("display","none");
+        
+	        // 4번쨰 카테고리에서 메뉴 선택시 메뉴 보이기
+	        $('#detail_sort4').find("ul > li").click(function(){
+	            $("#detail_sort5 > ul").css("display", "none");
+	            var html = '';
+		    	for(var i=0;i<tmpObj.price.length; i++){
+		    		html += '<li class="detail_price'+i+'"><a href="#">' +tmpObj.price[i] + '</a></li>';
+		    	}
+		    	$('#detail_sort5 > .detail_price').html(html);
+	            $("#detail_sort5 > ul").css("display", "block");
+	            // 마지막 메뉴에서 마우스를 떠나면 모든 메뉴 안보이게
+	            $("#detail_sort5 > ul").mouseleave(function(){
+	                $("#detail_category").css("display", "none");
+	                $("#detail_sort2 > ul").css("display", "none");
+	                $("#detail_sort3 > ul").css("display", "none");
+	                $("#detail_sort4 > ul").css("display", "none");
+	                $("#detail_sort5 > ul").css("display","none");
+	            });
+	        });
+        });
+	});
 
 
 $(function(){

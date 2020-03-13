@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <jsp:include page="../header_footer/header.jsp"></jsp:include>
+<div onload="takeId('${categoryId}')">
     <h2 align="center">상품 페이지</h2>
 <nav id="detail_navMenu">
     <ul>
@@ -120,5 +121,5 @@
         </div>
     </div>
 </section>
-
+</div>
 <jsp:include page="../header_footer/footer.jsp"></jsp:include>
