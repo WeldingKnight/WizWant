@@ -2,8 +2,8 @@
     pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("UTF-8"); %>
 
-<%@ page import="com.shopping.MVC_reshop.qna.QnaVO" %>
-<%@ page import="com.shopping.MVC_reshop.qna.QnaDAO" %>
+<%@ page import="com.shopping.MVC_reshop.notice.NoticeVO" %>
+<%@ page import="com.shopping.MVC_reshop.notice.NoticeDAO" %>
 <%@ page import="java.util.List" %>
 
 <%
@@ -19,12 +19,12 @@ if(request.getParameter("searchCondition") != null && request.getParameter("sear
 	request.setAttribute("searchword", searchText);
 }
 
-QnaDAO qnaDAO = new QnaDAO();
+NoticeDAO noticeDAO = new NoticeDAO();
 //메소드 호출
-   List<QnaVO> qnaList = qnaDAO.getQnaList(searchField, searchText);
-   request.setAttribute("qnaList", qnaList);
+   List<NoticeVO> noticeList = noticeDAO.getNoticeList(searchField, searchText);
+   request.setAttribute("noticeList", noticeList);
    
-   int totalList = qnaList.size(); // 총게시글 얻어오기
+   int totalList = noticeList.size(); // 총게시글 얻어오기
 %>    
 <%@ include file="../header_footer/header.jsp"%>
 
@@ -75,20 +75,20 @@ QnaDAO qnaDAO = new QnaDAO();
 		<center>
 			<c:choose>
 				<c:when test="${empty sessionScope.loginuser}">
-					<h3>고객센터 QNA 게시판에 오신것을 환영합니다.</h3>
+					<h3>공지사항 게시판에 오신것을 환영합니다.</h3>
 				</c:when>
 				<c:otherwise>
-					 <h3 align="center">${sessionScope.loginuser.id}님 QNA 게시판에 오신것을 환영합니다.</h3> 
+					 <h3 align="center">${sessionScope.loginuser.id}님 공지사항 게시판에 오신것을 환영합니다.</h3> 
 				</c:otherwise>
 			</c:choose>                         
-			<h4>총 Q&A : ${totalList} 건</h4>
-			<form method='get' action='getQnaList.do'>
+			<h4>총 공지사항 : ${totalList} 건</h4>
+			<form method='get' action='getNoticeList.do'>
 				<table border='1' cellpadding='0' cellspacing='0' width='750'>
 					<tr>
 						<td align='right'>
 							<select name='searchCondition'>
-								<option value='qna_title'>제목
-								<option value='qna_content'>내용
+								<option value='not_title'>제목
+								<option value='not_content'>내용
 								<option value='user_id'>작성자
 							</select>
 							<input name='searchKeyword' type='text' value='<%=searchText%>' />
@@ -108,18 +108,18 @@ QnaDAO qnaDAO = new QnaDAO();
 				</tr>
 				<c:forEach items="${qnaList}" var="qna">
 					<tr>
-						<td align="center">${qna.qna_id}</td>
-						<td align="center">${qna.qna_kind}</td>
-						<td align="center"><a href="getQna.do?qna_id=${qna.qna_id}">${qna.qna_title}</a></td>
-						<td align="center">${qna.user_id}</td>
-						<td align="center"><fmt:formatDate value="${qna.qna_timestamp}"  pattern="yy-MM-dd"/></td>
-						<td align="center">${qna.qna_views}</td>
+						<td align="center">${not.not_id}</td>
+						<td align="center">${not.not_kind}</td>
+						<td align="center"><a href="getNotice.do?qna_id=${not.not_id}">${not.not_title}</a></td>
+						<td align="center">${not.user_id}</td>
+						<td align="center"><fmt:formatDate value="${not.not_timestamp}"  pattern="yy-MM-dd"/></td>
+						<td align="center">${not.not_views}</td>
 					</tr>
 				</c:forEach>
 			</table>
 			<br>
-			<a href="getInsertQna.do">새글 등록</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<a href="getQnaList.do">전체글 목록 보기</a>
+			<a href="getInsertNotice.do">새글 등록</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="getNoticeList.do">전체글 목록 보기</a>
 		</center>
 		<!-- //content -->
  </div>

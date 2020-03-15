@@ -15,6 +15,8 @@ public static Connection getConnection() throws Exception{
 			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@192.168.0.24:1521:xe", "wiz", "1234");
 //			Class.forName("org.h2.Driver");
 //			Connection con = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test", "sa", "");
+//			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "sa", "");
+
 			System.out.println("DB연결성공");
 			
 			return con;
