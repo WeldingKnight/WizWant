@@ -64,6 +64,7 @@
 	<div id="detail_rap">
 		<c:forEach items="${productList}" var="product">
 			<div class="detail_content">
+			
 				<a href="product_detail.do?goods_id=${product.goods_id}"><img src="${product.goods_image}"></a>
 				<div class="detail_product">
 				    <div id="detail_productName">${product.goods_name}</div>
