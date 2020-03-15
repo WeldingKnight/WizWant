@@ -24,15 +24,15 @@
     text-align: center;
 }
 
-#product_sale_enrollment >td{
+#product_sale_enrollment > td{
     border: 1px solid black;
     height: 50px;
-  
 }
-#product_sale_button{
-
-    text-align: center;
-    float: right;
+#product_sale_button {
+    text-align: right;
+}
+#product_sale_input{
+	margin: 10px;
 }
 
 

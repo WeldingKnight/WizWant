@@ -10,6 +10,9 @@ public class ProductVO {
 	private int goods_id;			//상품 번호
 	private String goods_image;		//상품 이미지
 	private String goods_validate;	//상품 판매여부
+	private int goods_views;		//상품 조회수
+	private String goods_kind_b;	//상품 큰카테고리
+	private String goods_kind_s;	//상품 작은카테고리
 	
 	public String getSeller_id() {return seller_id;}
 	public void setSeller_id(String seller_id) {this.seller_id = seller_id;}
@@ -35,12 +38,24 @@ public class ProductVO {
 	public String getGoods_validate() {return goods_validate;}
 	public void setGoods_validate(String goods_validate) {this.goods_validate = goods_validate;}
 	
+	public int getGoods_views() {return goods_views;}
+	public void setGoods_views(int goods_views) {this.goods_views = goods_views;}
+	
+	public String getGoods_kind_b() {return goods_kind_b;}
+	public void setGoods_kind_b(String goods_kind_b) {this.goods_kind_b = goods_kind_b;}
+	
+	public String getGoods_kind_s() {return goods_kind_s;}
+	public void setGoods_kind_s(String goods_kind_s) {this.goods_kind_s = goods_kind_s;}
+	
 	@Override
 	public String toString() {
 		return "ProductVO [seller_id=" + seller_id + ", goods_name=" + goods_name + ", goods_detail=" + goods_detail
 				+ ", goods_quantity=" + goods_quantity + ", goods_price=" + goods_price + ", goods_id=" + goods_id
-				+ ", goods_image=" + goods_image + ", goods_validate=" + goods_validate + "]";
+				+ ", goods_image=" + goods_image + ", goods_validate=" + goods_validate + ", goods_views=" + goods_views
+				+ ", goods_kind_b=" + goods_kind_b + ", goods_kind_s=" + goods_kind_s + "]";
 	}
+	
+
 	
 	
 	

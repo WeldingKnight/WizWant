@@ -17,17 +17,16 @@ import com.shopping.MVC_reshop.product.ProductVO;
 public class ProductController {
 
 	@RequestMapping("/product.do" )
-	public String product(HttpServletRequest request,HttpSession session) {
-		
+	public String product(HttpServletRequest request,HttpSession session,ProductVO vo, ProductDAO productDAO) {
 		String Classification = request.getParameter("Classification");
 		String userId = request.getParameter("userId");
 		
 		System.out.println(Classification);
-		System.out.println(userId);
 		
 		System.out.println("상품페이지로 이동");
 		return "/views/product/product.jsp";
 	}
+	
 	
 	//글 상세 보기
 	@RequestMapping("/product_detail.do")
@@ -48,17 +47,17 @@ public class ProductController {
 	
 
 	//상품 등록 후 product 페이지로 이동
-		@RequestMapping(value ="/product_sale.do",method = RequestMethod.POST)
-		public String insertProduct(ProductVO vo, ProductDAO productDAO) {
-			System.out.println(vo.toString());
-			productDAO.insertProduct(vo);
-			
-			String fileuploadurl="D:\\Kangheesoo\\WizWant\\src\\main\\webapp\\img\\product_img";
-			File fileupload= new File(fileuploadurl+vo.getGoods_image());
-			System.out.println(productDAO.getProduct(vo));
-			System.out.println("판매 등록 후 상품 전체 페이지로 이동");
-			return "/views/product/product.jsp";
-		}
+	@RequestMapping(value ="/product_sale.do",method = RequestMethod.POST)
+	public String insertProduct(ProductVO vo, ProductDAO productDAO) {
+		System.out.println(vo.toString());
+		productDAO.insertProduct(vo);
+		
+		String fileuploadurl="D:\\Kangheesoo\\WizWant\\src\\main\\webapp\\img\\product_img";
+		File fileupload= new File(fileuploadurl+vo.getGoods_image());
+		System.out.println(productDAO.getProduct(vo));
+		System.out.println("판매 등록 후 상품 전체 페이지로 이동");
+		return "/views/product/product.jsp";
+	}
 
 	
 	//글 수정
