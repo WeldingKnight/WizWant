@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shopping.MVC_reshop.user.UserDAO;
 import com.shopping.MVC_reshop.user.UserVO;
@@ -37,4 +39,22 @@ public class UserController {
 		return "redirect:/wiz_want.do";
 
 	}
+	
+	@RequestMapping(value="/insertidchk.do",method = RequestMethod.GET)
+	@ResponseBody
+	public String idchk( UserDAO dao, UserVO vo, @RequestParam("insertId") String insert_id) {
+		
+		UserVO user = dao.isnertIdchk(insert_id);
+		System.out.println(user);
+
+		if (user != null) {
+
+			return "1"; //중복된 아이디일 경우
+		} else {
+		
+			return "0"; //중복되지 않은 아이디 일경우 
+		
+		}
+
+	}	
 }

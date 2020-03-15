@@ -5,6 +5,10 @@
 <html>
 <head>
 <link rel="stylesheet" href="./css/insert.css">
+<script src="./js/jquery-2.2.4.min.js"></script>
+<script src="./js/jquery-ui.min.js"></script>
+<script src="./js/jquery.easing.1.3.js"></script>
+<script src="./js/insert.js"></script>
 <meta charset="UTF-8">
 <title>회원가입</title>
 </head>
@@ -23,7 +27,8 @@
 				<tr>
 					<td><input
 						style="width: 300px; height: 30px; font-size: 30px;" type="text"
-						id="id" name="id" accesskey="L" maxlength="41" ></td>
+						id="id" name="id" accesskey="L" maxlength="41" >
+						<div class="check_font" id="insert_idchk"></div></td>
 				</tr>
 				<tr>
 					<td>비밀번호</td>
@@ -31,7 +36,8 @@
 				<tr>
 					<td><input
 						style="width: 300px; height: 30px; font-size: 30px;"
-						type="password" id="password" name="password" accesskey="L" maxlength="41" ></td>
+						type="password" id="password" name="password" accesskey="L" maxlength="41" >
+						<div class="check_font" id="insert_pw"></div></td>
 				</tr>
 				<tr>
 					<td>비밀번호 확인</td>
@@ -40,7 +46,9 @@
 					<td><input
 						style="width: 300px; height: 30px; font-size: 30px;"
 						type="password" id="pwdchk" name="pwdchk" accesskey="L"
-						maxlength="41" ></td>
+						maxlength="41" >
+						<div class="check_font" id="insert_pwcConfirm"></div>
+						</td>
 				</tr>
 				<tr>
 					<td>이름</td>
@@ -72,7 +80,7 @@
 				<tr>
 					<td><select name="sex" id="sex"
 						style="width: 300px; height: 30px; font-size: 20px;">
-							<option value="none">성별</option>
+							<option value="no">성별</option>
 							<option value="남">남</option>
 							<option value="여">여</option>
 					</select></td>
@@ -82,7 +90,7 @@
 				</tr>
 				<tr>
 					<td>
-						<input style="width: 300px; height: 30px; font-size: 20px;" type="text" id="birth" name="birth" accesskey="L" maxlength="41">
+						<input style="width: 300px; height: 30px; font-size: 20px;" type="text" id="birth" name="birth" accesskey="L" maxlength="41" placeholder="생년월일8자리를 입력하세요.">
 					</td>
 				</tr>
 				<tr>

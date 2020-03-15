@@ -19,6 +19,7 @@ public class UserDAO {
 	private final String USER_GET = "select * from members where id=? and pwd =?"; //로그인
 	private final String USER_insert= "insert into members (NAME,id,pwd,mail,address,birth,sex,tel) values(?,?,?,?,?,?,?,?)"; //회원가입
 	private final String USER_update ="update members set name=? pwd=? where id=?";  //회원정보수정
+	private final String USER_insertid_chk ="select * from members where id=?";//아이디 중복체그
 	
 	public UserVO getUser(UserVO vo) {  //로그인메서드
 		UserVO user = null;
@@ -59,10 +60,6 @@ public class UserDAO {
 		return user;	
 	}
 	
-	//SQL 명령어
-	
-	
-		
 	public void insertUser(UserVO vo) {
 			
 			
@@ -75,11 +72,31 @@ public class UserDAO {
 				pstmt.setString(1, vo.getName());
 				pstmt.setString(2, vo.getId());
 				pstmt.setString(3, vo.getPassword());
-				pstmt.setString(4, vo.getEmail());
-				pstmt.setString(5, vo.getAddress());
-				pstmt.setString(6, vo.getBirth());
+				
+				if( vo.getEmail()!=null) {
+					pstmt.setString(4, vo.getEmail());
+				}else {
+					pstmt.setString(4, null);
+				}
+				
+				if(vo.getAddress()!=null) {
+					pstmt.setString(5, vo.getAddress());
+				}else {
+					pstmt.setString(5,null);
+				}
+				
+				if(vo.getBirth()!=null) {
+					pstmt.setString(6, vo.getBirth());
+				}else {
+					pstmt.setString(6, null);
+				}
 				pstmt.setString(7, vo.getSex());
-				pstmt.setString(8, vo.getTel());
+				
+				if( vo.getTel() !=null) {
+					pstmt.setString(8, vo.getTel());
+				}else {
+					pstmt.setString(8, null);
+				}
 				pstmt.executeUpdate();
 				
 				System.out.println("UserDAO 회원가입 데이터 내용확인: "+vo.toString());
@@ -93,4 +110,32 @@ public class UserDAO {
 			}
 	
 		}
+	
+	public UserVO isnertIdchk(String insertid) {  //아이디 중복체크 메서드
+		UserVO user = null;
+		System.out.println("중복체크할 ID: "+insertid);
+		
+		try {
+			
+			System.out.println("===> JDBC로isnertIdchkr() 기능처리");
+			conn = JDBCUtil.getConnection();
+			stmt = conn.prepareStatement(USER_insertid_chk);
+			
+
+			stmt.setString(1, insertid);
+			rs = stmt.executeQuery();
+			
+			if(rs.next()) {
+				user = new UserVO();
+				user.setId(rs.getString("ID"));
+			}
+		} catch (Exception e) {
+
+		}finally {
+			
+			JDBCUtil.close(rs, stmt, conn);
+		}
+		
+		return user;	
+	}
 }
