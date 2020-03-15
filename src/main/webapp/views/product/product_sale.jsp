@@ -17,59 +17,59 @@
                 </tr>
                 <tr id="product_sale_enrollment">
                     <td name="select_machine" id="detail_category"> 
-	                    <select id="ssmain" name="main" onChange="showSub(this.options[this.selectedIndex].value);">
-	                        <option value="1" name="digital" id="digital">디지털</option>
-	                        <option value="2" name="tel" id="tel">모바일</option>
-	                        <option value="3" name="clothing" id="clothing">의류</option>
-	                        <option value="4" name="grocery" id="grocery">잡화</option>
+	                    <select id="goods_kind_b" name="goods_kind_b" onChange="showSub(this.options[this.selectedIndex].value);">
+	                        <option value="1" id="digital">디지털</option>
+	                        <option value="2" id="tel">모바일</option>
+	                        <option value="3" id="clothing">의류</option>
+	                        <option value="4" id="grocery">잡화</option>
 	                    </select>   
 	        
 	                    <select name="SUB1" style="display: ;">
 	                        
-	                        <option value=" ">데스크탑</option>
-	                        <option value=" ">노트북</option>
-	                        <option value=" ">태블릿</option>
+	                        <option>데스크탑</option>
+	                        <option>노트북</option>
+	                        <option>태블릿</option>
 	                    </select>    
 	        
-	                    <select name="SUB2" style="display: ;">
-	                        <option name="goods_kind_s" value=" ">조립</option>
-	                        <option name="goods_kind_s" value=" ">브랜드(삼성,LG,애플)</option>
-	                        <option name="goods_kind_s" value=" ">브랜드(기타)</option>
+	                    <select id="goods_kind_s" name="SUB2" style="display: ;">
+	                        <option value="조립">조립</option>
+	                        <option value="브랜드(삼성,LG,애플)">브랜드(삼성,LG,애플)</option>
+	                        <option value="브랜드(기타)">브랜드(기타)</option>
 	                    </select>   
 	        
 	                    <select name="SUB3" style="display: none;">
-	                        <option name="goods_kind_b" value=" ">스마트폰</option>
-	                        <option name="goods_kind_b" value=" ">주변기기</option>
-	                        <option name="goods_kind_b" value=" ">피처폰</option>
+	                        <option>스마트폰</option>
+	                        <option>주변기기</option>
+	                        <option>피처폰</option>
 	                    </select> 
 	        
-	                    <select name="SUB4" style="display: none;">
-	                        <option name="goods_kind_s" value=" ">애플</option>
-	                        <option name="goods_kind_s" value=" ">삼성,LG</option>
-	                        <option name="goods_kind_s" value=" ">기타 브랜드</option>
+	                    <select id="goods_kind_s" name="SUB4" style="display: none;">
+	                        <option value="애플">애플</option>
+	                        <option value="삼성,LG">삼성,LG</option>
+	                        <option value="기타 브랜드">기타 브랜드</option>
 	                    </select> 
 	        
 	                    <select name="SUB5" style="display: none;">
-	                        <option name="goods_kind_b" value=" ">남성</option>
-	                        <option name="goods_kind_b" value=" ">여성</option>
+	                        <option>남성</option>
+	                        <option>여성</option>
 	                    </select> 
 	        
-	                    <select name="SUB6" style="display: none;">
-	                        <option name="goods_kind_s" value=" ">상의</option>
-	                        <option name="goods_kind_s" value=" ">하의</option>
-	                        <option name="goods_kind_s" value=" ">그 외</option>
+	                    <select id="goods_kind_s" name="SUB6" style="display: none;">
+	                        <option value="상의">상의</option>
+	                        <option value="하의">하의</option>
+	                        <option value="그 외">그 외</option>
 	                    </select> 
 	                    
 	                    <select name="SUB7" style="display: none;">
-	                        <option name="goods_kind_b" value=" ">시계</option>
-	                        <option name="goods_kind_b" value=" ">신발</option>
-	                        <option name="goods_kind_b" value=" ">그 외</option>
+	                        <option>시계</option>
+	                        <option>신발</option>
+	                        <option>그 외</option>
 	                    </select> 
 	                    
-	                    <select name="SUB8" style="display: none;">
-	                        <option name="goods_kind_s" value=" ">남</option>
-	                        <option name="goods_kind_s" value=" ">여</option>
-	                        <option name="goods_kind_s" value=" ">브랜드 별</option>
+	                    <select id="goods_kind_s" name="SUB8" style="display: none;">
+	                        <option value="남">남</option>
+	                        <option value="여">여</option>
+	                        <option value="브랜드 별">브랜드 별</option>
 	                    </select>
                 	</td>
                     <td><input type="file" name="goods_image"  id="goods_image" src="./img/product_img/default.jpg"></td>
