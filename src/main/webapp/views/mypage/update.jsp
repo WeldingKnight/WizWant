@@ -51,7 +51,8 @@
 			</tr>
 			<tr>
 				<td><input style="width: 300px; height: 30px; font-size: 30px;"
-					type="tel" id="tel" name="tel" accesskey="L" maxlength="41" value="${sessionScope.loginuser.tel}"></td>
+					type="tel" id="tel" name="tel" accesskey="L" maxlength="41"
+					value="${sessionScope.loginuser.tel}"></td>
 			</tr>
 			<tr>
 				<td>성별</td>
@@ -84,11 +85,10 @@
 					background-color="skyblue" id="insert"> <input
 					style="width: 150px; height: 50px; font-size: 20px; background-color: dodgerblue; color: white;"
 					type="reset" title="취소" alt="취소" value="취소"
-					background-color="skyblue" id="insert">
-					<a href="./delet.do"></a></td>
-					
+					background-color="skyblue" id="insert"> <a href="/MVC_reshop/delete.do">회원탈퇴</a></td>
 			</tr>
 		</table>
+
 	</form>
 </div>
 <jsp:include page="../header_footer/footer.jsp"></jsp:include>
