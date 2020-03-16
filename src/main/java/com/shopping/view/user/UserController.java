@@ -57,6 +57,13 @@ public class UserController {
 		}
 	}
 	
+	@RequestMapping(value = "/delete.do", method = RequestMethod.GET)
+	public String delete() {
+
+		System.out.println("회원탈퇴페이지로 이동");
+		return "/views/login&insert/delete.jsp";
+	}
+	
 	@RequestMapping(value = "/delete.do", method = RequestMethod.POST)
 	public String delete(UserDAO dao, UserVO vo, HttpServletRequest request) throws ServletException,IOException{
 		request.setCharacterEncoding("UTF-8");
