@@ -45,7 +45,7 @@
 			</h1>
 			<div id="header_menu_cover">
 				<div id="header_menu">
-					<a href="product_detail.do">앵커테그</a>
+					<a href="delete.do">앵커테그</a>
 					<div class="header_menu_box">
 						<a href="product.do?Classification=${'digital'}"><img
 							src="./img/main_img/digital_img.png" alt="디지털이미지">디지털</a>
