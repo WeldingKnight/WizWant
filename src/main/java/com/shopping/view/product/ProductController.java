@@ -1,6 +1,7 @@
 package com.shopping.view.product;
 
 import java.io.File;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -14,8 +15,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shopping.MVC_reshop.product.ProductDAO;
 import com.shopping.MVC_reshop.product.ProductVO;
-import com.shopping.MVC_reshop.user.UserDAO;
-import com.shopping.MVC_reshop.user.UserVO;
 
 @Controller
 public class ProductController {
@@ -24,11 +23,13 @@ public class ProductController {
 	//상품 리스트 출력
 	@RequestMapping(value="/listProduct.do",method = RequestMethod.GET)
 	@ResponseBody
-	public ProductVO listProduct( ProductDAO dao, ProductVO vo, @RequestParam("goods") String goods) {
-		System.out.println(goods);
-		ProductVO product = dao.listProduct(goods);
+	public List<ProductVO> listProduct( ProductDAO dao, ProductVO vo, @RequestParam("goods") String goods) {
+		int idx = goods.indexOf("=");
+		String goodsval = goods.substring(idx+1);
+		System.out.println("리스트 받을 카테고리 name : " +goodsval);
+		List<ProductVO> product = dao.listProduct(goodsval);
 		System.out.println(product);
-
+		
 		return product;
 	}
 	
@@ -74,7 +75,7 @@ public class ProductController {
 		
 		String fileuploadurl="D:\\Kangheesoo\\WizWant\\src\\main\\webapp\\img\\product_img";
 		File fileupload= new File(fileuploadurl+vo.getGoods_image());
-		System.out.println(productDAO.getProduct(vo));
+//		System.out.println(productDAO.getProduct(vo));
 		System.out.println("판매 등록 후 상품 전체 페이지로 이동");
 		return "/views/product/product.jsp";
 	}
