@@ -22,37 +22,19 @@
    <h1>글 상세 보기</h1>
    <hr>
    <form action="updateNotice.do" method="POST">
-      <input name="seq" type="hidden" value="${not.not_id}"/>
+      <input name="seq" type="hidden" value="${notice.notice_id}"/>
       <table border='1' cellpadding='0' cellspacing='0'>
          <tr>
             <td bgcolor="orange" width="70">제목 </td>
-            <td align="left"><input name="title" type="text" value="${not.not_title}"></td>
-         </tr>
-         <tr>
-            <td bgcolor="orange">작성자 </td>
-            <td align="left">${not.user_id}</td>
-         </tr>
-         <tr>
-         	<td bgcolor="orange" width="70">종류:</td>
-			<td>
-				<select name="not_kind">
-					<option value="공지">공지</option>
-					<option value="이벤트">이벤트</option>
-					<option value="안내">안내</option>
-				</select>
-			</td>
+            <td align="left"><input name="title" type="text" value="${notice.notice_title}"></td>
          </tr>
          <tr>
          	<td bgcolor="orange">내용</td>
-         	<td align='center'><textarea name="content" rows="10" cols="40">${not.not_content}</textarea></td>
+         	<td align='center'><textarea name="content" rows="10" cols="40">${notice.notice_content}</textarea></td>
          </tr>
          <tr>
             <td bgcolor="orange">등록일</td>
-            <td align="left"><fmt:formatDate value="${not.not_timestamp}"  pattern="yy-MM-dd"/></td>
-         </tr>
-         <tr>
-            <td bgcolor="orange">조회수</td>
-            <td align="left">${not.not_views}</td>
+            <td align="left"><fmt:formatDate value="${notice.notice_timestamp}"  pattern="yy-MM-dd"/></td>
          </tr>
          <tr>
             <td colspan="2" align="center">
@@ -63,7 +45,7 @@
    </form>
    <hr>
    <a href='getInsertNotice.do'>글 등록</a>&nbsp;&nbsp;&nbsp;
-   <a href='deleteNotice.do?qna_id=${not.not_id}'>글 삭제</a>&nbsp;&nbsp;&nbsp;
+   <a href='deleteNotice.do?qna_id=${notice.notice_id}'>글 삭제</a>&nbsp;&nbsp;&nbsp;
    <a href='getNoticeList.do'>전체 게시판</a>
    </center>
   
