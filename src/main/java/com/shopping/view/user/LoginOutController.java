@@ -68,17 +68,6 @@ public class LoginOutController {
 
 	}
 	
-	
-//	@RequestMapping(value = "/logout.do")
-//	public void logout(HttpServletRequest request, HttpServletResponse response,HttpSession session)throws ServletException,IOException{
-//		String url = "/wiz_want.do";
-//		
-//		if (session!=null) {
-//			session.invalidate(); // 세션의 기능을 중단시키고무효화 시키는것
-//		}
-//		
-//		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
-//		dispatcher.forward(request, response);
-//	}
+
 	
 }

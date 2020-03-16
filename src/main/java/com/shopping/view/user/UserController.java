@@ -5,6 +5,7 @@ import java.io.UnsupportedEncodingException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -59,16 +60,20 @@ public class UserController {
 	
 	@RequestMapping(value = "/delete.do", method = RequestMethod.GET)
 	public String delete() {
-
+		
 		System.out.println("회원탈퇴페이지로 이동");
 		return "/views/login&insert/delete.jsp";
 	}
 	
 	@RequestMapping(value = "/delete.do", method = RequestMethod.POST)
-	public String delete(UserDAO dao, UserVO vo, HttpServletRequest request) throws ServletException,IOException{
+	public String delete(UserDAO dao, UserVO vo, HttpServletRequest request,HttpSession session) throws ServletException,IOException{
 		request.setCharacterEncoding("UTF-8");
 		
 		dao.deleteUser(vo);
+		
+		if (session!=null) {
+			session.invalidate(); // 세션의 기능을 중단시키고무효화 시키는것
+		}
 		System.out.println("회원탈퇴 후 main페이지로 이동");
 		
 		return "redirect:/wiz_want.do";
