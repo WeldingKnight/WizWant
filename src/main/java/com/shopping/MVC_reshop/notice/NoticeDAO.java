@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.shopping.MVC_reshop.qna.QnaVO;
+import com.shopping.MVC_reshop.notice.NoticeVO;
 import com.shopping.MVC_reshop.common.JDBCUtil;
 
 public class NoticeDAO {
@@ -16,15 +16,15 @@ public class NoticeDAO {
 	private ResultSet rs = null;
 	
 	//SQL 명령어들
-	private final String NOTICE_INSERT="insert into qna_board(user_id, qna_title, qna_content,qna_kind,qna_timestamp,qna_id) values(?,?,?,?,sysdate,qna_seq.nextval);";
-	private final String NOTICE_UPDATE ="update QNA_BOARD set user_id=?, qna_title=?, qna_kind=?,qna_content=? where qna_id=?";
-	private final String NOTICE_DELETE ="delete QNA_BOARD where qna_id=?";
-	private final String NOTICE_GET = "select * from QNA_BOARD where qna_id=?";
+	private final String NOTICE_INSERT="insert into notice_board(notice_id, notice_title,notice_content,seq_notice) values(?,?,?,1)";
+	private final String NOTICE_UPDATE ="update NOTICE_BOARD set notice_id=?, notice_title=?,notice_content=? where notice_id=?";
+	private final String NOTICE_DELETE ="delete NOTICE_BOARD where notice_id=?";
+	private final String NOTICE_GET = "select * from NOTICE_BOARD where notice_id=?";
 	//private final String QNA_LIST = "select * from board order by qna_id desc";
 	
 	//글 수정
 	public void updateNotice(NoticeVO vo) {
-		System.out.println("===> JDBC로 updateQna() 기능 처리");
+		System.out.println("===> JDBC로 updateNotice() 기능 처리");
 		
 		try {
 			conn = JDBCUtil.getConnection();
@@ -62,14 +62,7 @@ public class NoticeDAO {
 		
 		try {
 			conn = JDBCUtil.getConnection();
-			//해당 게시글 조회수(qna_views)에 +1 update 처리
-			String UPDATE_VIEWS = "update not_board set not_views=not_views+1 where not_id=?";
-			pstmt = conn.prepareStatement(UPDATE_VIEWS);
-			pstmt.setInt(1, vo.getNotice_id());
-			pstmt.executeUpdate();
-			System.out.println("UPDATE_VIEWS : "+UPDATE_VIEWS);
-			
-			
+		
 			//글 상세 가져오기
 			pstmt = conn.prepareStatement(NOTICE_GET);
 			pstmt.setInt(1, vo.getNotice_id());
@@ -128,7 +121,7 @@ public class NoticeDAO {
 			pstmt.setString(2,vo.getNotice_title());
 			pstmt.setString(3, vo.getNotice_content());
 			pstmt.executeUpdate();
-			
+			System.out.println("asd");
 		}catch(Exception e) {
 			System.out.println("insertNot() : "+e);
 		}finally {
@@ -151,13 +144,13 @@ public class NoticeDAO {
 			String NOTICE_GET_LIST=""; //쿼리 변수
 			if(!searchField.equals("") && !searchText.equals("")) {
 				where = "where "+searchField+" like '%" + searchText + "%'";
-				NOTICE_GET_LIST = "select * from qna_board "+where+" order by qna_id desc";
+				NOTICE_GET_LIST = "select * from notice_board "+where+" order by notice_id desc";
 				System.out.println(NOTICE_GET_LIST);
 				System.out.println("2");
 				pstmt = conn.prepareStatement(NOTICE_GET_LIST);
 			}else {
 			//조건이 들어오지 않을 시 where가 없으므로, 전체 불러오기가 됩니다.
-				NOTICE_GET_LIST="select * from qna_board order by qna_id desc";
+				NOTICE_GET_LIST="select * from notice_board order by notice_id desc";
 				pstmt = conn.prepareStatement(NOTICE_GET_LIST);
 				System.out.println(NOTICE_GET_LIST);
 				System.out.println("3");

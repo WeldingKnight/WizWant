@@ -63,17 +63,16 @@ document.addEventListener("DOMContentLoaded", function(){
 					</tr>
 				</table>
 			</form>
-			<table border='1' cellpadding='0' cellspacing='0' width='450'>
+			<table border='1' cellpadding='0' cellspacing='0' width='750'>
 				<tr>
-					<th bgcolor="orange" width='50'>번호</th>
-					<th bgcolor="orange" width='300'>제목</th>
-					<th bgcolor="orange" width='100'>등록일</th>
+					<th bgcolor="orange" width='70'>번호</th>
+					<th bgcolor="orange" width='500'>제목</th>
+					<th bgcolor="orange" width='180'>등록일</th>
 				</tr>
 				<c:forEach items="${noticeList}" var="notice">
 					<tr>
 						<td align="center">${notice.notice_id}</td>
-						<td align="center"><a href="getNotice.do?qna_id=${notice.notice_id}">${notice.notice_title}</a></td>
-						<td align="center">${notice.notice_id}</td>
+						<td align="center"><a href="getNotice.do?notice_id=${notice.notice_id}">${notice.notice_title}</a></td>
 						<td align="center"><fmt:formatDate value="${notice.notice_timestamp}"  pattern="yy-MM-dd"/></td>
 					</tr>
 				</c:forEach>

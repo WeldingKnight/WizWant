@@ -38,7 +38,7 @@
             <td bgcolor="orange">등록일</td>
             <td align="left"><fmt:formatDate value="${notice.notice_timestamp}"  pattern="yy-MM-dd"/></td>
          </tr>
-         <c:if test='${sessionScope.loginuser.id==notice.notice_id}'>
+         <c:if test='${sessionScope.loginuser.role==0}'>
          <tr>
             <td colspan="2" align="center">
             	<input type='submit' value='글수정'/>
@@ -50,7 +50,7 @@
    <hr>
    <a href='getInsertNotice.do'>새글 등록</a>&nbsp;&nbsp;&nbsp;
    <c:choose>
-	 <c:when test="${sessionScope.loginuser.id==notice.notice_id}">
+	 <c:when test="${sessionScope.loginuser.role==0}">
 	 	<a href='deleteNotice.do?not_id=${notice.notice_id}'>글 삭제</a>&nbsp;&nbsp;&nbsp;
 	 	<a href='getNoticeList.do'>전체 게시판</a>		
 	 </c:when>

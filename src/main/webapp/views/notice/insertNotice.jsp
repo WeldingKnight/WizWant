@@ -21,10 +21,14 @@
 <!-- //스크립트릿 -->
 
 	<center>
-	<h1>QNA 등록</h1>
+	<h1>공지사항 등록</h1>
 	<hr>
 		<form method='post' action='insertNotice.do'>
 			<table border='1' cellpadding='0' cellspacing='0'>
+				<tr>
+					<td bgcolor="orange" width="70">아이디 :</td>
+					<td align="left"><input type="number" name='notice_id' size='38'></td>
+				</tr>
 				<tr>
 					<td bgcolor="orange" width="70">제목 :</td>
 					<td align="left"><input type='text' name='notice_title' size='38'></td>
@@ -35,7 +39,7 @@
 				</tr>
 				<tr>
 					<td colspan='2' align='center'>
-						<input type='submit' value='글등록'/>
+						<input type='submit' value='공지등록'/>
 					</td>
 				</tr>
 				<tr>
