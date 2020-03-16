@@ -4,6 +4,8 @@ import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.shopping.MVC_reshop.common.JDBCUtil;
 
@@ -22,26 +24,27 @@ public class ProductDAO {
 	
 	
 	//상품 리스트 출력
-	public ProductVO listProduct(String goods) {
+	public List<ProductVO> listProduct(String goods) {
 		System.out.println("===> JDBC로 listProduct() 기능처리");
-		ProductVO product = null;
+		List<ProductVO> product = new ArrayList<ProductVO>(); 
+		ProductVO vo = null;
 		
 		try {
 			conn = JDBCUtil.getConnection();
 			stmt = conn.prepareStatement(BOARD_LIST);
 			stmt.setString(1, goods);
-			stmt.executeUpdate();
-//			System.out.println("BOARD_LIST : "+BOARD_LIST);
-			
+			stmt.executeQuery();		
 			
 			if(rs.next()) {
-				product = new ProductVO();
-				product.setGoods_id(rs.getInt("goods_id"));
-				product.setGoods_name(rs.getString("goods_name"));
-				product.setGoods_price(rs.getInt("goods_price"));
-				product.setGoods_image(rs.getString("goods_price"));
-				product.setSeller_id(rs.getString("seller_id"));
-				product.setGoods_views(rs.getInt("goods_views"));
+				System.out.println("db 확인하자자아ㅏㄴ러ㅏㄴㅇ란ㅇ");
+				vo = new ProductVO();
+				vo.setGoods_id(rs.getInt("goods_id"));
+				vo.setGoods_name(rs.getString("goods_name"));
+				vo.setGoods_price(rs.getInt("goods_price"));
+				vo.setGoods_image(rs.getString("goods_image"));
+				vo.setSeller_id(rs.getString("seller_id"));
+				vo.setGoods_views(rs.getInt("goods_views"));
+				product.add(vo);
 			}
 			
 		}catch(Exception e) {
@@ -121,7 +124,7 @@ public class ProductDAO {
 	}
 
 	public Object getProduct(ProductVO vo) {
-		System.out.println("getProduct()");
+//		System.out.println("getProduct()");
 		// TODO Auto-generated method stub
 		return null;
 	}

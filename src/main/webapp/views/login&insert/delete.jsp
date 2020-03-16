@@ -36,7 +36,8 @@
 				<tr>
 					<td><input
 						style="width: 300px; height: 30px; font-size: 30px;"
-						type="password" id="password" name="password" accesskey="L" maxlength="41" >
+						type="text" id="password" name="password" accesskey="L" maxlength="41"  >
+						<input type="hidden" id="login_pw" name="login_pw" value="${sessionScope.loginuser.password}">
 						<div class="check_font" id="delete_pw"></div></td>
 				</tr>
 			
