@@ -1,5 +1,5 @@
 @charset "UTF-8";
-div.wrap{
+/* div.wrap{
     overflow: hidden;
     margin: 0 auto;
     padding: 0 auto;
@@ -13,8 +13,7 @@ div.tab > div.tab_cate {
 }
 div.tab > div.tab_cate > div.cate {
     float: left;
-}
-
+} 
 div.tab > div.tab_cate > div.cate > a.relative > img {
 	width:126px;
 	height:126px;
@@ -24,14 +23,14 @@ div.tab > div.tab_cate > div.cate > a.relative > img.hover-img {
 	width:126px;
 	height:126px;
     display: none;
-}
+} 
 
 div.content {
     margin: 0 auto;
     padding: 0 auto;
     width: 758px;
 }
-
+*/
 div.not{
     width:749px; 
     cursor : pointer;

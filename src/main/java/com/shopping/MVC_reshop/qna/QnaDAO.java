@@ -16,10 +16,11 @@ public class QnaDAO {
 	private ResultSet rs = null;
 	
 	//SQL 명령어들
-	private final String QNA_INSERT="insert into qna_board(user_id, qna_title, qna_content,qna_kind,qna_timestamp,qna_id) values(?,?,?,?,sysdate,qna_seq.nextval);";
+	private final String QNA_INSERT="insert into qna_board(user_id, qna_title, qna_content,qna_kind,qna_id) values(?,?,?,?,qna_seq.nextval)";
 	private final String QNA_UPDATE ="update QNA_BOARD set user_id=?, qna_title=?, qna_kind=?,qna_content=? where qna_id=?";
-	private final String QNA_DELETE ="delete QNA_BOARD where qna_id=?";
+	private final String QNA_DELETE ="delete from QNA_BOARD where qna_id=?";
 	private final String QNA_GET = "select * from QNA_BOARD where qna_id=?";
+	//private final String QNA_GET_SORT="select * from qna_board where qna_kind=? order by qna_id desc";
 	//private final String QNA_LIST = "select * from board order by qna_id desc";
 	
 	//글 수정
@@ -70,7 +71,6 @@ public class QnaDAO {
 			pstmt.setInt(1, vo.getQna_id());
 			pstmt.executeUpdate();
 			System.out.println("UPDATE_VIEWS : "+UPDATE_VIEWS);
-			
 			
 			//글 상세 가져오기
 			pstmt = conn.prepareStatement(QNA_GET);
@@ -151,27 +151,22 @@ public class QnaDAO {
 		System.out.println("===> JDBC로 getQnaList() 기능 처리");
 		
 		List<QnaVO> qnaList = new ArrayList<QnaVO>(); // 가변 배열 객체 생성
-		
 		try {
 			conn = JDBCUtil.getConnection();
 			System.out.println("1");
 			//핵심 부분] = > 전체 목록 가져오기 & 검색 조건에 맞는 것만 가져오기
 			String where = ""; // 문자열 where 변수 선언(문자검색용 스트링 쿼리용)
-			String QNA_GET_LIST=""; //쿼리 변수
+			String QNA_GET_LIST="";
 			if(!searchField.equals("") && !searchText.equals("")) {
 				where = "where "+searchField+" like '%" + searchText + "%'";
-				QNA_GET_LIST = "select * from qna_board "+where+" order by qna_id desc";
-				System.out.println(QNA_GET_LIST);
+
+				System.out.println("where : "+where);
 				System.out.println("2");
-				pstmt = conn.prepareStatement(QNA_GET_LIST);
-			}else {
-			//조건이 들어오지 않을 시 where가 없으므로, 전체 불러오기가 됩니다.
-				QNA_GET_LIST="select * from qna_board order by qna_id desc";
-				pstmt = conn.prepareStatement(QNA_GET_LIST);
-				System.out.println(QNA_GET_LIST);
-				System.out.println("3");
 			}
 			
+			QNA_GET_LIST="select * from qna_board "+where+" order by qna_id desc"; //쿼리 변수
+
+			pstmt = conn.prepareStatement(QNA_GET_LIST);
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
@@ -195,6 +190,49 @@ public class QnaDAO {
 		}
 		return qnaList;
 
+	}
+	
+	//Sorting List Call
+	public List<QnaVO> getSortList(String sort) {
+		// TODO Auto-generated method stub
+		
+		List<QnaVO> sortList = new ArrayList<QnaVO>(); // 가변 배열 객체 생성
+		String QNA_GET_SORT = "";
+		try {
+			conn = JDBCUtil.getConnection();
+			System.out.println("1");			
+			
+
+			QNA_GET_SORT = "select * from qna_board where qna_kind=? order by qna_id desc";//쿼리 변수
+
+			pstmt = conn.prepareStatement(QNA_GET_SORT);
+			
+			System.out.println(QNA_GET_SORT);
+			System.out.println("3 :"+sort);
+			
+			pstmt.setString(1, sort);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				System.out.println("4");
+				QnaVO vo = new QnaVO();
+				vo.setUser_id(rs.getString("user_id"));
+				vo.setQna_title(rs.getString("qna_title"));
+				vo.setQna_timestamp(rs.getDate("qna_timestamp"));
+				vo.setQna_id(rs.getInt("qna_id"));
+				vo.setQna_views(rs.getInt("qna_views"));
+				vo.setQna_kind(rs.getString("qna_kind"));
+				sortList.add(vo);
+
+				System.out.println("QNA_KIND : "+vo.getQna_kind());
+				System.out.println("5");
+			}
+		}catch(Exception e) {
+			System.out.println("getSortList() : "+e);
+		}finally {
+			JDBCUtil.close(rs, pstmt, conn);
+		}
+		return sortList;
 	}
 
 }

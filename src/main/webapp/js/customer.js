@@ -1,36 +1,81 @@
 /**
  * 
  */
-$(function(){
-    $('div.one > a.relative > img').eq(1).show();
-    $('div.one > a.relative > img').eq(0).hide();  
-  });
 
-$(document).ready(function(){
-    $("div.content  > div.faq > div.faq_item").hide();
-    // $("ul > li:first-child a").next().show();
-    $("div.content > div.faq > div.faq_title").click(function(){
-      $(this).next().stop().slideToggle(300);
-      // $(this).next().slideDown(300);
-      $("div.content > div.faq > div.faq_title").not(this).next().slideUp(300);
-      return false;
-    });
-    //이거 없어야 자동으로 맨 위에꺼 안나오길래 지워놈(의태)
-//    $("div.content > div.faq > div.faq_title").eq(0).trigger("click");
-    
- });
 
-function changeImg(e){
-    var im = e;
-    var active = document.getElementsByClassName('active');   
-    var hover = document.getElementsByClassName('hover-img');
 
-    for (i=0; i<active.length; i++) {
-        active[i].style.display='block';
-    }
-    for (i=0; i<hover.length; i++) {
-        hover[i].style.display='none';
-    }
-    im.style.display = 'none';
-    im.nextSibling.nextSibling.style.display ='block';
-}
+//
+//$(function(){
+//    $('div.one > a.relative > img').eq(1).show();
+//    $('div.one > a.relative > img').eq(0).hide();  
+//  });
+//
+//
+//function changeImg(e){
+//    var im = e;
+//    var active = document.getElementsByClassName('active');   
+//    var hover = document.getElementsByClassName('hover-img');
+//
+//    for (i=0; i<active.length; i++) {
+//        active[i].style.display='block';
+//    }
+//    for (i=0; i<hover.length; i++) {
+//        hover[i].style.display='none';
+//    }
+//    im.style.display = 'none';
+//    im.nextSibling.nextSibling.style.display ='block';
+//}
+
+//2020.03.13
+//async function initBoard(){
+//	let boardData = await functionName("select * from qna_board");
+//	
+//	let sort = $.urlParam('sort');
+//	
+//	if(sort == 'order'){
+//		boardData.qna_kind()
+//	}
+////	
+////	boardData.qna_kind()
+//	//정렬
+//	
+//	//
+//	append()
+//	
+//}
+//
+//$.urlParam = function (name) {
+//    let results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+//    if (results == null) {
+//        return null;
+//    }
+//    else {
+//        return results[1] || 0;
+//    }
+//}
+//
+//let sort = $.urlParam('sort') - 1;
+//if (page == -1) {
+//    page = 0;
+//}
+
+
+//2020-03.15
+//$(function(){
+//	change();
+//  });
+//
+//function changeImg(e){
+//	var im = e;
+//	im.classList.remove( 'acitve' );
+//	im.nextSibling.nextSibling.classList.add( 'active' );
+//	
+////  im.style.display = 'none';
+////  im.nextSibling.nextSibling.style.display ='block';
+//}
+//function change(){
+//	 var active = document.getElementsByClassName('active');   
+//     var hover = document.getElementsByClassName('hover-img');
+//     active.style.display='none';
+//     hover.style.display='block';
+//}

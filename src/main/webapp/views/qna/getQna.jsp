@@ -20,8 +20,12 @@
    <h1>글 상세 보기</h1>
    <hr>
    <form action="getUpdateQna.do" method="POST">
-      <input name="qna_id" type="hidden" value="${qna.qna_id}" readonly/>
       <table border='1' cellpadding='0' cellspacing='0'>
+      	 <tr>
+         	<td bgcolor="orange">글번호 </td>
+         	<td>${qna.qna_id}</td>
+         	<input name="qna_id" type="hidden" value="${qna.qna_id}"/>
+         </tr>
          <tr>
             <td bgcolor="orange" width="70">제목 </td>
             <td align="left"><input name="title" type="text" value="${qna.qna_title}" readonly></td>
@@ -36,7 +40,7 @@
          </tr>
          <tr>
          	<td bgcolor="orange">내용</td>
-         	<td align='center'><p name="content" rows="10" cols="40">${qna.qna_content}</p></td>
+         	<td align='left'><p name="content" rows="10" cols="40">${qna.qna_content}</p></td>
          </tr>
          <tr>
             <td bgcolor="orange">등록일</td>
@@ -57,14 +61,9 @@
    </form>
    <hr>
    <a href='getInsertQna.do'>새글 등록</a>&nbsp;&nbsp;&nbsp;
-   <c:choose>
-	 <c:when test="${sessionScope.loginuser.id==qna.user_id}">
-	 	<a href='deleteQna.do?qna_id=${qna.qna_id}'>글 삭제</a>&nbsp;&nbsp;&nbsp;
-	 	<a href='getQnaList.do'>전체 게시판</a>		
-	 </c:when>
-	 <c:otherwise>
-	 	<a href='getQnaList.do'>전체 게시판</a>
-     </c:otherwise>
-   </c:choose>      
+   <c:if test="${sessionScope.loginuser.id==qna.user_id || sessionScope.loginuser.role==0}">
+	 <a href='deleteQna.do?qna_id=${qna.qna_id}'>글 삭제</a>&nbsp;&nbsp;&nbsp;
+   </c:if>
+   <a href='getQnaList.do'>전체 게시판</a>      
    </center>
 <%@ include file="../header_footer/footer.jsp"%>

@@ -4,7 +4,7 @@ div.wrap{
     margin: 0 auto;
     padding: 0 auto;
     width: 1200px;
-    height: 2000px;
+    height: 1000px;
 }
 div.tab > div.tab_cate {
     margin: 0 auto;
@@ -26,17 +26,22 @@ div.tab > div.tab_cate > div.cate > a.relative > img.hover-img {
     display: none;
 }
 
+
 div.content {
     margin: 0 auto;
     padding: 0 auto;
     width: 758px;
 }
 
+
+
+
+/* 2020.03.25 주석
 div.faq {
     width:749px; 
     cursor : pointer;
     border:3px solid #ccc; 
-    /*border-radius:8px; */
+    border-radius:8px;
     margin:0 auto;
     list-style:none;
   }
@@ -58,4 +63,4 @@ div.faq > div.faq_title {
     font-weight: bold;
   }
 
-div.faq > div.faq_item {color:black;font-weight: bold;background-color: #555;}
+div.faq > div.faq_item {color:black;font-weight: bold;background-color: #555;} */

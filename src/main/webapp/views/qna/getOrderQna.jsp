@@ -22,18 +22,16 @@ if(request.getParameter("searchCondition") != null && request.getParameter("sear
 	
 	List<QnaVO> qnaList = qnaDAO.getQnaList(searchField, searchText);
 	request.setAttribute("qnaList", qnaList);
-	
-	int totalList = qnaList.size(); // 총게시글 얻어오기
-	request.setAttribute("totalList", totalList);	
 %>
-
 <%@ include file="../header_footer/header.jsp"%>
+
 <script>
 document.addEventListener("DOMContentLoaded", function(){
-	document.getElementById("1").setAttribute("class","hover-img");
-	document.getElementById("1h").setAttribute("class","active");
+	document.getElementById("2").setAttribute("class","hover-img");
+	document.getElementById("2h").setAttribute("class","active");
 });
 </script>
+
  <div class="wrap">
  		<!-- 탭 메뉴 -->
       		<%@ include file="tabmenu.jsp" %>
@@ -49,10 +47,10 @@ document.addEventListener("DOMContentLoaded", function(){
 				</c:otherwise>
 			</c:choose>
 			<c:choose>
-				<c:when test="${totalList eq null}"><h4>게시글이 없습니다.</h4></c:when>
+				<c:when test="${sortList.size() eq 0}"><h4>게시글이 없습니다.</h4></c:when>
 				<c:otherwise><h4>총 Q&A : ${sortList.size()} 건</h4></c:otherwise>
 			</c:choose>
-			<form method='get' action='getQnaList.do'>
+				<form method='get' action='getQnaList.do'>
 					<table border='1' cellpadding='0' cellspacing='0' width='750'>
 						<tr>
 							<td align='right'>
@@ -61,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function(){
 									<option value='qna_content'>내용
 									<option value='user_id'>작성자
 								</select>
-								<input name='searchKeyword' type='text' value='<%=searchText%>' />
+								<input name='searchKeyword' type='text' />
 								<input type="submit" value="검색">
 							</td>
 						</tr>
@@ -76,16 +74,16 @@ document.addEventListener("DOMContentLoaded", function(){
 					<th bgcolor="orange" width='100'>등록일</th>
 					<th bgcolor="orange" width='100'>조회수</th>
 				</tr>
-				<c:forEach items="${qnaList}" var="qna">
-					<tr>
-						<td align="center">${qna.qna_id}</td>
-						<td align="center">${qna.qna_kind}</td>
-						<td align="center"><a href="getQna.do?qna_id=${qna.qna_id}">${qna.qna_title}</a></td>
-						<td align="center">${qna.user_id}</td>
-						<td align="center"><fmt:formatDate value="${qna.qna_timestamp}"  pattern="yy-MM-dd"/></td>
-						<td align="center">${qna.qna_views}</td>
-					</tr>
-				</c:forEach>
+			<c:forEach items="${sortList}" var="sort">
+				<tr>
+					<td align="center">${sort.qna_id}</td>
+					<td align="center">${sort.qna_kind}</td>
+					<td align="center"><a href="getQna.do?qna_id=${sort.qna_id}">${sort.qna_title}</a></td>
+					<td align="center">${sort.user_id}</td>
+					<td align="center"><fmt:formatDate value="${sort.qna_timestamp}"  pattern="yy-MM-dd"/></td>
+					<td align="center">${sort.qna_views}</td>
+				</tr>
+			</c:forEach>
 			</table>
 			<br>
 			<a href="getInsertQna.do">새글 등록</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
