@@ -55,6 +55,18 @@ public class UserController {
 			return "0"; //중복되지 않은 아이디 일경우 
 		
 		}
+	}
+	
+	@RequestMapping(value = "/delete.do", method = RequestMethod.POST)
+	public String delete(UserDAO dao, UserVO vo, HttpServletRequest request) throws ServletException,IOException{
+		request.setCharacterEncoding("UTF-8");
+		
+		dao.deleteUser(vo);
+		System.out.println("회원탈퇴 후 main페이지로 이동");
+		
+		return "redirect:/wiz_want.do";
 
-	}	
+	}
+	
+	
 }
