@@ -18,26 +18,21 @@ public class ProductDAO {
 	private final String BOARD_UPDATE = "update goods set goods_name=?, goods_detail=?, goods_quantity=?, goods_price=?, goods_image=?, goods_validate=?  where goods_id=?";	
 	private final String BOARD_DELETE = "delete goods where goods_id=?";	
 	private final String BOARD_GET = "select * from goods where seq=?";
-	private final String BOARD_LIST = "select * from goods order by goods_kind_b=? desc";
+	private final String BOARD_LIST = "select * from goods where goods_kind_b=? order by goods_id desc";
 	
 	
 	//상품 리스트 출력
-	public ProductVO listProduct(ProductVO vo) {
+	public ProductVO listProduct(String goods) {
 		System.out.println("===> JDBC로 listProduct() 기능처리");
 		ProductVO product = null;
 		
 		try {
 			conn = JDBCUtil.getConnection();
 			stmt = conn.prepareStatement(BOARD_LIST);
-			stmt.setString(1, vo.getGoods_kind_b());
+			stmt.setString(1, goods);
 			stmt.executeUpdate();
-			System.out.println("BOARD_LIST : "+BOARD_LIST);
+//			System.out.println("BOARD_LIST : "+BOARD_LIST);
 			
-			
-			//글 상세 가져오기
-			stmt = conn.prepareStatement(BOARD_LIST);
-			stmt.setString(1, vo.getGoods_kind_b());
-			rs= stmt.executeQuery();
 			
 			if(rs.next()) {
 				product = new ProductVO();

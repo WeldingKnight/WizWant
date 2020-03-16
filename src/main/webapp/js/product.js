@@ -254,3 +254,17 @@ $(function(){
     });   
 });
 };
+
+$(document).ready(function() {
+    var params = location.search.substr(location.search.indexOf("?") + 1); 
+$.ajax({
+	url : '/MVC_reshop/listProduct.do?goods=' + params,
+	type : 'get',
+	success : function(data) {
+		
+	},
+	error : function() {
+		console.log("실패");
+	}
+});
+});

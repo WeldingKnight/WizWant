@@ -26,6 +26,7 @@
 	                    </select>   
 	        
 	                    <select id ="detail_mid1" style="display: none;" onChange="showSub2(this.options[this.selectedIndex].value);">
+	                    	<option key="default-empty" hidden></option>
 	                        <option value="1">데스크탑</option>
 	                        <option value="2">노트북</option>
 	                        <option value="2">태블릿</option>

@@ -9,13 +9,31 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shopping.MVC_reshop.product.ProductDAO;
 import com.shopping.MVC_reshop.product.ProductVO;
+import com.shopping.MVC_reshop.user.UserDAO;
+import com.shopping.MVC_reshop.user.UserVO;
 
 @Controller
 public class ProductController {
+	
+	
+	//상품 리스트 출력
+	@RequestMapping(value="/listProduct.do",method = RequestMethod.GET)
+	@ResponseBody
+	public ProductVO listProduct( ProductDAO dao, ProductVO vo, @RequestParam("goods") String goods) {
+		System.out.println(goods);
+		ProductVO product = dao.listProduct(goods);
+		System.out.println(product);
 
+		return product;
+	}
+	
+	
+	//상푸 페이지 이동
 	@RequestMapping("/product.do" )
 	public String product(HttpServletRequest request,HttpSession session,ProductVO vo, ProductDAO productDAO) {
 		String Classification = request.getParameter("Classification");
@@ -44,6 +62,8 @@ public class ProductController {
 		System.out.println("판매 등록 페이지로 이동");
 		return "/views/product/product_sale.jsp";
 	}
+	
+	
 	
 
 	//상품 등록 후 product 페이지로 이동
