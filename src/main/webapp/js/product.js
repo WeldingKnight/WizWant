@@ -70,7 +70,7 @@ function takeId(id) {
 	
 	
 	var idV = "";
-	console.log(id);
+//	console.log(id);
 	
 	if(id == "digital"){
 		$("#detail_category").css("display", "block");
@@ -256,12 +256,13 @@ $(function(){
 };
 
 $(document).ready(function() {
-    var params = location.search.substr(location.search.indexOf("?") + 1); 
+    var params = location.search.substr(location.search.indexOf("=") + 1); 
 $.ajax({
 	url : '/MVC_reshop/listProduct.do?goods=' + params,
 	type : 'get',
+	dataType : "text",
 	success : function(data) {
-		
+		console.log(data);
 	},
 	error : function() {
 		console.log("실패");

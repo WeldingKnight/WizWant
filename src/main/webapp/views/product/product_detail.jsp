@@ -15,7 +15,7 @@
         </tr>
         <tr>
             <td class="detail_sellerId">${product.seller_id}</td>
-            <td id="sort1" class="detail_sellerReliability" style="background-color:green;"><span class="detail_seller">판매자신뢰도</span><span class="detail_sellerCnt" style="display:none;">판매이력 : 50번</span></td>
+            <td id="sort1" class="detail_sellerReliability" style="background-color:green;"><input id="detail_sellerReliability" value="" type="hidden"><span class="detail_seller">판매자신뢰도</span><span class="detail_sellerCnt" style="display:none;">판매이력 : 50번</span></td>
         </tr>
     </table>
     </form>

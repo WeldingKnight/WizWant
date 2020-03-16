@@ -23,17 +23,21 @@ public class ProductController {
 	//상품 리스트 출력
 	@RequestMapping(value="/listProduct.do",method = RequestMethod.GET)
 	@ResponseBody
-	public void listProduct( ProductDAO dao, ProductVO vo, @RequestParam("goods") String goods, Model model) {
+	public  List<ProductVO> listProduct( ProductDAO dao, ProductVO vo, @RequestParam("goods") String goods, Model model) {
 		int idx = goods.indexOf("=");
 		String goodsval = goods.substring(idx+1);
 		System.out.println("리스트 받을 카테고리 name : " +goodsval);
 		List<ProductVO> product = dao.listProduct(goodsval);
 		
 		model.addAttribute("product",product);
-		System.out.println(product.size());
-		for(int i=1; i<=product.size(); i++) {
-			System.out.println(product);
-		}
+		System.out.println("등록된 상품 갯수 : "+product.size());
+		
+//		상품 내용 확인하는 for문
+//		for(int i=0; i<product.size();i++) {
+//			System.out.println(product.get(i)+"\n");
+//		}
+
+		return product;
 	}
 	
 	
@@ -52,7 +56,7 @@ public class ProductController {
 	
 	//글 상세 보기
 	@RequestMapping("/product_detail.do")
-	public String getproduct_detail(ProductVO vo, ProductDAO productDAO, Model model) {
+	public String getProduct(ProductVO vo, ProductDAO productDAO, Model model) {
 		model.addAttribute("product",productDAO.getProduct(vo));
 		
 		System.out.println("제품 상세 페이지로 이동");
@@ -66,7 +70,6 @@ public class ProductController {
 		System.out.println("판매 등록 페이지로 이동");
 		return "/views/product/product_sale.jsp";
 	}
-	
 	
 	
 

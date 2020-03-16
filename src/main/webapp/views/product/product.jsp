@@ -64,7 +64,6 @@
 	<div id="detail_rap">
 		<c:forEach items="${product}" var="product">
 			<div class="detail_content">
-			
 				<a href="product_detail.do?goods_id=${product.goods_id}"><img src="${product.goods_image}"></a>
 				<div class="detail_product">
 				    <div id="detail_productName">${product.goods_name}</div>
@@ -72,54 +71,10 @@
 				</div>
 				<div class="detail_seller">
 			        <div id="detail_sellerId">${product.seller_id}</div>
-			        <div id="detail_sellerReliability">유저점수</div>
+			        <div id="detail_sellerReliability">${user_score.score}</div>
 			    </div>
 		    </div>
 		</c:forEach>
-		<div class="detail_content">
-        <img src="./img/product_img/Yerin.jpg">
-        <div class="detail_product">
-            <div id="detail_productName">제품명</div>
-            <div id="detail_productPrice">가격</div>
-        </div>
-        <div class="detail_seller">
-            <div id="detail_sellerId">판매자아이디</div>
-            <div id="detail_sellerReliability">판매자신뢰도</div>
-        </div>
-        </div>
-        <div class="detail_content">
-        <img src="./img/product_img/Yerin1.jpg">
-        <div class="detail_product">
-            <div id="detail_productName">제품명</div>
-            <div id="detail_productPrice">가격</div>
-        </div>
-        <div class="detail_seller">
-            <div id="detail_sellerId">판매자아이디</div>
-            <div id="detail_sellerReliability">판매자신뢰도</div>
-        </div>
-        </div>
-        <div class="detail_content">
-        <img src="./img/product_img/Yerin2.jpg">
-        <div class="detail_product">
-            <div id="detail_productName">제품명</div>
-            <div id="detail_productPrice">가격</div>
-        </div>
-        <div class="detail_seller">
-            <div id="detail_sellerId">판매자아이디</div>
-            <div id="detail_sellerReliability">판매자신뢰도</div>
-        </div>
-        </div>
-        <div class="detail_content">
-        <img src="./img/product_img/Yerin3.jpg">
-        <div class="detail_product">
-            <div id="detail_productName">제품명</div>
-            <div id="detail_productPrice">가격</div>
-        </div>
-        <div class="detail_seller">
-            <div id="detail_sellerId">판매자아이디</div>
-            <div id="detail_sellerReliability">판매자신뢰도</div>
-        </div>
-        </div>
     </div>
 </section>
 </div>

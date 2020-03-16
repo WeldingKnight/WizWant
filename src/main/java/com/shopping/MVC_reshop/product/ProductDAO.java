@@ -20,7 +20,7 @@ public class ProductDAO {
 	private final String BOARD_INSERT = "insert into goods(seller_id, goods_name, goods_detail, goods_quantity,goods_price,goods_id,goods_image,goods_validate,goods_views,goods_kind_b,goods_kind_s) values(?,?,?,?,?,goods_seq.nextval,?,'N',0,?,?)";
 	private final String BOARD_UPDATE = "update goods set goods_name=?, goods_detail=?, goods_quantity=?, goods_price=?, goods_image=?, goods_validate=?  where goods_id=?";	
 	private final String BOARD_DELETE = "delete goods where goods_id=?";	
-	private final String BOARD_GET = "select * from goods where seq=?";
+	private final String BOARD_GET = "select * from goods where goods_id=?";
 	private final String BOARD_SELLER = "insert into seller (seller_id,seller_area) values(?,?)";
 	private String BOARD_LIST = "select * from goods where goods_kind_b=? order by goods_id desc";
 	
@@ -143,10 +143,32 @@ public class ProductDAO {
 		}
 	}
 
+	//제픔 상세보기
 	public Object getProduct(ProductVO vo) {
-//		System.out.println("getProduct()");
-		// TODO Auto-generated method stub
-		return null;
+		System.out.println("===> JDBC로 getProduct() 기능처리");
+		ProductVO goods = null;
+		
+		try {
+			conn = JDBCUtil.getConnection();
+			stmt = conn.prepareStatement(BOARD_GET);
+			stmt.setInt(1, vo.getGoods_id());
+			rs = stmt.executeQuery();
+			if(rs.next()) {
+				goods = new ProductVO();
+				goods.setGoods_id(rs.getInt("goods_id"));
+				goods.setGoods_name(rs.getString("goods_name"));
+				goods.setSeller_id(rs.getString("seller_id"));
+				goods.setGoods_price(rs.getInt("goods_price"));
+				goods.setGoods_image(rs.getString("goods_image"));
+			}
+		}catch (Exception e) {
+			System.out.println("getProduct()"+e);
+		}finally {
+			JDBCUtil.close(rs, stmt, conn);
+		}
+		
+		return goods;
+		
 	}
 	
 }
