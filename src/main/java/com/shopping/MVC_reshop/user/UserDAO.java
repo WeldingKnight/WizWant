@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import com.shopping.MVC_reshop.common.JDBCUtil;
+import com.shopping.MVC_reshop.mypage.MypageVO;
 
 //import com.company.AnnotationMVC.common.JDBCUtil;
 //import com.company.AnnotationMVC.user.UserVO;
@@ -18,7 +19,7 @@ public class UserDAO {
 	//SQL문 정리
 	private final String USER_GET = "select * from members where id=? and pwd =?"; //로그인
 	private final String USER_insert= "insert into members (NAME,id,pwd,mail,address,birth,sex,tel) values(?,?,?,?,?,?,?,?)"; //회원가입
-	private final String USER_update ="update members set name=? pwd=? where id=?";  //회원정보수정
+	private final String USER_update = "update members set name=?, pwd=?, mail=?, address=?, birth=?, sex=?, tel=? where id=?"; // 회원정보수정  //회원정보수정
 	private final String USER_insertid_chk ="select * from members where id=?";//아이디 중복체그
 	private final String USER_delete = "delete from members where id=? and pwd=?"; //회원탈퇴
 	
@@ -164,4 +165,33 @@ public class UserDAO {
 		}
 
 	}
+
+	public void updateUser(UserVO vo) {
+		// TODO Auto-generated method stub
+		
+			try {
+
+				System.out.println("===> JDBC로 inserttUser() 기능처리");
+				conn = JDBCUtil.getConnection();
+				PreparedStatement pstmt = null;
+				pstmt = conn.prepareStatement(USER_update);
+				pstmt.setString(1, vo.getName());
+				pstmt.setString(2, vo.getPassword());
+				pstmt.setString(3, vo.getEmail());
+				pstmt.setString(4, vo.getAddress());
+				pstmt.setString(5, vo.getBirth());
+				pstmt.setString(6, vo.getSex());
+				pstmt.setString(7, vo.getTel());
+				pstmt.setString(8, vo.getId());
+				pstmt.executeUpdate();
+
+				System.out.println("UserDAO 회원정보 수정 내용확인: " + vo.toString());
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+
+				JDBCUtil.close(stmt, conn);
+			}
+	}
+
 }

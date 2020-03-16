@@ -6,7 +6,7 @@
 <div id="update_wrap">
 	<h1 class="mypage_title">회원정보수정</h1>
 
-	<form action="./mypage.do" id="update_form" method="post">
+	<form action="./update.do" id="update_form" method="post">
 		<table id="update_table">
 			<tr>
 				<td>아이디</td>
@@ -43,7 +43,7 @@
 			</tr>
 			<tr>
 				<td><input style="width: 300px; height: 30px; font-size: 20px;"
-					type="text" id="birth" name="birth" accesskey="L" maxlength="41"
+					type="text" id="email" name="email" accesskey="L" maxlength="41"
 					value="${sessionScope.loginuser.email}"></td>
 			</tr>
 			<tr>
@@ -58,7 +58,7 @@
 			</tr>
 			<tr>
 				<td><input style="width: 300px; height: 30px; font-size: 30px;"
-					type="text" id="name" name="name" maxlength="41"
+					type="text" id="sex" name="sex" maxlength="41"
 					value="${sessionScope.loginuser.sex}" readonly="readonly"></td>
 			</tr>
 			<tr>
@@ -84,7 +84,9 @@
 					background-color="skyblue" id="insert"> <input
 					style="width: 150px; height: 50px; font-size: 20px; background-color: dodgerblue; color: white;"
 					type="reset" title="취소" alt="취소" value="취소"
-					background-color="skyblue" id="insert"></td>
+					background-color="skyblue" id="insert">
+					<a href="./delet.do"></a></td>
+					
 			</tr>
 		</table>
 	</form>
