@@ -20,6 +20,7 @@ public class UserDAO {
 	private final String USER_insert= "insert into members (NAME,id,pwd,mail,address,birth,sex,tel) values(?,?,?,?,?,?,?,?)"; //회원가입
 	private final String USER_update ="update members set name=? pwd=? where id=?";  //회원정보수정
 	private final String USER_insertid_chk ="select * from members where id=?";//아이디 중복체그
+	private final String USER_delete = "delete from members where id=? and pwd=?"; //회원탈퇴
 	
 	public UserVO getUser(UserVO vo) {  //로그인메서드
 		UserVO user = null;
@@ -137,5 +138,30 @@ public class UserDAO {
 		}
 		
 		return user;	
+	}
+	
+	//회원탈퇴 메서드
+	public void deleteUser(UserVO vo) {
+		
+		
+		try {
+			
+			System.out.println("===> JDBC로 deletetUser() 기능처리");
+			conn = JDBCUtil.getConnection();
+			PreparedStatement pstmt =null; 
+			pstmt = conn.prepareStatement(USER_delete);
+			pstmt.setString(1, vo.getId());
+			pstmt.setString(2, vo.getPassword());
+			
+			pstmt.executeUpdate();
+				
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			
+			JDBCUtil.close(stmt, conn);
+		}
+
 	}
 }
