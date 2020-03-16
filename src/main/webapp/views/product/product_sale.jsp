@@ -76,14 +76,25 @@
                 </tr>
              
                 <tr id="product_sale_contents">
-                    <td>판매기한</td>
+                    <td>판매 지역</td>
                     <td>판매 수량</td>
                     <td>추가 설명</td>
                     <td>판매자 ID</td>
                 </tr>
 
                 <tr id="product_sale_enrollment">
-                    <td><input  id="sell_date"type="date"></td>
+                    <td>
+                    	<select id ="seller_area" name="seller_area">
+	                       	<option value="seoul">서울</option>
+	                        <option value="kyin">경기/인천</option>
+	                        <option value="buul">부산/울산</option>
+	                        <option value="deke">대구/경북</option>
+	                        <option value="dese">대전/세종</option>
+	                        <option value="kangzen">광주/전라</option>
+	                        <option value="kangze">강원/제주</option>
+	                    </select>
+                    </td>
+                    
                     <td><input type="number" id="goods_quantity" name="goods_quantity"></td>
                     <td><textarea rows="10" cols="60" style="resize: none;"  id="goods_detail"name="goods_detail"></textarea></td>
                     <td>${loginuser.id}<input type='hidden' id="seller_id" name="seller_id"  value="${loginuser.id}" /></td>

@@ -23,14 +23,17 @@ public class ProductController {
 	//상품 리스트 출력
 	@RequestMapping(value="/listProduct.do",method = RequestMethod.GET)
 	@ResponseBody
-	public List<ProductVO> listProduct( ProductDAO dao, ProductVO vo, @RequestParam("goods") String goods) {
+	public void listProduct( ProductDAO dao, ProductVO vo, @RequestParam("goods") String goods, Model model) {
 		int idx = goods.indexOf("=");
 		String goodsval = goods.substring(idx+1);
 		System.out.println("리스트 받을 카테고리 name : " +goodsval);
 		List<ProductVO> product = dao.listProduct(goodsval);
-		System.out.println(product);
 		
-		return product;
+		model.addAttribute("product",product);
+		System.out.println(product.size());
+		for(int i=1; i<=product.size(); i++) {
+			System.out.println(product);
+		}
 	}
 	
 	
@@ -69,15 +72,19 @@ public class ProductController {
 
 	//상품 등록 후 product 페이지로 이동
 	@RequestMapping(value ="/product_sale.do",method = RequestMethod.POST)
-	public String insertProduct(ProductVO vo, ProductDAO productDAO) {
+	public String insertProduct(ProductVO vo, ProductDAO productDAO, HttpServletRequest request) {
 		System.out.println(vo.toString());
+		
+		String area = request.getParameter("seller_area");
+//		System.out.println(area);
 		productDAO.insertProduct(vo);
+		productDAO.sellerProduct(vo,area);
 		
 		String fileuploadurl="D:\\Kangheesoo\\WizWant\\src\\main\\webapp\\img\\product_img";
 		File fileupload= new File(fileuploadurl+vo.getGoods_image());
 //		System.out.println(productDAO.getProduct(vo));
-		System.out.println("판매 등록 후 상품 전체 페이지로 이동");
-		return "/views/product/product.jsp";
+		System.out.println("판매 등록 후 메인페이지로 이동");
+		return "redirect:/wiz_want.do";
 	}
 
 	
