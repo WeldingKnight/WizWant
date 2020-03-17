@@ -40,16 +40,13 @@
         		<a href="orders.do">장바구니</a>&nbsp;&nbsp;&nbsp;&nbsp;
         		<a href="orders.do">찜 목록</a>
 			</td>
+        </tr>	
+		<tr>
+        	<td colspan="2">
+        		<a href="deleteProduct.do">글 삭제</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        		<a href="updateProduct.do">글 수정</a>	
+			</td>
         </tr>
-      	<%-- <c:set var="name" value="홍길동" />
-			<c:if test="${product.seller_id == userId or product.seller_id == 'admin'">		
-			<tr>
-	        	<td colspan="2">
-	        		<a href="deleteProduct.do">글 삭제</a>&nbsp;&nbsp;&nbsp;&nbsp;
-	        		<a href="updateProduct.do">글 수정</a>	
-				</td>
-	        </tr>
-		</c:if> --%>
     </table>
 </section>
 <jsp:include page="../header_footer/footer.jsp"></jsp:include>
