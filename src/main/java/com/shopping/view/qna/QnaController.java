@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.shopping.MVC_reshop.qna.QnaDAO;
 import com.shopping.MVC_reshop.qna.QnaVO;
+import com.shopping.MVC_reshop.reply.ReplyDAO;
 
 
 @Controller
@@ -35,7 +36,7 @@ public class QnaController {
 			url = "/views/qna/getOrderQna.jsp";
 		}else if(sort.equals("배송문의")) {
 			url = "/views/qna/getDeliveryQna.jsp";
-		}else if(sort.equals("환불문의")) {
+		}else if(sort.equals("반품환불")) {
 			url = "/views/qna/getRefundQna.jsp";
 		}else if(sort.equals("상품문의")) {
 			url = "/views/qna/getProductQna.jsp";			
@@ -50,13 +51,16 @@ public class QnaController {
 	
 	//글 상세보기
 	@RequestMapping("/getQna.do")
-	public String getQna(QnaDAO qna, QnaVO vo, Model model) {//DAO,VO,Model 매개변수로 넘겨주기
+	public String getQna(QnaDAO qna, QnaVO vo, ReplyDAO rep, Model model) {//DAO,VO,Model 매개변수로 넘겨주기
 		System.out.println("글 상세보기"); // 콘솔 확인용
 		model.addAttribute("qna",qna.getQna(vo));
+		System.out.println(vo.getQna_id());
+		model.addAttribute("rep", rep.getReply(vo.getQna_id()));
+	
 		//모델 객체로 키값('qna'), 밸류값('qna.getQna(vo)') 지정하여 넘겨준다.
 		return "/views/qna/getQna.jsp";
 	}
-	
+
 	//글 수정 이동
 	@RequestMapping("/getUpdateQna.do")
 	public String getUpdateQna(QnaDAO qna, QnaVO vo, Model model, HttpSession session) {//DAO,VO,Model 매개변수로 넘겨주기

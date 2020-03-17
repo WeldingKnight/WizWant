@@ -10,18 +10,6 @@
 	//스크립트릿 =>자바코드 작성
 request.setCharacterEncoding("UTF-8");
 
-String searchField =""; // 제목 or 작성 or 내용 
-String searchText=""; // 검색 키워드
-String sort = ""; // 종류
-QnaDAO qnaDAO = new QnaDAO();
-
-if(request.getParameter("searchCondition") != null && request.getParameter("searchKeyword") != null){
-	searchField = request.getParameter("searchCondition");
-	searchText = request.getParameter("searchKeyword");
-}
-	
-	List<QnaVO> qnaList = qnaDAO.getQnaList(searchField, searchText);
-	request.setAttribute("qnaList", qnaList);
 %>
 <%@ include file="../header_footer/header.jsp"%>
 

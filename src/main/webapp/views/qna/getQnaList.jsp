@@ -49,8 +49,8 @@ document.addEventListener("DOMContentLoaded", function(){
 				</c:otherwise>
 			</c:choose>
 			<c:choose>
-				<c:when test="${totalList eq null}"><h4>게시글이 없습니다.</h4></c:when>
-				<c:otherwise><h4>총 Q&A : ${sortList.size()} 건</h4></c:otherwise>
+				<c:when test="${totalList eq 0}"><h4>게시글이 없습니다.</h4></c:when>
+				<c:otherwise><h4>총 Q&A : ${totalList} 건</h4></c:otherwise>
 			</c:choose>
 			<form method='get' action='getQnaList.do'>
 					<table border='1' cellpadding='0' cellspacing='0' width='750'>
