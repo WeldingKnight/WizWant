@@ -40,14 +40,14 @@
 	padding-top:10px;
 	width:800px;
 	height:300px;
-	/*border: 1px solid red;*/
+	border: 1px solid red;
 	float: left;
 }
 
 .main_pitem_each{
 	width: 180px;
 	height:200px;
-	/*border: 1px solid pink;*/
+	border: 1px solid pink;
 	margin-right:15px;
 	float: left;
 }

@@ -63,11 +63,6 @@ public class LoginOutController {
 		if (session!=null) {
 			session.invalidate(); // 세션의 기능을 중단시키고무효화 시키는것
 		}
-
 		return "redirect:wiz_want.do";
-
 	}
-	
-
-	
 }

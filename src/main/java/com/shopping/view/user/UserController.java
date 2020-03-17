@@ -59,22 +59,37 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/delete.do", method = RequestMethod.GET)
-	public String delete() {
+	public String delete(HttpSession session) {
 		
-		System.out.println("회원탈퇴페이지로 이동");
-		return "/views/login&insert/delete.jsp";
+	
+		Object obj = session.getAttribute("loginuser");
+		System.out.println(obj);
+		String objtest = (String)obj.toString();
+		if(objtest==null) {
+			
+			System.out.println("session의 값 확인:"+objtest);
+			System.out.println("비로그인상태");
+			
+			return "redirect:/wiz_want.do";
+		
+		}else {
+			
+			System.out.println("session의 값 확인:"+objtest);
+			System.out.println("회원탈퇴 페이지로 이동");
+			return "/views/login&insert/delete.jsp";
+		}
+	
+	
 	}
 	
 	@RequestMapping(value = "/delete.do", method = RequestMethod.POST)
 	public String delete(UserDAO dao, UserVO vo, HttpServletRequest request,HttpSession session) throws ServletException,IOException{
 		request.setCharacterEncoding("UTF-8");
 		
+		session.invalidate();
 		dao.deleteUser(vo);
-		
-		if (session!=null) {
-			session.invalidate(); // 세션의 기능을 중단시키고무효화 시키는것
-		}
 		System.out.println("회원탈퇴 후 main페이지로 이동");
+	
 		
 		return "redirect:/wiz_want.do";
 

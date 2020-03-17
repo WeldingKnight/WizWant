@@ -24,7 +24,7 @@ $(document).ready(function() {
 			return false;
 
 		} else {
-			if (confirm("정말탈퇴할거냐능!!탈퇴하면빻린이라능!!") == true) { // 확인		
+			if (confirm("정말 탈퇴하시겠습니까?(탈퇴하시면 판매 게시글 및 작성글이 전부 삭제됩니다!)") == true) { // 확인		
 				return true;
 
 			} else { // 취소
