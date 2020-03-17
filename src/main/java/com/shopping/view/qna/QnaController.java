@@ -92,6 +92,7 @@ public class QnaController {
 		return url; //실행후 리스트로 이동
 	}
 	
+	
 	//새글 등록 이동
 	@RequestMapping("/getInsertQna.do")
 	public String getInsertQna(QnaDAO qna, QnaVO vo, HttpSession session) {//DAO,VO,Model 매개변수로 넘겨주기
@@ -142,4 +143,5 @@ public class QnaController {
 		}
 		return url;
 	}
+	
 }
