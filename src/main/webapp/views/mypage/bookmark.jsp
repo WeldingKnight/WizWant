@@ -8,13 +8,30 @@
 <h1 class="mypage_title">찜목록</h1>
 
 <c:forEach items="${bookmarkList}" var="bookmarkList">
-	<div>${bookmarkList.goods_id}</div>
-	<div>${bookmarkList.goods_name}</div>
-	<div>${bookmarkList.goods_detail}</div>
-	<div>${bookmarkList.goods_price}</div>
-	<div>${bookmarkList.seller_id}</div>
-	<div>${bookmarkList.bookmark_id}</div>
-	<div>${bookmarkList.user_id}</div>
+	<a href=".do?" class="bookmark_link">
+		<div class="bookmark">
+			<div class="bookmark_img">
+				<img alt="" src="">이미지
+			</div>
+			<table class="bookmark_table">
+				<tr>
+					<td class="bookmark_td">
+						<div>상품 번호 :</div>
+						<div>상품 이름 :</div>
+						<div>상품 설명 :</div>
+						<div>상품 가격 :</div>
+						<div>판매자 :</div>
+					</td>
+					<td><div>${bookmarkList.goods_id}</div>
+						<div>${bookmarkList.goods_name}</div>
+						<div>${bookmarkList.goods_detail}</div>
+						<div>${bookmarkList.goods_price}</div>
+						<div>${bookmarkList.seller_id}</div></td>
+				</tr>
+			</table>
+		</div>
+	</a>
 </c:forEach>
+<div class="clear"></div>
 
 <jsp:include page="../header_footer/footer.jsp"></jsp:include>
