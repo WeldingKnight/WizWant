@@ -22,7 +22,7 @@
                  </a>
              </div>
              <div class="cate four">
-                 <a href="getSortList.do?sort=환불문의" class="relative">
+                 <a href="getSortList.do?sort=반품환불" class="relative">
                      <img src="./img/customer_img/refund.jpg" id="4" class="active" alt="반품/교환/환불">
                      <img src="./img/customer_img/refundhover.jpg" id="4h" class="hover-img" alt="반품/교환/환불">
                  </a>
