@@ -1,5 +1,5 @@
 function takeId(id) {
-	//json으로 nav텝 목록 담기
+	// json으로 nav텝 목록 담기
 	var tmpObj = new Object();
 	var tmpArr;
 	
@@ -36,8 +36,8 @@ function takeId(id) {
 	tmpObj.price     = tmpArr;
 	 
 		
-	//console.log( "json object : " + JSON.stringify(tmpObj));
-	//json 목록 출력
+	// console.log( "json object : " + JSON.stringify(tmpObj));
+	// json 목록 출력
 	var Json = JSON.stringify(tmpObj);
 	
 	function setDiv(name, index){
@@ -70,7 +70,7 @@ function takeId(id) {
 	
 	
 	var idV = "";
-//	console.log(id);
+// console.log(id);
 	
 	if(id == "digital"){
 		$("#detail_category").css("display", "block");
@@ -164,7 +164,7 @@ function takeId(id) {
 $(function(){
 	// 첫 카테고리에서 메뉴 선택시 메뉴 보이기
     $('#detail_category').children().click(function(){
-		var idV = $(this).attr("id"); //id뽑아오기 digital
+		var idV = $(this).attr("id"); // id뽑아오기 digital
 	    if(idV == "detail_digital"){
 	    	setDiv("detail_digital", 0);
 	    }
@@ -259,17 +259,37 @@ $(document).ready(function() {
 	var url = location.pathname
     var params = location.search.substr(location.search.indexOf("=") + 1); 
     if(url == "/MVC_reshop/product.do"){
-    	
-   
-	$.ajax({
-		url : '/MVC_reshop/listProduct.do',
-		type : 'get',
-		data : {goods : params},
-		dataType : "text",
-		success : function(data) {
-			console.log(data);
+		$.ajax({
+			url : "/MVC_reshop/listProduct.do",
+			type : "get",
+			data : {goods : params},
+			dataType : "json",
+			success : function(data) {
+				$("#detail_rap").html(""); // div를 일단 공백으로 초기화 
+					console.log(data);
+					$(data).each(function(index, item) { // 이치를 써서 모든
+																// 데이터들을 배열에 넣음
+						var detailContent = $('<div />', {'class':'detail_content'});
+						var itemId = $('<a />', {'href':'product_detail.do?goods_id=' + item.goods_id});
+						var itemImage = $('<img>', {'src':'img/product_img/'+item.goods_image});
+						var detailProduct = $('<div />', {'class' :'detail_product'});
+						var detailProductName = $('<div />', {'id':'detail_productName', 'text': item.goods_name});
+						var detailProductPrice = $('<div />', {'id':'detail_productPrice', 'text': item.goods_price});
+						var detailSeller = $('<div />', {'class':'detail_seller'});
+						var detailSellerId = $('<div />', {'id':'detail_sellerId', 'text': item.seller_id});
+						var detailSellerReliability = $('<div />', {'id':'detail_sellerReliability', 'text': "none"});
 			
-		}
-	});
+						itemId.append(itemImage);
+						detailContent.append(itemId);
+						$("#detail_rap").append(detailContent);
+						detailContent.append(detailProduct);
+						detailProduct.append(detailProductName);
+						detailProduct.append(detailProductPrice);
+						detailContent.append(detailSeller);
+						detailSeller.append(detailSellerId);
+						detailSeller.append(detailSellerReliability);
+					});// each끝
+				}
+		});
     }
 });

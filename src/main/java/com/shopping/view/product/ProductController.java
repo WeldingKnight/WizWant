@@ -22,7 +22,7 @@ import com.shopping.MVC_reshop.product.ProductVO;
 
 @Controller
 public class ProductController {
-	
+	//상품 리스트 출력
 	@RequestMapping(value="/listProduct.do", method=RequestMethod.GET)
 	@ResponseBody
 	public ResponseEntity<String> nextPage(ProductDAO dao, ProductVO vo, @RequestParam("goods") String goods) throws Exception {
@@ -37,7 +37,7 @@ public class ProductController {
 		String returnString = mapper.writeValueAsString(product);  //  상품을 json 형식으로 변환
 		return new ResponseEntity<String>(returnString, responseHeaders, HttpStatus.CREATED);
 	}
-	//상품 리스트 출력
+	
 //	@RequestMapping(value="/listProduct.do",method = RequestMethod.GET)
 //	@ResponseBody
 //	public  List<ProductVO> listProduct( ProductDAO dao, ProductVO vo, @RequestParam("goods") String goods, Model model) {

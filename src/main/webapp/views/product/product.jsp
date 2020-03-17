@@ -62,19 +62,17 @@
 
 <section id="product_section">
 	<div id="detail_rap">
-		<c:forEach items="${product}" var="product">
-			<div class="detail_content">
-				<a href="product_detail.do?goods_id=${product.goods_id}"><img src="${product.goods_image}"></a>
-				<div class="detail_product">
-				    <div id="detail_productName">${product.goods_name}</div>
-				    <div id="detail_productPrice">${product.goods_price}</div>
-				</div>
-				<div class="detail_seller">
-			        <div id="detail_sellerId">${product.seller_id}</div>
-			        <div id="detail_sellerReliability">${user_score.score}</div>
-			    </div>
+		<div class="detail_content">
+			<a href="product_detail.do?goods_id="><img src=""></a>
+			<div class="detail_product">
+			    <div id="detail_productName"></div>
+			    <div id="detail_productPrice"></div>
+			</div>
+			<div class="detail_seller">
+		        <div id="detail_sellerId"></div>
+		        <div id="detail_sellerReliability"></div>
 		    </div>
-		</c:forEach>
+	    </div>
     </div>
 </section>
 </div>
