@@ -96,7 +96,7 @@
                     </td>
                     
                     <td><input type="number" id="goods_quantity" name="goods_quantity"></td>
-                    <td><textarea rows="10" cols="60" style="resize: none;"  id="goods_detail"name="goods_detail"></textarea></td>
+                    <td><textarea rows="10" cols="60" style="resize: none;"  id="goods_detail" name="goods_detail"></textarea></td>
                     <td>${loginuser.id}<input type='hidden' id="seller_id" name="seller_id"  value="${loginuser.id}" /></td>
                 </tr>
                 <tr id="product_sale_button">

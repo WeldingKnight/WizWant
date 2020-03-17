@@ -64,6 +64,7 @@ public class ProductDAO {
 				vo.setGoods_image(rs.getString("goods_image"));
 				vo.setSeller_id(rs.getString("seller_id"));
 				vo.setGoods_views(rs.getInt("goods_views"));
+				vo.setGoods_detail(rs.getString("goods_detail"));
 				product.add(vo);
 			}
 			
@@ -153,6 +154,7 @@ public class ProductDAO {
 			stmt = conn.prepareStatement(BOARD_GET);
 			stmt.setInt(1, vo.getGoods_id());
 			rs = stmt.executeQuery();
+			
 			if(rs.next()) {
 				goods = new ProductVO();
 				goods.setGoods_id(rs.getInt("goods_id"));
@@ -160,13 +162,14 @@ public class ProductDAO {
 				goods.setSeller_id(rs.getString("seller_id"));
 				goods.setGoods_price(rs.getInt("goods_price"));
 				goods.setGoods_image(rs.getString("goods_image"));
+				goods.setGoods_detail(rs.getString("goods_detail"));
 			}
 		}catch (Exception e) {
 			System.out.println("getProduct()"+e);
 		}finally {
 			JDBCUtil.close(rs, stmt, conn);
 		}
-		
+		System.out.println(goods);
 		return goods;
 		
 	}

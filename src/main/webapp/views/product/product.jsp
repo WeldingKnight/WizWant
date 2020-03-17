@@ -8,10 +8,10 @@
     <ul>
         <li id="detail_sort1"><a href="product.do">대분류 ></a>
             <ul id="detail_category">
-                <li id="detail_digital"><a href="#">디지털</a></li>
-                <li id="detail_mobile"><a href="#">통신</a></li>
-                <li id="detail_clothes"><a href="#">의류</a></li>
-                <li id="detail_fashion"><a href="#">패션잡화</a></li>
+                <li id="detail_digital"><a href="product.do?Classification=digital">디지털</a></li>
+                <li id="detail_mobile"><a href="product.do?Classification=tel">통신</a></li>
+                <li id="detail_clothes"><a href="product.do?Classification=clothing">의류</a></li>
+                <li id="detail_fashion"><a href="product.do?Classification=grocery">패션잡화</a></li>
             </ul>
         </li>
         <li id="detail_sort2"><a href="#">중분류 ></a>
@@ -62,7 +62,7 @@
 
 <section id="product_section">
 	<div id="detail_rap">
-		<div class="detail_content">
+		<!-- <div class="detail_content">
 			<a href="product_detail.do?goods_id="><img src=""></a>
 			<div class="detail_product">
 			    <div id="detail_productName"></div>
@@ -72,7 +72,7 @@
 		        <div id="detail_sellerId"></div>
 		        <div id="detail_sellerReliability"></div>
 		    </div>
-	    </div>
+	    </div> -->
     </div>
 </section>
 </div>

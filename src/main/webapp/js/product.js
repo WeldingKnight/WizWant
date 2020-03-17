@@ -159,8 +159,6 @@ function takeId(id) {
 	        });
         });
 	});
-
-
 $(function(){
 	// 첫 카테고리에서 메뉴 선택시 메뉴 보이기
     $('#detail_category').children().click(function(){
@@ -257,7 +255,7 @@ $(function(){
 
 $(document).ready(function() {
 	var url = location.pathname
-    var params = location.search.substr(location.search.indexOf("=") + 1); 
+    var params = location.search.substr(location.search.indexOf("=") + 1);
     if(url == "/MVC_reshop/product.do"){
 		$.ajax({
 			url : "/MVC_reshop/listProduct.do",
@@ -278,7 +276,7 @@ $(document).ready(function() {
 						var detailSeller = $('<div />', {'class':'detail_seller'});
 						var detailSellerId = $('<div />', {'id':'detail_sellerId', 'text': item.seller_id});
 						var detailSellerReliability = $('<div />', {'id':'detail_sellerReliability', 'text': "none"});
-			
+
 						itemId.append(itemImage);
 						detailContent.append(itemId);
 						$("#detail_rap").append(detailContent);
