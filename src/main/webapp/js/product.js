@@ -257,15 +257,14 @@ $(function(){
 
 $(document).ready(function() {
     var params = location.search.substr(location.search.indexOf("=") + 1); 
-$.ajax({
-	url : '/MVC_reshop/listProduct.do?goods=' + params,
-	type : 'get',
-	dataType : "text",
-	success : function(data) {
-		console.log(data);
-	},
-	error : function() {
-		console.log("실패");
-	}
-});
+	$.ajax({
+		url : '/MVC_reshop/listProduct.do',
+		type : 'get',
+		data : {goods : params},
+		dataType : "text",
+		success : function(data) {
+			console.log(data);
+			
+		}
+	});
 });
