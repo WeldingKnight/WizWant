@@ -26,10 +26,6 @@
 		<form method='post' action='insertNotice.do'>
 			<table border='1' cellpadding='0' cellspacing='0'>
 				<tr>
-					<td bgcolor="orange" width="70">아이디 :</td>
-					<td align="left"><input type="number" name='notice_id' size='38'></td>
-				</tr>
-				<tr>
 					<td bgcolor="orange" width="70">제목 :</td>
 					<td align="left"><input type='text' name='notice_title' size='38'></td>
 				</tr>

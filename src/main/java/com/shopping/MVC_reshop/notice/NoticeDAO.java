@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.shopping.MVC_reshop.notice.NoticeVO;
+import com.shopping.MVC_reshop.qna.QnaVO;
 import com.shopping.MVC_reshop.common.JDBCUtil;
 
 public class NoticeDAO {
@@ -16,8 +17,8 @@ public class NoticeDAO {
 	private ResultSet rs = null;
 	
 	//SQL 명령어들
-	private final String NOTICE_INSERT="insert into notice_board(notice_id, notice_title,notice_content,seq_notice) values(?,?,?,1)";
-	private final String NOTICE_UPDATE ="update NOTICE_BOARD set notice_id=?, notice_title=?,notice_content=? where notice_id=?";
+	private final String NOTICE_INSERT="insert into notice_board(notice_id, notice_title,notice_content,seq_notice) values(notice_seq.nextval,?,?,1)";
+	private final String NOTICE_UPDATE ="update NOTICE_BOARD set notice_title=?,notice_content=? where notice_id=?";
 	private final String NOTICE_DELETE ="delete NOTICE_BOARD where notice_id=?";
 	private final String NOTICE_GET = "select * from NOTICE_BOARD where notice_id=?";
 	//private final String QNA_LIST = "select * from board order by qna_id desc";
@@ -29,9 +30,10 @@ public class NoticeDAO {
 		try {
 			conn = JDBCUtil.getConnection();
 			pstmt = conn.prepareStatement(NOTICE_UPDATE);
-			pstmt.setInt(1,  vo.getNotice_id());
-			pstmt.setString(2,  vo.getNotice_title());
-			pstmt.setString(4,  vo.getNotice_content());
+			
+			pstmt.setString(1,  vo.getNotice_title());
+			pstmt.setString(2,  vo.getNotice_content());
+			pstmt.setInt(3,  vo.getNotice_id());
 			pstmt.executeUpdate();
 		}catch(Exception e) {
 			System.out.println("updateNot()"+e);
@@ -84,7 +86,7 @@ public class NoticeDAO {
 	}
 	
 	//글 수정페이지 이동
-	public NoticeVO getUpdateNot(NoticeVO vo) {
+	public NoticeVO getUpdateNotice(NoticeVO vo) {
 		System.out.println("===> JDBC로 getUpdateNot() 기능 처리");
 		NoticeVO notice = null;
 		
@@ -117,9 +119,9 @@ public class NoticeDAO {
 		try {
 			conn = JDBCUtil.getConnection();
 			pstmt = conn.prepareStatement(NOTICE_INSERT);
-			pstmt.setInt(1,vo.getNotice_id());
-			pstmt.setString(2,vo.getNotice_title());
-			pstmt.setString(3, vo.getNotice_content());
+//			pstmt.setInt(1,vo.getNotice_id());
+			pstmt.setString(1,vo.getNotice_title());
+			pstmt.setString(2, vo.getNotice_content());
 			pstmt.executeUpdate();
 			System.out.println("asd");
 		}catch(Exception e) {
@@ -178,5 +180,30 @@ public class NoticeDAO {
 		return noticeList;
 
 	}
+//	public Object getUpdateNotice(NoticeVO vo) {
+//		System.out.println("===> JDBC로 getUpdateNotice() 기능 처리");
+//		NoticeVO notice = null;
+//		
+//		try {
+//			conn = JDBCUtil.getConnection();
+//			
+//			pstmt = conn.prepareStatement(NOTICE_GET);
+//			pstmt.setInt(1, vo.getNotice_id());
+//			rs=pstmt.executeQuery();
+//			
+//			if(rs.next()) {
+//				notice = new NoticeVO();
+//				notice.setNotice_id(rs.getInt("notice_id"));
+//				notice.setNotice_title(rs.getString("notice_title"));
+//				notice.setNotice_content(rs.getString("notice_content"));
+//				notice.setNotice_timestamp(rs.getDate("notice_timestamp"));
+//			}
+//		}catch(Exception e) {
+//			System.out.println("updateNotice() : "+e);
+//		}finally {
+//			JDBCUtil.close(rs, pstmt, conn);
+//		}
+//		return notice;
+//	}
 
 }

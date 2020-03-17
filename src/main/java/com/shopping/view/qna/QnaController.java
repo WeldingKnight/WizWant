@@ -69,6 +69,7 @@ public class QnaController {
 			url ="/views/qna/updateQna.jsp";
 			System.out.println(url);
 			model.addAttribute("qna", qna.getUpdateQna(vo));
+			System.out.println("게시글수정:::::::::::::::::::::::::::::::::::::::::::"+qna.getUpdateQna(vo));
 			//모델 객체로 수정 페이지에 정보를 뿌려주기 위한 메소드
 		}
 		return url;
@@ -86,6 +87,8 @@ public class QnaController {
 		}else {
 			url ="redirect:/getQnaList.do";
 			System.out.println(url);
+			System.out.println("qna 수정내용!!!!:========="+vo.toString());
+
 			//보여주기가 아닌 쿼리 실행만 하면 되므로 모델 객체가 불필요함.
 			qna.updateQna(vo);
 		}	
