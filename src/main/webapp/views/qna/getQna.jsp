@@ -79,7 +79,7 @@
    <hr>
    <a href='getInsertQna.do'>새글 등록</a>&nbsp;&nbsp;&nbsp;
    <c:if test="${sessionScope.loginuser.id==qna.user_id || sessionScope.loginuser.role==0}">
-	 <a href='deleteQna.do?qna_id=${qna.qna_id}'>글 삭제</a>&nbsp;&nbsp;&nbsp;
+	 <a href='deleteQna.do?qna_id=${qna.qna_id}'>글 삭제</a>&nbsp;&nbsp;
    </c:if>
    <a href='getQnaList.do'>전체 게시판</a>      
    </center>
