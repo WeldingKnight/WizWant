@@ -256,7 +256,11 @@ $(function(){
 };
 
 $(document).ready(function() {
+	var url = location.pathname
     var params = location.search.substr(location.search.indexOf("=") + 1); 
+    if(url == "/MVC_reshop/product.do"){
+    	
+   
 	$.ajax({
 		url : '/MVC_reshop/listProduct.do',
 		type : 'get',
@@ -267,4 +271,5 @@ $(document).ready(function() {
 			
 		}
 	});
+    }
 });

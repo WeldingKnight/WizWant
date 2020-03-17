@@ -25,7 +25,7 @@ public class ProductController {
 	
 	@RequestMapping(value="/listProduct.do", method=RequestMethod.GET)
 	@ResponseBody
-	public ResponseEntity<String> nextPage(ProductDAO dao, ProductVO vo, @RequestParam("goods") String goods, Model model) throws Exception {
+	public ResponseEntity<String> nextPage(ProductDAO dao, ProductVO vo, @RequestParam("goods") String goods) throws Exception {
 		ObjectMapper mapper = new ObjectMapper();
 		HttpHeaders responseHeaders = new HttpHeaders();  //헤더객체를 만들어서 
 		responseHeaders.add("Content-Type", "text/html; charset=utf-8"); //헤더정보 추가
