@@ -21,14 +21,16 @@
 			</tr>
 			<tr>
 				<td><input style="width: 300px; height: 30px; font-size: 30px;"
-					type="password" id="password" name="password" maxlength="41"></td>
+					type="password" id="password" name="password" maxlength="41">
+					<div class="check_font" id="update_pw"></div></td>
 			</tr>
 			<tr>
 				<td>비밀번호 확인</td>
 			</tr>
 			<tr>
 				<td><input style="width: 300px; height: 30px; font-size: 30px;"
-					type="password" id="pwdchk" name="pwdchk" maxlength="41"></td>
+					type="password" id="pwdchk" name="pwdchk" maxlength="41">
+					<div class="check_font" id=update_pwcConfirm></div></td>
 			</tr>
 			<tr>
 				<td>이름</td>
@@ -82,10 +84,11 @@
 				<td><input
 					style="width: 150px; height: 50px; font-size: 20px; background-color: dodgerblue; color: white;"
 					type="submit" title="수정완료" alt="수정완료" value="수정완료"
-					background-color="skyblue" id="insert"> <input
+					background-color="skyblue" id="insert" id="update_input"> <input
 					style="width: 150px; height: 50px; font-size: 20px; background-color: dodgerblue; color: white;"
 					type="reset" title="취소" alt="취소" value="취소"
-					background-color="skyblue" id="insert"> <a href="/MVC_reshop/delete.do">회원탈퇴</a></td>
+					background-color="skyblue" id="insert"> <a
+					href="/MVC_reshop/delete.do">회원탈퇴</a></td>
 			</tr>
 		</table>
 
