@@ -12,6 +12,7 @@
 	<section align="center" class="detail_main">
     <h1>제품 상세 페이지</h1>
     <input type="hidden" name="goods_id" value="${product.goods_id}">
+    <input type="hidden" name="product" value="${product}">
     <img src="img/product_img/${product.goods_image}">
     <table align="center" border="1">
     	<tr>
@@ -48,7 +49,7 @@
 		<tr>
         	<td colspan="2">
         		<a href="deleteProduct.do?goods_id=${product.goods_id}">글 삭제</a>&nbsp;&nbsp;&nbsp;&nbsp;
-        		<a href="updateProduct.do">글 수정</a>	
+        		<a href="updateProduct.do?goods_id=${product.goods_id}">글 수정</a>	
 			</td>
         </tr>
         </c:if>

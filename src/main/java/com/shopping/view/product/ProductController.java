@@ -40,11 +40,14 @@ public class ProductController {
 	}
 	
 	
-	//상품 페이지 이동
+	//상품 페이지 이동 및 리스트 출력
 	@RequestMapping("/product.do" )
 	public String product(HttpServletRequest request,ProductVO vo, ProductDAO productDAO) {
 		String Classification = request.getParameter("Classification");
 		System.out.println(Classification);
+		
+		
+		
 		
 		System.out.println("상품페이지로 이동");
 		return "/views/product/product.jsp";
@@ -104,10 +107,21 @@ public class ProductController {
 	
 	//글 수정
 	@RequestMapping("/updateProduct.do")
+	public String updateGoods(ProductVO vo, ProductDAO productDAO, Model model) {
+		model.addAttribute("product",productDAO.getProduct(vo));
+//		productDAO.updateProduct(vo);
+	
+		System.out.println(vo.toString());
+		System.out.println("제품 업데이트페이지로 이동");
+		return "/views/product/product_update.jsp";
+	}
+	//글 수정 후 메인 페이지 이동
+	@RequestMapping("/updateFinish.do")
 	public String updateProduct(ProductVO vo, ProductDAO productDAO) {
 		productDAO.updateProduct(vo);
 	
-		System.out.println("제품 업데이트후 메인으로 이동");
+		System.out.println(vo.toString());
+		System.out.println("제품 업데이트페이지로 이동");
 		return "redirect:/wiz_want.do";
 	}
 	

@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="./css/main_page.css">
 <link rel="stylesheet" href="./css/product.css">
 <link rel="stylesheet" href="./css/product_detail.css">
+<link rel="stylesheet" href="./css/product_update.css">
 <link rel="stylesheet" href="./css/product_sale.css">
 <link rel="stylesheet" href="./css/customer.css">
 <link rel="stylesheet" href="./css/mypage.css">
