@@ -232,19 +232,6 @@ public class ProductDAO {
 					
 				}
 				
-//				for(int i=1;i<4;i++) {
-//					
-//					vo = new ProductVO();
-//					vo.setGoods_id(rs.getInt("goods_id"));
-//					vo.setGoods_name(rs.getString("goods_name"));
-//					vo.setGoods_price(rs.getInt("goods_price"));
-//					vo.setGoods_image(rs.getString("goods_image"));
-//					vo.setSeller_id(rs.getString("seller_id"));
-//					vo.setGoods_views(rs.getInt("goods_views"));
-//					vo.setGoods_detail(rs.getString("goods_detail"));
-//					product.add(vo);
-//					
-//				}
 				
 			}catch(Exception e) {
 				System.out.println("listProductviews() "+e);
