@@ -24,14 +24,14 @@
 	<h1>공지사항 등록</h1>
 	<hr>
 		<form method='post' action='insertNotice.do'>
-			<table border='1' cellpadding='0' cellspacing='0'>
+			<table border='1' cellpadding='0' cellspacing='0' width="748">
 				<tr>
 					<td bgcolor="orange" width="70">제목 :</td>
-					<td align="left"><input type='text' name='notice_title' size='38'></td>
+					<td align="left"><input type='text' name='notice_title' size='38' style="width:95%; border: 0; outline: none; padding: 7px;"></td>
 				</tr>
 				<tr>
 					<td bgcolor='orange' width='70'>내용 :</td>
-					<td align='left'><textarea name='notice_content' rows='10' cols='40'></textarea></td>
+					<td align='left'><textarea name='notice_content' rows='10' cols='40' style="width:95%; border: 0; outline: none; padding: 7px;"></textarea></td>
 				</tr>
 				<tr>
 					<td colspan='2' align='center'>

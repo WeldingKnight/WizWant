@@ -3,6 +3,8 @@
 <%@ include file="../header_footer/header.jsp"%>
 <%@ page import="com.shopping.MVC_reshop.product.*" %>
 <%@ page import="java.util.List" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
     <div id="product_sale_wrap">
     <h2 align="center">상품 등록 페이지</h2>
