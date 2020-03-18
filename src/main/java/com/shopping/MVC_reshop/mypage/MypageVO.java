@@ -9,6 +9,9 @@ public class MypageVO {
 	private String seller_id; // 판매자 id
 	private int bookmark_id; // 북마크 번호
 	private String user_id;// 유저 아이디
+	private String goods_validate; // 물품 상태
+	private String goods_image; // 물품 상태
+	private String id;//member id
 
 	public int getGoods_id() {
 		return goods_id;
@@ -66,10 +69,41 @@ public class MypageVO {
 		this.user_id = user_id;
 	}
 
+	public String getGoods_validate() {
+		return goods_validate;
+	}
+
+	public void setGoods_validate(String goods_validate) {
+		this.goods_validate = goods_validate;
+	}
+
+	public String getGoods_image() {
+		return goods_image;
+	}
+
+	public void setGoods_image(String goods_image) {
+		this.goods_image = goods_image;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
 	public String toString() {
 		return "MypageVO [goods_id=" + goods_id + ", goods_name=" + goods_name + ", goods_detail=" + goods_detail
 				+ ", goods_price=" + goods_price + ", seller_id=" + seller_id + ", bookmark_id=" + bookmark_id
 				+ ", user_id=" + user_id + "]";
 	}
 
+	public String orderString() {
+		return "MypageVO [goods_id=" + goods_id + ", goods_name=" + goods_name + ", goods_detail=" + goods_detail
+				+ ", goods_price=" + goods_price + ", seller_id=" + seller_id + ", bookmark_id=" + bookmark_id
+				+ ", user_id=" + user_id + ", goods_validate=" + goods_validate + ", goods_image=" + goods_image
+				+ ", id=" + id + "]";
+	}
+	
 }
