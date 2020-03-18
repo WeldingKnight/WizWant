@@ -99,7 +99,7 @@ public class MypageController {
 		model.addAttribute("bookmarkList", mypagedao.getBookmark(vo));
 
 		System.out.println(mypagedao.getBookmark(vo).toString());
-		System.out.println("북마크");
+		System.out.println("찜목록");
 
 		return "/views/mypage/bookmark.jsp";
 
@@ -122,8 +122,10 @@ public class MypageController {
 
 	// 장바구니
 	@RequestMapping(value = "/cart.do", method = RequestMethod.GET)
-	public String cart(@RequestParam(value = "goods_quantity", required = false) String goods_quantity,@RequestParam(value = "delete_id", required = false) String delete_id, @RequestParam(value = "goods_id", required = false) String goods_id, MypageVO mypagevo,
-			UserVO vo, MypageDAO mypagedao, HttpSession session, Model model) {
+	public String cart(@RequestParam(value = "goods_quantity", required = false) String goods_quantity,
+			@RequestParam(value = "delete_id", required = false) String delete_id,
+			@RequestParam(value = "goods_id", required = false) String goods_id, MypageVO mypagevo, UserVO vo,
+			MypageDAO mypagedao, HttpSession session, Model model) {
 
 		vo = (UserVO) session.getAttribute("loginuser");
 		System.out.println("bookmark test : " + vo);
@@ -134,7 +136,7 @@ public class MypageController {
 		// 장바구니 초가
 		if (goods_id != null) {
 			System.out.println("받을 아이디 : " + goods_id);
-			mypagedao.insertCart(vo, goods_id, goods_quantity);
+			mypagedao.insertCart(vo, goods_id);
 			System.out.println("장바구니 추가");
 		}
 
