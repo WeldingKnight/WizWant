@@ -7,7 +7,7 @@
     <h2 align="center">상품 페이지</h2>
 <nav id="detail_navMenu">
     <ul>
-        <li id="detail_sort1"><a href="product.do">대분류 ></a>
+        <li id="detail_sort1"><a href="product.do?Classification=">대분류 ></a>
             <ul id="detail_category">
                 <li id="detail_digital"><a href="product.do?Classification=digital">디지털</a></li>
                 <li id="detail_mobile"><a href="product.do?Classification=tel">통신</a></li>
