@@ -69,18 +69,12 @@ public class MypageController {
 
 	}
 
-//	@RequestMapping("/bookmark.do")
-//	public String bookmark() {
-//
-//		System.out.println("찜목록 페이지로 이동");
-//		return "/views/mypage/bookmark.jsp";
-//	}
-
+	//찜목록 이동
 	@RequestMapping(value = "/bookmark.do", method = RequestMethod.GET)
 	public String bookmark(MypageVO mypagevo, UserVO vo, MypageDAO mypagedao, HttpSession session, Model model) {
 		
 		vo = (UserVO) session.getAttribute("loginuser");
-		System.out.println("bookmark test");
+		System.out.println("bookmark test : " + vo);
 		
 		//모델 사용
 		model.addAttribute("bookmarkList",mypagedao.getBookmark(vo));
@@ -89,6 +83,21 @@ public class MypageController {
 		System.out.println("북마크");
 
 		return "/views/mypage/bookmark.jsp";
+
+	}
+	
+	@RequestMapping(value = "/orders.do", method = RequestMethod.GET)
+	public String orders(MypageVO mypagevo, UserVO vo, MypageDAO mypagedao, HttpSession session, Model model) {
+		
+		vo = (UserVO) session.getAttribute("loginuser");
+		System.out.println("order test : " + vo);
+		
+		//모델 사용
+		model.addAttribute("orderList",mypagedao.getOders(vo));
+		
+		System.out.println("주문내역");
+
+		return "/views/mypage/orders.jsp";
 
 	}
 
