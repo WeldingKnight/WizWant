@@ -14,6 +14,7 @@
     <input type="hidden" name="product" value="${product}">
     <img src="img/product_img/${product.goods_image}">
     <table align="center" border="1">
+   			 <h1>${product.goods_views}</h1>
     	<tr>
     		<th>상품 제목</th>
     		<th>상품 가격</th>

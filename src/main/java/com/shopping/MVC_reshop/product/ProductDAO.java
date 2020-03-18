@@ -19,12 +19,13 @@ public class ProductDAO {
 	//SQL 명령어
 	private final String BOARD_INSERT = "insert into goods(seller_id, goods_name, goods_detail, goods_quantity,goods_price,goods_id,goods_image,goods_validate,goods_views,goods_kind_b,goods_kind_s) values(?,?,?,?,?,goods_seq.nextval,?,'N',0,?,?)";
 	private final String BOARD_UPDATE = "update goods set goods_name=?, goods_detail=?, goods_quantity=?, goods_price=?, goods_image=?, goods_kind_b=?, goods_kind_s=?  where goods_id=?";	
+	private final String BOARD_UPDATE_views = "update goods set goods_views=goods_views+1 where goods_id=?";	
 	private final String BOARD_DELETE = "delete goods where goods_id=?";	
 	private final String BOARD_GET = "select * from goods where goods_id=?";
 	private final String BOARD_SELLER = "insert into seller (seller_id,seller_area) values(?,?)";
 	private final String BOARD_SELLER_update = "update seller set seller_area =? where seller_id";
 	private String BOARD_LIST = "select * from goods where goods_kind_b like '%'||?||'%' order by goods_id desc";
-	private String BOARD_LIST_views = "select * from goods order by goods_views desc";
+	private String BOARD_LIST_views = "select * from goods order by goods_views desc";  //메인에서 게시글 조회수 순으로 출력 
 	
 	//seller 지역 등록
 	public void sellerProduct(ProductVO vo, String area) {
@@ -90,7 +91,12 @@ public class ProductDAO {
 			stmt.setString(3, vo.getGoods_detail());
 			stmt.setInt(4, vo.getGoods_quantity());
 			stmt.setInt(5, vo.getGoods_price());
-			stmt.setString(6, vo.getGoods_image());
+			if(vo.getGoods_image()==null) {
+				stmt.setString(6, "default.jpg");
+			}else {
+				stmt.setString(6, vo.getGoods_image());
+			}
+			
 			stmt.setString(7, vo.getGoods_kind_b());
 			stmt.setString(8, vo.getGoods_kind_s());
 			stmt.executeUpdate();
@@ -165,6 +171,10 @@ public class ProductDAO {
 				goods.setGoods_image(rs.getString("goods_image"));
 				goods.setGoods_detail(rs.getString("goods_detail"));
 				goods.setGoods_quantity(rs.getInt("goods_quantity"));
+				goods.setGoods_views(rs.getInt("goods_views"));
+				
+				System.out.println(goods.toString());
+				
 			}
 		}catch (Exception e) {
 			System.out.println("getProduct()"+e);
@@ -173,6 +183,25 @@ public class ProductDAO {
 		}
 		return goods;
 	}
+	
+	//상품 조회수 카운트
+		public void updatecount(ProductVO vo) {
+			System.out.println("===> JDBC로 updatecount() 기능처리");
+			try {
+				conn = JDBCUtil.getConnection();
+				stmt = conn.prepareStatement(BOARD_UPDATE_views);
+
+				stmt.setInt(1, vo.getGoods_id());
+				
+				stmt.executeUpdate();
+				
+			
+			}catch(Exception e) {
+				System.out.println("updatecount()"+e);
+			}finally {
+				JDBCUtil.close(stmt, conn);
+			}
+		}
 	
 	
 	//상품 리스트 출력 (메인 조회수 순으로)

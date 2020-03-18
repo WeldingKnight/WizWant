@@ -54,7 +54,10 @@ public class ProductController {
 	//글 상세 보기
 	@RequestMapping("/product_detail.do")
 	public String getProduct(ProductVO vo, ProductDAO productDAO, Model model,HttpSession session,HttpServletRequest request) {
+		
+		productDAO.updatecount(vo);  //조회수 증가
 		model.addAttribute("product",productDAO.getProduct(vo));
+		System.out.println("빻자친구 병신:::::::::::::::"+productDAO.getProduct(vo));
 		UserVO user = null;
 		String userId = null;
 		if(session.getAttribute("loginuser") != null) {
@@ -90,6 +93,8 @@ public class ProductController {
 		
 		
 		String fileName = vo.getGoods_image();
+		
+		
 		
 		String fileuploadurl="C:\\Users\\kosmo-05\\git\\WizWant\\src\\main\\webapp\\img\\product_img\\";
 		
