@@ -69,7 +69,7 @@
 
 	                    </select>
                 	</td>
-                    <td><input type="file" name="goods_image"  id="goods_image" src="./img/product_img/default.jpg"></td>
+                    <td><input type="file" name="goods_image"  id="goods_image" alt="${product.image}" src="./img/product_img/${product.image}"></td>
                     <td><input type="text" id="goods_price" name="goods_price"></td>
                     <td><input type="text" id="goods_name" name="goods_name"></td>
                     

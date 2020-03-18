@@ -14,7 +14,7 @@
     <input type="hidden" name="product" value="${product}">
     <img src="img/product_img/${product.goods_image}">
     <table align="center" border="1">
-   			 <h1>${product.goods_views}</h1>
+   			 
     	<tr>
     		<th>상품 제목</th>
     		<th>상품 가격</th>
@@ -24,10 +24,12 @@
             <td class="detail_productprice">${product.goods_price}</td>
         </tr>
         <tr>
-    		<th colspan="2">상품 설명</th>
+    		<th>상품 설명</th>
+    		<th>조회수</th>
     	</tr>
         <tr>
-        	<td colspan="2" class="detail_productdetail">${product.goods_detail}</td>
+        	<td class="detail_productdetail">${product.goods_detail}</td>
+        	<td>${product.goods_views}</td>
         </tr>
         <tr>
     		<th>판매자 아이디</th>

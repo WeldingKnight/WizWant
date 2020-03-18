@@ -56,7 +56,7 @@ public class ProductController {
 		
 		productDAO.updatecount(vo);  //조회수 증가
 		model.addAttribute("product",productDAO.getProduct(vo));
-		System.out.println("빻자친구 병신:::::::::::::::"+productDAO.getProduct(vo));
+		System.out.println(productDAO.getProduct(vo));
 		UserVO user = null;
 		String userId = null;
 		if(session.getAttribute("loginuser") != null) {
