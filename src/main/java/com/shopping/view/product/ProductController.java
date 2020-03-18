@@ -40,14 +40,11 @@ public class ProductController {
 	}
 	
 	
-	//상품 페이지 이동 및 리스트 출력
+	//상품 페이지 이동
 	@RequestMapping("/product.do" )
 	public String product(HttpServletRequest request,ProductVO vo, ProductDAO productDAO) {
 		String Classification = request.getParameter("Classification");
 		System.out.println(Classification);
-		
-		
-		
 		
 		System.out.println("상품페이지로 이동");
 		return "/views/product/product.jsp";

@@ -71,10 +71,20 @@ public class MypageController {
 
 	//찜목록 이동
 	@RequestMapping(value = "/bookmark.do", method = RequestMethod.GET)
-	public String bookmark(MypageVO mypagevo, UserVO vo, MypageDAO mypagedao, HttpSession session, Model model) {
+	public String bookmark(@RequestParam(value = "goods_id", required = false) String goods_id, MypageVO mypagevo, UserVO vo, MypageDAO mypagedao, HttpSession session, Model model) {
 		
 		vo = (UserVO) session.getAttribute("loginuser");
 		System.out.println("bookmark test : " + vo);
+		
+		System.out.println("받을 아이디 : " + goods_id);
+		
+		
+		
+		//북마크 추가
+		if(goods_id != null) {
+			mypagedao.insertBookmark(vo, goods_id);
+			System.out.println("찜목록 추가 실행");
+		}
 		
 		//모델 사용
 		model.addAttribute("bookmarkList",mypagedao.getBookmark(vo));

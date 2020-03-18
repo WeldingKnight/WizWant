@@ -22,9 +22,8 @@ public class ProductDAO {
 	private final String BOARD_DELETE = "delete goods where goods_id=?";	
 	private final String BOARD_GET = "select * from goods where goods_id=?";
 	private final String BOARD_SELLER = "insert into seller (seller_id,seller_area) values(?,?)";
-	private String BOARD_LIST = "select * from goods where goods_kind_b=? order by goods_id desc";
+	private String BOARD_LIST = "select * from goods where goods_kind_b like '%'||?||'%' order by goods_id desc";
 	private String BOARD_LIST_views = "select * from goods order by goods_views desc";
-	private String BOARD_LIST_all = "select * from goods order by goods_id desc";
 	
 	//seller 지역 등록
 	public void sellerProduct(ProductVO vo, String area) {
@@ -43,39 +42,6 @@ public class ProductDAO {
 			JDBCUtil.close(stmt, conn);
 		}
 	}
-	
-	//상품 리스트 전체
-	public List<ProductVO> AlllistProduct() {
-		
-		System.out.println("===> JDBC로 AlllistProduct() 기능처리");
-		List<ProductVO> product = new ArrayList<ProductVO>(); 
-		ProductVO vo = null;
-		
-		try {
-			conn = JDBCUtil.getConnection();
-			stmt = conn.prepareStatement(BOARD_LIST_all);
-			rs = stmt.executeQuery();
-			
-			while(rs.next()) {
-				vo = new ProductVO();
-				vo.setGoods_id(rs.getInt("goods_id"));
-				vo.setGoods_name(rs.getString("goods_name"));
-				vo.setGoods_price(rs.getInt("goods_price"));
-				vo.setGoods_image(rs.getString("goods_image"));
-				vo.setSeller_id(rs.getString("seller_id"));
-				vo.setGoods_views(rs.getInt("goods_views"));
-				vo.setGoods_detail(rs.getString("goods_detail"));
-				product.add(vo);
-			}
-			
-		}catch(Exception e) {
-			System.out.println("AlllistProduct() "+e);
-		}finally {
-			JDBCUtil.close(rs, stmt, conn);
-		}
-		return product;
-	}
-	
 	
 	//상품 리스트 출력
 	public List<ProductVO> listProduct(String goods) {
