@@ -15,12 +15,10 @@ public class WebSocketConfig implements WebSocketConfigurer {
 	@Override
 	public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
 		// TODO Auto-generated method stub
-		registry.addHandler(webSocketHandler(), "/webSocket").setAllowedOrigins("*").withSockJS();
 	}
-	
-	@Bean
-	public WebSocketHandler webSocketHandler() {
-		return new WebSocketHandler();
-	}
+//	
+//	@Bean
+//	public WebSocketHandler webSocketHandler() {
+//	}
 
 }
