@@ -81,7 +81,6 @@ public class ProductDAO {
 	//상품 등록
 	public void insertProduct(ProductVO vo) {
 		System.out.println("===> JDBC로 insertProduct() 기능처리");
-		
 		try {
 			conn = JDBCUtil.getConnection();
 			stmt = conn.prepareStatement(BOARD_INSERT);
