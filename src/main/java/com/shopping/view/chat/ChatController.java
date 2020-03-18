@@ -1,8 +1,13 @@
 package com.shopping.view.chat;
 
 
+import org.springframework.messaging.handler.annotation.MessageExceptionHandler;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.simp.annotation.SendToUser;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.shopping.MVC_reshop.chat.ChatMessageVO;
 
 @Controller
 public class ChatController {
@@ -10,6 +15,23 @@ public class ChatController {
 	public String showChatMain() {
 		return "/views/chat/chat.jsp";
 	}
+	
+	@MessageMapping("/message")
+	@SendToUser("/chat/reply")
+	public ChatMessageVO sendMessage(ChatMessageVO message) throws Exception{
+		ChatMessageVO chat = new ChatMessageVO();
+		chat.setBody(message.getBody());
+		chat.setWriter(message.getWriter());
+		return chat; 
+	}
+	
+	@MessageExceptionHandler
+	@SendToUser("/chat/error")
+	public String handleException(Throwable exception) {
+		return exception.getMessage();
+	}
+	
+	
 }
 //
 //@Controller

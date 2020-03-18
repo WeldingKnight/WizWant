@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <script src="./js/jquery-2.2.4.min.js"></script>
 <script src="./js/sockjs.min.js"></script>
+<script src="./js/stomp.min.js"></script>
 <script src="./js/chat.js"></script>
 
 <title>ChatRoom</title>

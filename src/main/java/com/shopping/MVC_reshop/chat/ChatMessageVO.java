@@ -5,6 +5,10 @@ public class ChatMessageVO {
 	private String writer;
 	private String body;
 	
+	public ChatMessageVO() {
+		
+	}
+	
 	public ChatMessageVO(int id, String writer, String body) {
 		this.id = id;
 		this.writer = writer;
