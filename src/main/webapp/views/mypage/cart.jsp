@@ -5,7 +5,7 @@
 
 <link href="../../css/mypage.css" rel="stylesheet" type="text/css">
 <jsp:include page="../header_footer/header.jsp"></jsp:include>
-<h1 class="mypage_title">찜목록</h1>
+<h1 class="mypage_title">장바구니</h1>
 
 <c:forEach items="${bookmarkList}" var="bookmarkList">
 	<a href=".do=?" class="bookmark_link">

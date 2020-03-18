@@ -54,7 +54,10 @@ public class ProductController {
 	//글 상세 보기
 	@RequestMapping("/product_detail.do")
 	public String getProduct(ProductVO vo, ProductDAO productDAO, Model model,HttpSession session,HttpServletRequest request) {
+		
+		productDAO.updatecount(vo);  //조회수 증가
 		model.addAttribute("product",productDAO.getProduct(vo));
+		System.out.println("빻자친구 병신:::::::::::::::"+productDAO.getProduct(vo));
 		UserVO user = null;
 		String userId = null;
 		if(session.getAttribute("loginuser") != null) {
@@ -62,8 +65,7 @@ public class ProductController {
 			userId = user.getId();
 			session.setAttribute("userId", userId);
 		}
-		
-		
+
 		System.out.println("유저 아이디 : "+ userId);
 		System.out.println("제품 상세 페이지로 이동");
 		return "/views/product/product_detail.jsp";	
@@ -92,6 +94,8 @@ public class ProductController {
 		
 		String fileName = vo.getGoods_image();
 		
+		
+		
 		String fileuploadurl="C:\\Users\\kosmo-05\\git\\WizWant\\src\\main\\webapp\\img\\product_img\\";
 		
 		File fileupload= new File(fileuploadurl+fileName);
@@ -103,11 +107,22 @@ public class ProductController {
 	}
 	
 	//글 수정
+	//글 수정페이지로 이동
 	@RequestMapping("/updateProduct.do")
+	public String updateGoods(ProductVO vo, ProductDAO productDAO, Model model) {
+		model.addAttribute("product",productDAO.getProduct(vo));
+		
+		System.out.println("제품 업데이트페이지로 이동");
+		return "/views/product/product_update.jsp";
+	}
+	
+	//글 수정 후 메인 페이지 이동
+	@RequestMapping("/updateFinish.do")
 	public String updateProduct(ProductVO vo, ProductDAO productDAO) {
 		productDAO.updateProduct(vo);
 	
-		System.out.println("제품 업데이트후 메인으로 이동");
+		System.out.println(vo.toString());
+		System.out.println("메인 페이지로 이동");
 		return "redirect:/wiz_want.do";
 	}
 	

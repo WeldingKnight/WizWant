@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="./css/main_page.css">
 <link rel="stylesheet" href="./css/product.css">
 <link rel="stylesheet" href="./css/product_detail.css">
+<link rel="stylesheet" href="./css/product_update.css">
 <link rel="stylesheet" href="./css/product_sale.css">
 <link rel="stylesheet" href="./css/customer.css">
 <link rel="stylesheet" href="./css/mypage.css">
@@ -36,7 +37,7 @@
 <script src="./js/product_detail.js"></script>
 <script src="./js/customer.js"></script>
 <script src="./js/notice.js"></script>
-<script src="./js/mypage.js"></script>
+<script src="./js/update.js"></script>
 </head>
 <body id="header_body"  onload="takeId('${categoryId}')">
 	<div id="full_box">

@@ -66,7 +66,7 @@
 
 	<div id="main_pitem">
 		<!-- pitem: popular item -->
-
+		<h3>현재 조회수 상위 제품</h3>
 		<c:forEach items="${productviewslist}" var="productVO">
 			<div class="main_pitem_each">
 				<a href="#"> <img src="product_image/${productVO.goods_image}">

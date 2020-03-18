@@ -7,6 +7,7 @@ public class NoticeVO {
 	private String notice_title; // 제목
 	private String notice_content; // 내용
 	private Date notice_timestamp;  // 시간
+	
 	public int getNotice_id() {
 		return notice_id;
 	}
@@ -34,8 +35,12 @@ public class NoticeVO {
 	@Override
 	public String toString() {
 		return "NoticeVO [notice_id=" + notice_id + ", notice_title=" + notice_title + ", notice_content="
-				+ notice_content + ", notice_timestamp=" + notice_timestamp  + "]";
+				+ notice_content + ", notice_timestamp=" + notice_timestamp + "]";
 	}
+
+	
+	
+	
 	
 	
 }	

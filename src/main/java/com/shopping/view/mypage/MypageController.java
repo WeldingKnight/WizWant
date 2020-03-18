@@ -69,26 +69,88 @@ public class MypageController {
 
 	}
 
-//	@RequestMapping("/bookmark.do")
-//	public String bookmark() {
-//
-//		System.out.println("찜목록 페이지로 이동");
-//		return "/views/mypage/bookmark.jsp";
-//	}
-
+	// 찜목록 이동
 	@RequestMapping(value = "/bookmark.do", method = RequestMethod.GET)
-	public String bookmark(MypageVO mypagevo, UserVO vo, MypageDAO mypagedao, HttpSession session, Model model) {
-		
+	public String bookmark(@RequestParam(value = "delete_id", required = false) String delete_id,
+			@RequestParam(value = "goods_id", required = false) String goods_id, MypageVO mypagevo, UserVO vo,
+			MypageDAO mypagedao, HttpSession session, Model model) {
+
 		vo = (UserVO) session.getAttribute("loginuser");
-		System.out.println("bookmark test");
-		
-		//모델 사용
-		model.addAttribute("bookmarkList",mypagedao.getBookmark(vo));
-		
+		System.out.println("bookmark test : " + vo);
+
+		System.out.println("받을 아이디 : " + goods_id);
+		System.out.println("삭제 아이디 : " + delete_id);
+
+		// 북마크 추가
+		if (goods_id != null) {
+			System.out.println("받을 아이디 : " + goods_id);
+			mypagedao.insertBookmark(vo, goods_id);
+			System.out.println("찜목록 추가 실행");
+
+		}
+
+		if (delete_id != null) {
+			System.out.println("삭제 아이디 : " + delete_id);
+			mypagedao.deleteBookmark(vo, delete_id);
+			System.out.println("찜목록 삭제");
+		}
+
+		// 모델 사용
+		model.addAttribute("bookmarkList", mypagedao.getBookmark(vo));
+
 		System.out.println(mypagedao.getBookmark(vo).toString());
 		System.out.println("북마크");
 
 		return "/views/mypage/bookmark.jsp";
+
+	}
+
+	@RequestMapping(value = "/orders.do", method = RequestMethod.GET)
+	public String orders(MypageVO mypagevo, UserVO vo, MypageDAO mypagedao, HttpSession session, Model model) {
+
+		vo = (UserVO) session.getAttribute("loginuser");
+		System.out.println("order test : " + vo);
+
+		// 모델 사용
+		model.addAttribute("orderList", mypagedao.getOders(vo));
+
+		System.out.println("주문내역");
+
+		return "/views/mypage/orders.jsp";
+
+	}
+
+	// 장바구니
+	@RequestMapping(value = "/cart.do", method = RequestMethod.GET)
+	public String cart(@RequestParam(value = "goods_quantity", required = false) String goods_quantity,@RequestParam(value = "delete_id", required = false) String delete_id, @RequestParam(value = "goods_id", required = false) String goods_id, MypageVO mypagevo,
+			UserVO vo, MypageDAO mypagedao, HttpSession session, Model model) {
+
+		vo = (UserVO) session.getAttribute("loginuser");
+		System.out.println("bookmark test : " + vo);
+
+		System.out.println("받을 아이디 : " + goods_id);
+		System.out.println("삭제 아이디 : " + delete_id);
+
+		// 장바구니 초가
+		if (goods_id != null) {
+			System.out.println("받을 아이디 : " + goods_id);
+			mypagedao.insertCart(vo, goods_id, goods_quantity);
+			System.out.println("장바구니 추가");
+		}
+
+		if (delete_id != null) {
+			System.out.println("삭제 아이디 : " + delete_id);
+			mypagedao.deleteCart(vo, delete_id);
+			System.out.println("장바구니 삭제");
+		}
+
+		// 모델 사용
+		model.addAttribute("cartList", mypagedao.getCart(vo));
+
+		System.out.println(mypagedao.getCart(vo).toString());
+		System.out.println("장바구니");
+
+		return "/views/mypage/cart.jsp";
 
 	}
 
