@@ -28,7 +28,7 @@
 				<td bgcolor="orange" width="70">제목</td>
 				<td align="left"><input name="notice_title" type="text"
 					value="${notice.notice_title}"></td>
-						<input name="seq"  type="hidden" value="${notice.notice_id}" />
+						<input name="notice_id"  type="hidden" value="${notice.notice_id}" />
 			</tr>
 			<tr>
 				<td bgcolor="orange">내용</td>

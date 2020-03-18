@@ -19,7 +19,8 @@ public class MypageDAO {
 	private final String BOOKMARK = "select * from bookmark_view where user_id=?";
 	private final String ORDERS = "select * from orders_view where id=?";
 	private final String INSERT_BOOKMARK = "INSERT INTO bookmark (goods_id,bookmark_id,user_id) VALUES (?,bookmark_seq.NEXTVAL,?)";
-
+	private final String DELET_BOOKMARK= " DELETE FROM bookmark WHERE goods_id = ? and user_id=?";
+	
 	public List<MypageVO> getBookmark(UserVO vo) { // 북마크
 		// TODO Auto-generated method stub
 		System.out.println("===> JDBC로 listbook() 기능처리");
@@ -102,6 +103,27 @@ public class MypageDAO {
 			pstmt = conn.prepareStatement(INSERT_BOOKMARK);
 			pstmt.setString(1, goods_id);
 			pstmt.setString(2, vo.getId());
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+
+			JDBCUtil.close(stmt, conn);
+		}
+
+	}
+	
+	public void deleteBookmark(UserVO vo, String goods_id) {
+		// TODO Auto-generated method stub
+		System.out.println("===> JDBC로 deletBookmark() 기능처리");
+
+		try {
+			conn = JDBCUtil.getConnection();
+			PreparedStatement pstmt = null;
+			pstmt = conn.prepareStatement(DELET_BOOKMARK);
+			pstmt.setString(1, vo.getId());
+			pstmt.setString(2, goods_id);
 			pstmt.executeUpdate();
 
 		} catch (Exception e) {

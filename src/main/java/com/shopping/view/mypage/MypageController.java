@@ -71,7 +71,7 @@ public class MypageController {
 
 	//찜목록 이동
 	@RequestMapping(value = "/bookmark.do", method = RequestMethod.GET)
-	public String bookmark(@RequestParam(value = "goods_id", required = false) String goods_id, MypageVO mypagevo, UserVO vo, MypageDAO mypagedao, HttpSession session, Model model) {
+	public String bookmark(@RequestParam(value = "delete_id", required = false) String delete_id,@RequestParam(value = "goods_id", required = false) String goods_id, MypageVO mypagevo, UserVO vo, MypageDAO mypagedao, HttpSession session, Model model) {
 		
 		vo = (UserVO) session.getAttribute("loginuser");
 		System.out.println("bookmark test : " + vo);
@@ -84,6 +84,11 @@ public class MypageController {
 		if(goods_id != null) {
 			mypagedao.insertBookmark(vo, goods_id);
 			System.out.println("찜목록 추가 실행");
+		}
+		
+		if(delete_id != null) {
+			mypagedao.deleteBookmark(vo, delete_id);
+			System.out.println("찜목록 삭제");
 		}
 		
 		//모델 사용
