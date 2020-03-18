@@ -6,7 +6,6 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.google.gson.Gson;
 import com.shopping.MVC_reshop.product.ProductDAO;
 import com.shopping.MVC_reshop.product.ProductVO;
 import com.shopping.MVC_reshop.user.UserVO;
@@ -26,17 +26,16 @@ public class ProductController {
 	//상품 리스트 출력
 	@RequestMapping(value="/listProduct.do", method=RequestMethod.GET)
 	@ResponseBody
-	public ResponseEntity<String> nextPage(ProductDAO dao, ProductVO vo, @RequestParam("goods") String goods) throws Exception {	
-		ObjectMapper mapper = new ObjectMapper();
+	public ResponseEntity<String> nextPage(ProductDAO dao, ProductVO vo, @RequestParam("goods") String goods) throws Exception {
 		HttpHeaders responseHeaders = new HttpHeaders();  //헤더객체를 만들어서 
 		responseHeaders.add("Content-Type", "text/html; charset=utf-8"); //헤더정보 추가
 		List<ProductVO> product = dao.listProduct(goods);
 		
 		System.out.println("리스트 받을 카테고리 name : " +goods);
 		System.out.println("등록된 상품 갯수 : "+product.size());
-	      
-		String returnString = mapper.writeValueAsString(product);  //  상품을 json 형식으로 변환
-		return new ResponseEntity<String>(returnString, responseHeaders, HttpStatus.CREATED);
+		
+		String result = new Gson().toJson(product);	//  상품을 json 형식으로 변환
+		return new ResponseEntity<String>(result, responseHeaders, HttpStatus.CREATED);
 	}
 	
 	
