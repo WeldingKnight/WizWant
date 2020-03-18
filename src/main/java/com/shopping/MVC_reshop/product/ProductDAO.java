@@ -23,6 +23,7 @@ public class ProductDAO {
 	private final String BOARD_GET = "select * from goods where goods_id=?";
 	private final String BOARD_SELLER = "insert into seller (seller_id,seller_area) values(?,?)";
 	private String BOARD_LIST = "select * from goods where goods_kind_b=? order by goods_id desc";
+	private String BOARD_LIST_views = "select * from goods order by goods_views desc";
 	
 	
 	//seller 지역 등록
@@ -64,6 +65,7 @@ public class ProductDAO {
 				vo.setGoods_image(rs.getString("goods_image"));
 				vo.setSeller_id(rs.getString("seller_id"));
 				vo.setGoods_views(rs.getInt("goods_views"));
+				vo.setGoods_detail(rs.getString("goods_detail"));
 				product.add(vo);
 			}
 			
@@ -79,7 +81,6 @@ public class ProductDAO {
 	//상품 등록
 	public void insertProduct(ProductVO vo) {
 		System.out.println("===> JDBC로 insertProduct() 기능처리");
-		
 		try {
 			conn = JDBCUtil.getConnection();
 			stmt = conn.prepareStatement(BOARD_INSERT);
@@ -112,7 +113,6 @@ public class ProductDAO {
 			stmt = conn.prepareStatement(BOARD_DELETE);
 			stmt.setInt(1, vo.getGoods_id());
 			stmt.executeUpdate();
-			
 		}catch(Exception e) {
 			System.out.println("deleteProduct()"+e);
 		}finally {
@@ -153,6 +153,7 @@ public class ProductDAO {
 			stmt = conn.prepareStatement(BOARD_GET);
 			stmt.setInt(1, vo.getGoods_id());
 			rs = stmt.executeQuery();
+			
 			if(rs.next()) {
 				goods = new ProductVO();
 				goods.setGoods_id(rs.getInt("goods_id"));
@@ -160,15 +161,67 @@ public class ProductDAO {
 				goods.setSeller_id(rs.getString("seller_id"));
 				goods.setGoods_price(rs.getInt("goods_price"));
 				goods.setGoods_image(rs.getString("goods_image"));
+				goods.setGoods_detail(rs.getString("goods_detail"));
 			}
 		}catch (Exception e) {
 			System.out.println("getProduct()"+e);
 		}finally {
 			JDBCUtil.close(rs, stmt, conn);
 		}
-		
+		System.out.println(goods);
 		return goods;
 		
 	}
+	
+	
+	//상품 리스트 출력 (메인 조회수 순으로)
+		public List<ProductVO> Productlistviews() {
+			
+			System.out.println("===> JDBC로 listProduct() 기능처리");
+			List<ProductVO> product = new ArrayList<ProductVO>(); 
+			ProductVO vo = null;
+			
+			try {
+				conn = JDBCUtil.getConnection();
+				stmt = conn.prepareStatement(BOARD_LIST_views);
+				rs = stmt.executeQuery();
+				
+				
+				while(rs.next()) {
+					
+					vo = new ProductVO();
+					vo.setGoods_id(rs.getInt("goods_id"));
+					vo.setGoods_name(rs.getString("goods_name"));
+					vo.setGoods_price(rs.getInt("goods_price"));
+					vo.setGoods_image(rs.getString("goods_image"));
+					vo.setSeller_id(rs.getString("seller_id"));
+					vo.setGoods_views(rs.getInt("goods_views"));
+					vo.setGoods_detail(rs.getString("goods_detail"));
+					product.add(vo);
+					
+					
+				}
+				
+//				for(int i=1;i<4;i++) {
+//					
+//					vo = new ProductVO();
+//					vo.setGoods_id(rs.getInt("goods_id"));
+//					vo.setGoods_name(rs.getString("goods_name"));
+//					vo.setGoods_price(rs.getInt("goods_price"));
+//					vo.setGoods_image(rs.getString("goods_image"));
+//					vo.setSeller_id(rs.getString("seller_id"));
+//					vo.setGoods_views(rs.getInt("goods_views"));
+//					vo.setGoods_detail(rs.getString("goods_detail"));
+//					product.add(vo);
+//					
+//				}
+				
+			}catch(Exception e) {
+				System.out.println("listProductviews() "+e);
+			}finally {
+				JDBCUtil.close(rs, stmt, conn);
+			}
+			return product;
+		}
 	
 }

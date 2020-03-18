@@ -8,10 +8,9 @@
 	String userId =  request.getParameter("userId");
 	request.setAttribute("userId", userId);
 %>
-<title>제품 상세 페이지</title>
+<title>제품 수정 페이지</title>
 	<section align="center" class="detail_main">
-    <h1>제품 상세 페이지</h1>
-    <input type="hidden" name="goods_id" value="${product.goods_id}">
+    <h1>제품 수정 페이지</h1>
     <img src="img/product_img/${product.goods_image}">
     <table align="center" border="1">
     	<tr>
@@ -35,23 +34,12 @@
         <tr>
             <td class="detail_sellerId">${product.seller_id}</td>
             <td id="sort1" class="detail_sellerReliability" style="background-color:green;"><input id="detail_sellerReliability" value="" type="hidden"><span class="detail_seller">판매자신뢰도</span><span class="detail_sellerCnt" style="display:none;">판매이력 : 50번</span></td>
-        </tr>
-        <tr id="detail_productbutton">
-        	<td colspan="2">
-        		<a href="orders.do">장바구니</a>&nbsp;&nbsp;&nbsp;&nbsp;
-        		<a href="orders.do">찜 목록</a>
-			</td>
         </tr>	
-        
-        <c:set var="id" value="${userId}"/>
-        <c:if test="${id == product.seller_id || id =='admin'}">
 		<tr>
         	<td colspan="2">
-        		<a href="deleteProduct.do?goods_id=${product.goods_id}">글 삭제</a>&nbsp;&nbsp;&nbsp;&nbsp;
-        		<a href="updateProduct.do">글 수정</a>	
+        		<input type="submit" value="완료">
 			</td>
         </tr>
-        </c:if>
         
     </table>
 </section>
