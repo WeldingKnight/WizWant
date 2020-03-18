@@ -55,9 +55,12 @@ public class ProductController {
 	@RequestMapping("/product_detail.do")
 	public String getProduct(ProductVO vo, ProductDAO productDAO, Model model,HttpSession session,HttpServletRequest request) {
 		model.addAttribute("product",productDAO.getProduct(vo));
-		UserVO user = (UserVO)session.getAttribute("loginuser");
-		String userId = user.getId();
-		
+		UserVO user = null;
+		String userId = null;
+		if(session.getAttribute("loginuser") != null) {
+			user = (UserVO)session.getAttribute("loginuser");
+			userId = user.getId();
+		}
 		
 		System.out.println("유저 아이디 : "+ userId);
 		System.out.println("제품 상세 페이지로 이동");
@@ -109,18 +112,6 @@ public class ProductController {
 	//글 삭제
 	@RequestMapping("/deleteProduct.do")
 	public String deleteProduct(ProductVO vo, ProductDAO productDAO,HttpSession session) {
-//		if(session.getAttribute("loginuser")==null) {
-//		url = "redirect:/login.do";
-//		System.out.println("세션 값: "+session.getAttribute("loginuser"));
-//		System.out.println(url);
-//		}else {
-//			url ="redirect:/getQnaList.do";
-//			System.out.println(url);
-//			//보여주기가 아닌 쿼리 실행만 하면 되므로 모델 객체가 불필요함.
-//			qna.updateQna(vo);
-//		}	
-//		return url; //실행후 리스트로 이동
-		
 		productDAO.deleteProduct(vo);
 		
 		System.out.println("제품 삭제");

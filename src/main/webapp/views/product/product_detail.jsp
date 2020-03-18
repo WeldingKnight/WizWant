@@ -1,17 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <jsp:include page="../header_footer/header.jsp"></jsp:include>
-<%-- <%
-  	String userId = request.getParameter("userId");
-    session.setAttribute("userId", userId);
-    session.getAttribute(userId);
-%> --%>
 <title>제품 상세 페이지</title>
 	<section align="center" class="detail_main">
     <h1>제품 상세 페이지</h1>
     <img src="img/product_img/${product.goods_image}">
-    <input name="goods_id" type="hidden" value="${product.goods_id}"/>
+<%--     <input name="goods_id" type="hidden" value="${product.goods_id}"/> --%>
     <table align="center" border="1">
     	<tr>
     		<th>상품 제목</th>
