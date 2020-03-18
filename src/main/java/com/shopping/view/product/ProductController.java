@@ -60,7 +60,9 @@ public class ProductController {
 		if(session.getAttribute("loginuser") != null) {
 			user = (UserVO)session.getAttribute("loginuser");
 			userId = user.getId();
+			session.setAttribute("userId", userId);
 		}
+		
 		
 		System.out.println("유저 아이디 : "+ userId);
 		System.out.println("제품 상세 페이지로 이동");
@@ -105,8 +107,8 @@ public class ProductController {
 	public String updateProduct(ProductVO vo, ProductDAO productDAO) {
 		productDAO.updateProduct(vo);
 		
-		System.out.println("제품 업데이트");
-		return "/views/product/product.jsp";
+		System.out.println("제품 업데이트후 메인으로 이동");
+		return "redirect:/wiz_want.do";
 	}
 	
 	//글 삭제
@@ -114,7 +116,7 @@ public class ProductController {
 	public String deleteProduct(ProductVO vo, ProductDAO productDAO,HttpSession session) {
 		productDAO.deleteProduct(vo);
 		
-		System.out.println("제품 삭제");
-		return "/views/product/product.jsp";
+		System.out.println("제품 삭제후 메인으로 이동");
+		return "redirect:/wiz_want.do";
 	}
 }
