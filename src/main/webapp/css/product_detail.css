@@ -1,5 +1,7 @@
-.detail_content img{
+#detail_img {
     margin: 10px;
+    width: 250px;
+    height: 300px;
 }
 .detail_main table td{
     width: 225px;

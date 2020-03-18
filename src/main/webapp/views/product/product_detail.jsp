@@ -12,7 +12,7 @@
 	<section align="center" class="detail_main">
     <h1>제품 상세 페이지</h1>
     <input type="hidden" name="product" value="${product}">
-    <img src="img/product_img/${product.goods_image}">
+    <img id="detail_img" src="img/product_img/${product.goods_image}">
     <table align="center" border="1">
    			 
     	<tr>

@@ -35,8 +35,6 @@
 <script src="./js/product.js"></script>
 <script src="./js/product_sale.js"></script>
 <script src="./js/product_detail.js"></script>
-<script src="./js/customer.js"></script>
-<script src="./js/notice.js"></script>
 <script src="./js/update.js"></script>
 </head>
 <body id="header_body"  onload="takeId('${categoryId}')">
