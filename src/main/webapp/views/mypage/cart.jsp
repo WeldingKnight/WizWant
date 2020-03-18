@@ -7,7 +7,7 @@
 <jsp:include page="../header_footer/header.jsp"></jsp:include>
 <h1 class="mypage_title">장바구니</h1>
 
-<c:forEach items="${bookmarkList}" var="bookmarkList">
+<c:forEach items="${cartList}" var="cartskList">
 	<a href=".do=?" class="bookmark_link">
 		<div class="bookmark">
 			<div class="bookmark_img">
@@ -22,14 +22,14 @@
 						<div>상품 가격 :</div>
 						<div>판매자 :</div>
 					</td>
-					<td><div>${bookmarkList.goods_id}</div>
-						<div>${bookmarkList.goods_name}</div>
-						<div>${bookmarkList.goods_detail}</div>
-						<div>${bookmarkList.goods_price}</div>
-						<div>${bookmarkList.seller_id}</div></td>
+					<td><div>${cartskList.goods_id}</div>
+						<div>${cartskList.goods_name}</div>
+						<div>${cartskList.goods_detail}</div>
+						<div>${cartskList.goods_price}</div>
+						<div>${cartskList.seller_id}</div></td>
 				</tr>
 				<tr>
-					<td><a href="bookmark.do?delete_id=${bookmarkList.goods_id}">글 삭제</a></td>
+					<td><a href="bookmark.do?delete_id=${cartskList.goods_id}">글 삭제</a></td>
 				</tr>
 			</table>
 		</div>

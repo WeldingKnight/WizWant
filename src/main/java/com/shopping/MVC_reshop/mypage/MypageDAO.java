@@ -20,7 +20,7 @@ public class MypageDAO {
 	private final String ORDERS = "select * from orders_view where id=?";
 	private final String INSERT_BOOKMARK = "INSERT INTO bookmark (goods_id,bookmark_id,user_id) VALUES (?,bookmark_seq.NEXTVAL,?)";
 	private final String DELET_BOOKMARK = "DELETE FROM bookmark WHERE goods_id = ? AND user_id = ?";
-	private final String INSERT_CART = "INSERT INTO cart goods_id, cart_quantity, user_id) VALUES (?,?,?)";
+	private final String INSERT_CART = "INSERT INTO cart goods_id, cart_quantity, user_id) VALUES (?,1,?)";
 	private final String CART = "select * from cart_view where id=?";
 
 	public List<MypageVO> getBookmark(UserVO vo) { // 合付农
@@ -137,7 +137,7 @@ public class MypageDAO {
 
 	}
 	
-	public void insertCart(UserVO vo, String goods_id, String goods_quantity) {
+	public void insertCart(UserVO vo, String goods_id) {
 		// TODO Auto-generated method stub
 		System.out.println("===> JDBC肺 InsertCart() 扁瓷贸府");
 
@@ -146,8 +146,7 @@ public class MypageDAO {
 			PreparedStatement pstmt = null;
 			pstmt = conn.prepareStatement(INSERT_CART);
 			pstmt.setString(1, goods_id);
-			pstmt.setString(2, goods_quantity);
-			pstmt.setString(3, vo.getId());
+			pstmt.setString(2, vo.getId());
 			pstmt.executeUpdate();
 
 		} catch (Exception e) {
@@ -177,10 +176,8 @@ public class MypageDAO {
 				cart = new MypageVO();
 				cart.setGoods_id(rs.getInt("goods_id"));
 				cart.setGoods_name(rs.getString("goods_name"));
-				cart.setGoods_detail(rs.getString("goods_detail"));
 				cart.setGoods_price(rs.getInt("goods_price"));
 				cart.setSeller_id(rs.getString("Seller_id"));
-				cart.setBookmark_id(rs.getInt("bookmark_id"));
 				cart.setUser_id(rs.getString("user_id"));
 				cartlist.add(cart);
 			}
