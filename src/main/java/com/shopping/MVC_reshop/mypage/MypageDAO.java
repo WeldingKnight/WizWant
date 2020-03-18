@@ -18,6 +18,7 @@ public class MypageDAO {
 
 	private final String BOOKMARK = "select * from bookmark_view where user_id=?";
 	private final String ORDERS = "select * from orders_view where id=?";
+	private final String INSERT_BOOKMARK = "INSERT INTO bookmark (goods_id,bookmark_id,user_id) VALUES (?,bookmark_seq.NEXTVAL,?)";
 
 	public List<MypageVO> getBookmark(UserVO vo) { // 合付农
 		// TODO Auto-generated method stub
@@ -89,5 +90,26 @@ public class MypageDAO {
 			JDBCUtil.close(rs, stmt, conn);
 		}
 		return order;
+	}
+
+	public void insertBookmark(UserVO vo, String goods_id) {
+		// TODO Auto-generated method stub
+		System.out.println("===> JDBC肺 InsertBookmark() 扁瓷贸府");
+
+		try {
+			conn = JDBCUtil.getConnection();
+			PreparedStatement pstmt = null;
+			pstmt = conn.prepareStatement(INSERT_BOOKMARK);
+			pstmt.setString(1, goods_id);
+			pstmt.setString(2, vo.getId());
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+
+			JDBCUtil.close(stmt, conn);
+		}
+
 	}
 }

@@ -39,8 +39,8 @@
         </tr>
         <tr id="detail_productbutton">
         	<td colspan="2">
-        		<a href="orders.do">장바구니</a>&nbsp;&nbsp;&nbsp;&nbsp;
-        		<a href="orders.do">찜 목록</a>
+        		<a href="cart.do?goods_id=${product.goods_id}">장바구니</a>&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="bookmark.do?goods_id=${product.goods_id}">찜 목록</a>
 			</td>
         </tr>	
         
