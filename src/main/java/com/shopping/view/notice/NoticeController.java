@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.shopping.MVC_reshop.notice.NoticeDAO;
 import com.shopping.MVC_reshop.notice.NoticeVO;
+import com.shopping.MVC_reshop.qna.QnaDAO;
+import com.shopping.MVC_reshop.qna.QnaVO;
 
 
 @Controller
@@ -108,5 +110,22 @@ public class NoticeController {
 		
 		}
 		return url; //실행 후 리스트로 이동
+	}
+	//삭제
+	@RequestMapping("/deleteNotice.do")
+	public String deleteNotice(NoticeDAO notice, NoticeVO vo, HttpSession session) {
+		System.out.println("삭제");
+		if(session.getAttribute("loginuser") != null) {
+			url ="redirect:/getNoticeList.do";
+			System.out.println(url);
+			//입력 메소드로 데이터값 입력
+			System.out.println(vo.toString());
+			notice.deleteNotice(vo);
+		}else {
+			url="redirect:/login.do";
+			System.out.println("세션 값: "+session.getAttribute("loginuser"));
+			System.out.println(url);
+		}
+		return url;
 	}
 }

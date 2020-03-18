@@ -17,7 +17,7 @@ public class NoticeDAO {
 	private ResultSet rs = null;
 	
 	//SQL 명령어들
-	private final String NOTICE_INSERT="insert into notice_board(notice_id, notice_title,notice_content,seq_notice) values(notice_seq.nextval,?,?,1)";
+	private final String NOTICE_INSERT="insert into notice_board(notice_id, notice_title,notice_content) values(notice_seq.nextval,?,?)";
 	private final String NOTICE_UPDATE ="update NOTICE_BOARD set notice_title=?,notice_content=? where notice_id=?";
 	private final String NOTICE_DELETE ="delete NOTICE_BOARD where notice_id=?";
 	private final String NOTICE_GET = "select * from NOTICE_BOARD where notice_id=?";
