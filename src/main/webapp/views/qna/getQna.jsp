@@ -32,7 +32,7 @@
          <tr>
          	<td bgcolor="orange" align='center'>글번호 </td>
          	<td>${qna.qna_id}</td>
-         	<input name="qna_id" type="hidden" value="${qna.qna_id}"/>
+         	<input name="qna_id" type="hidden" value="${qna.qna_id}" >
             <td bgcolor="orange" align='center'>등록일</td>
             <td align="left"><fmt:formatDate value="${qna.qna_timestamp}"  pattern="yy-MM-dd"/></td>
          </tr>
@@ -44,13 +44,22 @@
          </tr>
          <tr>
          	<td bgcolor="orange" align='center'>내용</td>
-         	<td align='left' colspan="5"><p name="content" rows="50" cols="40">${qna.qna_content}</p></td>
+         	<td align='left' colspan="5"><p rows="50" cols="40">${qna.qna_content}</p></td>
          </tr>
          <c:if test="${rep.reply_id != null}">
          <tr>
-         	<td bgcolor="orange" align='center'>답변</td>
-         	<td align='left' colspan="5"><p name="content" rows="50" cols="40">${rep.reply_content}</p></td>
+         	<td bgcolor="orange" align='center'>관리자<br>답변</td>
+         	<td align='left' colspan="4">
+	         	<p name="content" rows="50" cols="40">${rep.reply_content}</p>
+         	</td>
          </tr>
+   		 </c:if>
+   		 <c:if test="${!empty rep.reply_content && sessionScope.loginuser.role == 0 }">
+	   		 <tr>
+	   		    <td align="center" colspan="5">
+	         		<a href='deleteReply.do?qna_id=${rep.qna_id}&reply_id=${rep.reply_id}'>답변 삭제</a>
+	         	</td>
+	         </tr>
    		 </c:if>
          <c:if test='${sessionScope.loginuser.id==qna.user_id}'>
          <tr>
@@ -61,7 +70,7 @@
          </c:if>
       </table>
    </form>
-   <c:if test="${sessionScope.loginuser.id == 'admin' && sessionScope.loginuser.role==0}">
+   <c:if test="${rep.reply_id eq null && sessionScope.loginuser.role==0}">
    	<form action="insertReply.do" method="post">
    		<table border='1' cellpadding='0' cellspacing='0'>
 			<input type='hidden' name='reply_user' value='${sessionScope.loginuser.id}'/>

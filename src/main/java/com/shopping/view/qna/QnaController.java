@@ -18,7 +18,7 @@ public class QnaController {
 
 	//전체 게시글
 	@RequestMapping("/getQnaList.do")
-	public String getQnaList(QnaDAO qna, QnaVO vo, Model model, HttpServletRequest request, String searchField, String searchText) {//DAO,VO,Model, String객체(글 검색용) 두개를 매개변수로 넘겨주기
+	public String getQnaList(QnaDAO qna, QnaVO vo, Model model, String searchField, String searchText) {//DAO,VO,Model, String객체(글 검색용) 두개를 매개변수로 넘겨주기
 		System.out.println("고객센터로 이동");//콘솔 확인용
 		model.addAttribute("qnaList", qna.getQnaList(searchField, searchText));
 		// 모델 객체에 애드어트리븃 메소드로 키값과 밸류를 넣어준다. 밸류엔 전체게시판 메소드가 주입
@@ -73,7 +73,6 @@ public class QnaController {
 			url ="/views/qna/updateQna.jsp";
 			System.out.println(url);
 			model.addAttribute("qna", qna.getUpdateQna(vo));
-			System.out.println("게시글수정:::::::::::::::::::::::::::::::::::::::::::"+qna.getUpdateQna(vo));
 			//모델 객체로 수정 페이지에 정보를 뿌려주기 위한 메소드
 		}
 		return url;
@@ -91,8 +90,6 @@ public class QnaController {
 		}else {
 			url ="redirect:/getQnaList.do";
 			System.out.println(url);
-			System.out.println("qna 수정내용!!!!:========="+vo.toString());
-
 			//보여주기가 아닌 쿼리 실행만 하면 되므로 모델 객체가 불필요함.
 			qna.updateQna(vo);
 		}	
