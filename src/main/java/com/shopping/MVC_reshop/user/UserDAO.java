@@ -171,7 +171,7 @@ public class UserDAO {
 		
 			try {
 
-				System.out.println("===> JDBC로 inserttUser() 기능처리");
+				System.out.println("===> JDBC로 updatetUser() 기능처리");
 				conn = JDBCUtil.getConnection();
 				PreparedStatement pstmt = null;
 				pstmt = conn.prepareStatement(USER_update);

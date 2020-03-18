@@ -36,7 +36,7 @@
 <script src="./js/product_detail.js"></script>
 <script src="./js/customer.js"></script>
 <script src="./js/notice.js"></script>
-<script src="./js/mypage.js"></script>
+<script src="./js/update.js"></script>
 </head>
 <body id="header_body"  onload="takeId('${categoryId}')">
 	<div id="full_box">
