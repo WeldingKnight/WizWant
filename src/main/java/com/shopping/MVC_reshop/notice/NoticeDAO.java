@@ -17,7 +17,7 @@ public class NoticeDAO {
 	
 	//SQL 명령어들
 	private final String NOTICE_INSERT="insert into notice_board(notice_id, notice_title,notice_content,seq_notice) values(?,?,?,1)";
-	private final String NOTICE_UPDATE ="update NOTICE_BOARD set notice_id=?, notice_title=?,notice_content=? where notice_id=?";
+	private final String NOTICE_UPDATE ="update NOTICE_BOARD set notice_title=?,notice_content=? where notice_id=?";
 	private final String NOTICE_DELETE ="delete NOTICE_BOARD where notice_id=?";
 	private final String NOTICE_GET = "select * from NOTICE_BOARD where notice_id=?";
 	//private final String QNA_LIST = "select * from board order by qna_id desc";
@@ -29,9 +29,9 @@ public class NoticeDAO {
 		try {
 			conn = JDBCUtil.getConnection();
 			pstmt = conn.prepareStatement(NOTICE_UPDATE);
-			pstmt.setInt(1,  vo.getNotice_id());
-			pstmt.setString(2,  vo.getNotice_title());
-			pstmt.setString(4,  vo.getNotice_content());
+			pstmt.setString(1,  vo.getNotice_title());
+			pstmt.setString(2,  vo.getNotice_content());
+			pstmt.setInt(3,  vo.getNotice_id());
 			pstmt.executeUpdate();
 		}catch(Exception e) {
 			System.out.println("updateNot()"+e);
