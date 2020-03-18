@@ -11,7 +11,8 @@ public class MypageVO {
 	private String user_id;// 유저 아이디
 	private String goods_validate; // 물품 상태
 	private String goods_image; // 물품 상태
-	private String id;//member id
+	private String id;// member id
+	private int cart_quantity;// 장바구니 물품 수량
 
 	public int getGoods_id() {
 		return goods_id;
@@ -93,17 +94,18 @@ public class MypageVO {
 		this.id = id;
 	}
 
+	public int getCart_quantity() {
+		return cart_quantity;
+	}
+
+	public void setCart_quantity(int cart_quantity) {
+		this.cart_quantity = cart_quantity;
+	}
+
 	public String toString() {
 		return "MypageVO [goods_id=" + goods_id + ", goods_name=" + goods_name + ", goods_detail=" + goods_detail
 				+ ", goods_price=" + goods_price + ", seller_id=" + seller_id + ", bookmark_id=" + bookmark_id
 				+ ", user_id=" + user_id + "]";
 	}
 
-	public String orderString() {
-		return "MypageVO [goods_id=" + goods_id + ", goods_name=" + goods_name + ", goods_detail=" + goods_detail
-				+ ", goods_price=" + goods_price + ", seller_id=" + seller_id + ", bookmark_id=" + bookmark_id
-				+ ", user_id=" + user_id + ", goods_validate=" + goods_validate + ", goods_image=" + goods_image
-				+ ", id=" + id + "]";
-	}
-	
 }
