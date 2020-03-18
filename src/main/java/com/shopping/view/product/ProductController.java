@@ -106,16 +106,17 @@ public class ProductController {
 	@RequestMapping("/updateProduct.do")
 	public String updateProduct(ProductVO vo, ProductDAO productDAO) {
 		productDAO.updateProduct(vo);
-		
+	
 		System.out.println("제품 업데이트후 메인으로 이동");
 		return "redirect:/wiz_want.do";
 	}
 	
 	//글 삭제
 	@RequestMapping("/deleteProduct.do")
-	public String deleteProduct(ProductVO vo, ProductDAO productDAO,HttpSession session) {
+	public String deleteProduct(ProductVO vo, ProductDAO productDAO) {
 		productDAO.deleteProduct(vo);
 		
+		System.out.println(vo.toString());
 		System.out.println("제품 삭제후 메인으로 이동");
 		return "redirect:/wiz_want.do";
 	}

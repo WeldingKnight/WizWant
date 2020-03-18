@@ -113,7 +113,6 @@ public class ProductDAO {
 			stmt = conn.prepareStatement(BOARD_DELETE);
 			stmt.setInt(1, vo.getGoods_id());
 			stmt.executeUpdate();
-			
 		}catch(Exception e) {
 			System.out.println("deleteProduct()"+e);
 		}finally {
