@@ -25,7 +25,7 @@ public class ProductDAO {
 	private final String BOARD_SELLER = "insert into seller (seller_id,seller_area) values(?,?)";
 	private final String BOARD_SELLER_update = "update seller set seller_area =? where seller_id";
 	private String BOARD_LIST = "select * from goods where goods_kind_b like '%'||?||'%' order by goods_id desc";
-	private String BOARD_LIST_views = "select * from goods order by goods_views desc";  //메인에서 게시글 조회수 순으로 출력 
+	private String BOARD_LIST_views = "select * from goods where rownum<5 order by goods_views desc";  //메인에서 게시글 조회수 순으로 출력 
 	
 	//seller 지역 등록
 	public void sellerProduct(ProductVO vo, String area) {

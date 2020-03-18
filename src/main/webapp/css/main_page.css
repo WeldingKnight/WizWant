@@ -48,6 +48,8 @@
 	width: 180px;
 	height:200px;
 	border: 1px solid pink;
+	  display: inline;
+	margin-top:10px;
 	margin-right:15px;
 	float: left;
 }
@@ -116,4 +118,27 @@
   to {opacity: 1}
 }
 
+<!-- 하단의 조회수 정렬 데이터 css-->
 
+.main_pitem_each_img{
+	width:300px;
+	height:200px;
+	border: 1px solid blue;
+}
+
+#main_pitem_wrap{
+	
+	width:170px;
+	height:60px;
+	border: 1px solid red;
+
+}
+
+.main_pitem_each_goods_info{
+	width:70px;
+	height:50px;
+	float: left;
+	margin-left:5px;
+	margin-right:5px;
+	border: 1px solid blue;
+}
