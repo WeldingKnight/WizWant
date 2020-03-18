@@ -62,9 +62,25 @@
 	</aside>
 
 	<!-- //중고거래사이트 링크부분 -->
+	
+	<div class="main_pitem">
+		<!-- pitem: popular item -->
+		<h3>최신 등록된 상품</h3>
+		<c:forEach items="${productviewslist}" var="productVO">
+			<div class="main_pitem_each">
+				<a href="product_detail.do?goods_id=${productVO.goods_id}"> <img class="main_pitem_each_img" src="product_image/${productVO.goods_image}"></a>
+				<div id="main_pitem_wrap">
+					<div class="main_pitem_each_goods_info">${productVO.goods_name}</div>
+					<div class="main_pitem_each_goods_info">${productVO.goods_price}</div>
+				</div>
+			</div>
+		</c:forEach>
+	</div>
+	
+	<!--// 최신 등록 순으로 아이텀 4개 출력부분 -->
 
 
-	<div id="main_pitem">
+	<div class="main_pitem">
 		<!-- pitem: popular item -->
 		<h3>현재 조회수 상위 제품</h3>
 		<c:forEach items="${productviewslist}" var="productVO">
@@ -77,6 +93,8 @@
 			</div>
 		</c:forEach>
 	</div>
+	
+	<!--// 조회수 순으로 아이텀 4개 출력부분 -->
 	<div id="chat"></div>
 
 
