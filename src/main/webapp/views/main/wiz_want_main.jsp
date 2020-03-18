@@ -67,7 +67,7 @@
 	<div id="main_pitem">
 		<!-- pitem: popular item -->
 
-		<c:forEach items="${productKindList}" var="productVO">
+		<c:forEach items="${productviewslist}" var="productVO">
 			<div class="main_pitem_each">
 				<a href="#"> <img src="product_image/${productVO.goods_image}">
 					<h3>${productVO.goods_name}</h3>
