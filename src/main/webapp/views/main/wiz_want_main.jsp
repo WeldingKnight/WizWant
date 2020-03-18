@@ -68,7 +68,7 @@
 		<h3>최신 등록된 상품</h3>
 		<c:forEach items="${productviewslist}" var="productVO">
 			<div class="main_pitem_each">
-				<a href="product_detail.do?goods_id=${productVO.goods_id}"> <img class="main_pitem_each_img" src="product_image/${productVO.goods_image}"></a>
+				<a href="product_detail.do?goods_id=${productVO.goods_id}"> <img style="witdh:150px; height:100px; display: block; margin: 0px auto; " src="img/product_img/${productVO.goods_image}"></a>
 				<div id="main_pitem_wrap">
 					<div class="main_pitem_each_goods_info">${productVO.goods_name}</div>
 					<div class="main_pitem_each_goods_info">${productVO.goods_price}</div>
@@ -85,7 +85,7 @@
 		<h3>현재 조회수 상위 제품</h3>
 		<c:forEach items="${productviewslist}" var="productVO">
 			<div class="main_pitem_each">
-				<a href="product_detail.do?goods_id=${productVO.goods_id}"> <img class="main_pitem_each_img" src="product_image/${productVO.goods_image}"></a>
+				<a href="product_detail.do?goods_id=${productVO.goods_id}"><img src="img/product_img/${productVO.goods_image}"></a>
 				<div id="main_pitem_wrap">
 					<div class="main_pitem_each_goods_info">${productVO.goods_name}</div>
 					<div class="main_pitem_each_goods_info">${productVO.goods_price}</div>
