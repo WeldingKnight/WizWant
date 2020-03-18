@@ -8,6 +8,7 @@
     <h2 align="center">상품 수정 페이지</h2>
     
         <form id="product_update" action="updateFinish.do" method="post">
+        	<input type="hidden" name="goods_id" value="${product.goods_id}">
             <table id="product_update_table">
                 <tr id="product_update_contents" >
                     <td >상품 분류</td>
@@ -69,7 +70,7 @@
 
 	                    </select>
                 	</td>
-                    <td><input type="file" name="goods_image"  id="goods_image" src="./img/product_img/default.jpg"></td>
+                    <td><input type="file" name="goods_image"  id="goods_image" src="./img/product_img/${product.goods_image}"></td>
                     <td><input type="text" id="goods_price" name="goods_price" value="${product.goods_price}"></td>
                     <td><input type="text" id="goods_name" name="goods_name" value="${product.goods_name}"></td>
                     

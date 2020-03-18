@@ -62,8 +62,7 @@ public class ProductController {
 			userId = user.getId();
 			session.setAttribute("userId", userId);
 		}
-		
-		
+
 		System.out.println("유저 아이디 : "+ userId);
 		System.out.println("제품 상세 페이지로 이동");
 		return "/views/product/product_detail.jsp";	
@@ -103,22 +102,22 @@ public class ProductController {
 	}
 	
 	//글 수정
+	//글 수정페이지로 이동
 	@RequestMapping("/updateProduct.do")
 	public String updateGoods(ProductVO vo, ProductDAO productDAO, Model model) {
 		model.addAttribute("product",productDAO.getProduct(vo));
-//		productDAO.updateProduct(vo);
-	
-		System.out.println(vo.toString());
+		
 		System.out.println("제품 업데이트페이지로 이동");
 		return "/views/product/product_update.jsp";
 	}
+	
 	//글 수정 후 메인 페이지 이동
 	@RequestMapping("/updateFinish.do")
 	public String updateProduct(ProductVO vo, ProductDAO productDAO) {
 		productDAO.updateProduct(vo);
 	
 		System.out.println(vo.toString());
-		System.out.println("제품 업데이트페이지로 이동");
+		System.out.println("메인 페이지로 이동");
 		return "redirect:/wiz_want.do";
 	}
 	

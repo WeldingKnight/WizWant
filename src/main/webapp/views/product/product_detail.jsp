@@ -11,7 +11,6 @@
 <title>제품 상세 페이지</title>
 	<section align="center" class="detail_main">
     <h1>제품 상세 페이지</h1>
-    <input type="hidden" name="goods_id" value="${product.goods_id}">
     <input type="hidden" name="product" value="${product}">
     <img src="img/product_img/${product.goods_image}">
     <table align="center" border="1">

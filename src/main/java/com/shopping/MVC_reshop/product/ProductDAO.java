@@ -22,6 +22,7 @@ public class ProductDAO {
 	private final String BOARD_DELETE = "delete goods where goods_id=?";	
 	private final String BOARD_GET = "select * from goods where goods_id=?";
 	private final String BOARD_SELLER = "insert into seller (seller_id,seller_area) values(?,?)";
+	private final String BOARD_SELLER_update = "update seller set seller_area =? where seller_id";
 	private String BOARD_LIST = "select * from goods where goods_kind_b like '%'||?||'%' order by goods_id desc";
 	private String BOARD_LIST_views = "select * from goods order by goods_views desc";
 	
@@ -65,6 +66,7 @@ public class ProductDAO {
 				vo.setSeller_id(rs.getString("seller_id"));
 				vo.setGoods_views(rs.getInt("goods_views"));
 				vo.setGoods_detail(rs.getString("goods_detail"));
+				vo.setGoods_quantity(rs.getInt("goods_quantity"));
 				product.add(vo);
 			}
 			
@@ -162,15 +164,14 @@ public class ProductDAO {
 				goods.setGoods_price(rs.getInt("goods_price"));
 				goods.setGoods_image(rs.getString("goods_image"));
 				goods.setGoods_detail(rs.getString("goods_detail"));
+				goods.setGoods_quantity(rs.getInt("goods_quantity"));
 			}
 		}catch (Exception e) {
 			System.out.println("getProduct()"+e);
 		}finally {
 			JDBCUtil.close(rs, stmt, conn);
 		}
-		System.out.println(goods);
 		return goods;
-		
 	}
 	
 	
