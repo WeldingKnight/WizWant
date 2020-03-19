@@ -10,7 +10,7 @@
     <div id="product_update_wrap">
     <h2 align="center">상품 수정 페이지</h2>
     
-        <form id="product_update" action="updateFinish.do" method="post">
+        <form id="product_update" action="updateProduct.do" method="post">
         	<input type="hidden" name="goods_id" value="${product.goods_id}">
             <table id="product_update_table">
                 <tr id="product_update_contents" >

@@ -96,7 +96,7 @@ public class ProductController {
 	
 	//글 수정
 	//글 수정페이지로 이동
-	@RequestMapping("/updateProduct.do")
+	@RequestMapping(value ="/updateProduct.do",method = RequestMethod.GET)
 	public String updateGoods(ProductVO vo, ProductDAO productDAO, Model model) {
 		
 		model.addAttribute("product",productDAO.getProduct(vo));
@@ -105,7 +105,7 @@ public class ProductController {
 	}
 	
 	//글 수정 후 메인 페이지 이동
-	@RequestMapping("/updateFinish.do")
+	@RequestMapping(value ="/updateProduct.do",method = RequestMethod.POST)
 	public String updateProduct(ProductVO vo, ProductDAO productDAO) {
 		productDAO.updateProduct(vo);
 	
