@@ -17,11 +17,12 @@ public class MypageDAO {
 	private ResultSet rs = null;
 
 	private final String BOOKMARK = "select * from bookmark_view where user_id=?";
-	private final String ORDERS = "SELECT * FROM orders_view where goods_validate = Y and id=?";
+	private final String INSERT_ORDERS = "UPDATE cart SET goods_validate = 'Y' WHERE goods_id = ? and user_id=?";
+	private final String ORDERS = "select * from cart_view where user_id=? and GOODS_VALIDATE='Y'";
 	private final String INSERT_BOOKMARK = "INSERT INTO bookmark (goods_id,bookmark_id,user_id) VALUES (?,bookmark_seq.NEXTVAL,?)";
 	private final String DELET_BOOKMARK = "DELETE FROM bookmark WHERE goods_id = ? AND user_id = ?";
 	private final String INSERT_CART = "INSERT INTO cart (goods_id, cart_quantity, user_id) VALUES (?, 1, ?)";
-	private final String CART = "select * from cart_view where user_id=?";
+	private final String CART = "select * from cart_view where user_id=? and GOODS_VALIDATE='N'";
 	private final String DELET_CART = "DELETE FROM cart WHERE goods_id = ? AND user_id = ?";
 
 	public List<MypageVO> getBookmark(UserVO vo) { // 북마크
@@ -61,6 +62,54 @@ public class MypageDAO {
 		return book;
 	}
 
+	public void insertOrder(UserVO vo, List<String> goods_id) {
+		// TODO Auto-generated method stub
+		System.out.println("===> JDBC로 InsertOrder() 기능처리");
+		String qr = "";
+		for (int i = 0; i < goods_id.size(); i++) {
+			qr += "?,";
+		}
+		qr = qr.substring(0, qr.length() - 1);
+		String INSERT_ORDERS = "UPDATE cart SET goods_validate = 'Y' WHERE user_id=? and goods_id in (" + qr + ")";
+		String UPDATE_GOODS_VAL = "UPDATE goods SET goods_validate = 'Y' WHERE goods_id in (" + qr + ")";
+		System.out.println(INSERT_ORDERS);
+		try {
+			conn = JDBCUtil.getConnection();
+			PreparedStatement pstmt = null;
+			pstmt = conn.prepareStatement(INSERT_ORDERS);
+			pstmt.setString(1, vo.getId());
+			
+			int j = 1;
+			for (int i = 0; i < goods_id.size(); i++) {
+				pstmt.setString(j + 1, goods_id.get(i));
+				j++;
+			}
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.close(stmt, conn);
+		}
+		
+		try {
+			conn = JDBCUtil.getConnection();
+			PreparedStatement pstmt = null;
+			pstmt = conn.prepareStatement(UPDATE_GOODS_VAL);
+			for (int i = 0; i < goods_id.size(); i++) {
+				pstmt.setString(i + 1, goods_id.get(i));
+			}
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			goods_id = null;
+			JDBCUtil.close(stmt, conn);
+		}
+
+	}
+
 	public List<MypageVO> getOders(UserVO vo) { // 주문 내역
 		// TODO Auto-generated method stub
 		System.out.println("===> JDBC로 listOrder() 기능처리");
@@ -80,11 +129,11 @@ public class MypageDAO {
 				orders = new MypageVO();
 				orders.setGoods_id(rs.getInt("goods_id"));
 				orders.setGoods_name(rs.getString("goods_name"));
-				orders.setGoods_detail(rs.getString("goods_detail"));
 				orders.setGoods_price(rs.getInt("goods_price"));
-				orders.setSeller_id(rs.getString("Seller_id"));
+				orders.setGoods_validate(rs.getString("goods_validate"));
+				orders.setSeller_id(rs.getString("seller_id"));
 				orders.setGoods_image(rs.getString("goods_image"));
-				orders.setId(rs.getString("id"));
+				orders.setUser_id(rs.getString("user_id"));
 				order.add(orders);
 			}
 		} catch (Exception e) {

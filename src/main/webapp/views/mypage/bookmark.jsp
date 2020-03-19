@@ -29,7 +29,8 @@
 						<div>${bookmarkList.seller_id}</div></td>
 				</tr>
 				<tr>
-					<td><a href="bookmark.do?delete_id=${bookmarkList.goods_id}">글 삭제</a></td>
+					<td><a href="bookmark.do?delete_id=${bookmarkList.goods_id}">찜
+							삭제</a></td>
 				</tr>
 			</table>
 		</div>

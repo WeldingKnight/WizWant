@@ -1,6 +1,8 @@
 package com.shopping.view.mypage;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -120,13 +122,17 @@ public class MypageController {
 	}
 
 	@RequestMapping(value = "/orders.do", method = RequestMethod.GET)
-	public String orders(MypageVO mypagevo, UserVO vo, UserDAO dao, MypageDAO mypagedao, HttpSession session,
-			Model model) {
-
+	public String orders(@RequestParam(value = "orders", required = false) String goods_id, MypageVO mypagevo,
+			UserVO vo, UserDAO dao, MypageDAO mypagedao, HttpSession session, Model model) {
+		
 		vo = (UserVO) session.getAttribute("loginuser");
 		if (vo != null) {
-			System.out.println("order test : " + vo);
+			if(goods_id != null) {
+				List<String> chkboxList = Arrays.asList(goods_id.split(","));
+				mypagedao.insertOrder(vo, chkboxList);
+			}
 
+			System.out.println("order test : " + vo);
 			// 모델 사용
 			model.addAttribute("orderList", mypagedao.getOders(vo));
 
@@ -136,7 +142,6 @@ public class MypageController {
 		} else {
 			System.out.println("로그인이 필요합니다.");
 			return "/views/login&insert/login.jsp";
-
 		}
 	}
 
