@@ -11,14 +11,13 @@
 	<a href="product_detail.do?goods_id=${cartsList.goods_id}" class="bookmark_link">
 		<div class="bookmark">
 			<div class="bookmark_img">
-				<img alt="" src="../img/product_img/${cartsList.goods_image}">이미지
+				<img alt="상품 이미지" src="img/product_img/${cartsList.goods_image}">
 			</div>
 			<table class="bookmark_table">
 				<tr>
 					<td class="bookmark_td">
 						<div>상품 번호 :</div>
 						<div>상품 이름 :</div>
-						<div>상품 설명 :</div>
 						<div>상품 가격 :</div>
 						<div>판매자 :</div>
 					</td>
