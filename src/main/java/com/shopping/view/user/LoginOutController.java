@@ -37,6 +37,7 @@ public class LoginOutController {
 		
 		// session: 내가 클라이언트에서 접속하고 있는 동안 개인한테 제공하는 메모리공간이다.(예수님 가라사대)
 		UserVO user = userdao.getUser(vo);
+		
 
 		if (user != null) {
 			

@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<% request.setCharacterEncoding("UTF-8"); %>
+<%
+	request.setCharacterEncoding("UTF-8");
+%>
 <html>
 <head>
 <link rel="stylesheet" href="./css/insert.css">
@@ -14,7 +16,9 @@
 </head>
 <body id="insert_body">
 	<div id="insert_wrap">
-		<h1 style="font-size: 80px; color: dodgerblue;"><a href="wiz_want.do">WIZ*WANT</a></h1>
+		<h1 style="font-size: 80px; color: dodgerblue;">
+			<a href="wiz_want.do">WIZ*WANT</a>
+		</h1>
 
 		<h1 style="font-size: 30px; color: dodgerblue;">회원가입</h1>
 
@@ -27,7 +31,7 @@
 				<tr>
 					<td><input
 						style="width: 300px; height: 30px; font-size: 30px;" type="text"
-						id="id" name="id" accesskey="L" maxlength="41" >
+						id="id" name="id" accesskey="L" maxlength="41">
 						<div class="check_font" id="insert_idchk"></div></td>
 				</tr>
 				<tr>
@@ -36,7 +40,8 @@
 				<tr>
 					<td><input
 						style="width: 300px; height: 30px; font-size: 30px;"
-						type="password" id="password" name="password" accesskey="L" maxlength="41" >
+						type="password" id="password" name="password" accesskey="L"
+						maxlength="41">
 						<div class="check_font" id="insert_pw"></div></td>
 				</tr>
 				<tr>
@@ -46,9 +51,8 @@
 					<td><input
 						style="width: 300px; height: 30px; font-size: 30px;"
 						type="password" id="pwdchk" name="pwdchk" accesskey="L"
-						maxlength="41" >
-						<div class="check_font" id="insert_pwcConfirm"></div>
-						</td>
+						maxlength="41">
+						<div class="check_font" id="insert_pwcConfirm"></div></td>
 				</tr>
 				<tr>
 					<td>이름</td>
@@ -56,7 +60,7 @@
 				<tr>
 					<td><input
 						style="width: 300px; height: 30px; font-size: 30px;" type="text"
-						id="name" name="name" accesskey="L" maxlength="41" ></td>
+						id="name" name="name" accesskey="L" maxlength="41"></td>
 				</tr>
 				<tr>
 					<td>본인 확인 이메일</td>
@@ -89,22 +93,23 @@
 					<td>생년월일</td>
 				</tr>
 				<tr>
-					<td>
-						<input style="width: 300px; height: 30px; font-size: 20px;" type="text" id="birth" name="birth" accesskey="L" maxlength="41" placeholder="생년월일8자리를 입력하세요.">
-					</td>
+					<td><input
+						style="width: 300px; height: 30px; font-size: 20px;" type="text"
+						id="birth" name="birth" accesskey="L" maxlength="41"
+						placeholder="생년월일8자리를 입력하세요."></td>
 				</tr>
 				<tr>
 					<td>주소</td>
 				</tr>
 				<tr>
-					<td>
-						<input style="width: 300px; height: 30px; font-size: 20px;" type="text" id="address" name="address" accesskey="L" maxlength="41" >
+					<td><input
+						style="width: 300px; height: 30px; font-size: 20px;" type="text"
+						id="address" name="address" accesskey="L" maxlength="41">
 					</td>
 				</tr>
 				<tr>
 					<td><input id="insert_input" type="submit" alt="회원가입"
-						value="회원가입" />
-					</td>
+						value="회원가입" /></td>
 				</tr>
 			</table>
 		</form>

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="EUC-KR"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +9,7 @@
 <script src="./js/jquery-ui.min.js"></script>
 <script src="./js/jquery.easing.1.3.js"></script>
 <script src="./js/delete.js"></script>
-<title>ΘΈΏψΕ»Επ</title>
+<title>νμ›νƒν‡΄</title>
 </head>
 <body id="delete_body">
 	<div id="delete_wrap">
@@ -17,35 +17,35 @@
 			<a href="wiz_want.do">WIZ*WANT</a>
 		</h1>
 
-		<h1 style="font-size: 30px; color: dodgerblue;">ΘΈΏψΕ»Επ</h1>
+		<h1 style="font-size: 30px; color: dodgerblue;">νμ›νƒν‡΄</h1>
 		<form action="delete.do" id="delete_form" method="post">
 			<table id="delete_table">
 
 				<tr>
-					<td>ΎΖΐΜµπ</td>
+					<td>μ•„μ΄λ””</td>
 				</tr>
 				<tr>
 					<td><input
-						style="width: 300px; height: 30px; font-size: 30px;" type="text" readonly value="${sessionScope.loginuser.id}"
-						id="id" name="id" accesskey="L" maxlength="41"  >
-						
+						style="width: 300px; height: 30px; font-size: 30px;" type="text"
+						readonly value="${sessionScope.loginuser.id}" id="id" name="id"
+						accesskey="L" maxlength="41">
 				</tr>
 				<tr>
-					<td>ΊρΉΠΉψΘ£</td>
+					<td>λΉ„λ°€λ²νΈ</td>
 				</tr>
 				<tr>
 					<td><input
-						style="width: 300px; height: 30px; font-size: 30px;"
-						type="text" id="password" name="password" accesskey="L" maxlength="41"  >
-						<input type="hidden" id="login_pw" name="login_pw" value="${sessionScope.loginuser.password}">
+						style="width: 300px; height: 30px; font-size: 30px;" type="text"
+						id="password" name="password" accesskey="L" maxlength="41">
+						<input type="hidden" id="login_pw" name="login_pw"
+						value="${sessionScope.loginuser.password}">
 						<div class="check_font" id="delete_pw"></div></td>
 				</tr>
-			
-			
+
+
 				<tr>
-					<td><input id="delete_user" type="submit" alt="ΘΈΏψΕ»Επ"
-						value="ΘΈΏψΕ»Επ" />
-					</td>
+					<td><input id="delete_user" type="submit" alt="νμ›νƒν‡΄"
+						value="νμ›νƒν‡΄" /></td>
 				</tr>
 			</table>
 		</form>
