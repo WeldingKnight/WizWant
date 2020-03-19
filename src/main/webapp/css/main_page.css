@@ -4,10 +4,11 @@
 	/*border: 2px solid blue;*/
 
 	width:1200px;
-	height: 1000px;  
+	height:100%;
+	overflow:hidden;
 	margin: 0 auto;
 	margin-top:30px;
-	margin-bottom:50px;
+	margin-bottom:200px;
 		
 }
 #main_slider_div{
@@ -134,14 +135,19 @@
 	width:170px;
 	height:60px;
 	border: 1px solid red;
+	margin-top: 10px;
 
 }
 
 .main_pitem_each_goods_info{
 	width:70px;
-	height:50px;
+	height:20px;
 	float: left;
+	text-align: center;
 	margin-left:5px;
 	margin-right:5px;
 	border: 1px solid orange;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }

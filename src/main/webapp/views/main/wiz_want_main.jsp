@@ -6,34 +6,7 @@
 
 
 <div id="main_div">
-	<!-- 슬라이드 부분 -->
-	<div id="main_slider_div">
-		<div class="main_slideshow-container">
 
-			<div class="mainSlides">
-				<div class="main_numbertext">1 / 3</div>
-				<img class="main_slide_img" src="./img/main_img/slide1.jpg">
-			</div>
-
-			<div class="mainSlides">
-				<div class="main_numbertext">2 / 3</div>
-				<img class="main_slide_img" src="./img/main_img/slide2.jpg">
-			</div>
-
-			<div class="mainSlides">
-				<div class="main_numbertext">3 / 3</div>
-				<img class="main_slide_img" src="./img/main_img/slide3.jpg">
-			</div>
-
-		</div>
-		<br>
-
-		<div style="text-align: center">
-			<span class="main_dot"></span> <span class="main_dot"></span> <span
-				class="main_dot"></span>
-		</div>
-	</div>
-	<!-- //슬라이드 부분 -->
 
 	<!-- 중고거래사이트 링크부분 -->
 	<aside id="main_link">
@@ -62,21 +35,25 @@
 	</aside>
 
 	<!-- //중고거래사이트 링크부분 -->
-	
+
 	<div class="main_pitem">
 		<!-- pitem: popular item -->
 		<h3>최신 등록된 상품</h3>
-		<c:forEach items="${productviewslist}" var="productVO">
+		<c:forEach items="${productdateslist}" var="productVO">
 			<div class="main_pitem_each">
-				<a href="product_detail.do?goods_id=${productVO.goods_id}"> <img style="witdh:150px; height:100px; display: block; margin: 0px auto; " src="img/product_img/${productVO.goods_image}"></a>
+				<a href="product_detail.do?goods_id=${productVO.goods_id}"> <img
+					style="witdh: 150px; height: 100px; display: block; margin: 0px auto;"
+					src="img/product_img/${productVO.goods_image}"></a>
 				<div id="main_pitem_wrap">
+					<div class="main_pitem_each_goods_info">상품명</div>
+					<div class="main_pitem_each_goods_info">가격</div>
 					<div class="main_pitem_each_goods_info">${productVO.goods_name}</div>
 					<div class="main_pitem_each_goods_info">${productVO.goods_price}</div>
 				</div>
 			</div>
 		</c:forEach>
 	</div>
-	
+
 	<!--// 최신 등록 순으로 아이텀 4개 출력부분 -->
 
 
@@ -85,15 +62,18 @@
 		<h3>현재 조회수 상위 제품</h3>
 		<c:forEach items="${productviewslist}" var="productVO">
 			<div class="main_pitem_each">
-				<a href="product_detail.do?goods_id=${productVO.goods_id}"><img src="img/product_img/${productVO.goods_image}"></a>
+				<a href="product_detail.do?goods_id=${productVO.goods_id}"><img
+					src="img/product_img/${productVO.goods_image}"></a>
 				<div id="main_pitem_wrap">
+					<div class="main_pitem_each_goods_info">상품명</div>
+					<div class="main_pitem_each_goods_info">가격</div>
 					<div class="main_pitem_each_goods_info">${productVO.goods_name}</div>
 					<div class="main_pitem_each_goods_info">${productVO.goods_price}</div>
 				</div>
 			</div>
 		</c:forEach>
 	</div>
-	
+
 	<!--// 조회수 순으로 아이텀 4개 출력부분 -->
 	<div id="chat"></div>
 

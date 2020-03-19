@@ -31,10 +31,12 @@ public class MainController { //메인 페이지 컨트롤러
 	@RequestMapping("/wiz_want.do")
 	public String main(HttpSession session, ProductDAO dao,HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		
-		ArrayList<ProductVO> productviewslist = (ArrayList<ProductVO>) dao.Productlistviews();
+		ArrayList<ProductVO> productviewslist = (ArrayList<ProductVO>) dao.Productlistviews(); //조회순으로 상품출력
+		ArrayList<ProductVO> productdateslist = (ArrayList<ProductVO>) dao.Productlistdates(); //최신등록순으로 상품출력
 		
 		
 		request.setAttribute("productviewslist", productviewslist);
+		request.setAttribute("productdateslist", productdateslist);
 		
 //		ArrayList<ProductVO> productKindList = productDAO.listKindProduct(kind);
 //		
