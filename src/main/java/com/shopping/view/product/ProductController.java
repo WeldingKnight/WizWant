@@ -109,8 +109,9 @@ public class ProductController {
 	//글 수정페이지로 이동
 	@RequestMapping("/updateProduct.do")
 	public String updateGoods(ProductVO vo, ProductDAO productDAO, Model model) {
+		System.out.println(vo.toString()+"담기전");
 		model.addAttribute("product",productDAO.getProduct(vo));
-		
+		System.out.println(productDAO.getProduct(vo)+"-----------------");
 		System.out.println("제품 업데이트페이지로 이동");
 		return "/views/product/product_update.jsp";
 	}
