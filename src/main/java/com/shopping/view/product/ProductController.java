@@ -1,6 +1,6 @@
 package com.shopping.view.product;
 
-import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartRequest;
 
 import com.google.gson.Gson;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.shopping.MVC_reshop.product.ProductDAO;
 import com.shopping.MVC_reshop.product.ProductVO;
 import com.shopping.MVC_reshop.user.UserVO;
@@ -81,37 +83,25 @@ public class ProductController {
 	
 	//상품 등록 후 product 페이지로 이동
 	@RequestMapping(value ="/product_sale.do",method = RequestMethod.POST)
-	public String insertProduct(ProductVO vo, ProductDAO productDAO, HttpServletRequest request) {
+	public String insertProduct(ProductVO vo, ProductDAO productDAO, HttpServletRequest request) throws IOException {
+		System.out.println(request.getParameter("keyValue"));
 		System.out.println(vo.toString());
-		
 		
 		String area = request.getParameter("seller_area");
 		System.out.println(area);
 		productDAO.insertProduct(vo);
 		productDAO.sellerProduct(vo,area);
 		
-		
-		String fileName = vo.getGoods_image();
-		
-		
-		
-		String fileuploadurl="C:\\Users\\kosmo-05\\git\\WizWant\\src\\main\\webapp\\img\\product_img\\";
-		
-		File fileupload= new File(fileuploadurl+fileName);
-		
-		System.out.println(fileupload);
-//		System.out.println(productDAO.getProduct(vo));
 		System.out.println("판매 등록 후 메인페이지로 이동");
-		return "redirect:/wiz_want.do";
+		return "/fileupload.jsp";
 	}
 	
 	//글 수정
 	//글 수정페이지로 이동
 	@RequestMapping("/updateProduct.do")
 	public String updateGoods(ProductVO vo, ProductDAO productDAO, Model model) {
-		System.out.println(vo.toString()+"담기전");
+		
 		model.addAttribute("product",productDAO.getProduct(vo));
-		System.out.println(productDAO.getProduct(vo)+"-----------------");
 		System.out.println("제품 업데이트페이지로 이동");
 		return "/views/product/product_update.jsp";
 	}
