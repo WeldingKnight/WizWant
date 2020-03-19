@@ -1,7 +1,6 @@
 package com.shopping.view.mypage;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -12,12 +11,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shopping.MVC_reshop.mypage.MypageDAO;
 import com.shopping.MVC_reshop.mypage.MypageVO;
-import com.shopping.MVC_reshop.product.ProductDAO;
-import com.shopping.MVC_reshop.product.ProductVO;
 import com.shopping.MVC_reshop.user.UserDAO;
 import com.shopping.MVC_reshop.user.UserVO;
 
@@ -47,25 +43,35 @@ public class MypageController {
 			UserDAO dao, UserVO vo, HttpSession session, HttpServletRequest request)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		System.out.println("수정실행");
-		UserVO loginuser = (UserVO) session.getAttribute("loginuser");
-		System.out.println("이름: " + vo.getName());
 
-		String id = loginuser.getId();
-		vo.setId(id);
-		vo.setName(name);
-		vo.setPassword(password);
-		vo.setEmail(email);
-		vo.setAddress(address);
-		vo.setBirth(birth);
-		vo.setSex(sex);
-		vo.setTel(tel);
-		dao.updateUser(vo);
+		UserVO user = dao.getUser(vo);
 
-		System.out.println("회원정보 수정 완료 후 main페이지로 이동");
+		if (user != null) {
 
-		session.setAttribute("loginuser", vo);
-		return "redirect:/wiz_want.do";
+			System.out.println("수정실행");
+			UserVO loginuser = (UserVO) session.getAttribute("loginuser");
+			System.out.println("이름: " + vo.getName());
+
+			String id = loginuser.getId();
+			vo.setId(id);
+			vo.setName(name);
+			vo.setPassword(password);
+			vo.setEmail(email);
+			vo.setAddress(address);
+			vo.setBirth(birth);
+			vo.setSex(sex);
+			vo.setTel(tel);
+			dao.updateUser(vo);
+
+			System.out.println("회원정보 수정 완료 후 main페이지로 이동");
+
+			session.setAttribute("loginuser", vo);
+			return "redirect:/wiz_want.do";
+		} else {
+			System.out.println("로그인이 필요합니다.");
+			return "/views/login&insert/login.jsp";
+
+		}
 
 	}
 
@@ -73,85 +79,107 @@ public class MypageController {
 	@RequestMapping(value = "/bookmark.do", method = RequestMethod.GET)
 	public String bookmark(@RequestParam(value = "delete_id", required = false) String delete_id,
 			@RequestParam(value = "goods_id", required = false) String goods_id, MypageVO mypagevo, UserVO vo,
-			MypageDAO mypagedao, HttpSession session, Model model) {
+			UserDAO dao, MypageDAO mypagedao, HttpSession session, HttpServletRequest request, Model model)
+			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 
+		session.getAttribute("loginuser");
 		vo = (UserVO) session.getAttribute("loginuser");
-		System.out.println("bookmark test : " + vo);
 
-		System.out.println("받을 아이디 : " + goods_id);
-		System.out.println("삭제 아이디 : " + delete_id);
-
-		// 북마크 추가
-		if (goods_id != null) {
+		if (vo != null) {
+			System.out.println("bookmark test : " + vo);
 			System.out.println("받을 아이디 : " + goods_id);
-			mypagedao.insertBookmark(vo, goods_id);
-			System.out.println("찜목록 추가 실행");
-
-		}
-
-		if (delete_id != null) {
 			System.out.println("삭제 아이디 : " + delete_id);
-			mypagedao.deleteBookmark(vo, delete_id);
-			System.out.println("찜목록 삭제");
+
+			// 북마크 추가
+			if (goods_id != null) {
+				System.out.println("받을 아이디 : " + goods_id);
+				mypagedao.insertBookmark(vo, goods_id);
+				System.out.println("찜목록 추가 실행");
+
+			}
+
+			if (delete_id != null) {
+				System.out.println("삭제 아이디 : " + delete_id);
+				mypagedao.deleteBookmark(vo, delete_id);
+				System.out.println("찜목록 삭제");
+			}
+
+			// 모델 사용
+			model.addAttribute("bookmarkList", mypagedao.getBookmark(vo));
+
+			System.out.println(mypagedao.getBookmark(vo).toString());
+			System.out.println("찜목록");
+
+			return "/views/mypage/bookmark.jsp";
+		} else {
+			System.out.println("로그인이 필요합니다.");
+			return "/views/login&insert/login.jsp";
 		}
-
-		// 모델 사용
-		model.addAttribute("bookmarkList", mypagedao.getBookmark(vo));
-
-		System.out.println(mypagedao.getBookmark(vo).toString());
-		System.out.println("찜목록");
-
-		return "/views/mypage/bookmark.jsp";
 
 	}
 
 	@RequestMapping(value = "/orders.do", method = RequestMethod.GET)
-	public String orders(MypageVO mypagevo, UserVO vo, MypageDAO mypagedao, HttpSession session, Model model) {
+	public String orders(MypageVO mypagevo, UserVO vo, UserDAO dao, MypageDAO mypagedao, HttpSession session,
+			Model model) {
 
 		vo = (UserVO) session.getAttribute("loginuser");
-		System.out.println("order test : " + vo);
+		if (vo != null) {
+			System.out.println("order test : " + vo);
 
-		// 모델 사용
-		model.addAttribute("orderList", mypagedao.getOders(vo));
+			// 모델 사용
+			model.addAttribute("orderList", mypagedao.getOders(vo));
 
-		System.out.println("주문내역");
+			System.out.println("주문내역");
 
-		return "/views/mypage/orders.jsp";
+			return "/views/mypage/orders.jsp";
+		} else {
+			System.out.println("로그인이 필요합니다.");
+			return "/views/login&insert/login.jsp";
 
+		}
 	}
 
 	// 장바구니 추가
 	@RequestMapping(value = "/cart.do", method = RequestMethod.GET)
 	public String cart(@RequestParam(value = "delete_id", required = false) String delete_id,
 			@RequestParam(value = "goods_id", required = false) String goods_id, MypageVO mypagevo, UserVO vo,
-			MypageDAO mypagedao, HttpSession session, Model model) {
+			UserDAO dao, MypageDAO mypagedao, HttpSession session, Model model) {
 
 		vo = (UserVO) session.getAttribute("loginuser");
-		System.out.println("cart test : " + vo);
 
-		System.out.println("받을 아이디 : " + goods_id);
-		System.out.println("삭제 아이디 : " + delete_id);
+		if (vo != null) {
 
-		// 장바구니 초가
-		if (goods_id != null) {
+			System.out.println("cart test : " + vo);
+
 			System.out.println("받을 아이디 : " + goods_id);
-			mypagedao.insertCart(vo, goods_id);
-			System.out.println("장바구니 추가");
-		}
-
-		if (delete_id != null) {
 			System.out.println("삭제 아이디 : " + delete_id);
-			mypagedao.deleteCart(vo, delete_id);
-			System.out.println("장바구니 삭제");
+
+			// 장바구니 초가
+			if (goods_id != null) {
+				System.out.println("받을 아이디 : " + goods_id);
+				mypagedao.insertCart(vo, goods_id);
+				System.out.println("장바구니 추가");
+			}
+
+			if (delete_id != null) {
+				System.out.println("삭제 아이디 : " + delete_id);
+				mypagedao.deleteCart(vo, delete_id);
+				System.out.println("장바구니 삭제");
+			}
+
+			// 모델 사용
+			model.addAttribute("cartList", mypagedao.getCart(vo));
+
+			System.out.println(mypagedao.getCart(vo).toString());
+			System.out.println("장바구니");
+
+			return "/views/mypage/cart.jsp";
+		} else {
+			System.out.println("로그인이 필요합니다.");
+			return "/views/login&insert/login.jsp";
+
 		}
-
-		// 모델 사용
-		model.addAttribute("cartList", mypagedao.getCart(vo));
-
-		System.out.println(mypagedao.getCart(vo).toString());
-		System.out.println("장바구니");
-
-		return "/views/mypage/cart.jsp";
 
 	}
 

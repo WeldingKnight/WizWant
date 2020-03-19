@@ -6,7 +6,7 @@
 <div id="update_wrap">
 	<h1 class="mypage_title">회원정보수정</h1>
 
-	<form action="./update.do" id="update_form" method="post">
+	<form action="./update.do" id="update_form" method="post" onsubmit="return check()">
 		<table id="update_table">
 			<tr>
 				<td>아이디</td>

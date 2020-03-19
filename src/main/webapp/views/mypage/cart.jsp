@@ -8,7 +8,8 @@
 <h1 class="mypage_title">장바구니</h1>
 
 <c:forEach items="${cartList}" var="cartsList">
-	<a href="product_detail.do?goods_id=${cartsList.goods_id}" class="bookmark_link">
+	<a href="product_detail.do?goods_id=${cartsList.goods_id}"
+		class="bookmark_link">
 		<div class="bookmark">
 			<div class="bookmark_img">
 				<img alt="상품 이미지" src="img/product_img/${cartsList.goods_image}">
@@ -34,6 +35,8 @@
 		</div>
 	</a>
 </c:forEach>
+<input class="purchase_button" type="submit" title="구매" alt="구매"
+	value="구매" id="purchase" id="purchase_input">
 <div class="clear"></div>
 
 <jsp:include page="../header_footer/footer.jsp"></jsp:include>
