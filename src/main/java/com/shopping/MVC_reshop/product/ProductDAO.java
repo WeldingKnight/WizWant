@@ -25,12 +25,12 @@ public class ProductDAO {
 	private final String BOARD_SELLER = "insert into seller (seller_id,seller_area) values(?,?)";
 	private final String BOARD_SELLER_update = "update seller set seller_area =? where seller_id";
 	private String BOARD_LIST = "select * from goods where goods_kind_b like '%'||?||'%' order by goods_id desc";
-	private String BOARD_LIST_views = "select * from(select * from goods order by goods_views desc) where rownum<5 "; // 메인에서
+	private String BOARD_LIST_views = "select * from(select * from goods order by goods_views desc) where rownum<9 "; // 메인에서
 																														// 게시글
 																														// 조회수
 																														// 순으로
 																														// 출력
-	private String BOARD_LIST_new = "select * from(select * from goods order by goods_date desc) where rownum<5 "; // 최신
+	private String BOARD_LIST_new = "select * from(select * from goods order by goods_date desc) where rownum<9 "; // 최신
 																													// 등록
 																													// 순으로
 																													// 게시글

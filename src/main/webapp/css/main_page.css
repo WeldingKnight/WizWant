@@ -19,6 +19,7 @@
 }
 
 #main_link{
+	margin-top:20px;
 	width:250px;
 	height:600px;
 	/*border: 2px solid orange;*/
@@ -41,7 +42,8 @@
 	padding-top:10px;
 	width:800px;
 	height:300px;
-	border: 1px solid red;
+	border: 10px outset  ;
+	background-color: white;
 	float: left;
 }
 
