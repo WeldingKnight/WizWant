@@ -15,10 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartRequest;
 
 import com.google.gson.Gson;
-import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.shopping.MVC_reshop.product.ProductDAO;
 import com.shopping.MVC_reshop.product.ProductVO;
 import com.shopping.MVC_reshop.user.UserVO;
@@ -76,15 +74,15 @@ public class ProductController {
 	//상품 등록 페이지로 이동
 	@RequestMapping(value ="/product_sale.do",method = RequestMethod.GET)
 	public String insertProduct() {
-
+		
+		
 		System.out.println("판매 등록 페이지로 이동");
 		return "/views/product/product_sale.jsp";
 	}
 	
 	//상품 등록 후 product 페이지로 이동
 	@RequestMapping(value ="/product_sale.do",method = RequestMethod.POST)
-	public String insertProduct(ProductVO vo, ProductDAO productDAO, HttpServletRequest request) throws IOException {
-		System.out.println(request.getParameter("keyValue"));
+	public String insertProduct(ProductVO vo, ProductDAO productDAO, HttpServletRequest request){
 		System.out.println(vo.toString());
 		
 		String area = request.getParameter("seller_area");
@@ -92,7 +90,7 @@ public class ProductController {
 		productDAO.insertProduct(vo);
 		productDAO.sellerProduct(vo,area);
 		
-		System.out.println("판매 등록 후 메인페이지로 이동");
+		System.out.println("판매 등록 후 사진등록 페이지로 이동");
 		return "/fileupload.jsp";
 	}
 	

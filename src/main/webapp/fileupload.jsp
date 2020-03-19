@@ -9,7 +9,7 @@
 <body>
 	<form action="uploadAction.jsp" method="POST" enctype="multipart/form-data">
 		파일:<input type="file" name="file"><br>
-			<input type="submit" value="업로드">	
+			<input type="submit" value="업로드">
 	</form>
 </body>
 </html>

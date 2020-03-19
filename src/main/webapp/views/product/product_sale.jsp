@@ -9,11 +9,11 @@
 
     <div id="product_sale_wrap">
     <h2 align="center">상품 등록 페이지</h2>
-    
+    	
         <form id="product_sale" action="product_sale.do" method="post">
             <table id="product_sale_table">
                 <tr id="product_sale_contents" >
-                    <td >상품 분류</td>
+                    <td>상품 분류</td>
                     <td>상품 이미지</td>
                     <td>상품 가격</td>
                     <td>상품명</td>
@@ -72,7 +72,7 @@
 
 	                    </select>
                 	</td>
-                    <td><input type="file" name="goods_image"  id="goods_image" alt="${product.goods_image}" src="./img/product_img/${product.goods_image}"></td>
+                	<td><input type="file" name="goods_image"  id="goods_image" alt="${product.goods_image}" src="./img/product_img/${product.goods_image}"></td>
                     <td><input type="text" id="goods_price" name="goods_price"></td>
                     <td><input type="text" id="goods_name" name="goods_name"></td>
                     
@@ -97,7 +97,6 @@
 	                        <option value="kangze">강원/제주</option>
 	                    </select>
                     </td>
-                    
                     <td><input type="number" id="goods_quantity" name="goods_quantity"></td>
                     <td><textarea rows="10" cols="60" style="resize: none;"  id="goods_detail" name="goods_detail"></textarea></td>
                     <td>${loginuser.id}<input type='hidden' id="seller_id" name="seller_id"  value="${loginuser.id}" /></td>
