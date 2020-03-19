@@ -92,7 +92,7 @@ public class ProductDAO {
 			stmt.setString(3, vo.getGoods_detail());
 			stmt.setInt(4, vo.getGoods_quantity());
 			stmt.setInt(5, vo.getGoods_price());
-			if(vo.getGoods_image()==null) {
+			if(vo.getGoods_image().equals("")) {
 				stmt.setString(6, "default.jpg");
 			}else {
 				stmt.setString(6, vo.getGoods_image());
