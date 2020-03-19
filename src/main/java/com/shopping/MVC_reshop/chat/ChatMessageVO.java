@@ -1,7 +1,6 @@
 package com.shopping.MVC_reshop.chat;
 
 public class ChatMessageVO {
-	private int id;
 	private String writer;
 	private String body;
 	
@@ -9,17 +8,9 @@ public class ChatMessageVO {
 		
 	}
 	
-	public ChatMessageVO(int id, String writer, String body) {
-		this.id = id;
+	public ChatMessageVO(String writer, String body) {
 		this.writer = writer;
 		this.body = body;
-	}
-	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
 	}
 	public String getWriter() {
 		return writer;

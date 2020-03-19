@@ -12,8 +12,11 @@
 <title>ChatRoom</title>
 </head>
 <body>
-    <input type="text" id="message" />
-    <input type="button" id="sendBtn" value="전송" />
+	<form name="frm" method="post" onsubmit="return sendMessage()">
+		<input type="hidden" name="userId" value="${ sessionScope.loginuser.id }">
+    	<input type="text" name="message" />
+    	<input type="submit" id="sendBtn" value="전송" />
+	</form> 
     <div id="data"></div>
 </body>
 </html>
