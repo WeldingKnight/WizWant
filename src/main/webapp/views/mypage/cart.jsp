@@ -8,7 +8,7 @@
 <h1 class="mypage_title">장바구니</h1>
 
 <c:forEach items="${cartList}" var="cartsList">
-	<a href=".do=?" class="bookmark_link">
+	<a href="product_detail.do?goods_id=${cartsList.goods_id}" class="bookmark_link">
 		<div class="bookmark">
 			<div class="bookmark_img">
 				<img alt="" src="../img/product_img/${cartsList.goods_image}">이미지

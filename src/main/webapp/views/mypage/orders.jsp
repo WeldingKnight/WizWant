@@ -7,7 +7,7 @@
 <jsp:include page="../header_footer/header.jsp"></jsp:include>
 <h1 class="mypage_title">주문내역</h1>
 <c:forEach items="${orderList}" var="ordersList">
-	<a href=".do=?" class="bookmark_link">
+	<a href="product_detail.do?goods_id=${cartsList.goods_id}" class="bookmark_link">
 		<div class="bookmark">
 			<div class="bookmark_img">
 				<img alt="" src="/img/product_img/${ordersList.goods_image}">이미지
