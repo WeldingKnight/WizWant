@@ -79,5 +79,6 @@
 					</c:otherwise>
 				</c:choose>
 				<a href="getQnaList.do">고객센터</a>
+				<a href="cart.do">장바구니</a>
 			</div>
 		</header>

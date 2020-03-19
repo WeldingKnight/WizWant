@@ -81,13 +81,10 @@
 					value="${sessionScope.loginuser.address}"></td>
 			</tr>
 			<tr>
-				<td><input
-					style="width: 150px; height: 50px; font-size: 20px; background-color: dodgerblue; color: white;"
-					type="submit" title="수정완료" alt="수정완료" value="수정완료"
-					background-color="skyblue" id="insert" id="update_input"> <input
-					style="width: 150px; height: 50px; font-size: 20px; background-color: dodgerblue; color: white;"
-					type="reset" title="취소" alt="취소" value="취소"
-					background-color="skyblue" id="insert"> <a
+				<td><input class="update_input_button" type="submit"
+					title="수정완료" alt="수정완료" value="수정완료" id="insert" id="update_input">
+					<input class="update_input_button" type="reset" title="취소" alt="취소"
+					value="취소" id="insert"> <a id="delete_user"
 					href="/MVC_reshop/delete.do">회원탈퇴</a></td>
 			</tr>
 		</table>

@@ -17,7 +17,7 @@ public class MypageDAO {
 	private ResultSet rs = null;
 
 	private final String BOOKMARK = "select * from bookmark_view where user_id=?";
-	private final String ORDERS = "select * from orders_view where id=?";
+	private final String ORDERS = "SELECT * FROM orders_view where goods_validate = Y and id=?";
 	private final String INSERT_BOOKMARK = "INSERT INTO bookmark (goods_id,bookmark_id,user_id) VALUES (?,bookmark_seq.NEXTVAL,?)";
 	private final String DELET_BOOKMARK = "DELETE FROM bookmark WHERE goods_id = ? AND user_id = ?";
 	private final String INSERT_CART = "INSERT INTO cart (goods_id, cart_quantity, user_id) VALUES (?, 1, ?)";
@@ -48,6 +48,7 @@ public class MypageDAO {
 				bookmark.setSeller_id(rs.getString("Seller_id"));
 				bookmark.setBookmark_id(rs.getInt("bookmark_id"));
 				bookmark.setUser_id(rs.getString("user_id"));
+				bookmark.setGoods_image(rs.getString("goods_image"));
 				book.add(bookmark);
 			}
 
@@ -86,11 +87,9 @@ public class MypageDAO {
 				orders.setId(rs.getString("id"));
 				order.add(orders);
 			}
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-
 			JDBCUtil.close(rs, stmt, conn);
 		}
 		return order;

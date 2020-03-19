@@ -8,10 +8,10 @@
 <h1 class="mypage_title">찜목록</h1>
 
 <c:forEach items="${bookmarkList}" var="bookmarkList">
-	<a href="product_detail.do?goods_id=${cartsList.goods_id}" class="bookmark_link">
+	<a href="product_detail.do?goods_id=${bookmarkList.goods_id}" class="bookmark_link">
 		<div class="bookmark">
 			<div class="bookmark_img">
-				<img alt="" src="">이미지
+				<img alt="" src="img/product_img/${bookmarkList.goods_image}">
 			</div>
 			<table class="bookmark_table">
 				<tr>

@@ -6,6 +6,36 @@
 .clear {
 	clear: both;
 }
+/*user update*/
+#update_form {
+	margin: 0 auto;
+	width: 320px;
+	text-align: center;
+}
+
+#delete_user {
+	display: block;
+	line-height: 50px;
+	width: 100px;
+	height: 50px;
+	font-size: 20px;
+	background-color: dodgerblue;
+	color: white;
+	float: right;
+	cursor: default;
+}
+
+.update_input_button {
+	margin-left: 4px;
+	width: 100px;
+	height: 50px;
+	font-size: 20px;
+	background-color: dodgerblue;
+	color: white;
+	border: none;
+	border-style: none;
+	outline-style: none;
+}
 
 /*mypage css*/
 .menu_img {
@@ -77,12 +107,17 @@
 	border: 1px solid black;
 }
 
+.bookmark_img img {
+	width: 250px;
+	height: 250px;
+}
+
 .bookmark_table {
 	margin: 0 auto;
 	margin-left: 20px;
 	width: -webkit-calc(100% - 282px);
-    width: -moz-calc(100% - 282px);
-    width: calc(100% - 282px);
+	width: -moz-calc(100% - 282px);
+	width: calc(100% - 282px);
 	height: 250px;
 	border: 1px solid black;
 	float: left;
@@ -95,10 +130,11 @@
 	height: 250px;
 	margin-bottom: 10px;
 }
-.bookmark_td{
+
+.bookmark_td {
 	width: 100px;
 }
 
-.bookmark_link{
+.bookmark_link {
 	color: black;
 }
