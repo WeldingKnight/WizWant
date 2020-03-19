@@ -25,6 +25,7 @@ NoticeDAO noticeDAO = new NoticeDAO();
    request.setAttribute("noticeList", noticeList);
    
    int totalList = noticeList.size(); // 총게시글 얻어오기
+   request.setAttribute("totalList", totalList);
 %>    
 <%@ include file="../header_footer/header.jsp"%>
 <script>
@@ -47,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function(){
 					 <h3 align="center">${sessionScope.loginuser.id}님 공지사항 게시판에 오신것을 환영합니다.</h3> 
 				</c:otherwise>
 			</c:choose>                         
-			<h4>총 공지사항 : ${totalList} 건</h4>
+			<h4>총 공지사항 : ${totalList}  건</h4>
 			<form method='get' action='getNoticeList.do'>
 				<table border='1' cellpadding='0' cellspacing='0' width='750'>
 					<tr>
@@ -78,7 +79,9 @@ document.addEventListener("DOMContentLoaded", function(){
 				</c:forEach>
 			</table>
 			<br>
+			<c:if test="${sessionScope.loginuser.id == 'admin' && sessionScope.loginuser.role==0}">
 			<a href="getInsertNotice.do">새글 등록</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</c:if>
 			<a href="getNoticeList.do">전체글 목록 보기</a>
 		</center>
 		<!-- //content -->

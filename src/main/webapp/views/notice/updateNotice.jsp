@@ -18,17 +18,17 @@
 <!-- //스크립트릿 -->
 
 <center>
-	<h1>글 상세 보기</h1>
+	<h1>공지사항 수정</h1>
 	<hr>
 	<form action="updateNotice.do" method="POST">
 		
-		<table border='1' cellpadding='0' cellspacing='0' width="748">
+		<table border='1' cellpadding='0' cellspacing='0' width='748'>
 		
 			<tr>
 				<td bgcolor="orange" width="70">제목</td>
 				<td align="left"><input name="notice_title" type="text" style="width:95%; border: 0; outline: none; padding: 7px;"
-					value="${notice.notice_title}"></td>
-						<input name="notice_id"  type="hidden" value="${notice.notice_id}" />
+					value="${notice.notice_title}" ></td>
+						<input name="notice_id"  type="hidden" value="${notice.notice_id}"  />
 			</tr>
 			<tr>
 				<td bgcolor="orange">내용</td>

@@ -17,7 +17,7 @@
 	%>
 <!-- //스크립트릿 -->    
    <center>
-   <h1>공지사항 상세 보기</h1>
+   <h1>글 상세 보기</h1>
    <hr>
    <form action="getUpdateNotice.do" method="POST">
       <input name="notice_id" type="hidden" value="${notice.notice_id}" readonly/>
@@ -48,10 +48,12 @@
       </table>
    </form>
    <hr>
+	<c:if test="${sessionScope.loginuser.id == 'admin' && sessionScope.loginuser.role==0}">
    <a href='getInsertNotice.do'>새글 등록</a>&nbsp;&nbsp;&nbsp;
+   </c:if>
    <c:choose>
 	 <c:when test="${sessionScope.loginuser.role==0}">
-	 	<a href='deleteNotice.do?notice_id=${notice.notice_id}'>글 삭제</a>&nbsp;&nbsp;&nbsp;
+	 	<a href='deleteNotice.do?not_id=${notice.notice_id}'>글 삭제</a>&nbsp;&nbsp;&nbsp;
 	 	<a href='getNoticeList.do'>전체 게시판</a>		
 	 </c:when>
 	 <c:otherwise>
