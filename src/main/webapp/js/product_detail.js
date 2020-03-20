@@ -8,6 +8,17 @@ $(function() {
 	});
 
 });
-$("#product_sale_button").click(function() {
-	alert("제가 조빱이라 같은 사진 두번올려야 합니다 ㅠ")
+
+
+$(function() {
+	$("#product_sale_button").click(function() {
+		alert("파일 오류방지를 위해서 다시한번 업로드 해주시길 바랍니다.")
+	});
 });
+
+function insert_cart_check() {
+	alert("상품이 장바구니에 추가되었습니다.");
+};
+function insert_bookmark_check() {
+	alert("상품이 찜목록에 추가되었습니다.");
+};
