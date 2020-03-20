@@ -14,7 +14,7 @@
 </head>
 <body>
 	<%;
-		String directory = application.getRealPath("./product_img/");
+		String directory = application.getRealPath("./img/product_img/");
 	//	String directory = "C:\\Users\\kosmo-05\\git\\WizWant\\src\\main\\webapp\\img\\product_img\\";
 		int maxSize = 1024*1024* 100;
 		String encoding = "UTF-8";
