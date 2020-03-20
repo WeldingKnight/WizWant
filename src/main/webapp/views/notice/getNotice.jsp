@@ -41,7 +41,7 @@
          <c:if test='${sessionScope.loginuser.role==0}'>
          <tr>
             <td colspan="2" align="center">
-            	<input type='submit' value='글수정' / >
+            	<input type='submit' value='글수정' />
             </td>
          </tr>
          </c:if>
@@ -53,7 +53,7 @@
    </c:if>
    <c:choose>
 	 <c:when test="${sessionScope.loginuser.role==0}">
-	 	<a href='deleteNotice.do?not_id=${notice.notice_id}'>글 삭제</a>&nbsp;&nbsp;&nbsp;
+	 	<a href='deleteNotice.do?notice_id=${notice.notice_id}'>글 삭제</a>&nbsp;&nbsp;&nbsp;
 	 	<a href='getNoticeList.do'>전체 게시판</a>		
 	 </c:when>
 	 <c:otherwise>

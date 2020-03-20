@@ -63,17 +63,6 @@
 
 <section id="product_section">
 	<div id="detail_rap">
-		<!-- <div class="detail_content">
-			<a href="product_detail.do?goods_id="><img src=""></a>
-			<div class="detail_product">
-			    <div id="detail_productName"></div>
-			    <div id="detail_productPrice"></div>
-			</div>
-			<div class="detail_seller">
-		        <div id="detail_sellerId"></div>
-		        <div id="detail_sellerReliability"></div>
-		    </div>
-	    </div> -->
     </div>
 </section>
 </div>
