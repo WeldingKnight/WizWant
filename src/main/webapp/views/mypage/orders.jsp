@@ -16,13 +16,11 @@
 				<tr>
 					<td class="bookmark_td">
 						<div>상품 이름 :</div>
-						<div>상품 설명 :</div>
 						<div>상품 가격 :</div>
 						<div>판매자 :</div>
 					</td>
 					<td>
 						<div>${ordersList.goods_name}</div>
-						<div>${ordersList.goods_detail}</div>
 						<div>${ordersList.goods_price}</div>
 						<div>${ordersList.seller_id}</div>
 					</td>

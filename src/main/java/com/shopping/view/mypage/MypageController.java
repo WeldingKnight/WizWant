@@ -46,35 +46,25 @@ public class MypageController {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 
-		UserVO user = dao.getUser(vo);
+		System.out.println("수정실행");
+		UserVO loginuser = (UserVO) session.getAttribute("loginuser");
+		System.out.println("이름: " + vo.getName());
 
-		if (user != null) {
+		String id = loginuser.getId();
+		vo.setId(id);
+		vo.setName(name);
+		vo.setPassword(password);
+		vo.setEmail(email);
+		vo.setAddress(address);
+		vo.setBirth(birth);
+		vo.setSex(sex);
+		vo.setTel(tel);
+		dao.updateUser(vo);
 
-			System.out.println("수정실행");
-			UserVO loginuser = (UserVO) session.getAttribute("loginuser");
-			System.out.println("이름: " + vo.getName());
+		System.out.println("회원정보 수정 완료 후 main페이지로 이동");
 
-			String id = loginuser.getId();
-			vo.setId(id);
-			vo.setName(name);
-			vo.setPassword(password);
-			vo.setEmail(email);
-			vo.setAddress(address);
-			vo.setBirth(birth);
-			vo.setSex(sex);
-			vo.setTel(tel);
-			dao.updateUser(vo);
-
-			System.out.println("회원정보 수정 완료 후 main페이지로 이동");
-
-			session.setAttribute("loginuser", vo);
-			return "redirect:/wiz_want.do";
-		} else {
-			System.out.println("로그인이 필요합니다.");
-			return "/views/login&insert/login.jsp";
-
-		}
-
+		session.setAttribute("loginuser", vo);
+		return "redirect:/wiz_want.do";
 	}
 
 	// 찜목록 이동
@@ -124,10 +114,10 @@ public class MypageController {
 	@RequestMapping(value = "/orders.do", method = RequestMethod.GET)
 	public String orders(@RequestParam(value = "orders", required = false) String goods_id, MypageVO mypagevo,
 			UserVO vo, UserDAO dao, MypageDAO mypagedao, HttpSession session, Model model) {
-		
+
 		vo = (UserVO) session.getAttribute("loginuser");
 		if (vo != null) {
-			if(goods_id != null) {
+			if (goods_id != null) {
 				List<String> chkboxList = Arrays.asList(goods_id.split(","));
 				mypagedao.insertOrder(vo, chkboxList);
 			}

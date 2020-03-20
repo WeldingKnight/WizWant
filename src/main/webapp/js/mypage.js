@@ -34,11 +34,9 @@ function check() {
 	var update_pwConfirm = $('#pwdchk').val();
 
 	if (update_pw == "") {
-
 		$('#update_pw').text('필수입력사항입니다.');
 		$('#update_pw').css('color', 'red');
 		$("#password").focus();
-
 		return false;
 
 	} else if (update_pwConfirm == "") {
@@ -55,13 +53,9 @@ function check() {
 		return false;
 	} else {
 		if (confirm("이대로 수정하시겠습니까??") == true) { // 확인
-
 			return true;
-
 		} else { // 취소
-
 			return false;
-
 		}
 	}
 }

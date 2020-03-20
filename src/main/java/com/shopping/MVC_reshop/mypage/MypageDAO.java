@@ -17,7 +17,6 @@ public class MypageDAO {
 	private ResultSet rs = null;
 
 	private final String BOOKMARK = "select * from bookmark_view where user_id=?";
-	private final String INSERT_ORDERS = "UPDATE cart SET goods_validate = 'Y' WHERE goods_id = ? and user_id=?";
 	private final String ORDERS = "select * from cart_view where user_id=? and GOODS_VALIDATE='Y'";
 	private final String INSERT_BOOKMARK = "INSERT INTO bookmark (goods_id,bookmark_id,user_id) VALUES (?,bookmark_seq.NEXTVAL,?)";
 	private final String DELET_BOOKMARK = "DELETE FROM bookmark WHERE goods_id = ? AND user_id = ?";
