@@ -88,7 +88,7 @@ public class MypageController {
 				System.out.println("받을 아이디 : " + goods_id);
 				mypagedao.insertBookmark(vo, goods_id);
 				System.out.println("찜목록 추가 실행");
-
+				return "redirect:/product_detail.do?goods_id=" + goods_id;
 			}
 
 			if (delete_id != null) {
@@ -155,14 +155,13 @@ public class MypageController {
 				System.out.println("받을 아이디 : " + goods_id);
 				mypagedao.insertCart(vo, goods_id);
 				System.out.println("장바구니 추가");
+				return "redirect:/product_detail.do?goods_id=" + goods_id;
 			}
-
 			if (delete_id != null) {
 				System.out.println("삭제 아이디 : " + delete_id);
 				mypagedao.deleteCart(vo, delete_id);
 				System.out.println("장바구니 삭제");
 			}
-
 			// 모델 사용
 			model.addAttribute("cartList", mypagedao.getCart(vo));
 

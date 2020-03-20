@@ -30,7 +30,7 @@
 							<div>${cartsList.seller_id}</div></td>
 					</tr>
 					<tr>
-						<td><a href="cart.do?delete_id=${cartsList.goods_id}">품목
+						<td><a href="cart.do?delete_id=${cartsList.goods_id}" id="bookmark_delete">품목
 								삭제</a></td>
 					</tr>
 				</table>

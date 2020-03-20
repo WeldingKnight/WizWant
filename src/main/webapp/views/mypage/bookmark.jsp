@@ -29,7 +29,7 @@
 						<div>${bookmarkList.seller_id}</div></td>
 				</tr>
 				<tr>
-					<td><a href="bookmark.do?delete_id=${bookmarkList.goods_id}">찜
+					<td><a href="bookmark.do?delete_id=${bookmarkList.goods_id}" id="bookmark_delete">찜
 							삭제</a></td>
 				</tr>
 			</table>

@@ -123,6 +123,7 @@
 	border: 1px solid black;
 	float: left;
 	height: 250px;
+	background-color: white;
 }
 
 .bookmark {
@@ -138,4 +139,31 @@
 
 .bookmark_link {
 	color: black;
+}
+#bookmark_delete{
+	display: block;
+	line-height: 50px;
+	width: 100px;
+	height: 50px;
+	font-size: 20px;
+	background-color: dodgerblue;
+	color: white;
+	float: right;
+	cursor: default;
+	margin-left: 4px;
+	text-align: center;
+}
+
+/*cart css*/
+.purchase_button {
+	display: block;
+	line-height: 50px;
+	width: 100px;
+	height: 50px;
+	font-size: 20px;
+	background-color: dodgerblue;
+	color: white;
+	float: right;
+	cursor: default;
+	margin-left: 4px;
 }
