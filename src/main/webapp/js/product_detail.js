@@ -8,6 +8,8 @@ $(function(){
     });
     
 });
-$("#product_sale_button").click(function() {
-	alert("제가 조빱이라 같은 사진 두번올려야 합니다 ㅠ")
+$(function(){
+	$("#product_sale_input").click(function() {
+	alert("파일 오류방지를 위해서 다시한번 업로드 해주시길 바랍니다.")
+	});
 });
